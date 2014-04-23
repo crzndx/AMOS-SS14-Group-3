@@ -14,7 +14,7 @@
     <Resource Language="x-generate" />
   </Resources>
   <Applications>
-    <Application Id="App" StartPage="default.html">
+    <Application Id="App" StartPage="index.html">
       <m2:VisualElements DisplayName="SolypManagementDashboard" Description="Solyp Management Dashboard Application" ForegroundText="light" BackgroundColor="#464646" Square150x150Logo="images\Logo.png" Square30x30Logo="images\SmallLogo.png">
         <m2:SplashScreen Image="images\splashscreen.png" BackgroundColor="white" />
         <m2:InitialRotationPreference>
