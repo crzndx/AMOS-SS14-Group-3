@@ -28,7 +28,12 @@
 
         _itemInvoked: function (args) {
             var item = HomescreenData.items.getAt(args.detail.itemIndex);
-            nav.navigate("/pages/itemDetail/itemDetail.html", { item: HomescreenData.getItemReference(item) });
+            nav.navigate(HomescreenData.getItemReference(item));
+
+
+            //nav.navigate("/pages/testSeite/page.html");
+            //nav.navigate("/pages/competitorCards/competitorCards.html");
+            //nav.navigate("/pages/itemDetail/itemDetail.html", { item: HomescreenData.getItemReference(item) });
         }
     });
 })();
