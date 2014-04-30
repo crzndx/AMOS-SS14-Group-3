@@ -63,6 +63,9 @@
     <Content Include="js\homescreenData.js" />
     <Content Include="js\default.js" />
     <Content Include="js\navigator.js" />
+    <Content Include="pages\competitorCards\competitorCards.css" />
+    <Content Include="pages\competitorCards\competitorCards.html" />
+    <Content Include="pages\competitorCards\competitorCards.js" />
     <Content Include="pages\itemDetail\itemDetail.css" />
     <Content Include="pages\itemDetail\itemDetail.html" />
     <Content Include="pages\itemDetail\itemDetail.js" />
@@ -73,6 +76,10 @@
     <Content Include="pages\groupedItems\groupedItems.html" />
     <Content Include="pages\groupedItems\groupedItems.js" />
     <Content Include="index.html" />
+    <Content Include="pages\newPageDummy\newDummyCSS.css" />
+    <Content Include="pages\newPageDummy\newDummyHTML.html" />
+    <Content Include="pages\newPageDummy\newDummyJS.js" />
+    <Content Include="pages\testSeite\page.html" />
     <None Include="SolypManagementDashboard_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
