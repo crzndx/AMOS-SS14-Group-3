@@ -80,7 +80,7 @@
             { group: sampleGroups[0], title: "Empty Page", subtitle: "Item unterschrift ohne Bedeutung", description: itemDescription, content: itemContent, backgroundImage: darkGray, path: "/pages/testSeite/page.html" },
 
             { group: sampleGroups[1], title: "Dummy Page", subtitle: "Have a look at the dummy page", description: itemDescription, content: itemContent, backgroundImage: darkGray, path: "/pages/newPageDummy/newDummyHTML.html" },
-            { group: sampleGroups[1], title: "Item Title: 2", subtitle: "Item Subtitle: 2", description: itemDescription, content: itemContent, backgroundImage: mediumGray },
+            { group: sampleGroups[1], title: "d3 Testseite", subtitle: "Eine einfache d3 testseite", description: itemDescription, content: itemContent, backgroundImage: mediumGray, path: "/pages/d3playground/d3playground.html" },
             { group: sampleGroups[1], title: "Item Title: 3", subtitle: "Item Subtitle: 3", description: itemDescription, content: itemContent, backgroundImage: lightGray },
 
             { group: sampleGroups[2], title: "Item Title: 1", subtitle: "Item Subtitle: 1", description: itemDescription, content: itemContent, backgroundImage: mediumGray },

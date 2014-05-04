@@ -1,0 +1,14 @@
+﻿/* add all CSS changes specifically concerning the new subpage here*/
+
+.contentwrapper {
+    margin: 50px; /* TODO needs defined makeover that every page looks the same!*/
+}
+
+.chart div {
+  font: 10px sans-serif;
+  background-color: steelblue;
+  text-align: right;
+  padding: 3px;
+  margin: 1px;
+  color: white;
+}
