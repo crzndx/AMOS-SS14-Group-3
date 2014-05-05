@@ -77,6 +77,7 @@
     <Content Include="pages\competitorCards\competitorCards.css" />
     <Content Include="pages\competitorCards\competitorCards.html" />
     <Content Include="pages\competitorCards\competitorCards.js" />
+    <Content Include="pages\competitorCards\d3playground.js" />
     <Content Include="pages\itemDetail\itemDetail.css" />
     <Content Include="pages\itemDetail\itemDetail.html" />
     <Content Include="pages\itemDetail\itemDetail.js" />

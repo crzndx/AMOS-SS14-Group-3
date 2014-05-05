@@ -10,6 +10,8 @@
 		zoom: 1;
 	}
 
+
+
 	#fdw-pricing-table:before, #fdw-pricing-table:after {
 	  content: "";
 	  display: table
