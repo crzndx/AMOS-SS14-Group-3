@@ -6,7 +6,6 @@
         // populates the page elements with the app's data.
         ready: function (element, options) {
  
-          
             var data = [21, 25, 19, 22];
 
             d3.select(".contentwrapper")

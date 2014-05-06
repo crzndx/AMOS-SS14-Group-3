@@ -94,7 +94,6 @@
     <Content Include="pages\newPageDummy\newDummyHTML.html" />
     <Content Include="pages\newPageDummy\newDummyJS.js" />
     <Content Include="pages\testSeite\page.html" />
-    <Content Include="pages\testSeite\script.js" />
     <None Include="SolypManagementDashboard_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
