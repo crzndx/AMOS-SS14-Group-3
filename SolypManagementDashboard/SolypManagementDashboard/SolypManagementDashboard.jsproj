@@ -77,7 +77,6 @@
     <Content Include="pages\competitorCards\competitorCards.css" />
     <Content Include="pages\competitorCards\competitorCards.html" />
     <Content Include="pages\competitorCards\competitorCards.js" />
-    <Content Include="pages\competitorCards\d3playground.js" />
     <Content Include="pages\itemDetail\itemDetail.css" />
     <Content Include="pages\itemDetail\itemDetail.html" />
     <Content Include="pages\itemDetail\itemDetail.js" />
@@ -95,6 +94,7 @@
     <Content Include="pages\newPageDummy\newDummyHTML.html" />
     <Content Include="pages\newPageDummy\newDummyJS.js" />
     <Content Include="pages\testSeite\page.html" />
+    <Content Include="pages\testSeite\script.js" />
     <None Include="SolypManagementDashboard_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
