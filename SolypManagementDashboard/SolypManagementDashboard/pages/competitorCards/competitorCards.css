@@ -10,7 +10,8 @@
 		zoom: 1;
 	}
 
-
+#KPI  {text-align:left;}
+#kpivalue  {text-align:right;}
 
 	#fdw-pricing-table:before, #fdw-pricing-table:after {
 	  content: "";
@@ -237,3 +238,9 @@
 .freshdesignweb-demos a.current:hover{
 	background: rgba(41,77,95,0.3);
 }
+
+/* Stars styling*/
+.win-rating.differentRatingColor.win-star.win-user.win-full {
+    color: rgba(0, 0, 0, 1.0);
+}
+
