@@ -63,6 +63,17 @@
     <Content Include="js\homescreenData.js" />
     <Content Include="js\default.js" />
     <Content Include="js\navigator.js" />
+    <Content Include="lib\js\d3\d3.js" />
+    <Content Include="lib\js\d3\d3.min.js" />
+    <Content Include="lib\js\d3\LICENSE" />
+    <Content Include="lib\readme.txt" />
+    <Content Include="lib\testing\jasmine-2.0.0\boot.js" />
+    <Content Include="lib\testing\jasmine-2.0.0\console.js" />
+    <Content Include="lib\testing\jasmine-2.0.0\jasmine-html.js" />
+    <Content Include="lib\testing\jasmine-2.0.0\jasmine.css" />
+    <Content Include="lib\testing\jasmine-2.0.0\jasmine.js" />
+    <Content Include="lib\testing\jasmine-2.0.0\jasmine_favicon.png" />
+    <Content Include="lib\testing\jasmine-2.0.0\MIT.LICENSE" />
     <Content Include="pages\competitorCards\competitorCards.css" />
     <Content Include="pages\competitorCards\competitorCards.html" />
     <Content Include="pages\competitorCards\competitorCards.js" />
@@ -76,6 +87,9 @@
     <Content Include="pages\groupedItems\groupedItems.html" />
     <Content Include="pages\groupedItems\groupedItems.js" />
     <Content Include="index.html" />
+    <Content Include="pages\d3playground\d3playground.css" />
+    <Content Include="pages\d3playground\d3playground.html" />
+    <Content Include="pages\d3playground\d3playground.js" />
     <Content Include="pages\newPageDummy\newDummyCSS.css" />
     <Content Include="pages\newPageDummy\newDummyHTML.html" />
     <Content Include="pages\newPageDummy\newDummyJS.js" />

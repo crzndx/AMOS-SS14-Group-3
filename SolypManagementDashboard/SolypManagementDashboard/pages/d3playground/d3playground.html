@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <!-- change title name -->
-    <title>Name of the Subpage</title>
+    <title>d3 Testseite</title>
 
     <!-- WinJS references -->
     <link href="//Microsoft.WinJS.2.0/css/ui-dark.css" rel="stylesheet" />
@@ -14,8 +14,13 @@
     <link href="/css/default.css" rel="stylesheet" />
 
     <!-- change these link names accordingly to the subpage name -->
-    <link href="newDummyCSS.css" rel="stylesheet" />
-    <script src="newDummyJS.js"></script>
+    <link href="/pages/d3playground/d3playground.css" rel="stylesheet" />
+    <script src="/pages/d3playground/d3playground.js"></script>
+
+    <!-- additional libraries-->
+    <!--d3js-->
+    <script src="../../lib/js/d3/d3.js"></script>
+
 
 
 </head>
@@ -26,13 +31,20 @@
             <button data-win-control="WinJS.UI.BackButton"></button>
             <h1 class="titlearea win-type-ellipsis">
                 <!-- change name of the actual title shown -->
-                <span class="pagetitle">Name of the Subpage</span>
+                <span class="pagetitle">d3 Testseite</span>
             </h1>
         </header>
         <section aria-label="Main content" role="main">
             <div class="contentwrapper">
                 <!-- add all specific subpage content here -->
-                Some nonsense content to show anything.
+
+                Example just to test d3.
+                <div class="chart"></div>
+
+                <!-- some star rating -->
+                <div class="win-star" data-win-control="WinJS.UI.Rating" data-win-options="{userRating: 4.0, disabled: true}"></div>
+
+
             </div>
         </section>
     </div>

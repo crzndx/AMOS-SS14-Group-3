@@ -76,13 +76,17 @@
         // Each of these sample items should have a reference to a particular
         // group.
         var sampleItems = [
+        
             { group: sampleGroups[0], title: "Competitor Cards", subtitle: "Shows competitors in form of trading-cards to compare properties easily", description: itemDescription, content: itemContent, backgroundImage: lightGray, path: "/pages/competitorCards/competitorCards.html" },
             { group: sampleGroups[0], title: "TileComparisonPAge", subtitle: "Tile Comparison", description: itemDescription, content: itemContent, backgroundImage: darkGray, path: "/pages/TileComparison/TileComparison.html" },
 
-            { group: sampleGroups[1], title: "Item Title: 1", subtitle: "Item Subtitle:1", description: itemDescription, content: itemContent, backgroundImage: darkGray },
-            { group: sampleGroups[1], title: "Adding Competitor cards", subtitle: "testing Flip side view", description: itemDescription, content: itemContent, backgroundImage: mediumGray, path: "/pages/testCompetitorcard/testcompetitor.html" },
-            { group: sampleGroups[1], title: "Item Title: 3", subtitle: "Item Subtitle: 3", description: itemDescription, content: itemContent, backgroundImage: lightGray },
 
+            { group: sampleGroups[1], title: "Adding Competitor cards", subtitle: "testing Flip side view", description: itemDescription, content: itemContent, backgroundImage: mediumGray, path: "/pages/testCompetitorcard/testCompetitor.html" },
+            { group: sampleGroups[1], title: "Dummy Page", subtitle: "Have a look at the dummy page", description: itemDescription, content: itemContent, backgroundImage: darkGray, path: "/pages/newPageDummy/newDummyHTML.html" },
+            { group: sampleGroups[1], title: "d3 Testseite", subtitle: "Eine einfache d3 testseite", description: itemDescription, content: itemContent, backgroundImage: mediumGray, path: "/pages/d3playground/d3playground.html" },
+            { group: sampleGroups[1], title: "Item Title: 3", subtitle: "Item Subtitle: 3", description: itemDescription, content: itemContent, backgroundImage: lightGray },
+                          
+            
             { group: sampleGroups[2], title: "Item Title: 1", subtitle: "Item Subtitle: 1", description: itemDescription, content: itemContent, backgroundImage: mediumGray },
             { group: sampleGroups[2], title: "Item Title: 2", subtitle: "Item Subtitle: 2", description: itemDescription, content: itemContent, backgroundImage: lightGray },
             { group: sampleGroups[2], title: "Item Title: 3", subtitle: "Item Subtitle: 3", description: itemDescription, content: itemContent, backgroundImage: darkGray },
