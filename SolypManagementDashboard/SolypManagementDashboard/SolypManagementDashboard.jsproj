@@ -74,6 +74,9 @@
     <Content Include="lib\testing\jasmine-2.0.0\jasmine.js" />
     <Content Include="lib\testing\jasmine-2.0.0\jasmine_favicon.png" />
     <Content Include="lib\testing\jasmine-2.0.0\MIT.LICENSE" />
+    <Content Include="pages\competitorCards_function\competitorCards_function.css" />
+    <Content Include="pages\competitorCards_function\competitorCards_function.html" />
+    <Content Include="pages\competitorCards_function\competitorCards_function.js" />
     <Content Include="pages\competitorCards\competitorCards.css" />
     <Content Include="pages\competitorCards\competitorCards.html" />
     <Content Include="pages\competitorCards\competitorCards.js" />

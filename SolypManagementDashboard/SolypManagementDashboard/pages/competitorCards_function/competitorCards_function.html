@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Competitor Cards</title>
+
+    <!-- WinJS references -->
+    <link href="//Microsoft.WinJS.2.0/css/ui-dark.css" rel="stylesheet" />
+    <script src="//Microsoft.WinJS.2.0/js/base.js"></script>
+    <script src="//Microsoft.WinJS.2.0/js/ui.js"></script>
+
+    <link href="/css/default.css" rel="stylesheet" />
+    <link href="competitorCards_function.css" rel="stylesheet" />
+    <script src="competitorCards_function.js"></script>
+    <script src="/js/homescreenData.js"></script>
+
+
+    <!--d3js-->
+    <script src="../../lib/js/d3/d3.js"></script>
+   
+
+
+</head>
+<body style="background-image: none;">
+    <!-- The content that will be loaded and displayed. -->
+    <div class="competitorcards fragment">
+        <header aria-label="Header content" role="banner">
+            <button data-win-control="WinJS.UI.BackButton"></button>
+            <h1 class="titlearea win-type-ellipsis">
+                <span class="pagetitle">Competitor Cards</span>
+            </h1>
+        </header>
+        <section aria-label="Main content" role="main">
+
+            
+
+                <header style="display: inherit; position: relative; top: 50px;">
+                    <div class="contentwrapper">
+                    
+                    </div>
+                       
+</header><!-- end header -->
+                <!-- Installs the AppBar at the top of the screen. Must be swiped in from the top of the screen -->
+                <div id="appBarWrapper">
+                    <div id="appBar" data-win-control="WinJS.UI.AppBar" data-win-options="{sticky: false, placement: 'top'}">
+                        <button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{id:'showAllCards',label:'Show all cards',icon:'viewall', section:'selection',tooltip: 'Show all cards'}"></button>
+                        <div data-win-control="WinJS.UI.AppBarCommand"
+                             data-win-options="{type: 'content', section: 'global', label:'' }">
+                            <h2>Navigate through years:</h2>
+                        </div>
+                        <button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{id: 'showNextYear', label:'Year', icon: 'add', section: 'global', tooltip: 'Next year'}"></button>
+
+                        <button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{id:'showPreviousYear', label: 'Year', icon:'remove', section: 'global',tooltip: 'Previous year'}"></button>
+                    </div>
+                </div>
+                Status:<div id="status"></div>
+
+
+
+</section>
+    </div>
+</body>
+</html>
