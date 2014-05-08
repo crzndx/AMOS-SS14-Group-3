@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <!-- change title name -->
+    <title>Tile View</title>
+
+    <!-- WinJS references -->
+    <link href="//Microsoft.WinJS.2.0/css/ui-dark.css" rel="stylesheet" />
+    <script src="//Microsoft.WinJS.2.0/js/base.js"></script>
+    <script src="//Microsoft.WinJS.2.0/js/ui.js"></script>
+    <script src="/js/homescreenData.js"></script>
+    <!-- default windows css -->
+    <link href="/css/default.css" rel="stylesheet" />
+
+    <!-- change these link names accordingly to the subpage name -->
+    <link href="/pages/testCompetitorcard/testcompetitor.css" rel="stylesheet" />
+    <script src="/pages/testCompetitorCard/testCompetitor.js"></script>
+
+
+</head>
+<body>
+    <!-- The content that will be loaded and displayed. -->
+    <div class="itemdetailpage fragment">
+        <header aria-label="Header content" role="banner">
+            <button data-win-control="WinJS.UI.BackButton"></button>
+            <h1 class="titlearea win-type-ellipsis">
+                <!-- change name of the actual title shown -->
+                <span class="pagetitle">Welcome to the Tile View!</span>
+            </h1>
+        </header>
+        <section aria-label="Main content" role="main">
+
+
+            <div class="contentwrapper">
+                <!-- add all specific subpage content here -->
+                <div id="simple_ItemTemplate" data-win-control="WinJS.Binding.Template" style="display: none">
+                    <div class="overlaidItemTemplate">
+                        <!-- <img class="image" data-win-bind="src: picture; alt: title" /> -->
+                        <div class="myowntext">
+                            <div data-win-bind="textContent: ownhtml.text1" style="margin: 40px; padding: 20px; background-color: red;"></div>
+                            <div data-win-bind="textContent: ownhtml.text2" style="margin: 40px; padding: 20px; background-color: yellow;"></div>
+                            <div data-win-bind="textContent: ownhtml.text3" style="margin: 40px; padding: 20px; background-color: green;"></div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <div id="simple_FlipView" class="flipView" data-win-control="WinJS.UI.FlipView" data-win-options="{ itemDataSource: DefaultData.bindingList.dataSource, itemTemplate: simple_ItemTemplate }">
+                </div>
+            </div>
+
+
+
+
+        </section>
+    </div>
+</body>
+</html>
