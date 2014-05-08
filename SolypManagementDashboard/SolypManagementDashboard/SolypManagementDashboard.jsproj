@@ -65,6 +65,9 @@
     <Content Include="images\background\5.jpg" />
     <Content Include="images\background\6.jpg" />
     <Content Include="images\background\7.jpg" />
+    <Content Include="images\background\7_wide.jpg" />
+    <Content Include="images\background\7_wide.png" />
+    <Content Include="images\background\7_wide_2.jpg" />
     <Content Include="images\background\8.jpg" />
     <Content Include="images\background\9.jpg" />
     <Content Include="images\background\background.png" />

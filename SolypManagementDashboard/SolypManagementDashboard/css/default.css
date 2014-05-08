@@ -1,15 +1,30 @@
 ﻿body{
-    background-image: url(/images/background/7.jpg);
+    background-image: url(/images/background/7_wide.jpg);
     margin: 0;
     padding: 0;
     min-height: 100%;
-    background-color: #34495e;
+    background-color: #7c8e9a;
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 100% 100%;
+    background-size: cover;
     position: relative;
-
+    animation: animatedBackground 50s linear infinite; /* link to animation css class*/
+    -ms-animation: animatedBackground 50s linear infinite; /* link to animation css class*/
 }
+
+
+@-ms-keyframes animatedBackground {
+    /*move background to the left*/
+    0% { background-position: 0 0; }
+    /* turnpoint after 600px to the right*/
+    45% {background-position: -600px 0;}
+    /* wait 5% of the time at the other turnpoint again*/
+    95% { background-position: 0px 0; }
+    /* starting point again*/
+    100% { background-position: 0px 0; }
+}
+
+
 #contenthost {
     height: 100%;
     width: 100%;
