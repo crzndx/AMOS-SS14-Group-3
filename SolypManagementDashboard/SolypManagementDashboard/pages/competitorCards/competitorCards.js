@@ -339,13 +339,130 @@
                 },
                 "2012": {
                     "profits": {
-                        "BMW": 3333,
-                        "DaimlerAG": 14692,
-                        "Ford": 22637,
+                        "BMW": 7383,
+                        "DaimlerAG": 14648,
+                        "Ford": 22751,
                         "Honda": 6015,
-                        "Nissan": 4912,
-                        "Toyota": 7946,
-                        "Volkswagen": 9338
+                        "Nissan": 5163,
+                        "Toyota": 8113,
+                        "Volkswagen": 9263
+                    },
+                    "salesVolume": {
+                        "BMW": 1669,
+                        "DaimlerAG": 2749,
+                        "Ford": 3606,
+                        "Honda": 1664,
+                        "Nissan": 1522,
+                        "Toyota": 2346,
+                        "Volkswagen": 2500
+                    },
+                    "returnOnCapital": {
+                        "BMW": 25.4,
+                        "DaimlerAG": 16.96,
+                        "Ford": 25.66,
+                        "Honda": 13.33,
+                        "Nissan": 19.9,
+                        "Toyota": 9.14,
+                        "Volkswagen": 18.84
+                    },
+                    "workforce": {
+                        "BMW": 100306,
+                        "DaimlerAG": 271591,
+                        "Ford": 183908,
+                        "Honda": 195258,
+                        "Nissan": 156920,
+                        "Toyota": 305284,
+                        "Volkswagen": 308081
+                    },
+                    "womenWorkforceShare": {
+                        "BMW": 13.5,
+                        "DaimlerAG": 18.05,
+                        "Ford": 11.6,
+                        "Honda": 12.22,
+                        "Nissan": 18.63,
+                        "Toyota": 10.96,
+                        "Volkswagen": 13.02
+                    },
+                    "averageTrainingDays": {
+                        "BMW": 3.6,
+                        "DaimlerAG": 2.17,
+                        "Ford": 3.96,
+                        "Honda": 3.4,
+                        "Nissan": 5.46,
+                        "Toyota": 1.17,
+                        "Volkswagen": 4.44
+                    },
+                    "energyConsumptionPerVehicle": {
+                        "BMW": 2.46,
+                        "DaimlerAG": 3.1,
+                        "Ford": 2.31,
+                        "Honda": 2.01,
+                        "Nissan": 2.43,
+                        "Toyota": 2.65,
+                        "Volkswagen": 2.94
+                    },
+                    "waterConsumptionPerVehicle": {
+                        "BMW": 2.12,
+                        "DaimlerAG": 1.86,
+                        "Ford": 1.99,
+                        "Honda": 2.45,
+                        "Nissan": 2.11,
+                        "Toyota": 2.29,
+                        "Volkswagen": 1.87
+                    },
+                    "co2perVehicle": {
+                        "BMW": 0.71,
+                        "DaimlerAG": 0.93,
+                        "Ford": 0.73,
+                        "Honda": 1,
+                        "Nissan": 1.41,
+                        "Toyota": 1,
+                        "Volkswagen": 0.85
+                    },
+                    "revenueSum": {
+                        "BMW": 68828,
+                        "DaimlerAG": 113842,
+                        "Ford": 147860,
+                        "Honda": 68224,
+                        "Nissan": 63036,
+                        "Toyota": 96187,
+                        "Volkswagen": 102507
+                    },
+                    "revenueQ1": {
+                        "BMW": 14453.88,
+                        "DaimlerAG": 29599,
+                        "Ford": 42879,
+                        "Honda": 17056,
+                        "Nissan": 15759,
+                        "Toyota": 24047,
+                        "Volkswagen": 25627
+                    },
+                    "revenueQ2": {
+                        "BMW": 16518.72,
+                        "DaimlerAG": 29599,
+                        "Ford": 44358,
+                        "Honda": 15691,
+                        "Nissan": 12607,
+                        "Toyota": 25970,
+                        "Volkswagen": 22552
+                    },
+                    "revenueQ3": {
+                        "BMW": 19271.84,
+                        "DaimlerAG": 33014,
+                        "Ford": 41401,
+                        "Honda": 17738,
+                        "Nissan": 16389,
+                        "Toyota": 26932,
+                        "Volkswagen": 28702
+                    },
+                    "revenueQ4": {
+                        "BMW": 18583.56,
+                        "DaimlerAG": 21630,
+                        "Ford": 19222,
+                        "Honda": 17738,
+                        "Nissan": 18281,
+                        "Toyota": 19237,
+                        "Volkswagen": 25627
                     }
                 }
         };
