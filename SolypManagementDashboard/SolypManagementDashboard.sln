@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.30324.0
+VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{262852C6-CD72-467D-83FE-5EEB1973A190}") = "SolypManagementDashboard", "SolypManagementDashboard\SolypManagementDashboard.jsproj", "{E731AD49-D0DB-4D20-928F-205E28CC5B25}"
 EndProject
