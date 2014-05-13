@@ -10,10 +10,7 @@
             // Parses the title of the subpage from the data file
             element.querySelector(".titlearea .pagetitle").textContent = item.title;
 
-            // Add useful content here
-            // what should be done after pageload? does more content need to be rendered?
-            // start other js services?
-
+     
         }
     });
     // Start of data.js
@@ -62,14 +59,8 @@
        }); 
 
 
-    })(); // End of data.js
+    }); // End of data.js
 
 
 
-
-
-        // some more librarys/js starts here
-
-
-    })
 });
