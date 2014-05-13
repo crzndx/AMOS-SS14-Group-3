@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <!-- change title name -->
+    <title>Name of the Subpage</title>
+
+    <!-- WinJS references -->
+    <link href="//Microsoft.WinJS.2.0/css/ui-dark.css" rel="stylesheet" />
+    <script src="//Microsoft.WinJS.2.0/js/base.js"></script>
+    <script src="//Microsoft.WinJS.2.0/js/ui.js"></script>
+    <script src="/js/homescreenData.js"></script>
+    <!-- default windows css -->
+    <link href="/css/default.css" rel="stylesheet" />
+
+    <!-- change these link names accordingly to the subpage name 
+    <link href="newDummyCSS.css" rel="stylesheet" />
+    <script src="newDummyJS.js"></script> -->
+    <!-- reference to the summary of cards page here -->
+    <script src="/js/Summaryofcards.js"></script>
+
+
+</head>
+<body>
+    <!-- Template for the group headers in the zoomed-in view. -->
+    <div id="headerTemplate" data-win-control="WinJS.Binding.Template" style="display: none">
+        <div class="simpleHeaderItem">
+            <h1 data-win-bind="innerText: title"></h1>
+        </div>
+    </div>
+
+    <!-- Template for the ListView items in the zoomed-in view. -->
+    <div id="mediumListIconTextTemplate" data-win-control="WinJS.Binding.Template" style="display: none">
+        <div class="mediumListIconTextItem">
+            <img class="mediumListIconTextItem-Image" data-win-bind="src: picture" />
+            <div class="mediumListIconTextItem-Detail">
+                <h4 data-win-bind="innerText: title"></h4>
+                <h6 data-win-bind="innerText: text"></h6>
+            </div>
+        </div>
+    </div>
+
+    <!-- Template for the zoomed out view of the semantic view. -->
+    <div id="semanticZoomTemplate" data-win-control="WinJS.Binding.Template" style="display: none">
+        <div class="semanticZoomItem">
+            <h1 class="semanticZoomItem-Text" data-win-bind="innerText: title"></h1>
+        </div>
+    </div>
+
+    <!-- The zoomed-in view. -->
+    <div id="zoomedInListView"
+         data-win-control="WinJS.UI.ListView"
+         data-win-options="{ itemDataSource: listLogo.groupedItemsList.dataSource, itemTemplate: select('#mediumListIconTextTemplate'), groupHeaderTemplate: select('#headerTemplate'), groupDataSource: myData.groupedItemsList.groups.dataSource, selectionMode: 'none', tapBehavior: 'none', swipeBehavior: 'none' }"></div>
+
+    <!--- The zoomed-out view. -->
+    <div id="zoomedOutListView"
+         data-win-control="WinJS.UI.ListView"
+         data-win-options="{ itemDataSource: listLogo.groupedItemsList.groups.dataSource, itemTemplate: select('#semanticZoomTemplate'), selectionMode: 'none', tapBehavior: 'invoke', swipeBehavior: 'none' }">
+
+    </div>
+
+
+
+   
+</body>
+</html>

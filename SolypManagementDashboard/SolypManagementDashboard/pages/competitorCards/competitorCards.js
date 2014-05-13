@@ -55,7 +55,7 @@
      * Page to navigate to must be provided.
      */
     function showAllCards() {
-        WinJS.Navigation.navigate("/pages/d3playground/d3playground.html"); //TODO set correct link @ramni
+        WinJS.Navigation.navigate("/pages/SummayofCards/Summaryofcards.html"); //TODO set correct link @ramni
     }
 
     /*
