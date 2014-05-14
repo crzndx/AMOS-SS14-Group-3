@@ -1,0 +1,69 @@
+﻿/* add all CSS changes specifically concerning the new subpage here*/
+/* Template for headers in the zoomed-in ListView */
+.simpleHeaderItem
+{
+    width: 50px;
+    height: 50px;
+    padding: 8px;
+}   
+
+/* Template for items in the zoomed-in ListView */  
+.mediumListIconTextItem
+{
+    width: 282px;
+    height: 70px;
+    padding: 5px;
+    overflow: hidden;
+    display: -ms-grid;
+}
+
+    .mediumListIconTextItem img.mediumListIconTextItem-Image 
+    {
+        width: 60px;
+        height: 60px;
+        margin: 5px;
+        -ms-grid-column: 1;
+    }
+
+    .mediumListIconTextItem .mediumListIconTextItem-Detail
+    {
+        margin: 5px;
+        -ms-grid-column: 2;
+    }
+
+/* Template for items in the zoomed-out ListView */
+.semanticZoomItem
+{
+    width: 130px;
+    height: 130px;
+    background-color: rgba(38, 160, 218, 1.0);
+}   
+
+    .semanticZoomItem .semanticZoomItem-Text
+    {
+        padding: 10px;
+        line-height: 150px;
+        white-space: nowrap;
+        color: white;
+    }
+
+/* CSS for the zoomed-in ListView */
+#zoomedInListView
+{
+    width: 600px;
+    height: 300px;
+    border: solid 2px rgba(0, 0, 0, 0.13);
+}
+
+#semanticZoomDiv 
+{
+    width: 600px;
+    height: 300px;
+    border: solid 2px rgba(0, 0, 0, 0.13);
+}
+
+}
+
+.contentwrapper {
+    margin: 50px; /* TODO needs defined makeover that every page looks the same!*/
+}

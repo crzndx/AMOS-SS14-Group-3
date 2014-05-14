@@ -1,0 +1,59 @@
+﻿/* add all CSS changes specifically concerning the new subpage here*/
+.timeline-fragment {
+    height: 100%;
+    width: 100%;
+}
+section {
+    height: 100%;
+    width: 100%;
+}
+span {
+    margin-left: 70px;
+}
+.win-semanticzoom {
+    height: 520px;
+}
+.timeline-zoomed-in
+{
+    color: WhiteSmoke;
+    height: 100%;
+    width: 100%;
+}
+.timeline-zoomed-out
+{
+    margin-left: 50px;
+}
+.viewportStyle {
+    position: absolute;
+    overflow-x: auto;
+    overflow-y: hidden;
+    height: 100%;
+}
+.canvasStyle {
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+}
+　
+.zoomedInItem, .zoomedOutItem {
+    width: 215px;
+    height: 537px;
+    position: relative;
+    overflow: hidden;
+    float: left;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.scaleStyle {
+    background-image: url(/images/timeline/timeline-meter-bottom.png);
+    background-repeat: no-repeat;
+    position: absolute;
+    bottom: 0px;
+    width: 1366px;
+    height: 109px;
+}
+
+
+.contentwrapper {
+    margin: 50px; /* TODO needs defined makeover that every page looks the same!*/
+}
