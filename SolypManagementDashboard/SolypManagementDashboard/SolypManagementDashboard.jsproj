@@ -99,7 +99,6 @@
     <Content Include="pages\testCompetitorcard\testCompetitor.html" />
     <Content Include="pages\testCompetitorcard\testCompetitor.js" />
     <Content Include="pages\testCompetitorcard\testCompetitor.css" />
-    <Content Include="pages\testSeite\page.html" />
     <Content Include="pages\TileComparison\TileComparison.css" />
     <Content Include="pages\TileComparison\TileComparison.html" />
     <Content Include="pages\TileComparison\TileComparison.js" />
