@@ -13,7 +13,7 @@
      
         }
     });
-    // Start of data.js
+    // Start of summaryofcards.js
     (function () {
         "use strict";
 
@@ -59,7 +59,7 @@
        }); 
 
 
-    }); // End of data.js
+    }); // End of summaryofcards.js
 
 
 
