@@ -10,7 +10,10 @@
 		zoom: 1;
 	}
 
-#KPI  {text-align:left;}
+#kpi  {
+        text-align:left;
+        font-weight:bold;
+}
 #kpivalue  {text-align:right;}
 
 	#fdw-pricing-table:before, #fdw-pricing-table:after {

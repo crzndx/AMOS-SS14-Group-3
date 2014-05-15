@@ -101,6 +101,7 @@
     <Content Include="pages\competitorCards\competitorCards.css" />
     <Content Include="pages\competitorCards\competitorCards.html" />
     <Content Include="pages\competitorCards\competitorCards.js" />
+    <Content Include="pages\competitorCards_function\competitors.json" />
     <Content Include="pages\groupDetail\d3playground\d3playground.css" />
     <Content Include="pages\groupDetail\d3playground\d3playground.html" />
     <Content Include="pages\groupDetail\d3playground\d3playground.js" />
