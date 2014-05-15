@@ -4,29 +4,7 @@
     // sample data provided by wikipedia
 
     var actualYear = 0; // array index
-
-    var data = [
-    {
-        "make": "Ford",
-        "model": "E350",
-        "price": "3000.00"
-    },
-    {
-        "make": "Chevy",
-        "model": "Venture \"Extended Edition\"",
-        "price": "4900.00"
-    },
-    {
-        "make": "BMW",
-        "model": "Venture \"Extended Edition, Very Large\"",
-        "price": "5000.00"
-    },
-    {
-        "make": "Jeep",
-        "model": "Grand Cherokee",
-        "price": "4799.00"
-    }
-    ];
+    // data created by phillip
 
     var slidingAppBar;
 
@@ -44,11 +22,98 @@
 
             /* Initialize Competitor Cards Content with d3.js */
             var dataset = [1, 2];
-            drawCardsContent(dataset);
+
+            var jsoncompetitors = [{
+                "Name": "BMW",
+                "Period1": {
+
+                    "Year": "2011",
+                    "profits": 4853,
+                    "salesVolume": 1461,
+                    "returnOnCapital": 19.1,
+                    "workforce": 95453,
+                    "womenWorkforceShare": 13.5,
+                    "averageTrainingHours": 3.6,
+                    "energyConsumptionPerVehicle": 2.75,
+                    "waterConsumptionPerVehicle": 2.31,
+                    "co2perVehicle": 0.86,
+                    "revenueSum": 60447,
+                    "quarterRevenue": {
+                        "Q1": 15111.75,
+                        "Q2": 14507.28,
+                        "Q3": 13298.34,
+                        "Q4": 17529.63
+                    }
+                },
+                "Period2": {
+
+                    "Year": "2010",
+                    "profits": 4853,
+                    "salesVolume": 1461,
+                    "returnOnCapital": 19.1,
+                    "workforce": 95453,
+                    "womenWorkforceShare": 13.5,
+                    "averageTrainingHours": 3.6,
+                    "energyConsumptionPerVehicle": 2.75,
+                    "waterConsumptionPerVehicle": 2.31,
+                    "co2perVehicle": 0.86,
+                    "revenueSum": 60447,
+                    "revenueQ1": 15111.75,
+                    "revenueQ2": 14507.28,
+                    "revenueQ3": 13298.34,
+                    "revenueQ4": 17529.63,
+                }
+            },
+                    {
+
+                        "Name": "Volkswagen",
+                        "Period1": {
+
+                            "Year": "2011",
+                            "profits": 4853,
+                            "salesVolume": 1461,
+                            "returnOnCapital": 19.1,
+                            "workforce": 95453,
+                            "womenWorkforceShare": 13.5,
+                            "averageTrainingHours": 3.6,
+                            "energyConsumptionPerVehicle": 2.75,
+                            "waterConsumptionPerVehicle": 2.31,
+                            "co2perVehicle": 0.86,
+                            "revenueSum": 60447,
+                            "quarterRevenue": {
+                                "Q1": 15111.75,
+                                "Q2": 14507.28,
+                                "Q3": 13298.34,
+                                "Q4": 17529.63
+                            }
+                        },
+                        "Period2": {
+
+                            "Year": "2010",
+                            "profits": 4853,
+                            "salesVolume": 1461,
+                            "returnOnCapital": 19.1,
+                            "workforce": 95453,
+                            "womenWorkforceShare": 13.5,
+                            "averageTrainingHours": 3.6,
+                            "energyConsumptionPerVehicle": 2.75,
+                            "waterConsumptionPerVehicle": 2.31,
+                            "co2perVehicle": 0.86,
+                            "revenueSum": 60447,
+                            "revenueQ1": 15111.75,
+                            "revenueQ2": 14507.28,
+                            "revenueQ3": 13298.34,
+                            "revenueQ4": 17529.63,
+                        }
+                    }
+
+            ];
+
+            drawCardsContent(jsoncompetitors);
             //chart1
             var data = [5, 8, 12, 15];
 
-            drawbarchart(data);
+            
         }
 
     });
@@ -89,6 +154,8 @@
 
     
     function drawCardsContent(data) {
+
+        var counter = 0;
         
         var firstdiv = d3.select(".contentwrapper")
                             .append("div")
@@ -99,79 +166,88 @@
                            .enter()
                            .append("div")
                            .attr("class", function (d) {
-                               if (d == 4) { d = 0;}
-                               d++;
-                               return "plan plan" + d;
-                           });
+                               counter++;
+                               if (counter == 4) { counter = 0;}
+                               return "plan plan" + counter;});
 
             seconddiv.append("div")
                         .attr("class", "header")
-                        .text("blabla");
+                        .text(function (d) { return d.Name;});
 
-                 var ulist = seconddiv.append("ul");
-                 /*I create three list item because we want to display 3 KPI (bear in mind that the one in the middle has the stars and needs to be changed*/
-                        ulist.append("li")
-                             .attr("id", "kpi")
-                        .text("blabla")
-                        .append("span")
-                        .text("blabla");
 
+        /*I create three list item because we want to display 3 KPI (bear in mind that the one in the middle has the stars and needs to be changed*/
+                var ulist = seconddiv.append("ul");
+               
                         ulist.append("li")
-                            .attr("id", "kpi")
-                            .text("blabla")
-                            .append("span")
-                            .text("blabla");
-
-                        ulist.append("li")
-                            .attr("id", "kpi")
-                        .text("blabla")
-                        .append("span")
-                        .text("blabla");
+                                .attr("id", "kpi")
+                                .text("Profits")
+                                .append("span")
+                                .style("position", "relative")
+                                .style("left", "70px")
+                                .style("font-weight", "normal")
+                                .text(function (d) { return d.Period1.profits; });
 
                         ulist.append("li")
-                            .attr("class", "barchart");
+                                .attr("id", "kpi")
+                                .text("Sales Volume")
+                                .append("span")
+                                .style("position", "relative")
+                                .style("left", "70px")
+                                .style("font-weight", "normal")
+                                .text(function (d) { return d.Period1.salesVolume; });
 
-        seconddiv.append("div")
-                 .attr("class", "signup")
-                 .text("blabla");
+                        ulist.append("li")
+                                .attr("id", "kpi")
+                                .text("Workforce")
+                                .append("span")
+                                .style("position", "relative")
+                                .style("left", "70px")
+                                .style("font-weight", "normal")
+                                .text(function (d) { return d.Period1.workforce; });
 
-    }
-    /*
-     * Responsible for generating all d3 related graphical elements on the cards dashboard.
-     */
-    function drawbarchart(data) {
-        
+                        ulist.append("li")
+                                .attr("class", "barchart");
 
-        //size of the bar chart 70*160
-        var w = 160;
-        var h = 70;
-        var barpadding = 10;
+                 seconddiv.append("div")
+                          .attr("class", "signup")
+                          .text("More Info");
 
-        //create the svg
-        var svg = d3.select(".barchart")
-                    .append("svg")
-                    .attr("width", w)
-                    .attr("height", h);
-        // we create a rectangle for each entry of the data
-        svg.selectAll("rect")
-            .data(data)
-            .enter()
-            .append("rect")
-            //position on the x axis
-            .attr("x", function (d, i) {
-                return i * (w / data.length); //like this it adjust to the amount of data we have
-            })
-            .attr("y", function (d) {
-                return h - d;
-            })
-            .attr("width", w / data.length - barpadding)
-            .attr("height", function (d) {
-                return d;
-            })
-            .attr("fill", "teal");
+                 //drawing the barchart
+
+                     //size of the bar chart 70*160
+
+                     var w = 160;
+                     var h = 70;
+                     var barpadding = 10;
+                     var four = [0,0,0,0]
+
+                     //create the svg
+                     var svg = d3.select(".barchart")
+                                 .append("svg")
+                                 .attr("width", w)
+                                 .attr("height", h);
+                     // we create a rectangle for each entry of the data
+                     svg.selectAll("rect")
+                         .data(d.Period1.quarterRevenue)
+                         .enter()
+                         .append("rect")
+                         //position on the x axis
+                         .attr("x", function (d, i) {
+                             return i * (w / 4); //like this it adjust to the amount of data we have
+                         })
+                         .attr("y", function (d) {
+                             return h - d;
+                         })
+                         .attr("width", w / 4 - barpadding)
+                         .attr("height", function (d) { return d.Period1.quarterRevenue.Q1; })
+                         .attr("fill", "teal");
 
 
-    }
+                 
+
+        } //here the card display ends
+    
+   
 
 
 })();
