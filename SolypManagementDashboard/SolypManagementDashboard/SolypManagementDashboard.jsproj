@@ -116,9 +116,6 @@
     <Content Include="pages\groupedItems\groupedItems.html" />
     <Content Include="pages\groupedItems\groupedItems.js" />
     <Content Include="index.html" />
-    <Content Include="pages\SummayofCards\Summaryofcards.css" />
-    <Content Include="pages\SummayofCards\Summaryofcards.html" />
-    <Content Include="pages\SummayofCards\Summaryofcards.js" />
     <Content Include="pages\newPageDummy\newDummyCSS.css" />
     <Content Include="pages\newPageDummy\newDummyHTML.html" />
     <Content Include="pages\newPageDummy\newDummyJS.js" />
