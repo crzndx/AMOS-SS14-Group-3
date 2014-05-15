@@ -52,7 +52,7 @@
     <PackageCertificateKeyFile>SolypManagementDashboard_TemporaryKey.pfx</PackageCertificateKeyFile>
     <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
     <AppxBundlePlatforms>neutral</AppxBundlePlatforms>
-    <AppxPackageDir>C:\Users\Acer\Videos\</AppxPackageDir>
+    <AppxPackageDir>D:\Users\Desktop\</AppxPackageDir>
   </PropertyGroup>
   <ItemGroup>
     <AppxManifest Include="package.appxmanifest">
