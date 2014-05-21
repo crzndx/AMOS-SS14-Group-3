@@ -73,6 +73,9 @@
     <Content Include="images\background\8.jpg" />
     <Content Include="images\background\9.jpg" />
     <Content Include="images\background\background.png" />
+    <Content Include="images\groupedItems\blankPage.jpg" />
+    <Content Include="images\groupedItems\lineChart.jpg" />
+    <Content Include="images\groupedItems\playingCards.jpg" />
     <Content Include="images\logo.scale-100.png" />
     <Content Include="images\Logo1.png" />
     <Content Include="images\Logo2.png" />
