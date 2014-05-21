@@ -4,9 +4,9 @@
 }
 
 .groupeditemspage .groupeditemslist {
-    height: 100%;
+    height: 108.8%;
     position: relative;
-    width: 100%;
+    width: 109.81%;
     z-index: 0;
 }
 
@@ -76,6 +76,7 @@
 
         .groupeditemspage .groupeditemslist .item .item-image {
             -ms-grid-row-span: 2;
+			margin-bottom: 90px;
         }
 
         .groupeditemspage .groupeditemslist .item .item-overlay {

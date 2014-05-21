@@ -77,31 +77,20 @@
         // group.
         var sampleItems = [
         
-            { group: sampleGroups[0], title: "Competitor Cards", subtitle: "Shows competitors in form of trading-cards to compare properties easily", description: itemDescription, content: itemContent, backgroundImage: lightGray, path: "/pages/competitorCards/competitorCards.html" },
-            { group: sampleGroups[0], title: "TileComparisonPAge", subtitle: "Tile Comparison", description: itemDescription, content: itemContent, backgroundImage: darkGray, path: "/pages/TileComparison/TileComparison.html" },
+  { group: sampleGroups[0], title: "Competitor Cards", subtitle: "Shows competitors in form of trading-cards to compare properties easily", description: itemDescription, content: itemContent, backgroundImage: "/images/groupedItems/playingCards.jpg", path: "/pages/competitorCards/competitorCards.html" },
+            { group: sampleGroups[0], title: "TileComparisonPAge", subtitle: "Tile Comparison", description: itemDescription, content: itemContent, backgroundImage: "/images/groupedItems/playingCards.jpg", path: "/pages/TileComparison/TileComparison.html" },
 
 
-            { group: sampleGroups[1], title: "Adding Competitor cards", subtitle: "testing Flip side view", description: itemDescription, content: itemContent, backgroundImage: mediumGray, path: "/pages/testCompetitorcard/testCompetitor.html" },
-            { group: sampleGroups[1], title: "Dummy Page", subtitle: "Have a look at the dummy page", description: itemDescription, content: itemContent, backgroundImage: darkGray, path: "/pages/newPageDummy/newDummyHTML.html" },
-            { group: sampleGroups[1], title: "d3 Testseite", subtitle: "Eine einfache d3 testseite", description: itemDescription, content: itemContent, backgroundImage: mediumGray, path: "/pages/d3playground/d3playground.html" },
-            { group: sampleGroups[1], title: "Item Title: 3", subtitle: "Item Subtitle: 3", description: itemDescription, content: itemContent, backgroundImage: lightGray },
-                          
-            
-            { group: sampleGroups[2], title: "functions", subtitle: "Item Subtitle: 1", description: itemDescription, content: itemContent, backgroundImage: mediumGray, path: "/pages/competitorCards_function/competitorCards_function.html" },
-            { group: sampleGroups[2], title: "Item Title: 2", subtitle: "Item Subtitle: 2", description: itemDescription, content: itemContent, backgroundImage: lightGray },
-            { group: sampleGroups[2], title: "Item Title: 3", subtitle: "Item Subtitle: 3", description: itemDescription, content: itemContent, backgroundImage: darkGray },
-            { group: sampleGroups[2], title: "Item Title: 4", subtitle: "Item Subtitle: 4", description: itemDescription, content: itemContent, backgroundImage: lightGray },
-
-            { group: sampleGroups[3], title: "Item Title: 1", subtitle: "Item Subtitle: 1", description: itemDescription, content: itemContent, backgroundImage: darkGray },
-            { group: sampleGroups[3], title: "Item Title: 2", subtitle: "Item Subtitle: 2", description: itemDescription, content: itemContent, backgroundImage: lightGray },
-            { group: sampleGroups[3], title: "Item Title: 3", subtitle: "Item Subtitle: 3", description: itemDescription, content: itemContent, backgroundImage: darkGray },
-            { group: sampleGroups[3], title: "Item Title: 4", subtitle: "Item Subtitle: 4", description: itemDescription, content: itemContent, backgroundImage: lightGray },
+            { group: sampleGroups[1], title: "Adding Competitor cards", subtitle: "testing Flip side view", description: itemDescription, content: itemContent, backgroundImage: "/images/groupedItems/playingCards.jpg", path: "/pages/testCompetitorcard/testCompetitor.html" },
+            { group: sampleGroups[1], title: "Dummy Page", subtitle: "Have a look at the dummy page", description: itemDescription, content: itemContent, backgroundImage: "/images/groupedItems/blankPage.jpg", path: "/pages/newPageDummy/newDummyHTML.html" },
+            { group: sampleGroups[1], title: "d3 Testseite", subtitle: "Eine einfache d3 testseite", description: itemDescription, content: itemContent, backgroundImage: "/images/groupedItems/blankPage.jpg", path: "/pages/d3playground/d3playground.html" },
 
 
-            { group: sampleGroups[4], title: "Item Title: 1", subtitle: "Item Subtitle: 1", description: itemDescription, content: itemContent, backgroundImage: lightGray },
-            { group: sampleGroups[4], title: "Item Title: 2", subtitle: "Item Subtitle: 2", description: itemDescription, content: itemContent, backgroundImage: darkGray },
-            { group: sampleGroups[4], title: "Item Title: 3", subtitle: "Item Subtitle: 3", description: itemDescription, content: itemContent, backgroundImage: lightGray },
-            { group: sampleGroups[4], title: "Item Title: 4", subtitle: "Item Subtitle: 4", description: itemDescription, content: itemContent, backgroundImage: mediumGray }
+            { group: sampleGroups[2], title: "functions", subtitle: "Item Subtitle: 1", description: itemDescription, content: itemContent, backgroundImage: "/images/groupedItems/playingCards.jpg", path: "/pages/competitorCards_function/competitorCards_function.html" },
+            { group: sampleGroups[2], title: "linechart", subtitle: "linechart", description: itemDescription, content: itemContent, backgroundImage: "/images/groupedItems/lineChart.jpg", path: "/pages/lineChart/lineChart.html" },
+            { group: sampleGroups[3], title: "Item Title: 1", subtitle: "Item Subtitle: 1", description: itemDescription, content: itemContent, backgroundImage: "/images/groupedItems/blankPage.jpg", path: "/pages/d3playground/d3playground.html" },
+
+            { group: sampleGroups[4], title: "Item Title: 1", subtitle: "Item Subtitle: 1", description: itemDescription, content: itemContent, backgroundImage: "/images/groupedItems/blankPage.jpg", path: "/pages/d3playground/d3playground.html" },
         ];
 
         return sampleItems;
