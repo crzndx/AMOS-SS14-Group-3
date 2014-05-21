@@ -11,9 +11,9 @@
      */
 
     // where will be drawn
-    var canvasElementName = "#plottingarea";
+    var canvasElementName = "#plottingarea"; //  @important
 
-    // additional styling and axis, labelling, etc.
+    // additional styling and axis, labelling, etc.  @important
     var drawingOptions = {
         xaxis: {
             color: "#ffffff"
@@ -25,7 +25,8 @@
             show: true,
             //color: "#ffffff",
             //borderColor: "#ffffff"
-        }
+        },
+        colors: ["#ff0000", "#7A45D6", "#FFE840"]
     };
 
 
@@ -33,19 +34,22 @@
      * Data for graphs to be plotted
      */
     var d1 = [];
-    for (var i = 0; i < 14; i += 0.5) {
+    for (var i = 0; i < 21; i += 0.5) {
         d1.push([i, Math.sin(i)]);
     }
 
-    var d2 = [[0, 3], [4, 8], [8, 5], [9, 13]];
+    var d2 = [[0, 3], [4, 8], [8, 5], [9, 13],[10,17]];
 
     // A null signifies separate line segments
 
-    var d3 = [[0, 12], [7, 12], null, [7, 2.5], [12, 2.5]];
+    var d3 = [[0, 1], [7, 12], null, [7, 5], [12, 3]];
 
-    // what will be fed into the tool to draw it
+    // what will be fed into the tool to draw it @important
     var data = [d1,d2];
-   
+    var graphsData = {
+        "graph1label": "Titel Graph 1",
+        "graph1color": "#FF0000"
+    }
 
     /*
      * Actual drawing function
@@ -76,6 +80,7 @@
     }
 
 
+
     /*
      * Grid navigation - called when listed page is being loaded
      */
@@ -87,6 +92,9 @@
             document.getElementById("button1").addEventListener("click", toggleGraph, false);
             // invoke plotting function
             drawLineChart(canvasElementName, data, drawingOptions);
+
+            //document.write("blabla <span style='color: "+ graphsData.graph1color +";'>" + graphsData.graph1label + " </span> xxx");
+            //var mytext = document.createTextNode("<span style='color: " + graphsData.graph1color + ";'>" + graphsData.graph1label + " </span>");
 
         }
     });
