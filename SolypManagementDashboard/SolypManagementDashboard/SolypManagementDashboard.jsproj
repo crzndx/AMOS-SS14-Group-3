@@ -86,11 +86,9 @@
     <Content Include="js\homescreenData.js" />
     <Content Include="js\default.js" />
     <Content Include="js\navigator.js" />
-    <Content Include="lib\js\chartsjs\chartsjs.js" />
     <Content Include="lib\js\d3\d3.js" />
     <Content Include="lib\js\d3\d3.min.js" />
     <Content Include="lib\js\d3\LICENSE" />
-    <Content Include="lib\js\flot\.DS_Store" />
     <Content Include="lib\js\flot\API.md" />
     <Content Include="lib\js\flot\CONTRIBUTING.md" />
     <Content Include="lib\js\flot\excanvas.js" />
