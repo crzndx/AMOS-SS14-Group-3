@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <!-- change title name -->
+    <title>LineChart</title>
+
+    <!-- WinJS references -->
+    <link href="//Microsoft.WinJS.2.0/css/ui-dark.css" rel="stylesheet" />
+    <script src="//Microsoft.WinJS.2.0/js/base.js"></script>
+    <script src="//Microsoft.WinJS.2.0/js/ui.js"></script>
+    <script src="/js/homescreenData.js"></script>
+    <!-- default windows css -->
+    <link href="/css/default.css" rel="stylesheet" />
+
+    <!-- jquery -->
+    <script src="../../lib/js/jquery/jquery-2.1.1.js"></script>
+
+    <!-- flot -->
+    <script language="javascript" type="text/javascript" src="../../lib/js/flot/excanvas.min.js"></script>
+    <script src="../../lib/js/flot/jquery.flot.js"></script>
+
+
+    <!--d3js-->
+    <script src="../../lib/js/d3/d3.js"></script>
+
+    <!-- change these link names accordingly to the subpage name -->
+    <link href="linceChart.css" rel="stylesheet" />
+    <script src="lineChart.js"></script>
+    <script type="text/javascript">
+
+
+
+    </script>
+
+
+
+
+
+</head>
+<body>
+    <!-- The content that will be loaded and displayed. -->
+    <div class="itemdetailpage fragment">
+        <header aria-label="Header content" role="banner">
+            <button data-win-control="WinJS.UI.BackButton"></button>
+            <h1 class="titlearea win-type-ellipsis">
+                <!-- change name of the actual title shown -->
+                <span class="pagetitle">LineChart</span>
+            </h1>
+        </header>
+        <section aria-label="Main content" role="main">
+            <div class="contentwrapper">
+                <!-- add all specific subpage content here -->
+                <div id="lineChartControls" style="width: 20%; float: left; border: 1px;">
+                    <h2>Lines:</h2>
+                    <label id="graph1label">Graph3 Bezeichner:</label>
+                    <button class="action" id="button1">Anzeigen</button>
+                </div>
+                <div id="lineChartCanvas" style="width: 76%; margin-left:23%;">
+                        <div id="plottingarea" class="plottingarea"></div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

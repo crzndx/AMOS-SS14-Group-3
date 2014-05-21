@@ -89,7 +89,7 @@
                           
             
             { group: sampleGroups[2], title: "functions", subtitle: "Item Subtitle: 1", description: itemDescription, content: itemContent, backgroundImage: mediumGray, path: "/pages/competitorCards_function/competitorCards_function.html" },
-            { group: sampleGroups[2], title: "Item Title: 2", subtitle: "Item Subtitle: 2", description: itemDescription, content: itemContent, backgroundImage: lightGray, path: "/pages/d3playground/d3playground.html" },
+            { group: sampleGroups[2], title: "linechart", subtitle: "linechart", description: itemDescription, content: itemContent, backgroundImage: lightGray, path: "/pages/lineChart/lineChart.html" },
             { group: sampleGroups[2], title: "Item Title: 3", subtitle: "Item Subtitle: 3", description: itemDescription, content: itemContent, backgroundImage: darkGray, path: "/pages/d3playground/d3playground.html" },
             { group: sampleGroups[2], title: "Item Title: 4", subtitle: "Item Subtitle: 4", description: itemDescription, content: itemContent, backgroundImage: lightGray, path: "/pages/d3playground/d3playground.html" },
 
