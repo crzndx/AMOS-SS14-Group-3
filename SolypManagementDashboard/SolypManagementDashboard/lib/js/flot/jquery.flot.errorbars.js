@@ -1,4 +1,4 @@
-/* Flot plugin for plotting error bars.
+﻿/* Flot plugin for plotting error bars.
 
 Copyright (c) 2007-2014 IOLA and Ole Laursen.
 Licensed under the MIT license.

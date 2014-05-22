@@ -82,7 +82,7 @@
 
             { group: sampleGroups[1], title: "Flipcards", subtitle: "Scroll through existing cards on this subpage", description: itemDescription, content: itemContent, backgroundImage: "/images/groupedItems/playingCards.jpg", path: "/pages/testCompetitorcard/testCompetitor.html" },
             { group: sampleGroups[1], title: "Dummy Page", subtitle: "This is a basic template site used for every new subpage", description: itemDescription, content: itemContent, backgroundImage: "/images/groupedItems/blankPage.jpg", path: "/pages/newPageDummy/newDummyHTML.html" },
-            { group: sampleGroups[1], title: "Testpage D3.js", subtitle: "Shows a simple d3.js dummy page to draw things", description: itemDescription, content: itemContent, backgroundImage: "/images/groupedItems/blankPage.jpg", path: "/pages/d3playground/d3playground.html" },
+            { group: sampleGroups[1], title: "Testpage D3.js", subtitle: "Shows a simple d3.js dummy page to draw things", description: itemDescription, content: itemContent, backgroundImage: "/images/groupedItems/blankPage.jpg", path: "/pages/newPageDummy/newDummyHTML.html" },
 
 
             { group: sampleGroups[2], title: "Competitor Cards v2", subtitle: "Competitorcards with enhanced functinalities", description: itemDescription, content: itemContent, backgroundImage: "/images/groupedItems/playingCards.jpg", path: "/pages/competitorCards_function/competitorCards_function.html" },

@@ -1,4 +1,4 @@
-/* Flot plugin for thresholding data.
+﻿/* Flot plugin for thresholding data.
 
 Copyright (c) 2007-2014 IOLA and Ole Laursen.
 Licensed under the MIT license.
