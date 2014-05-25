@@ -168,6 +168,9 @@
     <Content Include="pages\lineChart\linceChart.css" />
     <Content Include="pages\lineChart\lineChart.html" />
     <Content Include="pages\lineChart\lineChart.js" />
+    <Content Include="pages\allCards\allCards.css" />
+    <Content Include="pages\allCards\allCards.html" />
+    <Content Include="pages\allCards\allCards.js" />
     <Content Include="pages\newPageDummy\newDummyCSS.css" />
     <Content Include="pages\newPageDummy\newDummyHTML.html" />
     <Content Include="pages\newPageDummy\newDummyJS.js" />

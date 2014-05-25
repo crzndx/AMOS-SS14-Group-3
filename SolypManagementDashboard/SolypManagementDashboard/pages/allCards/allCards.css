@@ -1,0 +1,40 @@
+﻿/* add all CSS changes specifically concerning the new subpage here*/
+
+.contentwrapper {
+    margin: 50px; /* TODO needs defined makeover that every page looks the same!*/
+}
+
+/*Copied from winjs listview*/
+
+.smallListIconTextItem
+{
+    width: 100%;
+    height: 70px;
+    padding: 5px;
+    overflow: hidden;
+}
+
+    .smallListIconTextItem img.smallListIconTextItem-Image 
+    {
+        width: 60px;
+        height: 60px;
+        margin: 5px;
+        float:left;
+        margin-right:20px;
+    }
+
+    .smallListIconTextItem .smallListIconTextItem-Detail
+    {
+        margin: 5px;
+    }
+
+   .listLayoutTopHeaderTemplateRoot, .gridLayoutLeftHeaderTemplateRoot {
+        font-size: larger;
+        margin-left: 16px;
+    }
+    
+/* CSS applied to the ListViews in this sample */
+#listView
+{
+    height: 280px;
+}

@@ -78,6 +78,7 @@
         var sampleItems = [
             { group: sampleGroups[0], title: "Competitor Cards", subtitle: "Shows competitors in form of trading-cards to compare properties easily", description: itemDescription, content: itemContent, backgroundImage: "/images/groupedItems/playingCards.jpg", path: "/pages/competitorCards/competitorCards.html" },
             { group: sampleGroups[0], title: "Card Comparison", subtitle: "Compare different competitor cards with the comparing functionality", description: itemDescription, content: itemContent, backgroundImage: "/images/groupedItems/playingCards.jpg", path: "/pages/TileComparison/TileComparison.html" },
+            { group: sampleGroups[0], title: "Showing all Cards", subtitle: "Compare different competitor cards with the comparing functionality", description: itemDescription, content: itemContent, backgroundImage: "/images/groupedItems/playingCards.jpg", path: "/pages/allCards/allCards.html" },
 
 
             { group: sampleGroups[1], title: "Flipcards", subtitle: "Scroll through existing cards on this subpage", description: itemDescription, content: itemContent, backgroundImage: "/images/groupedItems/playingCards.jpg", path: "/pages/testCompetitorcard/testCompetitor.html" },
