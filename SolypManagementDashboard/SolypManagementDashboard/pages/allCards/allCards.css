@@ -5,10 +5,10 @@
 }
 
 /*Copied from winjs listview*/
-
+/* Template for the items in the ListViews in this sample */       
 .smallListIconTextItem
 {
-    width: 100%;
+    width: 242px;
     height: 70px;
     padding: 5px;
     overflow: hidden;
@@ -28,7 +28,7 @@
         margin: 5px;
     }
 
-   .listLayoutTopHeaderTemplateRoot, .gridLayoutLeftHeaderTemplateRoot {
+   .listLayoutTopHeaderTemplateRoot {
         font-size: larger;
         margin-left: 16px;
     }
