@@ -82,30 +82,43 @@
                 legend: {
                     show: false
                 },
-                yaxisName: "in USD",
-                xaxisName: "Years"
+                yaxisName: "in USD asdf asdf ahhkhgkhghgkhggkhghksdf",
+                xaxisName: "Years asdf asdf asdf"
             };
+
             $.plot("#plottingarea", data, options);
 
             // add a label to y-axis
+            var heightYAxis;
             MSApp.execUnsafeLocalFunction(function () {
                 var elem = $(".yAxis");
-                var height = elem.height();
-                var width = elem.width();
-                var untrusted = "<div class='verticaltext' style='position: absolute; top: "+(height/2)+"px; left: -30px;'>"+options.yaxisName+"</div>";
-
+                heightYAxis = elem.height();
+                var widthYAxis = elem.width();
+                var untrusted = "<div class='verticaltext' style='text-align: center; position: absolute; top: " + (heightYAxis / 2) + "px; left: -30px;'>" + options.yaxisName + "</div>";
                 elem.append(untrusted);
             });
 
+            // reposition the vertical label
+            var elY = $(".verticaltext");
+            var w = elY.height();
+            $(".verticaltext").css("top", ((heightYAxis / 2) - w/2) );
+
+
             // add a label to x-axis
+            var widthX;
             MSApp.execUnsafeLocalFunction(function () {
                 var elem = $(".xAxis");
                 var height = elem.height();
-                var width = elem.width();
-                var untrusted = "<div style='position: absolute; top: " + height + "px; left: " + (width / 2) + "px;'>" + options.xaxisName + "</div>";
+                widthX = elem.width();
+                var untrusted = "<div class='horizontaltext' style='position: absolute; top: " + height + "px; left: " + (widthX / 2) + "px;'>" + options.xaxisName + "</div>";
 
                 elem.append(untrusted);
             });
+
+            // reposition the vertical label
+            var elX = $(".horizontaltext");
+            var h = elX.width();
+            $(".horizontaltext").css("left", ((widthX / 2) - h / 2));
 
 
         }
