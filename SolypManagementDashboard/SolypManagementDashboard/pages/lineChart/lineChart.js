@@ -82,8 +82,8 @@
                 legend: {
                     show: false
                 },
-                yaxisName: "in USD asdf asdf ahhkhgkhghgkhggkhghksdf",
-                xaxisName: "Years asdf asdf asdf"
+                yaxisName: "in USD",
+                xaxisName: "Years"
             };
 
             $.plot("#plottingarea", data, options);
