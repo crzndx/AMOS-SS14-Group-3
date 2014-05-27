@@ -12,7 +12,7 @@
 
     var canvasElementName = "#plottingarea"; //  where will be drawn
     var choices = $("#choices");
-    var colors = ["#ff0000", "#7A45D6", "#FFE840", "#78E700", "#FFAA00", "#6C8CD5", "#E93A90", "#B52D43"];
+    var colors = ["#ff0000", "#7A45D6", "#FFE840", "#78E700", "#FFAA00", "#6C8CD5", "#E93A90", "#B52D43","#DDAACC"];
 
     /*
      * Data for graphs to be plotted
@@ -53,6 +53,16 @@
         "canada": {
         label: "Canada",
         data: [[1988, 11982], [1989, 22027], [1990, 660696], [1991, 44348], [1992, 128560], [1993, 256393], [1994, 354579], [1995, 550818], [1996, 50554], [1997, 148276], [1998, 472691], [1999, 347529], [2000, 473778], [2001, 487160], [2002, 509249], [2003, 574521], [2004, 602334], [2005, 601076], [2006, 593213]]
+        }
+    };
+    var datasets2 = {
+        "brasil": {
+            label: "Brasil",
+            data: [[1988, 183194], [1989, 273030], [1990, 133631], [1991, 333349], [1992, 311105], [1993, 2111], [1994, 123717], [1995, 100382], [1996, 320046], [1997, 100000], [1998, 22611], [1999, 129421], [2000, 142172], [2001, 344932], [2002, 223303], [2003, 540813], [2004, 183451], [2005, 3034638], [2006, 528692]]
+        },
+        "egal": {
+            label: "Egal",
+            data: [[1988, 183994], [1989, 319030], [1990, 417648], [1991, 41949], [1992, 421705], [1993, 302375], [1994, 177867], [1995, 157382], [1996, 337946], [1997, 26185], [1998, 338611], [1999, 129421], [2000, 342172], [2001, 144932], [2002, 287303], [2003, 840813], [2004, 480351], [2005, 501638], [2006, 528692]]
         }
     };
 
@@ -133,8 +143,31 @@
         // populates the page elements with the app's data.
         ready: function (element, options) {
 
+            datasets = datasets2;
+            
+            /*
+            WinJS.xhr({
+                url: "/pages/lineChart/salesPerCountries.json",
+                responseType: "json"
+            }).done(
+                function completed(response) {
+                    var fixedResponse = response.responseText.replace(/\\'/g, "'");
+                    var foo = JSON.stringify(fixedResponse)
+                    var feed = JSON.parse(foo);
+                    document.write(feed);
+                }, 
+                function error(request) {
+                    // handle error conditions.
+                }, 
+                function progress(request) {
+                   
+                });
+            */
+
+
             // give every graph a unique color from config
             var j = 0;
+            
             $.each(datasets, function (key, val) {
                 val.color = colors[(j%colors.length)];
                 ++j;
