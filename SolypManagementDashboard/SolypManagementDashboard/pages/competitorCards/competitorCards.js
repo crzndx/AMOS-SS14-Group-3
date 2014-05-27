@@ -35,7 +35,7 @@
      * Page to navigate to must be provided.
      */
     function showAllCards() {
-        WinJS.Navigation.navigate("/pages/SummayofCards/Summaryofcards.html"); //TODO set correct link @ramni
+        WinJS.Navigation.navigate("pages/allCards/allCards.html"); 
     }
 
     /*

@@ -1,16 +1,19 @@
 ﻿(function () {
     "use strict";
 
+   
+
+
     // Code from TryWinJS
     var itemArray = [
-       { title: "Marvelous Mint", text: "Gelato", picture: "/images/fruits/60Mint.png" },
-       { title: "Succulent Strawberry", text: "Sorbet", picture: "/images/fruits/60Strawberry.png" },
-       { title: "Banana Blast", text: "Low-fat frozen yogurt", picture: "/images/fruits/60Banana.png" },
-       { title: "Lavish Lemon Ice", text: "Sorbet", picture: "/images/fruits/60Lemon.png" },
-       { title: "Creamy Orange", text: "Sorbet", picture: "/images/fruits/60Orange.png" },
-       { title: "Very Vanilla", text: "Ice Cream", picture: "/images/fruits/60Vanilla.png" },
-       { title: "Banana Blast", text: "Low-fat frozen yogurt", picture: "/images/fruits/60Banana.png" },
-       { title: "Lavish Lemon Ice", text: "Sorbet", picture: "/images/fruits/60Lemon.png" }
+       { title: "Volkswagen", text: "Gelato", picture: "/images/carLogos/volkswagen.png" },
+       { title: "Ford", text: "Sorbet", picture: "/images/carLogos/ford.png" },
+       { title: "BMW", text: "Low-fat frozen yogurt", picture: "/images/carLogos/bmw.png" },
+       { title: "MINI", text: "Sorbet", picture: "/images/carLogos/mini.png" },
+       { title: "Skoda", text: "Sorbet", picture: "/images/carLogos/skoda.png" },
+       { title: "Seat", text: "Ice Cream", picture: "/images/carLogos/seat.png" },
+       { title: "Mazda", text: "Low-fat frozen yogurt", picture: "/images/carLogos/mazda.png" },
+       { title: "Vauxhall", text: "Sorbet", picture: "/images/carLogos/vauxhall.png" }
     ];
     var items = [];
 
