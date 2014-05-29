@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <!-- change title name -->
+    <title>Name of the Subpage</title>
+
+    <!-- WinJS references -->
+    <link href="//Microsoft.WinJS.2.0/css/ui-dark.css" rel="stylesheet" />
+    <script src="//Microsoft.WinJS.2.0/js/base.js"></script>
+    <script src="//Microsoft.WinJS.2.0/js/ui.js"></script>
+    <script src="/js/homescreenData.js"></script>
+    <!-- default windows css -->
+    <link href="/css/default.css" rel="stylesheet" />
+
+    <!-- change these link names accordingly to the subpage name -->
+    <link href="allCards.css" rel="stylesheet" />
+    <script src="allCards.js"></script>
+
+
+</head>
+<body>
+    <!-- The content that will be loaded and displayed. -->
+    <div class="itemdetailpage fragment">
+        <header aria-label="Header content" role="banner">
+            <button data-win-control="WinJS.UI.BackButton"></button>
+            <h1 class="titlearea win-type-ellipsis">
+                <!-- change name of the actual title shown -->
+                <span class="pagetitle">All Competitors Cards</span>
+            </h1>
+        </header>
+        <section aria-label="Main content" role="main">
+            <div class="contentwrapper">
+                <!-- add all specific subpage content here -->
+               <!--Copied from winjs list view-->
+                <!-- Simple template for the ListView instantiation  -->
+                <div id="smallListIconTextTemplate" data-win-control="WinJS.Binding.Template" style="display: none">
+                    <div class="smallListIconTextItem">
+                        <img src="#" class="smallListIconTextItem-Image" data-win-bind="src: picture" />
+                        <div class="smallListIconTextItem-Detail">
+                            <h4 data-win-bind="textContent: title"></h4>
+                            <h6 data-win-bind="textContent: text"></h6>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- The declarative markup necesary for ListView instantiation -->
+                <!-- Call WinJS.UI.processAll() in your initialization code -->
+                <div id="listView"
+                     class="win-selectionstylefilled"
+                     data-win-control="WinJS.UI.ListView"
+                     data-win-options="{
+                                        itemDataSource: Sample.ListView.data.dataSource,
+                                        itemTemplate: smallListIconTextTemplate,
+                                        selectionMode: 'none',
+                                        tapBehavior: 'none',
+                                        swipeBehavior: 'none',
+                                        layout: { type: WinJS.UI.GridLayout }
+                    }">
+                </div>
+            <!--Finished copying-->
+
+            </div>
+        </section>
+    </div>
+</body>
+</html>

@@ -147,6 +147,12 @@
     <Content Include="lib\testing\jasmine-2.0.0\jasmine.js" />
     <Content Include="lib\testing\jasmine-2.0.0\jasmine_favicon.png" />
     <Content Include="lib\testing\jasmine-2.0.0\MIT.LICENSE" />
+    <Content Include="pages\allCards\images\fruits\60Banana.png" />
+    <Content Include="pages\allCards\images\fruits\60Lemon.png" />
+    <Content Include="pages\allCards\images\fruits\60Mint.png" />
+    <Content Include="pages\allCards\images\fruits\60Orange.png" />
+    <Content Include="pages\allCards\images\fruits\60Strawberry.png" />
+    <Content Include="pages\allCards\images\fruits\60Vanilla.png" />
     <Content Include="pages\competitorCards_function\competitorCards_function.css" />
     <Content Include="pages\competitorCards_function\competitorCards_function.html" />
     <Content Include="pages\competitorCards_function\competitorCards_function.js" />
@@ -166,10 +172,13 @@
     <Content Include="pages\groupedItems\groupedItems.html" />
     <Content Include="pages\groupedItems\groupedItems.js" />
     <Content Include="index.html" />
-    <Content Include="pages\lineChart\data.json" />
+    <Content Include="pages\lineChart\salesPerCountries.json" />
     <Content Include="pages\lineChart\linceChart.css" />
     <Content Include="pages\lineChart\lineChart.html" />
     <Content Include="pages\lineChart\lineChart.js" />
+    <Content Include="pages\allCards\allCards.css" />
+    <Content Include="pages\allCards\allCards.html" />
+    <Content Include="pages\allCards\allCards.js" />
     <Content Include="pages\newPageDummy\newDummyCSS.css" />
     <Content Include="pages\newPageDummy\newDummyHTML.html" />
     <Content Include="pages\newPageDummy\newDummyJS.js" />
