@@ -143,7 +143,7 @@
         // populates the page elements with the app's data.
         ready: function (element, options) {
 
-            datasets = datasets2;
+            //datasets = datasets2;
             
             /*
             WinJS.xhr({
