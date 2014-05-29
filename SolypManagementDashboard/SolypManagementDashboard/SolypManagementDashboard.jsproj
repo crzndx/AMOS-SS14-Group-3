@@ -51,7 +51,7 @@
     <DefaultLanguage>en-US</DefaultLanguage>
     <PackageCertificateKeyFile>SolypManagementDashboard_TemporaryKey.pfx</PackageCertificateKeyFile>
     <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
-    <AppxPackageDir>C:\Users\Andreas Lindsteding\Desktop\release\</AppxPackageDir>
+    <AppxPackageDir>C:\Users\Philipp\Desktop\amosrelease3\</AppxPackageDir>
     <AppxBundlePlatforms>neutral</AppxBundlePlatforms>
   </PropertyGroup>
   <ItemGroup>
