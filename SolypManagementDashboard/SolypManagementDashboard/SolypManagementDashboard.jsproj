@@ -75,6 +75,20 @@
     <Content Include="images\background\8.jpg" />
     <Content Include="images\background\9.jpg" />
     <Content Include="images\background\background.png" />
+    <Content Include="images\carLogos\bmw.png" />
+    <Content Include="images\carLogos\ford.png" />
+    <Content Include="images\carLogos\mazda.png" />
+    <Content Include="images\carLogos\mini.png" />
+    <Content Include="images\carLogos\seat.png" />
+    <Content Include="images\carLogos\skoda.png" />
+    <Content Include="images\carLogos\vauxhall.png" />
+    <Content Include="images\carLogos\volkswagen.png" />
+    <Content Include="images\fruits\60Banana.png" />
+    <Content Include="images\fruits\60Lemon.png" />
+    <Content Include="images\fruits\60Mint.png" />
+    <Content Include="images\fruits\60Orange.png" />
+    <Content Include="images\fruits\60Strawberry.png" />
+    <Content Include="images\fruits\60Vanilla.png" />
     <Content Include="images\groupedItems\blankPage.jpg" />
     <Content Include="images\groupedItems\lineChart.jpg" />
     <Content Include="images\groupedItems\playingCards.jpg" />
@@ -147,12 +161,6 @@
     <Content Include="lib\testing\jasmine-2.0.0\jasmine.js" />
     <Content Include="lib\testing\jasmine-2.0.0\jasmine_favicon.png" />
     <Content Include="lib\testing\jasmine-2.0.0\MIT.LICENSE" />
-    <Content Include="pages\allCards\images\fruits\60Banana.png" />
-    <Content Include="pages\allCards\images\fruits\60Lemon.png" />
-    <Content Include="pages\allCards\images\fruits\60Mint.png" />
-    <Content Include="pages\allCards\images\fruits\60Orange.png" />
-    <Content Include="pages\allCards\images\fruits\60Strawberry.png" />
-    <Content Include="pages\allCards\images\fruits\60Vanilla.png" />
     <Content Include="pages\competitorCards_function\competitorCards_function.css" />
     <Content Include="pages\competitorCards_function\competitorCards_function.html" />
     <Content Include="pages\competitorCards_function\competitorCards_function.js" />
@@ -192,6 +200,9 @@
   </ItemGroup>
   <ItemGroup>
     <SDKReference Include="Microsoft.WinJS.2.0, Version=1.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="pages\allCards\images\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\$(WMSJSProjectDirectory)\Microsoft.VisualStudio.$(WMSJSProject).targets" />
   <!-- To modify your build process, add your task inside one of the targets below then uncomment
