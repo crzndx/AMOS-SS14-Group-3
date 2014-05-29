@@ -16,6 +16,8 @@
     <!-- change these link names accordingly to the subpage name -->
     <link href="/pages/TileComparison/TileComparison.css" rel="stylesheet" />
     <script src="/pages/TileComparison/TileComparison.js"></script>
+    <!--d3js-->
+    <script src="../../lib/js/d3/d3.js"></script>
 
 
 </head>
@@ -38,25 +40,38 @@
 
 
                 <div class="box">
-                                       <button id="compareTile" class="action secondary">Compare Tiles</button>
+
                     <br />
-                    <div id="tileTemplate" data-win-control="WinJS.Binding.Template">
-                        <div class="tileTempl">
-                            <h6 class="counter" data-win-bind="innerText: counter"></h6>
-                            <h1 class="letter" data-win-bind="innerText: letter"></h1>
+                    <div id="tileTemplate" class=".contentwrapper" data-win-control="WinJS.Binding.Template">
+                        <div id="fdw-pricing-table">
+                            <div class="plan plan1">
+                                <div class="header" data-win-bind="innerText: Name"></div>
+
+                                <ul>
+                                    <li id="KPI"><b>Profits</b><span style="position: relative; left: 75px;" data-win-bind="innerText: profits"></span></li>
+                                    <li id="KPI"><b>KPI 2</b><div class="win-small" data-win-control="WinJS.UI.Rating" data-win-bind="winControl.userRating: averageTrainingHours" data-win-options="{ disabled: true}" style="position: relative; left: 65px;"></div></li>
+                                    <li id="KPI"><b>KPI 3</b><span style="position: relative; left: 85px;">58%</span></li>
+                                    <li><div class="barchart"></div></li>
+                                </ul>
+                                <a class="signup" href="">More Info</a>
+                            </div>
                         </div>
+
                     </div>
-                    <div id="listView2" class="listBox" data-win-control="WinJS.UI.ListView" data-win-options="{
+                    <div id="customerListView" class="listBox" data-win-control="WinJS.UI.ListView" data-win-options="{
                                     selectionMode: 'multi',
+                                    oniteminvoked : handler,
+                                    itemTemplate : TemplatingExample.itemTemplateFunction,
                                     tapBehavior: WinJS.UI.TapBehavior.toggleSelect,
                                     itemsReorderable: true,
                                     layout: { type: WinJS.UI.GridLayout, maxRows: 1 }
                                }"></div>
+
+                    <div class="MessageBox" style="margin-top:10px; border-width:2px; border-style:solid; border-color:#000000; ">
+                        <div class="MessageToTheUserInvisible" id="MessageToTheUser">Select more to compare!!!</div>
+                        <button id="compareButton" class="action secondary MessageToTheUserInvisible">Compare Tiles</button>
+                    </div>
                 </div>
-
-
-
-
 
         </section>
     </div>

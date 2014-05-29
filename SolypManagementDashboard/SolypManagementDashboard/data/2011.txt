@@ -1,0 +1,70 @@
+[{
+                "Name": "BMW",
+              
+
+                    "Year": "2011",
+                    "profits": 4853,
+                    "salesVolume": 1461,
+                    "returnOnCapital": 19.1,
+                    "workforce": 95453,
+                    "womenWorkforceShare": 13.5,
+                    "averageTrainingHours": 3.6,
+                    "energyConsumptionPerVehicle": 2.75,
+                    "waterConsumptionPerVehicle": 2.31,
+                    "co2perVehicle": 0.86,
+                    "revenueSum": 60447,
+                    "quarterRevenue": [
+                        11.75,
+                        17.28,
+                        18.34,
+                        29.63
+                    ]
+                
+                
+            },
+                    {
+
+                        "Name": "Volkswagen",
+                        
+
+                            "Year": "2011",
+                            "profits": 4853,
+                            "salesVolume": 1461,
+                            "returnOnCapital": 19.1,
+                            "workforce": 95453,
+                            "womenWorkforceShare": 13.5,
+                            "averageTrainingHours": 3.6,
+                            "energyConsumptionPerVehicle": 2.75,
+                            "waterConsumptionPerVehicle": 2.31,
+                            "co2perVehicle": 0.86,
+                            "revenueSum": 60447,
+                            "quarterRevenue": [
+                        12.75,
+                        13.28,
+                        14.34,
+                        25.63
+                    ]},
+                        
+                         {
+
+                            "Year": "2010",
+                            "profits": 4853,
+                            "salesVolume": 1461,
+                            "returnOnCapital": 19.1,
+                            "workforce": 95453,
+                            "womenWorkforceShare": 13.5,
+                            "averageTrainingHours": 3.6,
+                            "energyConsumptionPerVehicle": 2.75,
+                            "waterConsumptionPerVehicle": 2.31,
+                            "co2perVehicle": 0.86,
+                            "revenueSum": 60447,
+                            "quarterRevenue": [
+                        15.75,
+                        14.28,
+                        13.34,
+                        22.63
+                    ]
+                        
+                    }
+
+            ]
