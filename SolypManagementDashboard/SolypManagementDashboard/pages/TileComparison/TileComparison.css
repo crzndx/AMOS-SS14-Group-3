@@ -3,9 +3,14 @@
     /* styles */
 .listBox {
    /* border: 1px solid #222222; */
+   height: 520px;
 }
 
 .hidden { display:none;}
+
+.win-itembox {
+    padding:0px;
+}
 
 #listView2 {
     
@@ -20,15 +25,22 @@
     visibility:visible;
 }
 
+.KPISpanLeft {
+    float:left; width:30px; text-align:left;
+}
+.KPISpanRight {
+    float: right;
+}
+
 .firstKPI {
-    position: relative; left: 75px;
+    position: relative; left: 75px; height:30px;
 }
 .secondKPI {
-    position: relative; left: 65px;
+    position: relative; left: 65px; text-align:left;
 }
 
 .thirdKPI {
-    position: relative; left: 85px;
+    position: relative; left: 85px; text-align:left;
 }
 
 .tileTempl {
@@ -70,10 +82,10 @@
     margin-right: 120px;
 }
 
-#fdw-pricing-table {
+#customercard {
 		margin:0 auto;
 		text-align: center;
-		
+
 		zoom: 1;
 	}
 
@@ -82,38 +94,39 @@
 }
 #kpivalue  {text-align:right;}
 
-	#fdw-pricing-table:before, #fdw-pricing-table:after {
+	#customercard:before, #customercard:after {
 	  content: "";
 	  display: table
 	}
 
-	#fdw-pricing-table:after {
+	#customercard:after {
 	  clear: both
 	}
 
 	/* --------------- */	
 
-	#fdw-pricing-table .plan {
+	#customercard .plan {
 		font: 13px 'Lucida Sans', 'trebuchet MS', Arial, Helvetica;     
 		background: #fff;      
 		border: 1px solid #ddd;
 		color: #333;
 		padding: 20px;
-		width: 180px;
+		width: 160px;
 		float: left;
 		_display: inline; /* IE6 double margin fix */
 		position: relative;
-		margin: 0 5px;
+		margin: 0px;
 		-moz-box-shadow: 0 2px 2px -1px rgba(0,0,0,.3);
 		-webkit-box-shadow: 0 2px 2px -1px rgba(0,0,0,.3);
 		box-shadow: 0 2px 2px -1px rgba(0,0,0,.3);		
 	}
 
-	#fdw-pricing-table .plan:after {
+	#customercard .plan:after {
 	  z-index: -1; 
 	  position: absolute; 
 	  content: "";
-	  bottom: 10px;
+	  bottom: 20px;
+
 	  right: 4px;
 	  width: 80%; 
 	  top: 80%; 
@@ -126,15 +139,15 @@
 	  -ms-transform: rotate(3deg);
 	  transform: rotate(3deg);	
 	}	
-	
-	#fdw-pricing-table .popular-plan {
+
+	#customercard .popular-plan {
 		top: -20px;
 		padding: 40px 20px;   
 	}
-	
+
 	/* --------------- */	
 
-	#fdw-pricing-table .header {
+	#customercard .header {
 		position: relative;
 		font-size: 20px;
 		font-weight: normal;
@@ -151,42 +164,42 @@
 		background-image: linear-gradient(#fff, #eee);
 	}
 
-	#fdw-pricing-table .header:after {
+	#customercard .header:after {
 		position: absolute;
 		bottom: -8px; left: 0;
 		height: 3px; width: 100%;
 		content: '';
 		background-image: url(images/bar.png);
 	}
-	
-	#fdw-pricing-table .popular-plan .header {
+
+	#customercard .popular-plan .header {
 		margin-top: -40px;
 		padding-top: 60px;		
 	}
 
-	#fdw-pricing-table .plan1 .header{
+	#customercard .plan1 .header{
 		border-bottom-color: #B3E03F;
 	}
 
-	#fdw-pricing-table .plan2 .header{
+	#customercard .plan2 .header{
 		border-bottom-color: #7BD553;
 	}
 
-	#fdw-pricing-table .plan3 .header{
+	#customercard .plan3 .header{
 		border-bottom-color: #3AD5A0;
 	}
 
-	#fdw-pricing-table .plan4 .header{
+	#customercard .plan4 .header{
 		border-bottom-color: #45D0DA;
 	}			
-	
+
 	/* --------------- */
 
-	#fdw-pricing-table .price{
+	#customercard .price{
 		font-size: 45px;
 	}
 
-	#fdw-pricing-table .monthly{
+	#customercard .monthly{
 		font-size: 13px;
 		margin-bottom: 20px;
 		text-transform: uppercase;
@@ -195,19 +208,19 @@
 
 	/* --------------- */
 
-	#fdw-pricing-table ul {
+	#customercard ul {
 		margin: 20px 0;
 		padding: 0;
 		list-style: none;
 	}
 
-	#fdw-pricing-table li {
+	#customercard li {
 		padding: 10px 0;
 	}
-	
+
 	/* --------------- */
-		
-	#fdw-pricing-table .signup {
+
+	#customercard .signup {
 		position: relative;
 		padding: 10px 20px;
 		color: #fff;
@@ -223,32 +236,32 @@
 		opacity: .9;       
 	}
 
-	#fdw-pricing-table .signup:hover {
+	#customercard .signup:hover {
 		opacity: 1;       
 	}
 
-	#fdw-pricing-table .signup:active {
+	#customercard .signup:active {
 		-moz-box-shadow: 0 2px 2px rgba(0,0,0,.3) inset;
 		-webkit-box-shadow: 0 2px 2px rgba(0,0,0,.3) inset;
 		box-shadow: 0 2px 2px rgba(0,0,0,.3) inset;       
 	}			
 
-	#fdw-pricing-table .plan1 .signup{
+	#customercard .plan1 .signup{
 		background: #B3E03F;
 	}
 
-	#fdw-pricing-table .plan2 .signup{
+	#customercard .plan2 .signup{
 		background: #7BD553;
 	}
 
-	#fdw-pricing-table .plan3 .signup{
+	#customercard .plan3 .signup{
 		background: #3AD5A0;
 	}
 
-	#fdw-pricing-table .plan4 .signup{
+	#customercard .plan4 .signup{
 		background: #45D0DA;
 	}	
-	
+
 
     /* Header Style */
 .freshdesignweb-top{
@@ -312,4 +325,3 @@
 .win-rating.differentRatingColor.win-star.win-user.win-full {
     color: rgba(0, 0, 0, 1.0);
 }
-

@@ -9,6 +9,19 @@
     var sched = WinJS.Utilities.Scheduler;
     var ui = WinJS.UI;
 
+    app.onerror = function (e) {
+        var message = e.detail.exception.message;
+        var description = e.detail.exception.description;
+        var code = e.detail.exception.number;
+        var stackTrace = e.detail.exception.stack;
+        var msgBox = new Windows.UI.Popups.MessageDialog(
+            description, message
+            );
+
+        msgBox.showAsync().done();
+        return true;
+    };
+
     app.addEventListener("activated", function (args) {
         if (args.detail.kind === activation.ActivationKind.launch) {
             if (args.detail.previousExecutionState !== activation.ApplicationExecutionState.terminated) {

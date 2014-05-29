@@ -33,24 +33,41 @@
         </header>
         <section aria-label="Main content" role="main">
 
-
             <div class="contentwrapper">
                 <!-- add all specific subpage content here -->
 
 
 
-                <div class="box">
+                <div class=" ">
 
                     <br />
-                    <div id="tileTemplate" class=".contentwrapper" data-win-control="WinJS.Binding.Template">
-                        <div id="fdw-pricing-table">
-                            <div class="plan plan1">
+                    <div id="tiletemplate" class=".contentwrapper">
+                        <div id="customercard">
+
+                            <div id="plandiv" class="plan plan1">
                                 <div class="header" data-win-bind="innerText: Name"></div>
 
                                 <ul>
-                                    <li id="KPI"><b>Profits</b><span style="position: relative; left: 75px;" data-win-bind="innerText: profits"></span></li>
-                                    <li id="KPI"><b>KPI 2</b><div class="win-small" data-win-control="WinJS.UI.Rating" data-win-bind="winControl.userRating: averageTrainingHours" data-win-options="{ disabled: true}" style="position: relative; left: 65px;"></div></li>
-                                    <li id="KPI"><b>KPI 3</b><span style="position: relative; left: 85px;">58%</span></li>
+                                    <li id="KPI">
+                                        <div style="width:100px;">
+                                            <span class="KPISpanLeft"><b>Profits</b></span>
+                                            <span class="KPISpanRight firstKPI" data-win-bind="innerText: profits"></span>
+                                        </div>
+
+                                    </li>
+                                    <li id="KPI">
+                                        <div style="width:100px;">
+                                            <span class="KPISpanLeft"><b>KPI2</b></span>
+                                            <span class="win-small KPISpanRight secondKPI" data-win-control="WinJS.UI.Rating" data-win-bind="winControl.userRating: averageTrainingHours" data-win-options="{ disabled: true}"></span>
+                                        </div>
+                                    </li>
+
+                                    <li id="KPI">
+                                        <div style="width:100px;">
+                                            <span class="KPISpanLeft"><b>KPI3</b></span>
+                                            <span class="KPISpanRight thirdKPI">58%</span>
+                                        </div>
+                                    </li>
                                     <li><div class="barchart"></div></li>
                                 </ul>
                                 <a class="signup" href="">More Info</a>
@@ -72,7 +89,7 @@
                         <button id="compareButton" class="action secondary MessageToTheUserInvisible">Compare Tiles</button>
                     </div>
                 </div>
-
+            </div>
         </section>
     </div>
 </body>
