@@ -58,6 +58,7 @@
       <SubType>Designer</SubType>
     </AppxManifest>
     <Content Include="css\default.css" />
+    <Content Include="data\2011.txt" />
     <Content Include="images\background\1.jpg" />
     <Content Include="images\background\10.jpg" />
     <Content Include="images\background\11.jpg" />
@@ -178,7 +179,7 @@
     <Content Include="pages\groupedItems\groupedItems.html" />
     <Content Include="pages\groupedItems\groupedItems.js" />
     <Content Include="index.html" />
-    <Content Include="pages\lineChart\data.json" />
+    <Content Include="pages\lineChart\salesPerCountries.json" />
     <Content Include="pages\lineChart\linceChart.css" />
     <Content Include="pages\lineChart\lineChart.html" />
     <Content Include="pages\lineChart\lineChart.js" />
