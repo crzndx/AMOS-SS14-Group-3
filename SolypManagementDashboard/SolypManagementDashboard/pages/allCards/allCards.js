@@ -20,7 +20,7 @@
             "co2perVehicle": 0.86,
             "revenueSum": 60447,
             "quarterRevenue": [11.75, 17.28, 18.34, 29.63],
-            "logo": "/images/carLogos/bmw.png",
+            "logo": "/images/carLogos/bmw.png"
             },
             {
 
@@ -37,7 +37,7 @@
             "co2perVehicle": 0.86,
             "revenueSum": 60447,
             "quarterRevenue": [12.75, 13.28, 14.34, 25.63],
-            "logo": "/images/carLogos/volkswagen.png",
+            "logo": "/images/carLogos/volkswagen.png"
             },
             {
 
@@ -54,7 +54,7 @@
                 "co2perVehicle": 0.86,
                 "revenueSum": 60447,
                 "quarterRevenue": [12.75, 13.28, 14.34, 25.63],
-                "logo": "/images/carLogos/mazda.png",
+                "logo": "/images/carLogos/mazda.png"
             },
             {
 
@@ -71,7 +71,7 @@
                 "co2perVehicle": 0.86,
                 "revenueSum": 60447,
                 "quarterRevenue": [12.75, 13.28, 14.34, 25.63],
-                "logo": "/images/carLogos/ford.png",
+                "logo": "/images/carLogos/ford.png"
             },
             {
 
@@ -88,7 +88,7 @@
                 "co2perVehicle": 0.86,
                 "revenueSum": 60447,
                 "quarterRevenue": [12.75, 13.28, 14.34, 25.63],
-                "logo": "/images/carLogos/vauxhall.png",
+                "logo": "/images/carLogos/vauxhall.png"
             },
             {
 
@@ -105,7 +105,7 @@
                 "co2perVehicle": 0.86,
                 "revenueSum": 60447,
                 "quarterRevenue": [12.75, 13.28, 14.34, 25.63],
-                "logo": "/images/carLogos/skoda.png",
+                "logo": "/images/carLogos/skoda.png"
             },
             {
 
@@ -122,7 +122,7 @@
                 "co2perVehicle": 0.86,
                 "revenueSum": 60447,
                 "quarterRevenue": [12.75, 13.28, 14.34, 25.63],
-                "logo": "/images/carLogos/mini.png",
+                "logo": "/images/carLogos/mini.png"
             },
             {
 
@@ -139,8 +139,8 @@
                 "co2perVehicle": 0.86,
                 "revenueSum": 60447,
                 "quarterRevenue": [12.75, 13.28, 14.34, 25.63],
-                "logo": "/images/carLogos/seat.png",
-            },
+                "logo": "/images/carLogos/seat.png"
+            }
     ];
 
     var items = [];
