@@ -19,8 +19,10 @@
      * Data for graphs to be plotted
      */
 
-    var ind = 0; // current index to show dataset #
+    var index = 0; // current index to show dataset #
 
+    // actual data being displayed
+    // @TODO do it externally?
     var datasets = {
         "xaxis": "Years",
         "yaxis": "in USD",  
@@ -41,6 +43,22 @@
                 label: "UK",
                 data: [[1988, 62982], [1989, 62027], [1990, 60696], [1991, 62348], [1992, 58560], [1993, 56393], [1994, 54579], [1995, 50818], [1996, 50554], [1997, 48276], [1998, 47691], [1999, 47529], [2000, 47778], [2001, 48760], [2002, 50949], [2003, 57452], [2004, 60234], [2005, 60076], [2006, 59213]]
             },
+            "canada": {
+                label: "Canada",
+                data: [[1988, 11982], [1989, 22027], [1990, 660696], [1991, 44348], [1992, 128560], [1993, 256393], [1994, 354579], [1995, 550818], [1996, 50554], [1997, 148276], [1998, 472691], [1999, 347529], [2000, 473778], [2001, 487160], [2002, 509249], [2003, 574521], [2004, 602334], [2005, 601076], [2006, 593213]]
+            }
+        },
+        "1": {
+            "brasil": {
+                label: "Brasil",
+                data: [[1988, 183194], [1989, 273030], [1990, 133631], [1991, 333349], [1992, 311105], [1993, 2111], [1994, 123717], [1995, 100382], [1996, 320046], [1997, 100000], [1998, 22611], [1999, 129421], [2000, 142172], [2001, 344932], [2002, 223303], [2003, 540813], [2004, 183451], [2005, 3034638], [2006, 528692]]
+            },
+            "egal": {
+                label: "Egal",
+                data: [[1988, 183994], [1989, 319030], [1990, 417648], [1991, 41949], [1992, 421705], [1993, 302375], [1994, 177867], [1995, 157382], [1996, 337946], [1997, 26185], [1998, 338611], [1999, 129421], [2000, 342172], [2001, 144932], [2002, 287303], [2003, 840813], [2004, 480351], [2005, 501638], [2006, 528692]]
+            }
+        },
+        "2": {
             "germany": {
                 label: "Germany",
                 data: [[1988, 55627], [1989, 55475], [1990, 58464], [1991, 55134], [1992, 52436], [1993, 47139], [1994, 43962], [1995, 43238], [1996, 42395], [1997, 40854], [1998, 40993], [1999, 41822], [2000, 41147], [2001, 40474], [2002, 40604], [2003, 40044], [2004, 38816], [2005, 38060], [2006, 36984]]
@@ -56,20 +74,6 @@
             "norway": {
                 label: "Norway",
                 data: [[1988, 4382], [1989, 4498], [1990, 4535], [1991, 4398], [1992, 4766], [1993, 4441], [1994, 4670], [1995, 4217], [1996, 4275], [1997, 4203], [1998, 4482], [1999, 4506], [2000, 4358], [2001, 4385], [2002, 5269], [2003, 5066], [2004, 5194], [2005, 4887], [2006, 4891]]
-            },
-            "canada": {
-                label: "Canada",
-                data: [[1988, 11982], [1989, 22027], [1990, 660696], [1991, 44348], [1992, 128560], [1993, 256393], [1994, 354579], [1995, 550818], [1996, 50554], [1997, 148276], [1998, 472691], [1999, 347529], [2000, 473778], [2001, 487160], [2002, 509249], [2003, 574521], [2004, 602334], [2005, 601076], [2006, 593213]]
-            }
-        },
-        "1": {
-            "brasil": {
-                label: "Brasil",
-                data: [[1988, 183194], [1989, 273030], [1990, 133631], [1991, 333349], [1992, 311105], [1993, 2111], [1994, 123717], [1995, 100382], [1996, 320046], [1997, 100000], [1998, 22611], [1999, 129421], [2000, 142172], [2001, 344932], [2002, 223303], [2003, 540813], [2004, 183451], [2005, 3034638], [2006, 528692]]
-            },
-            "egal": {
-                label: "Egal",
-                data: [[1988, 183994], [1989, 319030], [1990, 417648], [1991, 41949], [1992, 421705], [1993, 302375], [1994, 177867], [1995, 157382], [1996, 337946], [1997, 26185], [1998, 338611], [1999, 129421], [2000, 342172], [2001, 144932], [2002, 287303], [2003, 840813], [2004, 480351], [2005, 501638], [2006, 528692]]
             }
         }
     };
@@ -85,6 +89,7 @@
         legend: {
             show: false
         },
+        // names of axes (could be done nicer elsewhere) @TODO
         yaxisName: datasets['yaxis'],
         xaxisName: datasets['xaxis']
     };
@@ -107,6 +112,8 @@
             myNode.removeChild(myNode.firstChild);
         }
 
+        printChoices(ind);
+        plotCheckedLines(ind);
    
     }
 
@@ -119,17 +126,27 @@
         }
         log(ind);
         choices.empty();
-        plottingarea.empty();
 
+        var myNode = document.getElementById("plottingarea");
+        while (myNode.firstChild) {
+            myNode.removeChild(myNode.firstChild);
+        }
+
+        printChoices(ind);
+        plotCheckedLines(ind);
 
     }
 
-
+    /*
+     * Desperately needed debugging function...
+     */
     function log(msg) {
         document.getElementById("status").innerHTML += msg;
     }
 
-
+    /*
+    * Puts textual description underneath x axis
+    */
     function paintXlabel(xaxisName) {
         // add a label to x-axis
         var widthX;
@@ -148,6 +165,9 @@
         $(".horizontaltext").css("left", ((widthX / 2) - h / 2));
     }
 
+    /*
+     * Puts a textual description next to the y axis
+     */
     function paintYlabel(yaxisName) {
         // add a label to y-axis
         var heightYAxis;
@@ -165,88 +185,18 @@
         $(".verticaltext").css("top", ((heightYAxis / 2) - w / 2));
     }
 
+
     /*
-    function printChoices(ind) {
-        // give every graph a unique color from config
-        var j = 0;
-        $.each(datasets[ind], function (key, val) {
-            val.color = colors[(j % colors.length)];
-            ++j;
-        });
-
-        // Print the labelling column with descriptive names of the lines
-        // and the proper coloring as it is shown on the line-canvas.
-        choices = $("#choices");
-        choices.empty();
-
-        $.each(datasets[ind], function (key, val) {
-
-            // changing DOM prohibited natively, this intercepts the forbidden ;)
-            MSApp.execUnsafeLocalFunction(function () {
-                var untrusted = "<br/><input type='checkbox' checked='checked' id='" + key + "'></input>" +
-                                "<label style='color:" + val.color + " !important;'>" + val.label + "</label>";
-
-                choices.append(untrusted);
-            });
-
-        });
-
-        // reprint on click on one of the labels
-        choices.find("input").click(plotCheckedLines(ind));
-        
-
-    }
+    * Actually plots the graphs at given data index number
     */
-
-    /*
-    * Draws the canvas, adds labels, writes labels on axes
-    */
-    /*
-    function plotCheckedLines(ind) {
-
-       
-
+    function plotCheckedLines(index) {
         var data = [];
-        var c = $("#choices");
-        c.find("input:checked").each(function () {
-            var key = $(this).attr("id");
 
-            if (key && datasets[ind][key]) {
-                data.push(datasets[ind][key]);
-            }
-        });
-
-        log("PLI");
-
-        if (data.length > 0) {
-
-            var pltting = $("#plottingarea");
-            pltting.empty();
-
-
-
-            $.plot("#plottingarea", data, options);
-
-            paintXlabel(options.xaxisName);
-            paintYlabel(options.yaxisName);
-
-        } else {
-            document.getElementById("plottingarea").innerText = "Cannot draw anything, no data given.";
-        }
-    }
-    */
-
-
-
-
-
-    function plotCheckedLines() {
-        var data = [];
         choices.find("input:checked").each(function () {
             var key = $(this).attr("id");
 
-            if (key && datasets[ind][key]) {
-                data.push(datasets[ind][key]);
+            if (key && datasets[index][key]) {
+                data.push(datasets[index][key]);
             }
         });
 
@@ -269,6 +219,7 @@
 
             $.plot("#plottingarea", data, options);
 
+            // paint labels on x and y axis
             paintXlabel(datasets['xaxis']);
             paintYlabel(datasets['yaxis']);
            
@@ -278,7 +229,33 @@
     }
 
 
+    function printChoices(index) {
+        // give every graph a unique color from config
+        var j = 0;
+        $.each(datasets[index], function (key, val) {
+            val.color = colors[(j % colors.length)];
+            ++j;
+        });
 
+
+        choices = $("#choices");
+        $.each(datasets[index], function (key, val) {
+
+            // why I hate Windows development... (unallowed operation throwing errors otherwise)
+            MSApp.execUnsafeLocalFunction(function () {
+                var untrusted = "<br/><input type='checkbox' checked='checked' id='" + key + "'></input>" +
+                                "<label style='color:" + val.color + " !important;'>" + val.label + "</label>";
+
+                choices.append(untrusted);
+            });
+        });
+
+        /* redefine onclick behaviour on newly printed input elements on each subpage -- important*/
+        $(document).on("click", "input", function () {
+            plotCheckedLines(index);
+        });
+
+    }
 
 
     /*
@@ -290,41 +267,12 @@
         ready: function (element, options) {
 
             // eventListeners navigation buttons for Dataset changes
-            document.getElementById("rightNav").addEventListener("click", function () { showNextDataset(ind); });
-            document.getElementById("leftNav").addEventListener("click", function () { showPreviousDataset(ind); });
+            document.getElementById("rightNav").addEventListener("click", function () { showNextDataset(index); });
+            document.getElementById("leftNav").addEventListener("click", function () { showPreviousDataset(index); });
 
-
-            // give every graph a unique color from config
-            var j = 0;
-            $.each(datasets[ind], function (key, val) {
-                val.color = colors[(j % colors.length)];
-                ++j;
-            });
-
-
-            choices = $("#choices");
-            $.each(datasets[ind], function (key, val) {
-
-                MSApp.execUnsafeLocalFunction(function () {
-                    var untrusted = "<br/><input type='checkbox' checked='checked' id='" + key + "'></input>" +
-                                    "<label style='color:" + val.color + " !important;'>" + val.label + "</label>";
-
-                    choices.append(untrusted);
-                });
-            });
-
-            choices.find("input").click(plotCheckedLines);
-
-            plotCheckedLines();
-
-
-
-            /*
-            printChoices(ind);
-
-            // print when executed the first time
-            plotCheckedLines(ind);
-            */
+            // print initally
+            printChoices(index);
+            plotCheckedLines(index);
 
         }
     });
