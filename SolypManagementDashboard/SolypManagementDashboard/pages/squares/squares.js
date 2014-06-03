@@ -17,11 +17,20 @@
             var data = [105, 12, 67, 17, 55, 32];
             var color = ["#93c747", "#b64176", "#583f95"];
             var allColor = [];
+            var borderColor = ["#568117", "#761541", "#2b1461"];
+            var allBorderColor = [];
 
             // making the colors variable as long as elements has the data variable
             for (var i = 0; i < data.length; i++) {
                 color.forEach(function (item) {
                     allColor.push(item);
+                });
+            }
+
+            // making the colors variable as long as elements has the data variable for the borders
+            for (var i = 0; i < data.length; i++) {
+                borderColor.forEach(function (item) {
+                    allBorderColor.push(item);
                 });
             }
             //first I need to do is read the variable and sum all values so that later on I can get the percentages
@@ -32,8 +41,8 @@
             for (var i in data) { sum += data[i]; }
          
             //I have the sum of the array in sum, now its time to create the percentages 
-            //lets take for granted that the width is 600px (I need to check this later) * 500px
-            var w = 1200;
+            //lets take for granted that the width is 1250px (I need to check this later) * 500px
+            var w = 1250;
             var h = 500;
             //create somehow loop
             var handle = document.getElementById('squares');
@@ -47,7 +56,7 @@
                 customSquare.style.float = "left";
                 customSquare.style.border = "solid";
                 customSquare.style.borderWidth = "1px";
-                customSquare.style.borderColor = "black";
+                customSquare.style.borderColor = allBorderColor[i];
                 customSquare.innerHTML = i+1;
                 handle.appendChild(customSquare);
             }
