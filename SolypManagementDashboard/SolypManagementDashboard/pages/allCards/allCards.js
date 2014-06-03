@@ -5,21 +5,149 @@
 
 
     // Code from TryWinJS
-    var itemArray = [
-       { title: "Volkswagen", text: "Gelato", picture: "/images/carLogos/volkswagen.png" },
-       { title: "Ford", text: "Sorbet", picture: "/images/carLogos/ford.png" },
-       { title: "BMW", text: "Low-fat frozen yogurt", picture: "/images/carLogos/bmw.png" },
-       { title: "MINI", text: "Sorbet", picture: "/images/carLogos/mini.png" },
-       { title: "Skoda", text: "Sorbet", picture: "/images/carLogos/skoda.png" },
-       { title: "Seat", text: "Ice Cream", picture: "/images/carLogos/seat.png" },
-       { title: "Mazda", text: "Low-fat frozen yogurt", picture: "/images/carLogos/mazda.png" },
-       { title: "Vauxhall", text: "Sorbet", picture: "/images/carLogos/vauxhall.png" }
+   
+    var json = [{
+            "Name": "BMW",
+            "Year": "2011",
+            "profits": 2853,
+            "salesVolume": 1461,
+            "returnOnCapital": 19.1,
+            "workforce": 95453,
+            "womenWorkforceShare": 13.5,
+            "averageTrainingHours": 3.6,
+            "energyConsumptionPerVehicle": 2.75,
+            "waterConsumptionPerVehicle": 2.31,
+            "co2perVehicle": 0.86,
+            "revenueSum": 60447,
+            "quarterRevenue": [11.75, 17.28, 18.34, 29.63],
+            "logo": "/images/carLogos/bmw.png",
+            },
+            {
+
+            "Name": "Volkswagen",
+            "Year": "2011",
+            "profits": 4853,
+            "salesVolume": 1461,
+            "returnOnCapital": 19.1,
+            "workforce": 95453,
+            "womenWorkforceShare": 13.5,
+            "averageTrainingHours": 1.6,
+            "energyConsumptionPerVehicle": 2.75,
+            "waterConsumptionPerVehicle": 2.31,
+            "co2perVehicle": 0.86,
+            "revenueSum": 60447,
+            "quarterRevenue": [12.75, 13.28, 14.34, 25.63],
+            "logo": "/images/carLogos/volkswagen.png",
+            },
+            {
+
+                "Name": "Mazda",
+                "Year": "2011",
+                "profits": 4853,
+                "salesVolume": 1461,
+                "returnOnCapital": 19.1,
+                "workforce": 95453,
+                "womenWorkforceShare": 13.5,
+                "averageTrainingHours": 1.6,
+                "energyConsumptionPerVehicle": 2.75,
+                "waterConsumptionPerVehicle": 2.31,
+                "co2perVehicle": 0.86,
+                "revenueSum": 60447,
+                "quarterRevenue": [12.75, 13.28, 14.34, 25.63],
+                "logo": "/images/carLogos/mazda.png",
+            },
+            {
+
+                "Name": "Ford",
+                "Year": "2011",
+                "profits": 4853,
+                "salesVolume": 1461,
+                "returnOnCapital": 19.1,
+                "workforce": 95453,
+                "womenWorkforceShare": 13.5,
+                "averageTrainingHours": 1.6,
+                "energyConsumptionPerVehicle": 2.75,
+                "waterConsumptionPerVehicle": 2.31,
+                "co2perVehicle": 0.86,
+                "revenueSum": 60447,
+                "quarterRevenue": [12.75, 13.28, 14.34, 25.63],
+                "logo": "/images/carLogos/ford.png",
+            },
+            {
+
+                "Name": "Vauxhall",
+                "Year": "2011",
+                "profits": 4853,
+                "salesVolume": 1461,
+                "returnOnCapital": 19.1,
+                "workforce": 95453,
+                "womenWorkforceShare": 13.5,
+                "averageTrainingHours": 1.6,
+                "energyConsumptionPerVehicle": 2.75,
+                "waterConsumptionPerVehicle": 2.31,
+                "co2perVehicle": 0.86,
+                "revenueSum": 60447,
+                "quarterRevenue": [12.75, 13.28, 14.34, 25.63],
+                "logo": "/images/carLogos/vauxhall.png",
+            },
+            {
+
+                "Name": "Skoda",
+                "Year": "2011",
+                "profits": 4853,
+                "salesVolume": 1461,
+                "returnOnCapital": 19.1,
+                "workforce": 95453,
+                "womenWorkforceShare": 13.5,
+                "averageTrainingHours": 1.6,
+                "energyConsumptionPerVehicle": 2.75,
+                "waterConsumptionPerVehicle": 2.31,
+                "co2perVehicle": 0.86,
+                "revenueSum": 60447,
+                "quarterRevenue": [12.75, 13.28, 14.34, 25.63],
+                "logo": "/images/carLogos/skoda.png",
+            },
+            {
+
+                "Name": "Mini",
+                "Year": "2011",
+                "profits": 4853,
+                "salesVolume": 1461,
+                "returnOnCapital": 19.1,
+                "workforce": 95453,
+                "womenWorkforceShare": 13.5,
+                "averageTrainingHours": 1.6,
+                "energyConsumptionPerVehicle": 2.75,
+                "waterConsumptionPerVehicle": 2.31,
+                "co2perVehicle": 0.86,
+                "revenueSum": 60447,
+                "quarterRevenue": [12.75, 13.28, 14.34, 25.63],
+                "logo": "/images/carLogos/mini.png",
+            },
+            {
+
+                "Name": "Seat",
+                "Year": "2011",
+                "profits": 4853,
+                "salesVolume": 1461,
+                "returnOnCapital": 19.1,
+                "workforce": 95453,
+                "womenWorkforceShare": 13.5,
+                "averageTrainingHours": 1.6,
+                "energyConsumptionPerVehicle": 2.75,
+                "waterConsumptionPerVehicle": 2.31,
+                "co2perVehicle": 0.86,
+                "revenueSum": 60447,
+                "quarterRevenue": [12.75, 13.28, 14.34, 25.63],
+                "logo": "/images/carLogos/seat.png",
+            },
     ];
+
     var items = [];
 
     // Generate 160 items
     for (var i = 0; i < 20; i++) {
-        itemArray.forEach(function (item) {
+        json.forEach(function (item) {
             items.push(item);
         });
     }
