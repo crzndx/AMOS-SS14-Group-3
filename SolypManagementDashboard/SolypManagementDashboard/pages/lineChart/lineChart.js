@@ -12,6 +12,7 @@
 
     var canvasElementName = "#plottingarea"; //  where will be drawn
     var choices = $("#choices");
+    var plottingarea = $("#plottingarea");
     var colors = ["#ff0000", "#7A45D6", "#FFE840", "#78E700", "#FFAA00", "#6C8CD5", "#E93A90", "#B52D43","#DDAACC"];
 
     /*
@@ -21,7 +22,7 @@
     var ind = 0; // current index to show dataset #
 
     var datasets = {
-        "xaxis": "years",
+        "xaxis": "Years",
         "yaxis": "in USD",  
         "0" : {
             "china": {
@@ -99,8 +100,14 @@
             ind = ind - 1;
         }
         log(ind);
+        choices.empty();
 
-        printGraph(ind);
+        var myNode = document.getElementById("plottingarea");
+        while (myNode.firstChild) {
+            myNode.removeChild(myNode.firstChild);
+        }
+
+   
     }
 
     /*
@@ -111,8 +118,10 @@
             ind = ind + 1;
         }
         log(ind);
+        choices.empty();
+        plottingarea.empty();
 
-        printGraph(ind);
+
     }
 
 
@@ -156,8 +165,8 @@
         $(".verticaltext").css("top", ((heightYAxis / 2) - w / 2));
     }
 
-
-    function printGraph(ind) {
+    /*
+    function printChoices(ind) {
         // give every graph a unique color from config
         var j = 0;
         $.each(datasets[ind], function (key, val) {
@@ -184,17 +193,22 @@
 
         // reprint on click on one of the labels
         choices.find("input").click(plotCheckedLines(ind));
+        
 
     }
-
+    */
 
     /*
- * Draws the canvas, adds labels, writes labels on axes
- */
+    * Draws the canvas, adds labels, writes labels on axes
+    */
+    /*
     function plotCheckedLines(ind) {
 
+       
+
         var data = [];
-        choices.find("input:checked").each(function () {
+        var c = $("#choices");
+        c.find("input:checked").each(function () {
             var key = $(this).attr("id");
 
             if (key && datasets[ind][key]) {
@@ -202,10 +216,14 @@
             }
         });
 
+        log("PLI");
+
         if (data.length > 0) {
 
             var pltting = $("#plottingarea");
             pltting.empty();
+
+
 
             $.plot("#plottingarea", data, options);
 
@@ -216,6 +234,52 @@
             document.getElementById("plottingarea").innerText = "Cannot draw anything, no data given.";
         }
     }
+    */
+
+
+
+
+
+    function plotCheckedLines() {
+        var data = [];
+        choices.find("input:checked").each(function () {
+            var key = $(this).attr("id");
+
+            if (key && datasets[ind][key]) {
+                data.push(datasets[ind][key]);
+            }
+        });
+
+        if (data.length > 0) {
+            var options = {
+                yaxis: {
+                    min: 0
+                    //color: "#ffffff" background
+                },
+                xaxis: {
+                    tickDecimals: 0
+                    //color: "#ffffff" background
+                },
+                legend: {
+                    show: false
+                },
+                yaxisName: datasets['yaxis'],
+                xaxisName: datasets['xaxis']
+            };
+
+            $.plot("#plottingarea", data, options);
+
+            paintXlabel(datasets['xaxis']);
+            paintYlabel(datasets['yaxis']);
+           
+
+
+        }
+    }
+
+
+
+
 
     /*
      * Grid navigation - called when listed page is being loaded
@@ -229,34 +293,40 @@
             document.getElementById("rightNav").addEventListener("click", function () { showNextDataset(ind); });
             document.getElementById("leftNav").addEventListener("click", function () { showPreviousDataset(ind); });
 
-            printGraph(ind);
+
+            // give every graph a unique color from config
+            var j = 0;
+            $.each(datasets[ind], function (key, val) {
+                val.color = colors[(j % colors.length)];
+                ++j;
+            });
+
+
+            choices = $("#choices");
+            $.each(datasets[ind], function (key, val) {
+
+                MSApp.execUnsafeLocalFunction(function () {
+                    var untrusted = "<br/><input type='checkbox' checked='checked' id='" + key + "'></input>" +
+                                    "<label style='color:" + val.color + " !important;'>" + val.label + "</label>";
+
+                    choices.append(untrusted);
+                });
+            });
+
+            choices.find("input").click(plotCheckedLines);
+
+            plotCheckedLines();
+
+
+
+            /*
+            printChoices(ind);
+
             // print when executed the first time
             plotCheckedLines(ind);
-
+            */
 
         }
     });
 
 })();
-
-
-
-
-/*
-WinJS.xhr({
-    url: "/pages/lineChart/salesPerCountries.json",
-    responseType: "json"
-}).done(
-    function completed(response) {
-        var fixedResponse = response.responseText.replace(/\\'/g, "'");
-        var foo = JSON.stringify(fixedResponse)
-        var feed = JSON.parse(foo);
-        document.write(feed);
-    }, 
-    function error(request) {
-        // handle error conditions.
-    }, 
-    function progress(request) {
-       
-    });
-*/
