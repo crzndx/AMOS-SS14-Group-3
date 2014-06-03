@@ -13,7 +13,7 @@
     var canvasElementName = "#plottingarea"; //  where will be drawn
     var choices = $("#choices");
     var plottingarea = $("#plottingarea");
-    var colors = ["#ff0000", "#7A45D6", "#FFE840", "#78E700", "#FFAA00", "#6C8CD5", "#E93A90", "#B52D43","#DDAACC"];
+    var colors = ["#ff0000", "#7A45D6", "#FFE840", "#78E700", "#FFAA00", "#6C8CD5", "#E93A90", "#B52D43","#DDAACC"]; // @TODO define nice looking colors on background (dynamically possible?)
 
     /*
      * Data for graphs to be plotted
@@ -26,7 +26,7 @@
     var datasets = {
         "xaxis": "Years",
         "yaxis": "in USD",  
-        "0" : {
+        0 : {
             "china": {
                 label: "China",
                 data: [[1988, 683994], [1989, 573060], [1990, 153631], [1991, 333349], [1992, 311705], [1993, 202111], [1994, 247867], [1995, 300382], [1996, 300046], [1997, 300000], [1998, 322611], [1999, 129421], [2000, 142172], [2001, 244932], [2002, 227303], [2003, 540813], [2004, 183451], [2005, 304638], [2006, 528692]]
@@ -48,7 +48,7 @@
                 data: [[1988, 11982], [1989, 22027], [1990, 660696], [1991, 44348], [1992, 128560], [1993, 256393], [1994, 354579], [1995, 550818], [1996, 50554], [1997, 148276], [1998, 472691], [1999, 347529], [2000, 473778], [2001, 487160], [2002, 509249], [2003, 574521], [2004, 602334], [2005, 601076], [2006, 593213]]
             }
         },
-        "1": {
+        1: {
             "brasil": {
                 label: "Brasil",
                 data: [[1988, 183194], [1989, 273030], [1990, 133631], [1991, 333349], [1992, 311105], [1993, 2111], [1994, 123717], [1995, 100382], [1996, 320046], [1997, 100000], [1998, 22611], [1999, 129421], [2000, 142172], [2001, 344932], [2002, 223303], [2003, 540813], [2004, 183451], [2005, 3034638], [2006, 528692]]
@@ -56,13 +56,13 @@
             "egal": {
                 label: "Egal",
                 data: [[1988, 183994], [1989, 319030], [1990, 417648], [1991, 41949], [1992, 421705], [1993, 302375], [1994, 177867], [1995, 157382], [1996, 337946], [1997, 26185], [1998, 338611], [1999, 129421], [2000, 342172], [2001, 144932], [2002, 287303], [2003, 840813], [2004, 480351], [2005, 501638], [2006, 528692]]
-            }
-        },
-        "2": {
+            },
             "germany": {
                 label: "Germany",
                 data: [[1988, 55627], [1989, 55475], [1990, 58464], [1991, 55134], [1992, 52436], [1993, 47139], [1994, 43962], [1995, 43238], [1996, 42395], [1997, 40854], [1998, 40993], [1999, 41822], [2000, 41147], [2001, 40474], [2002, 40604], [2003, 40044], [2004, 38816], [2005, 38060], [2006, 36984]]
-            },
+            }
+        },
+        2: {
             "denmark": {
                 label: "Denmark",
                 data: [[1988, 3813], [1989, 3719], [1990, 3722], [1991, 3789], [1992, 3720], [1993, 3730], [1994, 3636], [1995, 3598], [1996, 3610], [1997, 3655], [1998, 3695], [1999, 3673], [2000, 3553], [2001, 3774], [2002, 3728], [2003, 3618], [2004, 3638], [2005, 3467], [2006, 3770]]
@@ -100,13 +100,13 @@
      * Show Data one in front of actual displayed at the moment.
      */
     function showPreviousDataset(ind) {
+
         // decrease actualYear parameter if year is existent
         if (ind > 0) {
             ind = ind - 1;
         }
-        log(ind);
-        choices.empty();
 
+        choices.empty();
         var myNode = document.getElementById("plottingarea");
         while (myNode.firstChild) {
             myNode.removeChild(myNode.firstChild);
@@ -114,19 +114,20 @@
 
         printChoices(ind);
         plotCheckedLines(ind);
-   
+
+        index = ind;
     }
 
     /*
      * Show Data one year in the future of actual displayed at the moment.
      */
     function showNextDataset(ind) {
+      
         if (datasets[ind+1] != null) {
             ind = ind + 1;
         }
-        log(ind);
-        choices.empty();
 
+        choices.empty();
         var myNode = document.getElementById("plottingarea");
         while (myNode.firstChild) {
             myNode.removeChild(myNode.firstChild);
@@ -135,6 +136,7 @@
         printChoices(ind);
         plotCheckedLines(ind);
 
+        index = ind;
     }
 
     /*
@@ -256,7 +258,6 @@
         });
 
     }
-
 
     /*
      * Grid navigation - called when listed page is being loaded
