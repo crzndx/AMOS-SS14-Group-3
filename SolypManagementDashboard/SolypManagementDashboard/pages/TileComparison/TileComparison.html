@@ -90,6 +90,20 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Installs the AppBar at the top of the screen. Must be swiped in from the top of the screen -->
+            <div id="appBarWrapper">
+                <div id="appBar" data-win-control="WinJS.UI.AppBar" data-win-options="{sticky: false, placement: 'top'}">
+                    <button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{id:'showAllCards',label:'Show all cards',icon:'viewall', section:'selection',tooltip: 'Show all cards'}"></button>
+                    <div data-win-control="WinJS.UI.AppBarCommand"
+                         data-win-options="{type: 'content', section: 'global', label:'' }">
+                        <h2>Navigate through years:</h2>
+                    </div>
+                    <button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{id: 'showNextYear', label:'Year', icon: 'add', section: 'global', tooltip: 'Next year'}"></button>
+
+                    <button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{id:'showPreviousYear', label: 'Year', icon:'remove', section: 'global',tooltip: 'Previous year'}"></button>
+                </div>
+            </div>
         </section>
     </div>
 </body>

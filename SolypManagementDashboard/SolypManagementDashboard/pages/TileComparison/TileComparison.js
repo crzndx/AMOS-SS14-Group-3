@@ -1,12 +1,22 @@
 ﻿(function () {
     "use strict";
 
+
+   
+
+    function showAllCards() {
+        WinJS.Navigation.navigate("pages/allCards/allCards.html");
+    }
+
+
     var customerCardsTileId = 0;
     function itemTemplateFunction(itemPromise) {
 
         return itemPromise.then(function (item) {
 
-            customerCardsTileId = (customerCardsTileId + 1) % 4;
+            //the id is not well defined it only counts 3 items and not four thats why one of the cards is black
+            customerCardsTileId = (customerCardsTileId) % 4;
+            customerCardsTileId++;
 
             //var outerDiv = document.createElement("div");
             //outerDiv.id = "customercard";
@@ -47,7 +57,7 @@
                 })
                 .attr("fill", "teal");
 
-            tempCard._value.querySelector("#plandiv").className = "plan plan" + customerCardsTileId;
+            tempCard._value.querySelector("#plandiv").className = "plan plan" +customerCardsTileId;
 
             return tempCard;
         });
@@ -154,10 +164,21 @@
     }
     WinJS.Namespace.define("TemplatingExample", { itemTemplateFunction: itemTemplateFunction });
     WinJS.Utilities.markSupportedForProcessing(TemplatingExample.itemTemplateFunction);
+    /*declarating the sliding bar*/
+    var slidingAppBar;
+    /******/
 
     WinJS.UI.Pages.define("/pages/TileComparison/TileComparison.html", {
 
         ready: function (element, options) {
+
+            /* Initialize App Bar */
+            slidingAppBar = document.getElementById("appBar").winControl;
+
+            slidingAppBar.getCommandById("showNextYear").addEventListener("click", function () { showNextYear(dimensionIndex); });
+            slidingAppBar.getCommandById("showPreviousYear").addEventListener("click", function () { showPreviousYear(dimensionIndex); });
+            slidingAppBar.getCommandById("showAllCards").addEventListener("click", function () { showAllCards(); });
+            /*****************************************/
             customerCardsTileId = 0;
             document.body.querySelector("#compareButton").addEventListener("click", compareTile, false)
 
