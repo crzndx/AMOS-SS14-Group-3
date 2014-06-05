@@ -247,7 +247,7 @@
             MSApp.execUnsafeLocalFunction(function () {
                 var untrusted = "<br/><input type='checkbox' checked='checked' id='" + key + "'></input>" +
                                 "<label style='color:" + val.color + " !important;'>" + val.label + "</label>";
-
+                    // @TODO create new dom element and append afterwards maybe doesnt need .execUnsafeLocal...
                 choices.append(untrusted);
             });
         });
