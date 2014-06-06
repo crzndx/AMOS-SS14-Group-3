@@ -1,0 +1,184 @@
+{
+ "name": "level_one",
+ "children": [
+  {
+   "name": "level_two",
+   "children": [
+    {
+     "name": "level_three",
+     "children": [
+      {"name": "level_four", "size": 3938},
+      {"name": "level_four", "size": 3812},
+      {"name": "level_four", "size": 6714},
+      {"name": "level_four", "size": 743}
+     ]
+    },
+    {
+     "name": "level_three",
+     "children": [
+      {"name": "level_four", "size": 3534},
+      {"name": "level_four", "size": 5731},
+      {"name": "level_four", "size": 7840},
+      {"name": "level_four", "size": 5914},
+      {"name": "level_four", "size": 3416}
+     ]
+    },
+    {
+     "name": "level_three",
+     "children": [
+      {"name": "level_four", "size": 7074}
+     ]
+    }
+   ]
+  },
+  {
+   "name": "level_two",
+   "children": [
+    {"name": "level_three", "size": 17010},
+    {"name": "level_three", "size": 5842},
+    {
+     "name": "level_three",
+     "children": [
+      {"name": "level_four", "size": 1983},
+      {"name": "level_four", "size": 2047},
+      {"name": "level_four", "size": 1375},
+      {"name": "level_four", "size": 8746},
+      {"name": "level_four", "size": 2202},
+      {"name": "level_four", "size": 1382},
+      {"name": "level_four", "size": 1629},
+      {"name": "level_four", "size": 1675},
+      {"name": "level_four", "size": 2042}
+     ]
+    },
+    {"name": "level_three", "size": 1041},
+    {"name": "level_three", "size": 5176},
+    {"name": "level_three", "size": 449},
+    {"name": "level_three", "size": 5593},
+    {"name": "level_three", "size": 5534},
+    {"name": "level_three", "size": 9201},
+    {"name": "level_three", "size": 19975},
+    {"name": "level_three", "size": 1116},
+    {"name": "level_three", "size": 6006}
+   ]
+  },
+  {
+   "name": "level_two",
+   "children": [
+    {
+     "name": "level_three",
+     "children": [
+      {"name": "level_four", "size": 721},
+      {"name": "level_four", "size": 4294},
+      {"name": "level_four", "size": 9800},
+      {"name": "level_four", "size": 1314},
+      {"name": "level_four", "size": 2220}
+     ]
+    },
+    {"name": "level_three", "size": 1759},
+    {"name": "level_three", "size": 2165},
+    {"name": "level_three", "size": 586},
+    {"name": "level_three", "size": 3331},
+    {"name": "level_three", "size": 772},
+    {"name": "level_three", "size": 3322}
+   ]
+  },
+  {
+   "name": "level_two",
+   "children": [
+    {"name": "level_three", "size": 8833},
+    {"name": "level_three", "size": 1732},
+    {"name": "level_three", "size": 3623},
+    {"name": "level_three", "size": 10066}
+   ]
+  },
+  {
+   "name": "level_two",
+   "children": [
+    {"name": "level_three", "size": 4116}
+   ]
+  },
+  {
+   "name": "level_three",
+   "children": [
+    {"name": "level_four", "size": 1082},
+    {"name": "level_four", "size": 1336},
+    {"name": "level_four", "size": 319},
+    {"name": "level_four", "size": 10498},
+    {"name": "level_four", "size": 2822},
+    {"name": "level_four", "size": 9983},
+    {"name": "level_four", "size": 2213},
+    {"name": "level_four", "size": 1681}
+   ]
+  },
+  {
+   "name": "level_three",
+   "children": [
+    {"name": "level_four", "size": 1616},
+    {"name": "level_four", "size": 1027},
+    {"name": "level_four", "size": 3891},
+    {"name": "level_four", "size": 891},
+    {"name": "level_four", "size": 2893},
+    {"name": "level_four", "size": 5103},
+    {"name": "level_four", "size": 3677},
+    {"name": "level_four", "size": 781},
+    {"name": "level_four", "size": 4141},
+    {"name": "level_four", "size": 933},
+    {"name": "level_four", "size": 5130},
+    {"name": "level_four", "size": 3617},
+    {"name": "level_four", "size": 3240},
+    {"name": "level_four", "size": 2732},
+    {"name": "level_four", "size": 2039},
+    {"name": "level_four", "size": 1214},
+    {"name": "level_four", "size": 3748},
+    {"name": "level_four", "size": 843},
+    {
+     "name": "level_three",
+     "children": [
+      {"name": "level_four", "size": 593},
+      {"name": "level_four", "size": 330},
+      {"name": "level_four", "size": 287},
+      {"name": "level_four", "size": 277},
+      {"name": "level_four", "size": 292},
+      {"name": "level_four", "size": 595},
+      {"name": "level_four", "size": 594},
+      {"name": "level_four", "size": 460},
+      {"name": "level_four", "size": 603},
+      {"name": "level_four", "size": 625},
+      {"name": "level_four", "size": 748},
+      {"name": "level_four", "size": 461},
+      {"name": "level_four", "size": 597},
+      {"name": "level_four", "size": 619},
+      {"name": "level_four", "size": 283},
+      {"name": "level_four", "size": 283},
+      {"name": "level_four", "size": 591},
+      {"name": "level_four", "size": 603},
+      {"name": "level_four", "size": 599},
+      {"name": "level_four", "size": 386},
+      {"name": "level_four", "size": 323},
+      {"name": "level_four", "size": 307},
+      {"name": "level_four", "size": 772},
+      {"name": "level_four", "size": 296},
+      {"name": "level_four", "size": 363},
+      {"name": "level_four", "size": 600},
+      {"name": "level_four", "size": 280},
+      {"name": "level_four", "size": 307},
+      {"name": "level_four", "size": 335},
+      {"name": "level_four", "size": 299},
+      {"name": "level_four", "size": 354},
+      {"name": "level_four", "size": 264}
+     ]
+    },
+    {"name": "level_three", "size": 843},
+    {"name": "level_three", "size": 1554},
+    {"name": "level_three", "size": 970},
+    {"name": "level_three", "size": 13896},
+    {"name": "level_three", "size": 1594},
+    {"name": "level_three", "size": 4130},
+    {"name": "level_three", "size": 791},
+    {"name": "level_three", "size": 1124},
+    {"name": "level_three", "size": 1876},
+    {"name": "level_three", "size": 1101}
+   ]
+  }
+ ]
+}

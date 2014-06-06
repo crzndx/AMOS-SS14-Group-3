@@ -190,6 +190,7 @@
     <Content Include="pages\newPageDummy\newDummyHTML.html" />
     <Content Include="pages\newPageDummy\newDummyJS.js" />
     <Content Include="pages\squares_mike\flare.json" />
+    <Content Include="pages\squares_mike\squaresdata.json" />
     <Content Include="pages\squares_mike\squares_mike.css" />
     <Content Include="pages\squares_mike\squares_mike.html" />
     <Content Include="pages\squares_mike\squares_mike.js" />

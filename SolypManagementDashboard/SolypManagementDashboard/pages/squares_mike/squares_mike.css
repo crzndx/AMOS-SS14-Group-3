@@ -9,10 +9,6 @@
     }
 
 /*Copied from Mike Bostock*/
-body {
-  
-}
-
 form {
   position: absolute;
   right: 10px;
@@ -27,4 +23,4 @@ form {
   position: absolute;
   text-indent: 2px;
 }
-/*Enfo of Mikes*/
+/*End of Mikes*/

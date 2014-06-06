@@ -13,9 +13,10 @@
             // start other js services?
 
             //Mike bostock's tree map
+            // leaving 50 on top because we need to fit the form, we leave 10 on the sides to make it look more spacious but the truth is that the content wrapper already has margins
             var margin = { top: 50, right: 10, bottom: 10, left: 10 },
-           width = 960 - margin.left - margin.right,
-           height = 500 - margin.top - margin.bottom;
+             width = 960 - margin.left - margin.right,
+             height = 500 - margin.top - margin.bottom;
 
             var color = d3.scale.category20c();
 
@@ -31,7 +32,7 @@
                 .style("left", margin.left + "px")
                 .style("top", margin.top + "px");
 
-            d3.json("pages/squares_mike/flare.json", function (error, root) {
+            d3.json("pages/squares_mike/squaresdata.json", function (error, root) {
                 var node = div.datum(root).selectAll(".node")
                     .data(treemap.nodes)
                   .enter().append("div")
@@ -41,13 +42,13 @@
                     .text(function (d) { return d.children ? null : d.name; });
 
                 d3.selectAll("input").on("change", function change() {
-                    var value = this.value === "count"
+                    var count = this.value === "count"
                         ? function () { return 1; }
                         : function (d) { return d.size; };
 
                     node
-                        .data(treemap.value(value).nodes)
-                      .transition()
+                        .data(treemap.value(count).nodes)
+                        .transition()
                         .duration(1500)
                         .call(position);
                 });
