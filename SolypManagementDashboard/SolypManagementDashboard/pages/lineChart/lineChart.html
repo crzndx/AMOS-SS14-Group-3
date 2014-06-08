@@ -19,6 +19,7 @@
     <!-- flot -->
     <script language="javascript" type="text/javascript" src="../../lib/js/flot/excanvas.min.js"></script>
     <script src="../../lib/js/flot/jquery.flot.js"></script>
+    <script src="../../lib/js/flot/jquery.flot.crosshair.js"></script>
 
     <!--d3js-->
     <script src="../../lib/js/d3/d3.js"></script>
@@ -45,9 +46,17 @@
                     <div id="controlsTitle">
                         <h2>Graphlines:</h2>
                     </div>
-                    <!--<label id="graph1label" onload="colorizedPreviewLine(0);">Graph3:</label>
-                    <button class="action" id="button1">Anzeigen</button> -->
+                    <!-- dynamically render graph on/off switches from json dataset-->
                     <div id="choices"></div>
+                    <!-- Options for interaction -->
+                    <div id="controlsTitle">
+                        <h2>Options:</h2>
+                    </div>
+                    <div id="showOptions">
+                        <label><input id="enablePosition" type="checkbox" checked="checked">Show coordinates</label>
+                        <br />
+                        <span id="mouseoverdata"></span>
+                    </div>
                 </div>
                 <div id="lineChartCanvas" style="width: 76%; margin-left:23%;">
                         <div id="canvasTitle" style="text-align:center;">
@@ -60,6 +69,8 @@
 
                         <!-- used for debugging, otherwise invisible -->
                         <div id="status"></div>
+
+                  
                 </div>
             </div>
         </section>

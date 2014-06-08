@@ -13,7 +13,9 @@
     var canvasElementName = "#plottingarea"; //  where will be drawn
     var choices = $("#choices");
     var plottingarea = $("#plottingarea");
-    var colors = ["#ff0000", "#7A45D6", "#FFE840", "#78E700", "#FFAA00", "#6C8CD5", "#E93A90", "#B52D43","#DDAACC"]; // @TODO define nice looking colors on background (dynamically possible?)
+    var colors = ["#f72020", "#fc8c62", "#e0b192",
+        "#e87c00", "#e3c759", "#e7f700", "#d1ed9a", "#6ced3e", "#3debb1", "#42d7fc",
+        "#62b5fc", "#7a89eb", "#2100f5", "#FFE840", "#78E700", "#9059e3", "#e598eb"];
 
     /*
      * Data for graphs to be plotted
@@ -79,20 +81,7 @@
     };
 
     // options to draw canvas
-    var options = {
-        yaxis: {
-            min: 0
-        },
-        xaxis: {
-            tickDecimals: 0
-        },
-        legend: {
-            show: false
-        },
-        // names of axes (could be done nicer elsewhere) @TODO
-        yaxisName: datasets['yaxis'],
-        xaxisName: datasets['xaxis']
-    };
+    var options;
 
 
 
@@ -204,22 +193,76 @@
 
         if (data.length > 0) {
             var options = {
+                series: {
+                    lines: {
+                        show: true
+                    },
+                    points: {
+                        show: true
+                    }
+                },
+                grid: {
+                    hoverable: true,
+                    clickable: true
+                },
                 yaxis: {
                     min: 0
-                    //color: "#ffffff" background
                 },
                 xaxis: {
                     tickDecimals: 0
-                    //color: "#ffffff" background
                 },
                 legend: {
                     show: false
                 },
                 yaxisName: datasets['yaxis'],
-                xaxisName: datasets['xaxis']
+                xaxisName: datasets['xaxis'],
+                crosshair: {
+                    mode: "xy",
+                    color: "rgba(255, 255, 255, 0.30)",
+                    lineWidth: 1
+
+                }
             };
 
+            $("<div id='tooltip'></div>").css({
+                position: "absolute",
+                display: "none",
+                border: "1px solid #fff",
+                padding: "4px",
+                "background-color": "grey",
+                opacity: 0.80
+            }).appendTo("body");
+
             $.plot("#plottingarea", data, options);
+
+            $("#plottingarea").bind("plothover", function (event, pos, item) {
+
+                // show actual position of crosshair
+                if ($("#enablePosition:checked").length > 0 ) {
+                    $("#mouseoverdata").text(pos.x.toFixed(0) + ", " + pos.y.toFixed(0));
+                } else {
+                    $("#mouseoverdata").text("");
+                }
+
+                // make position label disappear on mouseout of plotting area when there are no coordinates to show
+                $("#plottingarea").mouseout(function () {
+                    $("#mouseoverdata").text("");
+                });
+
+                // tooltip appears on click of a data point
+                if (item) {
+                        var x = item.datapoint[0],
+                            y = item.datapoint[1];
+
+                        $("#tooltip").html(item.series.label + ": x: " + x.toFixed(0) + " ; y: " + y.toFixed(0))
+                            .css({ top: item.pageY + 5, left: item.pageX + 5 })
+                            .fadeIn(400);
+                    } else {
+                        $("#tooltip").hide();
+               }
+                
+            });
+
 
             // paint labels on x and y axis
             paintXlabel(datasets['xaxis']);
@@ -233,13 +276,13 @@
 
     function printChoices(index) {
         // give every graph a unique color from config
+       
         var j = 0;
         $.each(datasets[index], function (key, val) {
             val.color = colors[(j % colors.length)];
             ++j;
         });
-
-
+        
         choices = $("#choices");
         $.each(datasets[index], function (key, val) {
 

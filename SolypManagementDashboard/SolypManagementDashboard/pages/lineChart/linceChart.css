@@ -4,6 +4,10 @@
     margin: 50px; /* TODO needs defined makeover that every page looks the same!*/
 }
 
+#controlsTitle {
+    margin-top: 30px;
+}
+
 
 .plottingarea {
     /* needs at least height coordinates in pixels, or fallback*/
