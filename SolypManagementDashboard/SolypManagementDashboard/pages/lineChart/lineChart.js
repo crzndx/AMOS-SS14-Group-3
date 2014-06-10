@@ -13,9 +13,29 @@
     var canvasElementName = "#plottingarea"; //  where will be drawn
     var choices = $("#choices");
     var plottingarea = $("#plottingarea");
-    var colors = ["#f72020", "#fc8c62", "#e0b192",
-        "#e87c00", "#e3c759", "#e7f700", "#d1ed9a", "#6ced3e", "#3debb1", "#42d7fc",
-        "#62b5fc", "#7a89eb", "#2100f5", "#FFE840", "#78E700", "#9059e3", "#e598eb"];
+
+    var  colors = ["#ff0000", "#ff9900", "#99ff00", "#408cff", "#cc00ff", "#ffbfbf", "#ffcc00", "#7fffa6", "#4053ff", "#ff00b3", "#ffa680", "#ffff80", "#80ffff", "#bfc6ff", "#ff0066", "#ffd9bf", "#f2ffbf", "#00ccff", "#cc80ff", "#ff80b3"];
+    var colorsChosen = [];
+
+    /* get random color from defined list of good visible colors */
+    function getRandomColor(colorList) {
+       var l = colorList.length;
+       var r = colorList[Math.floor(Math.random() * l)];
+
+       // is color already in use?
+       if (colorsChosen.indexOf(r) > -1) {
+           if(colorList.length != colorsChosen.length) { 
+               return getRandomColor(colorList);
+           } else {
+               // when showing more than 20 graphs
+               return "#ff0000";
+           }
+       } else {
+           colorsChosen.push(r);
+           return r;
+       }
+    }
+
 
     /*
      * Data for graphs to be plotted
@@ -104,6 +124,9 @@
         printChoices(ind);
         plotCheckedLines(ind);
 
+        // reset usable colors on next sheet @see getRandomColor function
+        colorsChosen.length = 0;
+
         index = ind;
     }
 
@@ -124,6 +147,9 @@
 
         printChoices(ind);
         plotCheckedLines(ind);
+
+        // reset usable colors on next sheet @see getRandomColor function
+        colorsChosen.length = 0;
 
         index = ind;
     }
@@ -179,6 +205,7 @@
 
     /*
     * Actually plots the graphs at given data index number
+    * arguments: index (which dataset to plot)
     */
     function plotCheckedLines(index) {
         var data = [];
@@ -192,7 +219,7 @@
         });
 
         if (data.length > 0) {
-            var options = {
+            options = {
                 series: {
                     lines: {
                         show: true
@@ -263,37 +290,37 @@
                 
             });
 
-
             // paint labels on x and y axis
             paintXlabel(datasets['xaxis']);
             paintYlabel(datasets['yaxis']);
-           
-
-
+          
         }
     }
 
-
+    /*
+     * Funciton responsible for printing the left side navigational menu.
+     * Prints a toggling-functionality for the data being displayed as graphs on the canvas
+     * arguments: index (which dataset is shown)
+     */
     function printChoices(index) {
         // give every graph a unique color from config
-       
-        var j = 0;
         $.each(datasets[index], function (key, val) {
-            val.color = colors[(j % colors.length)];
-            ++j;
+            val.color = getRandomColor(colors);
         });
-        
+
         choices = $("#choices");
         $.each(datasets[index], function (key, val) {
 
             // why I hate Windows development... (unallowed operation throwing errors otherwise)
             MSApp.execUnsafeLocalFunction(function () {
                 var untrusted = "<br/><input type='checkbox' checked='checked' id='" + key + "'></input>" +
-                                "<label style='color:" + val.color + " !important;'>" + val.label + "</label>";
+                                "<label style='color:" + val.color + " !important; text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.22);'>" + val.label + "</label>";
                     // @TODO create new dom element and append afterwards maybe doesnt need .execUnsafeLocal...
                 choices.append(untrusted);
             });
         });
+
+        printNavigationArrows(index);
 
         /* redefine onclick behaviour on newly printed input elements on each subpage -- important*/
         $(document).on("click", "input", function () {
@@ -301,6 +328,27 @@
         });
 
     }
+
+    /*
+     *  define if navigation arrows make sense on a certain page (toggle them if needed)
+     *  argument: ind is the indicator for the dataset to show (index)
+     */
+    function printNavigationArrows(ind) {
+        if (datasets[ind - 1] == null) {
+            // start
+            $("#leftNav").hide();
+            $("#rightNav").show();
+        } else if (datasets[ind + 1] == null) {
+            // middle pages
+            $("#leftNav").show();
+            $("#rightNav").hide();
+        } else {
+            // end
+            $("#leftNav").show();
+            $("#rightNav").show();
+        }
+    }
+
 
     /*
      * Grid navigation - called when listed page is being loaded
