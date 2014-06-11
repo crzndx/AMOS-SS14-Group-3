@@ -1,4 +1,4 @@
-﻿(function () {
+﻿var LineChart = function () {
     "use strict";
 
     /*
@@ -350,6 +350,10 @@
     }
 
 
+    function add(a, b) {
+        return a + b;
+    }
+
     /*
      * Grid navigation - called when listed page is being loaded
      */
@@ -369,4 +373,6 @@
         }
     });
 
-})();
+    return { add: add }
+
+}();
