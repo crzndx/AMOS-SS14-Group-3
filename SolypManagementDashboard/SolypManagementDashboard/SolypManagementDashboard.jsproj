@@ -82,12 +82,6 @@
     <Content Include="images\carLogos\skoda.png" />
     <Content Include="images\carLogos\vauxhall.png" />
     <Content Include="images\carLogos\volkswagen.png" />
-    <Content Include="images\fruits\60Banana.png" />
-    <Content Include="images\fruits\60Lemon.png" />
-    <Content Include="images\fruits\60Mint.png" />
-    <Content Include="images\fruits\60Orange.png" />
-    <Content Include="images\fruits\60Strawberry.png" />
-    <Content Include="images\fruits\60Vanilla.png" />
     <Content Include="images\groupedItems\blankPage.jpg" />
     <Content Include="images\groupedItems\lineChart.jpg" />
     <Content Include="images\groupedItems\playingCards.jpg" />

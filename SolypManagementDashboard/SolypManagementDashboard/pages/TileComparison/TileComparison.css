@@ -18,22 +18,26 @@
    
 }
 
+.MessageBox {
+    text-align: center;
+}
+
 .MessageToTheUserInvisible {
     visibility:hidden;
 }
 .MessageToTheUserVisible {
-    visibility:visible;
+    visibility:visible; font-size: 14px;font-family: Verdana; 
 }
 
 .KPISpanLeft {
-    float:left; width:30px; text-align:left;
+    float:left; width:30px; text-align:left;width: 60px;
 }
 .KPISpanRight {
     float: right;
 }
 
 .firstKPI {
-    position: relative; left: 75px; height:30px;
+    position: relative; left: 75px; height:19px;
 }
 .secondKPI {
     position: relative; left: 65px; text-align:left;
@@ -85,13 +89,11 @@
 #customercard {
 		margin:0 auto;
 		text-align: center;
-
+		
 		zoom: 1;
 	}
 
-#kpi  {text-align:left;
-       position: relative; left: 75px;
-}
+
 #kpivalue  {text-align:right;}
 
 	#customercard:before, #customercard:after {
@@ -126,7 +128,7 @@
 	  position: absolute; 
 	  content: "";
 	  bottom: 20px;
-
+	  
 	  right: 4px;
 	  width: 80%; 
 	  top: 80%; 
@@ -139,12 +141,12 @@
 	  -ms-transform: rotate(3deg);
 	  transform: rotate(3deg);	
 	}	
-
+	
 	#customercard .popular-plan {
 		top: -20px;
 		padding: 40px 20px;   
 	}
-
+	
 	/* --------------- */	
 
 	#customercard .header {
@@ -152,7 +154,7 @@
 		font-size: 20px;
 		font-weight: normal;
 		text-transform: uppercase;
-		padding: 40px;
+		padding: 40px 40px 20px;
 		margin: -20px -20px 20px -20px;
 		border-bottom: 8px solid;
 		background-color: #eee;
@@ -171,7 +173,7 @@
 		content: '';
 		background-image: url(images/bar.png);
 	}
-
+	
 	#customercard .popular-plan .header {
 		margin-top: -40px;
 		padding-top: 60px;		
@@ -192,7 +194,7 @@
 	#customercard .plan4 .header{
 		border-bottom-color: #45D0DA;
 	}			
-
+	
 	/* --------------- */
 
 	#customercard .price{
@@ -217,9 +219,9 @@
 	#customercard li {
 		padding: 10px 0;
 	}
-
+	
 	/* --------------- */
-
+		
 	#customercard .signup {
 		position: relative;
 		padding: 10px 20px;
@@ -261,7 +263,7 @@
 	#customercard .plan4 .signup{
 		background: #45D0DA;
 	}	
-
+	
 
     /* Header Style */
 .freshdesignweb-top{
@@ -325,3 +327,10 @@
 .win-rating.differentRatingColor.win-star.win-user.win-full {
     color: rgba(0, 0, 0, 1.0);
 }
+
+.win-container {
+	widht:200px;
+}
+
+
+
