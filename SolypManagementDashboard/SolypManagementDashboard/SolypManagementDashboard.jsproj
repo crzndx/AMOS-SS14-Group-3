@@ -180,6 +180,7 @@
     <Content Include="pages\allCards\allCards.css" />
     <Content Include="pages\allCards\allCards.html" />
     <Content Include="pages\allCards\allCards.js" />
+    <Content Include="pages\lineChart\lineChart_test.js" />
     <Content Include="pages\newPageDummy\newDummyCSS.css" />
     <Content Include="pages\newPageDummy\newDummyHTML.html" />
     <Content Include="pages\newPageDummy\newDummyJS.js" />

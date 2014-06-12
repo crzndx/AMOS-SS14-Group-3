@@ -1,4 +1,4 @@
-﻿(function () {
+﻿var LineChart = function () {
     "use strict";
 
     /*
@@ -12,128 +12,347 @@
 
     var canvasElementName = "#plottingarea"; //  where will be drawn
     var choices = $("#choices");
-    var colors = ["#ff0000", "#7A45D6", "#FFE840", "#78E700", "#FFAA00", "#6C8CD5", "#E93A90", "#B52D43","#DDAACC"];
+    var plottingarea = $("#plottingarea");
+
+    var  colors = ["#ff0000", "#ff9900", "#99ff00", "#408cff", "#cc00ff", "#ffbfbf", "#ffcc00", "#7fffa6", "#4053ff", "#ff00b3", "#ffa680", "#ffff80", "#80ffff", "#bfc6ff", "#ff0066", "#ffd9bf", "#f2ffbf", "#00ccff", "#cc80ff", "#ff80b3"];
+    var colorsChosen = [];
+
+    /* get random color from defined list of good visible colors */
+    function getRandomColor(colorList) {
+       var l = colorList.length;
+       var r = colorList[Math.floor(Math.random() * l)];
+
+       // is color already in use?
+       if (colorsChosen.indexOf(r) > -1) {
+           if(colorList.length != colorsChosen.length) { 
+               return getRandomColor(colorList);
+           } else {
+               // when showing more than 20 graphs
+               return "#ff0000";
+           }
+       } else {
+           colorsChosen.push(r);
+           return r;
+       }
+    }
+
 
     /*
      * Data for graphs to be plotted
      */
+
+    var index = 0; // current index to show dataset #
+
+    // actual data being displayed
+    // @TODO do it externally?
     var datasets = {
-        "china": {
-            label: "China",
-            data: [[1988, 683994], [1989, 573060], [1990, 153631], [1991, 333349], [1992, 311705], [1993, 202111], [1994, 247867], [1995, 300382], [1996, 300046], [1997, 300000], [1998, 322611], [1999, 129421], [2000, 142172], [2001, 244932], [2002, 227303], [2003, 540813], [2004, 183451], [2005, 304638], [2006, 528692]]
+        "xaxis": "Years",
+        "yaxis": "in USD",  
+        0 : {
+            "china": {
+                label: "China",
+                data: [[1988, 683994], [1989, 573060], [1990, 153631], [1991, 333349], [1992, 311705], [1993, 202111], [1994, 247867], [1995, 300382], [1996, 300046], [1997, 300000], [1998, 322611], [1999, 129421], [2000, 142172], [2001, 244932], [2002, 227303], [2003, 540813], [2004, 183451], [2005, 304638], [2006, 528692]]
+            },
+            "usa": {
+                label: "USA",
+                data: [[1988, 483994], [1989, 479060], [1990, 457648], [1991, 401949], [1992, 424705], [1993, 402375], [1994, 377867], [1995, 357382], [1996, 337946], [1997, 336185], [1998, 328611], [1999, 329421], [2000, 342172], [2001, 344932], [2002, 387303], [2003, 440813], [2004, 480451], [2005, 504638], [2006, 528692]]
+            },
+            "russia": {
+                label: "Russia",
+                data: [[1988, 218000], [1989, 203000], [1990, 171000], [1992, 42500], [1993, 37600], [1994, 36600], [1995, 21700], [1996, 19200], [1997, 21300], [1998, 13600], [1999, 14000], [2000, 19100], [2001, 21300], [2002, 23600], [2003, 25100], [2004, 26100], [2005, 31100], [2006, 34700]]
+            },
+            "uk": {
+                label: "UK",
+                data: [[1988, 62982], [1989, 62027], [1990, 60696], [1991, 62348], [1992, 58560], [1993, 56393], [1994, 54579], [1995, 50818], [1996, 50554], [1997, 48276], [1998, 47691], [1999, 47529], [2000, 47778], [2001, 48760], [2002, 50949], [2003, 57452], [2004, 60234], [2005, 60076], [2006, 59213]]
+            },
+            "canada": {
+                label: "Canada",
+                data: [[1988, 11982], [1989, 22027], [1990, 660696], [1991, 44348], [1992, 128560], [1993, 256393], [1994, 354579], [1995, 550818], [1996, 50554], [1997, 148276], [1998, 472691], [1999, 347529], [2000, 473778], [2001, 487160], [2002, 509249], [2003, 574521], [2004, 602334], [2005, 601076], [2006, 593213]]
+            }
         },
-        "usa": {
-            label: "USA",
-            data: [[1988, 483994], [1989, 479060], [1990, 457648], [1991, 401949], [1992, 424705], [1993, 402375], [1994, 377867], [1995, 357382], [1996, 337946], [1997, 336185], [1998, 328611], [1999, 329421], [2000, 342172], [2001, 344932], [2002, 387303], [2003, 440813], [2004, 480451], [2005, 504638], [2006, 528692]]
+        1: {
+            "brasil": {
+                label: "Brasil",
+                data: [[1988, 183194], [1989, 273030], [1990, 133631], [1991, 333349], [1992, 311105], [1993, 2111], [1994, 123717], [1995, 100382], [1996, 320046], [1997, 100000], [1998, 22611], [1999, 129421], [2000, 142172], [2001, 344932], [2002, 223303], [2003, 540813], [2004, 183451], [2005, 3034638], [2006, 528692]]
+            },
+            "egal": {
+                label: "Egal",
+                data: [[1988, 183994], [1989, 319030], [1990, 417648], [1991, 41949], [1992, 421705], [1993, 302375], [1994, 177867], [1995, 157382], [1996, 337946], [1997, 26185], [1998, 338611], [1999, 129421], [2000, 342172], [2001, 144932], [2002, 287303], [2003, 840813], [2004, 480351], [2005, 501638], [2006, 528692]]
+            },
+            "germany": {
+                label: "Germany",
+                data: [[1988, 55627], [1989, 55475], [1990, 58464], [1991, 55134], [1992, 52436], [1993, 47139], [1994, 43962], [1995, 43238], [1996, 42395], [1997, 40854], [1998, 40993], [1999, 41822], [2000, 41147], [2001, 40474], [2002, 40604], [2003, 40044], [2004, 38816], [2005, 38060], [2006, 36984]]
+            }
         },
-        "russia": {
-            label: "Russia",
-            data: [[1988, 218000], [1989, 203000], [1990, 171000], [1992, 42500], [1993, 37600], [1994, 36600], [1995, 21700], [1996, 19200], [1997, 21300], [1998, 13600], [1999, 14000], [2000, 19100], [2001, 21300], [2002, 23600], [2003, 25100], [2004, 26100], [2005, 31100], [2006, 34700]]
-        },
-        "uk": {
-            label: "UK",
-            data: [[1988, 62982], [1989, 62027], [1990, 60696], [1991, 62348], [1992, 58560], [1993, 56393], [1994, 54579], [1995, 50818], [1996, 50554], [1997, 48276], [1998, 47691], [1999, 47529], [2000, 47778], [2001, 48760], [2002, 50949], [2003, 57452], [2004, 60234], [2005, 60076], [2006, 59213]]
-        },
-        "germany": {
-            label: "Germany",
-            data: [[1988, 55627], [1989, 55475], [1990, 58464], [1991, 55134], [1992, 52436], [1993, 47139], [1994, 43962], [1995, 43238], [1996, 42395], [1997, 40854], [1998, 40993], [1999, 41822], [2000, 41147], [2001, 40474], [2002, 40604], [2003, 40044], [2004, 38816], [2005, 38060], [2006, 36984]]
-        },
-        "denmark": {
-            label: "Denmark",
-            data: [[1988, 3813], [1989, 3719], [1990, 3722], [1991, 3789], [1992, 3720], [1993, 3730], [1994, 3636], [1995, 3598], [1996, 3610], [1997, 3655], [1998, 3695], [1999, 3673], [2000, 3553], [2001, 3774], [2002, 3728], [2003, 3618], [2004, 3638], [2005, 3467], [2006, 3770]]
-        },
-        "sweden": {
-            label: "Sweden",
-            data: [[1988, 6402], [1989, 6474], [1990, 6605], [1991, 6209], [1992, 6035], [1993, 6020], [1994, 6000], [1995, 6018], [1996, 3958], [1997, 5780], [1998, 5954], [1999, 6178], [2000, 6411], [2001, 5993], [2002, 5833], [2003, 5791], [2004, 5450], [2005, 5521], [2006, 5271]]
-        },
-        "norway": {
-            label: "Norway",
-            data: [[1988, 4382], [1989, 4498], [1990, 4535], [1991, 4398], [1992, 4766], [1993, 4441], [1994, 4670], [1995, 4217], [1996, 4275], [1997, 4203], [1998, 4482], [1999, 4506], [2000, 4358], [2001, 4385], [2002, 5269], [2003, 5066], [2004, 5194], [2005, 4887], [2006, 4891]]
-        },
-        "canada": {
-        label: "Canada",
-        data: [[1988, 11982], [1989, 22027], [1990, 660696], [1991, 44348], [1992, 128560], [1993, 256393], [1994, 354579], [1995, 550818], [1996, 50554], [1997, 148276], [1998, 472691], [1999, 347529], [2000, 473778], [2001, 487160], [2002, 509249], [2003, 574521], [2004, 602334], [2005, 601076], [2006, 593213]]
-        }
-    };
-    var datasets2 = {
-        "brasil": {
-            label: "Brasil",
-            data: [[1988, 183194], [1989, 273030], [1990, 133631], [1991, 333349], [1992, 311105], [1993, 2111], [1994, 123717], [1995, 100382], [1996, 320046], [1997, 100000], [1998, 22611], [1999, 129421], [2000, 142172], [2001, 344932], [2002, 223303], [2003, 540813], [2004, 183451], [2005, 3034638], [2006, 528692]]
-        },
-        "egal": {
-            label: "Egal",
-            data: [[1988, 183994], [1989, 319030], [1990, 417648], [1991, 41949], [1992, 421705], [1993, 302375], [1994, 177867], [1995, 157382], [1996, 337946], [1997, 26185], [1998, 338611], [1999, 129421], [2000, 342172], [2001, 144932], [2002, 287303], [2003, 840813], [2004, 480351], [2005, 501638], [2006, 528692]]
+        2: {
+            "denmark": {
+                label: "Denmark",
+                data: [[1988, 3813], [1989, 3719], [1990, 3722], [1991, 3789], [1992, 3720], [1993, 3730], [1994, 3636], [1995, 3598], [1996, 3610], [1997, 3655], [1998, 3695], [1999, 3673], [2000, 3553], [2001, 3774], [2002, 3728], [2003, 3618], [2004, 3638], [2005, 3467], [2006, 3770]]
+            },
+            "sweden": {
+                label: "Sweden",
+                data: [[1988, 6402], [1989, 6474], [1990, 6605], [1991, 6209], [1992, 6035], [1993, 6020], [1994, 6000], [1995, 6018], [1996, 3958], [1997, 5780], [1998, 5954], [1999, 6178], [2000, 6411], [2001, 5993], [2002, 5833], [2003, 5791], [2004, 5450], [2005, 5521], [2006, 5271]]
+            },
+            "norway": {
+                label: "Norway",
+                data: [[1988, 4382], [1989, 4498], [1990, 4535], [1991, 4398], [1992, 4766], [1993, 4441], [1994, 4670], [1995, 4217], [1996, 4275], [1997, 4203], [1998, 4482], [1999, 4506], [2000, 4358], [2001, 4385], [2002, 5269], [2003, 5066], [2004, 5194], [2005, 4887], [2006, 4891]]
+            }
         }
     };
 
+    // options to draw canvas
+    var options;
+
+
+
     /*
-     * Draws the canvas, adds labels, writes labels on axes
+     * Show Data one in front of actual displayed at the moment.
      */
-    function plotCheckedLines() {
+    function showPreviousDataset(ind) {
+
+        // decrease actualYear parameter if year is existent
+        if (ind > 0) {
+            ind = ind - 1;
+        }
+
+        choices.empty();
+        var myNode = document.getElementById("plottingarea");
+        while (myNode.firstChild) {
+            myNode.removeChild(myNode.firstChild);
+        }
+
+        printChoices(ind);
+        plotCheckedLines(ind);
+
+        // reset usable colors on next sheet @see getRandomColor function
+        colorsChosen.length = 0;
+
+        index = ind;
+    }
+
+    /*
+     * Show Data one year in the future of actual displayed at the moment.
+     */
+    function showNextDataset(ind) {
+      
+        if (datasets[ind+1] != null) {
+            ind = ind + 1;
+        }
+
+        choices.empty();
+        var myNode = document.getElementById("plottingarea");
+        while (myNode.firstChild) {
+            myNode.removeChild(myNode.firstChild);
+        }
+
+        printChoices(ind);
+        plotCheckedLines(ind);
+
+        // reset usable colors on next sheet @see getRandomColor function
+        colorsChosen.length = 0;
+
+        index = ind;
+    }
+
+    /*
+     * Desperately needed debugging function...
+     */
+    function log(msg) {
+        document.getElementById("status").innerHTML += msg;
+    }
+
+    /*
+    * Puts textual description underneath x axis
+    */
+    function paintXlabel(xaxisName) {
+        // add a label to x-axis
+        var widthX;
+        MSApp.execUnsafeLocalFunction(function () {
+            var elem = $(".xAxis");
+            var height = elem.height();
+            widthX = elem.width();
+            var untrusted = "<div class='horizontaltext' style='position: absolute; top: " + height + "px; left: " + (widthX / 2) + "px;'>" + xaxisName + "</div>";
+
+            elem.append(untrusted);
+        });
+
+        // reposition the horizontal label
+        var elX = $(".horizontaltext");
+        var h = elX.width();
+        $(".horizontaltext").css("left", ((widthX / 2) - h / 2));
+    }
+
+    /*
+     * Puts a textual description next to the y axis
+     */
+    function paintYlabel(yaxisName) {
+        // add a label to y-axis
+        var heightYAxis;
+        MSApp.execUnsafeLocalFunction(function () {
+            var elem = $(".yAxis");
+            heightYAxis = elem.height();
+            var widthYAxis = elem.width();
+            var untrusted = "<div class='verticaltext' style='text-align: center; position: absolute; top: " + (heightYAxis / 2) + "px; left: -30px;'>" + yaxisName + "</div>";
+            elem.append(untrusted);
+        });
+
+        // reposition the vertical label
+        var elY = $(".verticaltext");
+        var w = elY.height();
+        $(".verticaltext").css("top", ((heightYAxis / 2) - w / 2));
+    }
+
+
+    /*
+    * Actually plots the graphs at given data index number
+    * arguments: index (which dataset to plot)
+    */
+    function plotCheckedLines(index) {
         var data = [];
+
         choices.find("input:checked").each(function () {
             var key = $(this).attr("id");
 
-            if (key && datasets[key]) {
-                data.push(datasets[key]);
+            if (key && datasets[index][key]) {
+                data.push(datasets[index][key]);
             }
         });
 
         if (data.length > 0) {
-            var options = {
+            options = {
+                series: {
+                    lines: {
+                        show: true
+                    },
+                    points: {
+                        show: true
+                    }
+                },
+                grid: {
+                    hoverable: true,
+                    clickable: true
+                },
                 yaxis: {
                     min: 0
-                    //color: "#ffffff" background
                 },
                 xaxis: {
                     tickDecimals: 0
-                    //color: "#ffffff" background
                 },
                 legend: {
                     show: false
                 },
-                yaxisName: "in USD",
-                xaxisName: "Years"
+                yaxisName: datasets['yaxis'],
+                xaxisName: datasets['xaxis'],
+                crosshair: {
+                    mode: "xy",
+                    color: "rgba(255, 255, 255, 0.30)",
+                    lineWidth: 1
+
+                }
             };
+
+            $("<div id='tooltip'></div>").css({
+                position: "absolute",
+                display: "none",
+                border: "1px solid #fff",
+                padding: "4px",
+                "background-color": "grey",
+                opacity: 0.80
+            }).appendTo("body");
 
             $.plot("#plottingarea", data, options);
 
-            // add a label to y-axis
-            var heightYAxis;
-            MSApp.execUnsafeLocalFunction(function () {
-                var elem = $(".yAxis");
-                heightYAxis = elem.height();
-                var widthYAxis = elem.width();
-                var untrusted = "<div class='verticaltext' style='text-align: center; position: absolute; top: " + (heightYAxis / 2) + "px; left: -30px;'>" + options.yaxisName + "</div>";
-                elem.append(untrusted);
+            $("#plottingarea").bind("plothover", function (event, pos, item) {
+
+                // show actual position of crosshair
+                if ($("#enablePosition:checked").length > 0 ) {
+                    $("#mouseoverdata").text(pos.x.toFixed(0) + ", " + pos.y.toFixed(0));
+                } else {
+                    $("#mouseoverdata").text("");
+                }
+
+                // make position label disappear on mouseout of plotting area when there are no coordinates to show
+                $("#plottingarea").mouseout(function () {
+                    $("#mouseoverdata").text("");
+                });
+
+                // tooltip appears on click of a data point
+                if (item) {
+                        var x = item.datapoint[0],
+                            y = item.datapoint[1];
+
+                        $("#tooltip").html(item.series.label + ": x: " + x.toFixed(0) + " ; y: " + y.toFixed(0))
+                            .css({ top: item.pageY + 5, left: item.pageX + 5 })
+                            .fadeIn(400);
+                    } else {
+                        $("#tooltip").hide();
+               }
+                
             });
 
-            // reposition the vertical label
-            var elY = $(".verticaltext");
-            var w = elY.height();
-            $(".verticaltext").css("top", ((heightYAxis / 2) - w/2) );
-
-
-            // add a label to x-axis
-            var widthX;
-            MSApp.execUnsafeLocalFunction(function () {
-                var elem = $(".xAxis");
-                var height = elem.height();
-                widthX = elem.width();
-                var untrusted = "<div class='horizontaltext' style='position: absolute; top: " + height + "px; left: " + (widthX / 2) + "px;'>" + options.xaxisName + "</div>";
-
-                elem.append(untrusted);
-            });
-
-            // reposition the vertical label
-            var elX = $(".horizontaltext");
-            var h = elX.width();
-            $(".horizontaltext").css("left", ((widthX / 2) - h / 2));
-
-
+            // paint labels on x and y axis
+            paintXlabel(datasets['xaxis']);
+            paintYlabel(datasets['yaxis']);
+          
         }
     }
 
+    /*
+     * Funciton responsible for printing the left side navigational menu.
+     * Prints a toggling-functionality for the data being displayed as graphs on the canvas
+     * arguments: index (which dataset is shown)
+     */
+    function printChoices(index) {
+        // give every graph a unique color from config
+        $.each(datasets[index], function (key, val) {
+            val.color = getRandomColor(colors);
+        });
+
+        choices = $("#choices");
+        $.each(datasets[index], function (key, val) {
+
+            // why I hate Windows development... (unallowed operation throwing errors otherwise)
+            MSApp.execUnsafeLocalFunction(function () {
+                var untrusted = "<br/><input type='checkbox' checked='checked' id='" + key + "'></input>" +
+                                "<label style='color:" + val.color + " !important; text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.22);'>" + val.label + "</label>";
+                    // @TODO create new dom element and append afterwards maybe doesnt need .execUnsafeLocal...
+                choices.append(untrusted);
+            });
+        });
+
+        printNavigationArrows(index);
+
+        /* redefine onclick behaviour on newly printed input elements on each subpage -- important*/
+        $(document).on("click", "input", function () {
+            plotCheckedLines(index);
+        });
+
+    }
+
+    /*
+     *  define if navigation arrows make sense on a certain page (toggle them if needed)
+     *  argument: ind is the indicator for the dataset to show (index)
+     */
+    function printNavigationArrows(ind) {
+        if (datasets[ind - 1] == null) {
+            // start
+            $("#leftNav").hide();
+            $("#rightNav").show();
+        } else if (datasets[ind + 1] == null) {
+            // middle pages
+            $("#leftNav").show();
+            $("#rightNav").hide();
+        } else {
+            // end
+            $("#leftNav").show();
+            $("#rightNav").show();
+        }
+    }
+
+
+    function add(a, b) {
+        return a + b;
+    }
 
     /*
      * Grid navigation - called when listed page is being loaded
@@ -143,54 +362,17 @@
         // populates the page elements with the app's data.
         ready: function (element, options) {
 
-            //datasets = datasets2;
-            
-            /*
-            WinJS.xhr({
-                url: "/pages/lineChart/salesPerCountries.json",
-                responseType: "json"
-            }).done(
-                function completed(response) {
-                    var fixedResponse = response.responseText.replace(/\\'/g, "'");
-                    var foo = JSON.stringify(fixedResponse)
-                    var feed = JSON.parse(foo);
-                    document.write(feed);
-                }, 
-                function error(request) {
-                    // handle error conditions.
-                }, 
-                function progress(request) {
-                   
-                });
-            */
+            // eventListeners navigation buttons for Dataset changes
+            document.getElementById("rightNav").addEventListener("click", function () { showNextDataset(index); });
+            document.getElementById("leftNav").addEventListener("click", function () { showPreviousDataset(index); });
 
-
-            // give every graph a unique color from config
-            var j = 0;
-            
-            $.each(datasets, function (key, val) {
-                val.color = colors[(j%colors.length)];
-                ++j;
-            });
-
-
-            choices = $("#choices");
-            $.each(datasets, function (key, val) {
-
-                MSApp.execUnsafeLocalFunction(function () {
-                    var untrusted = "<br/><input type='checkbox' checked='checked' id='" + key + "'></input>" +
-                                    "<label style='color:" + val.color +" !important;'>" + val.label + "</label>";
-
-                    choices.append(untrusted);
-                });
-            });
-
-            choices.find("input").click(plotCheckedLines);
-
-            plotCheckedLines();
-
+            // print initally
+            printChoices(index);
+            plotCheckedLines(index);
 
         }
     });
 
-})();
+    return { add: add }
+
+}();
