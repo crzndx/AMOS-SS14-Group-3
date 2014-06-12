@@ -26,18 +26,32 @@
             //debugger;
             //outerDiv.appendChild(tempCard);
 
-
+            var xLabels = ["Q1", "Q2", "Q3", "Q4"];
             // chart
             var w = 160;
-            var h = 70;
+            var h = 120;
             var barpadding = 10;
             var i = 0;
+            var marginTop = 30;
+
+            
 
             //create the svg
             var svg = d3.select(tempCard._value.querySelector(".barchart"))
                         .append("svg")
                         .attr("width", w)
                         .attr("height", h);
+            
+            svg.append("text")
+            .attr("x", (w / 2))
+            .attr("y", (marginTop / 2))
+            .attr("text-anchor", "middle")
+            .style("font-size", "12px")
+            .style("text-decoration", "underline")
+            .text("Quarter Revenue");
+
+            
+            
             // we create a rectangle for each entry of the data
             svg.selectAll("rect")
                 .data(item.data.quarterRevenue)
@@ -56,7 +70,7 @@
                     return d;
                 })
                 .attr("fill", "teal");
-
+          
             tempCard._value.querySelector("#plandiv").className = "plan plan" +customerCardsTileId;
 
             return tempCard;

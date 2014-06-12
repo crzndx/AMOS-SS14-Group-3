@@ -74,6 +74,14 @@
     <Content Include="images\background\8.jpg" />
     <Content Include="images\background\9.jpg" />
     <Content Include="images\background\background.png" />
+    <Content Include="images\carLogos\bmw.png" />
+    <Content Include="images\carLogos\ford.png" />
+    <Content Include="images\carLogos\mazda.png" />
+    <Content Include="images\carLogos\mini.png" />
+    <Content Include="images\carLogos\seat.png" />
+    <Content Include="images\carLogos\skoda.png" />
+    <Content Include="images\carLogos\vauxhall.png" />
+    <Content Include="images\carLogos\volkswagen.png" />
     <Content Include="images\groupedItems\blankPage.jpg" />
     <Content Include="images\groupedItems\lineChart.jpg" />
     <Content Include="images\groupedItems\playingCards.jpg" />

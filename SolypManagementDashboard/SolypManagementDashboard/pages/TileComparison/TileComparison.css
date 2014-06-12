@@ -18,22 +18,26 @@
    
 }
 
+.MessageBox {
+    text-align: center;
+}
+
 .MessageToTheUserInvisible {
     visibility:hidden;
 }
 .MessageToTheUserVisible {
-    visibility:visible;
+    visibility:visible; font-size: 14px;font-family: Verdana; 
 }
 
 .KPISpanLeft {
-    float:left; width:30px; text-align:left;
+    float:left; width:30px; text-align:left;width: 60px;
 }
 .KPISpanRight {
     float: right;
 }
 
 .firstKPI {
-    position: relative; left: 75px; height:30px;
+    position: relative; left: 75px; height:19px;
 }
 .secondKPI {
     position: relative; left: 65px; text-align:left;
@@ -89,9 +93,7 @@
 		zoom: 1;
 	}
 
-#kpi  {text-align:left;
-       position: relative; left: 75px;
-}
+
 #kpivalue  {text-align:right;}
 
 	#customercard:before, #customercard:after {
@@ -152,7 +154,7 @@
 		font-size: 20px;
 		font-weight: normal;
 		text-transform: uppercase;
-		padding: 40px;
+		padding: 40px 40px 20px;
 		margin: -20px -20px 20px -20px;
 		border-bottom: 8px solid;
 		background-color: #eee;
@@ -324,6 +326,10 @@
 /* Stars styling*/
 .win-rating.differentRatingColor.win-star.win-user.win-full {
     color: rgba(0, 0, 0, 1.0);
+}
+
+.win-container {
+	widht:200px;
 }
 
 
