@@ -1,4 +1,4 @@
-﻿(function () {
+﻿var LineChart = function () {
     "use strict";
 
     /*
@@ -13,7 +13,29 @@
     var canvasElementName = "#plottingarea"; //  where will be drawn
     var choices = $("#choices");
     var plottingarea = $("#plottingarea");
-    var colors = ["#ff0000", "#7A45D6", "#FFE840", "#78E700", "#FFAA00", "#6C8CD5", "#E93A90", "#B52D43","#DDAACC"]; // @TODO define nice looking colors on background (dynamically possible?)
+
+    var  colors = ["#ff0000", "#ff9900", "#99ff00", "#408cff", "#cc00ff", "#ffbfbf", "#ffcc00", "#7fffa6", "#4053ff", "#ff00b3", "#ffa680", "#ffff80", "#80ffff", "#bfc6ff", "#ff0066", "#ffd9bf", "#f2ffbf", "#00ccff", "#cc80ff", "#ff80b3"];
+    var colorsChosen = [];
+
+    /* get random color from defined list of good visible colors */
+    function getRandomColor(colorList) {
+       var l = colorList.length;
+       var r = colorList[Math.floor(Math.random() * l)];
+
+       // is color already in use?
+       if (colorsChosen.indexOf(r) > -1) {
+           if(colorList.length != colorsChosen.length) { 
+               return getRandomColor(colorList);
+           } else {
+               // when showing more than 20 graphs
+               return "#ff0000";
+           }
+       } else {
+           colorsChosen.push(r);
+           return r;
+       }
+    }
+
 
     /*
      * Data for graphs to be plotted
@@ -79,20 +101,7 @@
     };
 
     // options to draw canvas
-    var options = {
-        yaxis: {
-            min: 0
-        },
-        xaxis: {
-            tickDecimals: 0
-        },
-        legend: {
-            show: false
-        },
-        // names of axes (could be done nicer elsewhere) @TODO
-        yaxisName: datasets['yaxis'],
-        xaxisName: datasets['xaxis']
-    };
+    var options;
 
 
 
@@ -115,6 +124,9 @@
         printChoices(ind);
         plotCheckedLines(ind);
 
+        // reset usable colors on next sheet @see getRandomColor function
+        colorsChosen.length = 0;
+
         index = ind;
     }
 
@@ -135,6 +147,9 @@
 
         printChoices(ind);
         plotCheckedLines(ind);
+
+        // reset usable colors on next sheet @see getRandomColor function
+        colorsChosen.length = 0;
 
         index = ind;
     }
@@ -190,6 +205,7 @@
 
     /*
     * Actually plots the graphs at given data index number
+    * arguments: index (which dataset to plot)
     */
     function plotCheckedLines(index) {
         var data = [];
@@ -203,42 +219,94 @@
         });
 
         if (data.length > 0) {
-            var options = {
+            options = {
+                series: {
+                    lines: {
+                        show: true
+                    },
+                    points: {
+                        show: true
+                    }
+                },
+                grid: {
+                    hoverable: true,
+                    clickable: true
+                },
                 yaxis: {
                     min: 0
-                    //color: "#ffffff" background
                 },
                 xaxis: {
                     tickDecimals: 0
-                    //color: "#ffffff" background
                 },
                 legend: {
                     show: false
                 },
                 yaxisName: datasets['yaxis'],
-                xaxisName: datasets['xaxis']
+                xaxisName: datasets['xaxis'],
+                crosshair: {
+                    mode: "xy",
+                    color: "rgba(255, 255, 255, 0.30)",
+                    lineWidth: 1
+
+                }
             };
 
+            $("<div id='tooltip'></div>").css({
+                position: "absolute",
+                display: "none",
+                border: "1px solid #fff",
+                padding: "4px",
+                "background-color": "grey",
+                opacity: 0.80
+            }).appendTo("body");
+
             $.plot("#plottingarea", data, options);
+
+            $("#plottingarea").bind("plothover", function (event, pos, item) {
+
+                // show actual position of crosshair
+                if ($("#enablePosition:checked").length > 0 ) {
+                    $("#mouseoverdata").text(pos.x.toFixed(0) + ", " + pos.y.toFixed(0));
+                } else {
+                    $("#mouseoverdata").text("");
+                }
+
+                // make position label disappear on mouseout of plotting area when there are no coordinates to show
+                $("#plottingarea").mouseout(function () {
+                    $("#mouseoverdata").text("");
+                });
+
+                // tooltip appears on click of a data point
+                if (item) {
+                        var x = item.datapoint[0],
+                            y = item.datapoint[1];
+
+                        $("#tooltip").html(item.series.label + ": x: " + x.toFixed(0) + " ; y: " + y.toFixed(0))
+                            .css({ top: item.pageY + 5, left: item.pageX + 5 })
+                            .fadeIn(400);
+                    } else {
+                        $("#tooltip").hide();
+               }
+                
+            });
 
             // paint labels on x and y axis
             paintXlabel(datasets['xaxis']);
             paintYlabel(datasets['yaxis']);
-           
-
-
+          
         }
     }
 
-
+    /*
+     * Funciton responsible for printing the left side navigational menu.
+     * Prints a toggling-functionality for the data being displayed as graphs on the canvas
+     * arguments: index (which dataset is shown)
+     */
     function printChoices(index) {
         // give every graph a unique color from config
-        var j = 0;
         $.each(datasets[index], function (key, val) {
-            val.color = colors[(j % colors.length)];
-            ++j;
+            val.color = getRandomColor(colors);
         });
-
 
         choices = $("#choices");
         $.each(datasets[index], function (key, val) {
@@ -246,17 +314,44 @@
             // why I hate Windows development... (unallowed operation throwing errors otherwise)
             MSApp.execUnsafeLocalFunction(function () {
                 var untrusted = "<br/><input type='checkbox' checked='checked' id='" + key + "'></input>" +
-                                "<label style='color:" + val.color + " !important;'>" + val.label + "</label>";
+                                "<label style='color:" + val.color + " !important; text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.22);'>" + val.label + "</label>";
                     // @TODO create new dom element and append afterwards maybe doesnt need .execUnsafeLocal...
                 choices.append(untrusted);
             });
         });
+
+        printNavigationArrows(index);
 
         /* redefine onclick behaviour on newly printed input elements on each subpage -- important*/
         $(document).on("click", "input", function () {
             plotCheckedLines(index);
         });
 
+    }
+
+    /*
+     *  define if navigation arrows make sense on a certain page (toggle them if needed)
+     *  argument: ind is the indicator for the dataset to show (index)
+     */
+    function printNavigationArrows(ind) {
+        if (datasets[ind - 1] == null) {
+            // start
+            $("#leftNav").hide();
+            $("#rightNav").show();
+        } else if (datasets[ind + 1] == null) {
+            // middle pages
+            $("#leftNav").show();
+            $("#rightNav").hide();
+        } else {
+            // end
+            $("#leftNav").show();
+            $("#rightNav").show();
+        }
+    }
+
+
+    function add(a, b) {
+        return a + b;
     }
 
     /*
@@ -278,4 +373,6 @@
         }
     });
 
-})();
+    return { add: add }
+
+}();

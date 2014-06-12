@@ -51,7 +51,6 @@
     <DefaultLanguage>en-US</DefaultLanguage>
     <PackageCertificateKeyFile>SolypManagementDashboard_TemporaryKey.pfx</PackageCertificateKeyFile>
     <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
-    <AppxPackageDir>C:\Users\Philipp\Desktop\amosrelease4\</AppxPackageDir>
     <AppxBundlePlatforms>neutral</AppxBundlePlatforms>
   </PropertyGroup>
   <ItemGroup>
@@ -83,12 +82,6 @@
     <Content Include="images\carLogos\skoda.png" />
     <Content Include="images\carLogos\vauxhall.png" />
     <Content Include="images\carLogos\volkswagen.png" />
-    <Content Include="images\fruits\60Banana.png" />
-    <Content Include="images\fruits\60Lemon.png" />
-    <Content Include="images\fruits\60Mint.png" />
-    <Content Include="images\fruits\60Orange.png" />
-    <Content Include="images\fruits\60Strawberry.png" />
-    <Content Include="images\fruits\60Vanilla.png" />
     <Content Include="images\groupedItems\blankPage.jpg" />
     <Content Include="images\groupedItems\lineChart.jpg" />
     <Content Include="images\groupedItems\playingCards.jpg" />
@@ -187,9 +180,15 @@
     <Content Include="pages\allCards\allCards.css" />
     <Content Include="pages\allCards\allCards.html" />
     <Content Include="pages\allCards\allCards.js" />
+    <Content Include="pages\lineChart\lineChart_test.js" />
     <Content Include="pages\newPageDummy\newDummyCSS.css" />
     <Content Include="pages\newPageDummy\newDummyHTML.html" />
     <Content Include="pages\newPageDummy\newDummyJS.js" />
+    <Content Include="pages\squares_mike\flare.json" />
+    <Content Include="pages\squares_mike\squaresdata.json" />
+    <Content Include="pages\squares_mike\squares_mike.css" />
+    <Content Include="pages\squares_mike\squares_mike.html" />
+    <Content Include="pages\squares_mike\squares_mike.js" />
     <Content Include="pages\squares\squares.css" />
     <Content Include="pages\squares\squares.html" />
     <Content Include="pages\squares\squares.js" />

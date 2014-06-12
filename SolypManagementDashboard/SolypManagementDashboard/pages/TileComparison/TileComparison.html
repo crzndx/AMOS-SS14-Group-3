@@ -44,36 +44,34 @@
                     <div id="tiletemplate" class=".contentwrapper">
                         <div id="customercard">
 
-                            <div id="plandiv" class="plan plan1">
-                                <div class="header" data-win-bind="innerText: Name"></div>
+                            <div id="plandiv" class="plan plan1" >
+                                <div class="header">
+                                    <img data-win-bind="src: logo"/>
+                          
+                                </div>
 
-                                <ul>
-                                    <li id="KPI">
-                                        <div style="width:100px;">
-                                            <span class="KPISpanLeft"><b>Profits</b></span>
-                                            <span class="KPISpanRight firstKPI" data-win-bind="innerText: profits"></span>
-                                        </div>
+                               
+                                    <table width="100%">
+										<colgroup> <col style="width:50%;"> <col style="width:50%;"> 
+											</colgroup>
+                                        <tr>
+                                            <td align="left"><b>Profits</b></td>
+                                            <td align="left"><div  data-win-bind="innerText: profits"></div></td>
+                                        </tr>
+                                        <tr>
+                                            <td align="left"><b>KPI2</b></td>
+                                            <td align="left"><span class="win-small" data-win-control="WinJS.UI.Rating" data-win-bind="winControl.userRating: averageTrainingHours" data-win-options="{ disabled: true}"></span></td>
+                                        </tr>
+                                        <tr>
+                                            <td align="left"><b>KPI3</b></td>
+                                            <td align="left">58%</td>
+                                        </tr>
+                                    </table>
 
-                                    </li>
-                                    <li id="KPI">
-                                        <div style="width:100px;">
-                                            <span class="KPISpanLeft"><b>KPI2</b></span>
-                                            <span class="win-small KPISpanRight secondKPI" data-win-control="WinJS.UI.Rating" data-win-bind="winControl.userRating: averageTrainingHours" data-win-options="{ disabled: true}"></span>
-                                        </div>
-                                    </li>
-
-                                    <li id="KPI">
-                                        <div style="width:100px;">
-                                            <span class="KPISpanLeft"><b>KPI3</b></span>
-                                            <span class="KPISpanRight thirdKPI">58%</span>
-                                        </div>
-                                    </li>
-                                    <li><div class="barchart"></div></li>
-                                </ul>
-                                <!-- does not work when unlinked, therefore deactivated
-                                    <a class="signup" href="">More Info</a>
-                                 -->
-                               </div>
+                                    <div class="barchart"></div>
+                               
+                                
+                            </div>
                         </div>
 
                     </div>
@@ -86,7 +84,7 @@
                                     layout: { type: WinJS.UI.GridLayout, maxRows: 1 }
                                }"></div>
 
-                    <div class="MessageBox" style="margin-top:10px; border-width:2px; border-style:solid; border-color:#000000; ">
+                    <div class="MessageBox" style="margin-top:10px;">
                         <div class="MessageToTheUserInvisible" id="MessageToTheUser">Select more to compare!!!</div>
                         <button id="compareButton" class="action secondary MessageToTheUserInvisible">Compare Tiles</button>
                     </div>
