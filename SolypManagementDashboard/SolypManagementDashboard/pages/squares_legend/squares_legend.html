@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <!-- change title name -->
-    <title>Name of the Subpage</title>
+    <title>Squares from Mike</title>
 
     <!-- WinJS references -->
     <link href="//Microsoft.WinJS.2.0/css/ui-dark.css" rel="stylesheet" />
@@ -14,10 +14,12 @@
     <link href="/css/default.css" rel="stylesheet" />
 
     <!-- change these link names accordingly to the subpage name -->
-    <link href="squares.css" rel="stylesheet" />
-    <script src="squares.js"></script>
+    <link href="squares_legend.css" rel="stylesheet" />
+    <script src="squares_legend.js"></script>
 
-
+    <!--Copied from Mike Bostock-->
+    <script src="../../lib/js/d3/d3.js"></script>
+    
 </head>
 <body>
     <!-- The content that will be loaded and displayed. -->
@@ -31,10 +33,14 @@
         </header>
         <section aria-label="Main content" role="main">
             <div  class="contentwrapper">
-                <div id="squares">
-                   
-                </div>
-                <!-- add all specific subpage content here -->
+                
+                <!--Form from Mike-->
+                <form>
+                    <label><input type="radio" name="mode" value="size" checked> Size</label>
+                    <label><input type="radio" name="mode" value="count"> Count</label>
+                </form>
+
+                
                
             </div>
         </section>

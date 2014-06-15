@@ -8,8 +8,8 @@
     width: 960px;
     }
 
-/*Copied from Mike Bostock*/
-form {
+
+ form {
   position: absolute;
   right: 10px;
   top: 10px;
@@ -23,4 +23,3 @@ form {
   position: absolute;
   text-indent: 2px;
 }
-/*End of Mikes*/

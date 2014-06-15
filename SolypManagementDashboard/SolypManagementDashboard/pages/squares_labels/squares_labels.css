@@ -1,0 +1,20 @@
+﻿/* add all CSS changes specifically concerning the new subpage here*/
+
+.contentwrapper {
+    margin: 50px; /* TODO needs defined makeover that every page looks the same!*/
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin: auto;
+    position: relative;
+    width: 960px;
+    }
+
+/*Copied from Mike Bostock*/
+
+rect {
+  fill: none;
+  stroke: #fff;
+}
+
+text {
+  font: 10px sans-serif;
+}
