@@ -36,7 +36,7 @@
             d3.json("pages/squares_original/squaresdata.json", function(error, root) {
                 var node = div.datum(root).selectAll(".node")
                     .data(treemap.nodes)
-                  .enter().append("div")
+                    .enter().append("div")
                     .attr("class", "node")
                     .call(position)
                     .style("background", function(d) { return d.children ? color(d.name) : null; })
