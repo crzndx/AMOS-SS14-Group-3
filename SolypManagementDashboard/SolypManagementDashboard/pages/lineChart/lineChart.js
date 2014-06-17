@@ -40,14 +40,11 @@
     /*
      * Data for graphs to be plotted
      */
-
     var index = 0; // current index to show dataset #
 
     // actual data being displayed
     // @TODO do it externally?
     var datasets = {
-        "xaxis": "Years",
-        "yaxis": "in USD",  
         0 : {
             "myanmar": {
                 label: "Myanmar",
@@ -78,11 +75,11 @@
         1: {
             "uk": {
                 label: "United Kingdom",
-                data: [[1988, 183194], [1989, 273030], [1990, 133631], [1991, 333349], [1992, 311105], [1993, 2111], [1994, 123717], [1995, 100382], [1996, 320046], [1997, 100000], [1998, 22611], [1999, 129421], [2000, 142172], [2001, 344932], [2002, 223303], [2003, 540813], [2004, 183451], [2005, 3034638], [2006, 528692]]
+                data: [[1988, 183194], [1989, 273030], [1990, 133631], [1991, 333349], [1992, 311105], [1993, 2111], [1994, 123717], [1995, 100382], [1996, 320046], [1997, 100000], [1998, 22611], [1999, 129421], [2000, 142172], [2001, 344932], [2002, 223303], [2003, 540813], [2004, 183451], [2005, 303468], [2006, 458495]]
             },
             "italy": {
                 label: "Italy",
-                data: [[1988, 183994], [1989, 319030], [1990, 417648], [1991, 41949], [1992, 421705], [1993, 302375], [1994, 177867], [1995, 157382], [1996, 337946], [1997, 26185], [1998, 338611], [1999, 129421], [2000, 342172], [2001, 144932], [2002, 287303], [2003, 840813], [2004, 480351], [2005, 501638], [2006, 528692]]
+                data: [[1988, 183994], [1989, 319030], [1990, 417648], [1991, 41949], [1992, 421705], [1993, 302375], [1994, 177867], [1995, 157382], [1996, 337946], [1997, 26185], [1998, 338611], [1999, 129421], [2000, 342172], [2001, 144932], [2002, 287303], [2003, 840813], [2004, 480351], [2005, 501638], [2006, 574692]]
             },
             "germany": {
                 label: "Germany",
@@ -109,9 +106,9 @@
                 data: [[1988, 4382], [1989, 4498], [1990, 4535], [1991, 4398], [1992, 4766], [1993, 4441], [1994, 4670], [1995, 4217], [1996, 4275], [1997, 4203], [1998, 4482], [1999, 4506]]
             },
             "metadata": {
-                title: "Sales in Scandinavia",
+                title: "Customers in Scandinavia",
                 xaxis: "Years",
-                yaxis: "in Danish Crowns"
+                yaxis: "Headcount"
             }
         }
     };
@@ -217,7 +214,6 @@
         var w = elY.height();
         $(".verticaltext").css("top", ((heightYAxis / 2) - w / 2));
     }
-
 
     /*
     * Actually plots the graphs at given data index number
@@ -329,8 +325,8 @@
             if (key === "metadata") return;
             // why I hate Windows development... (unallowed operation throwing errors otherwise)
             MSApp.execUnsafeLocalFunction(function () {
-                var untrusted = "<br/><input type='checkbox' checked='checked' id='" + key + "'></input>" +
-                                "<label style='color:" + val.color + " !important; text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.22);'>" + val.label + "</label>";
+                var untrusted = "<input type='checkbox' checked='checked' id='" + key + "' style='display: inline;'>" +
+                                "<label style='margin-left: 5px; color:" + val.color + " !important; text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.22); font-size: 16px;'>" + val.label + "</label><br>";
                     // @TODO create new dom element and append afterwards maybe doesnt need .execUnsafeLocal...
                 choices.append(untrusted);
             });
@@ -394,5 +390,4 @@
 
         }
     });
-
 }();
