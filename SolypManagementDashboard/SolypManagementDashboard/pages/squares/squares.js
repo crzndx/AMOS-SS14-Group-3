@@ -3,7 +3,7 @@
 
         
     
-    WinJS.UI.Pages.define("/pages/squares_labels/squares_labels.html", {
+    WinJS.UI.Pages.define("/pages/squares/squares.html", {
         // This function is called whenever a user navigates to this page. It
         // populates the page elements with the app's data.
         ready: function (element, options) {
@@ -40,7 +40,7 @@
                 .append("g")
                 .attr("transform", "translate(-.5,-.5)");
 
-            d3.json("pages/squares_labels/squaresdata.json", function(json) {
+            d3.json("pages/squares/squaresdata.json", function(json) {
                 var cell = svg.data([json]).selectAll("g")
                     .data(treemap)
                     .enter().append("g")
