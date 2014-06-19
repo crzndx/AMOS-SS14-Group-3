@@ -36,7 +36,7 @@
             <div class="contentwrapper">
                 <!-- add all specific subpage content here -->
 
-
+               
 
                 <div class=" ">
 
@@ -47,42 +47,31 @@
                             <div id="plandiv" class="plan plan1" >
                                 <div class="header">
                                     <img data-win-bind="src: logo"/>
-                          
                                 </div>
 
-                               
-                                    <table width="100%">
-										<colgroup> <col style="width:50%;"> <col style="width:50%;"> 
-											</colgroup>
-                                        <tr>
-                                            <td align="left"><b>Profits</b></td>
-                                            <td align="left"><div  data-win-bind="innerText: profits"></div></td>
-                                        </tr>
-                                        <tr>
-                                            <td align="left"><b>KPI2</b></td>
-                                            <td align="left"><span class="win-small" data-win-control="WinJS.UI.Rating" data-win-bind="winControl.userRating: averageTrainingHours" data-win-options="{ disabled: true}"></span></td>
-                                        </tr>
-                                        <tr>
-                                            <td align="left"><b>KPI3</b></td>
-                                            <td align="left">58%</td>
-                                        </tr>
-                                    </table>
+                                <div class="kpiCanvas" style="background-color:#000000; width:160px; height:79px; position:relative;">
+                                    <input type="hidden" class="itemid" data-win-bind="value: Name"></input>
+                                </div>
 
-                                    <div class="barchart"></div>
-                               
-                                
+                                <div class="barchart"></div>
+
                             </div>
                         </div>
 
                     </div>
-                    <div id="customerListView" class="listBox" data-win-control="WinJS.UI.ListView" data-win-options="{
-                                    selectionMode: 'multi',
-                                    oniteminvoked : handler,
-                                    itemTemplate : TemplatingExample.itemTemplateFunction,
-                                    tapBehavior: WinJS.UI.TapBehavior.toggleSelect,
-                                    itemsReorderable: true,
-                                    layout: { type: WinJS.UI.GridLayout, maxRows: 1 }
-                               }"></div>
+                    <div id="customerListView" style="height:425px;" class="listBox" data-win-control="WinJS.UI.ListView" data-win-options="{
+                        selectionMode: 'multi',
+                        oniteminvoked : handler,
+                        itemTemplate : TemplatingExample.itemTemplateFunction,
+                        tapBehavior: WinJS.UI.TapBehavior.toggleSelect,
+                        itemsReorderable: true,
+                        layout: { type: WinJS.UI.GridLayout, maxRows: 1 }
+                    }"></div>
+                    <div  style="text-align:center;"><img id="kpiLeft" src="/images/left.png" width="60"
+                            onmouseover="this.src='/images/left_hover.png'"
+                            onmouseout="this.src = '/images/left.png'" /><img id="kpiRight" src="/images/right.png" width="60"
+                             onmouseover="this.src='/images/right_hover.png'"
+                             onmouseout="this.src = '/images/right.png'" /></div>
 
                     <div class="MessageBox" style="margin-top:10px;">
                         <div class="MessageToTheUserInvisible" id="MessageToTheUser">Select more to compare!!!</div>
