@@ -164,12 +164,6 @@
     <Content Include="pages\allCards\images\fruits\60Orange.png" />
     <Content Include="pages\allCards\images\fruits\60Strawberry.png" />
     <Content Include="pages\allCards\images\fruits\60Vanilla.png" />
-    <Content Include="pages\competitorCards_function\competitorCards_function.css" />
-    <Content Include="pages\competitorCards_function\competitorCards_function.html" />
-    <Content Include="pages\competitorCards_function\competitorCards_function.js" />
-    <Content Include="pages\competitorCards\competitorCards.css" />
-    <Content Include="pages\competitorCards\competitorCards.html" />
-    <Content Include="pages\competitorCards\competitorCards.js" />
     <Content Include="pages\groupDetail\d3playground\d3playground.css" />
     <Content Include="pages\groupDetail\d3playground\d3playground.html" />
     <Content Include="pages\groupDetail\d3playground\d3playground.js" />
@@ -193,9 +187,6 @@
     <Content Include="pages\newPageDummy\newDummyCSS.css" />
     <Content Include="pages\newPageDummy\newDummyHTML.html" />
     <Content Include="pages\newPageDummy\newDummyJS.js" />
-    <Content Include="pages\testCompetitorcard\testCompetitor.html" />
-    <Content Include="pages\testCompetitorcard\testCompetitor.js" />
-    <Content Include="pages\testCompetitorcard\testCompetitor.css" />
     <Content Include="pages\TileComparison\TileComparison.css" />
     <Content Include="pages\TileComparison\TileComparison.html" />
     <Content Include="pages\TileComparison\TileComparison.js" />
