@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/2010/manifest" xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest" xmlns:build="http://schemas.microsoft.com/developer/appx/2012/build" IgnorableNamespaces="build">
-  <Identity Name="e731ad49-d0db-4d20-928f-205e28cc5b25" Version="1.0.5.18" Publisher="CN=Philipp" />
+  <Identity Name="e731ad49-d0db-4d20-928f-205e28cc5b25" Version="1.0.5.4" Publisher="CN=Philipp" />
   <Properties>
     <DisplayName>SolypManagementDashboard</DisplayName>
     <PublisherDisplayName>Philipp</PublisherDisplayName>

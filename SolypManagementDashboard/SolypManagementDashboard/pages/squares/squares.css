@@ -2,9 +2,25 @@
 
 .contentwrapper {
     margin: 50px; /* TODO needs defined makeover that every page looks the same!*/
-    
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin: auto;
+    position: relative;
+    width: 960px;
+    }
 
+/*Copied from Mike Bostock*/
 
-
-}
-
+ 
+        rect {
+            fill: none;
+            stroke: #FFFFFF;
+        }
+        .labelbody {
+            margin: 2px;
+        }
+        .foreignObject {
+            font: 9px sans-serif;
+            text-overflow: ellipsis;
+            text-align: left;
+            word-wrap: break-word;
+        }

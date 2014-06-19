@@ -8,6 +8,11 @@
     margin-top: 30px;
 }
 
+#chartTitle {
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 33px;
+}
 
 .plottingarea {
     /* needs at least height coordinates in pixels, or fallback*/

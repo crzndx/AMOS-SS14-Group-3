@@ -76,16 +76,16 @@
         // Each of these sample items should have a reference to a particular
         // group.
         var sampleItems = [
-            { group: sampleGroups[0], title: "Competitor Cards", subtitle: "Shows competitors in form of trading-cards to compare properties easily", description: itemDescription, content: itemContent, backgroundImage: "/images/groupedItems/playingCards.jpg", path: "/pages/competitorCards/competitorCards.html" },
+            
             { group: sampleGroups[0], title: "Card Comparison", subtitle: "Compare different competitor cards with the comparing functionality", description: itemDescription, content: itemContent, backgroundImage: "/images/groupedItems/playingCards.jpg", path: "/pages/TileComparison/TileComparison.html" },
             { group: sampleGroups[0], title: "Showing all Cards", subtitle: "Shows all cards at once", description: itemDescription, content: itemContent, backgroundImage: "/images/groupedItems/playingCards.jpg", path: "/pages/allCards/allCards.html" },
 
-            { group: sampleGroups[1], title: "Flipcards", subtitle: "Scroll through existing cards on this subpage", description: itemDescription, content: itemContent, backgroundImage: "/images/groupedItems/playingCards.jpg", path: "/pages/testCompetitorcard/testCompetitor.html" },
+
+            
 
             { group: sampleGroups[2], title: "Linecharts", subtitle: "Displays financial line charts e.g. sales", description: itemDescription, content: itemContent, backgroundImage: "/images/groupedItems/lineChart.jpg", path: "/pages/lineChart/lineChart.html" },
 
             { group: sampleGroups[3], title: "Squares", subtitle: "Displays KPI in squares of different sizes", description: itemDescription, content: itemContent, backgroundImage: "/images/groupedItems/squares.jpg", path: "/pages/squares/squares.html" },
-            { group: sampleGroups[3], title: "Squares_mike", subtitle: "Displays KPI in squares of different sizes", description: itemDescription, content: itemContent, backgroundImage: "/images/groupedItems/squares.jpg", path: "/pages/squares_mike/squares_mike.html" },
 
             { group: sampleGroups[4], title: "Dummy Page", subtitle: "This is a basic template site used for every new subpage", description: itemDescription, content: itemContent, backgroundImage: "/images/groupedItems/blankPage.jpg", path: "/pages/newPageDummy/newDummyHTML.html" },
         ];

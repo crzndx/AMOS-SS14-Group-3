@@ -1,7 +1,7 @@
 ﻿(function () {
-    "use strict";
+    
 
-
+        
     
     WinJS.UI.Pages.define("/pages/squares/squares.html", {
         // This function is called whenever a user navigates to this page. It
@@ -12,56 +12,73 @@
             // what should be done after pageload? does more content need to be rendered?
             // start other js services?
 
-            //creating the squares, Im gonna try to do it without a function and later on if so create a function
+            //Mike bostock's tree map
+            // leaving 50 on top because we need to fit the form, we leave 10 on the sides to make it look more spacious but the truth is that the content wrapper already has margins
+            
 
-            var data = [105, 12, 67, 17, 55, 32];
-            var color = ["#93c747", "#b64176", "#583f95"];
-            var allColor = [];
-            var borderColor = ["#568117", "#761541", "#2b1461"];
-            var allBorderColor = [];
+            /**********/
+            var width = 960,
+                height = 500,
+                color = d3.scale.category20c();
 
-            // making the colors variable as long as elements has the data variable
-            for (var i = 0; i < data.length; i++) {
-                color.forEach(function (item) {
-                    allColor.push(item);
+            var w = 960;
+            var h = 550;
+            var paddingAllowance = 2;
+            var color = d3.scale.category20c();
+
+            var treemap = d3.layout.treemap()
+                .size([w, h])
+                .padding([20, 4, 4, 4])
+                .value(function(d) {
+                    return d.size;
                 });
-            }
 
-            // making the colors variable as long as elements has the data variable for the borders
-            for (var i = 0; i < data.length; i++) {
-                borderColor.forEach(function (item) {
-                    allBorderColor.push(item);
-                });
-            }
-            //first I need to do is read the variable and sum all values so that later on I can get the percentages
+            var svg = d3.select(".contentwrapper").append("svg")
+                .style("position", "relative")
+                .style("width", w + "px")
+                .style("height", h + "px")
+                .append("g")
+                .attr("transform", "translate(-.5,-.5)");
 
-            var sum = 0;
-           
-           
-            for (var i in data) { sum += data[i]; }
-         
-            //I have the sum of the array in sum, now its time to create the percentages 
-            //lets take for granted that the width is 1250px (I need to check this later) * 500px
-            var w = 1250;
-            var h = 500;
-            //create somehow loop
-            var handle = document.getElementById('squares');
+            d3.json("pages/squares/squaresdata.json", function(json) {
+                var cell = svg.data([json]).selectAll("g")
+                    .data(treemap)
+                    .enter().append("g")
+                    .attr("class", "cell")
+                    .attr("transform", function(d) {return "translate(" + d.x + "," + d.y + ")";});
 
-            for (var i = 0; i < data.length; i++) {
-                var customSquare = document.createElement("div");
-                customSquare.style.width = w / sum * data[i]+"px";
-                customSquare.style.height = h / sum * data[i]+"px";
-                customSquare.style.background = allColor[i];
-                customSquare.style.position = "relative";
-                customSquare.style.float = "left";
-                customSquare.style.border = "solid";
-                customSquare.style.borderWidth = "1px";
-                customSquare.style.borderColor = allBorderColor[i];
-                customSquare.innerHTML = i+1;
-                handle.appendChild(customSquare);
-            }
+                cell.append("rect")
+                    .attr("width", function(d) { return d.dx;})
+                    .attr("height", function(d) { return d.dy;})
+                    .style("fill", function(d) {return d.children ? color(d.name) : null;});
 
-        }
+                //the application environment works as if it a internet explorer browser, so I have to achieve that the labels wrap manually as I get to truncate manually the labels
+
+                cell.append("text")
+              .attr("class", "foreignObject")
+              .attr("transform", "translate(3, 13)")
+              .text(function (d) { return (d.dy < 16 ? "" : d.name); })
+              .filter(function (d) { d.tw = this.getComputedTextLength();
+                  return d.dx < d.tw;})
+              .each(function (d) { // ridiculous routine where we test to see if label is short enough to fit
+                  var proposedLabel = d.name;
+                  var proposedLabelArray = proposedLabel.split('');
+                  while (d.tw > d.dx && proposedLabelArray.length) {
+                      // pull out 3 chars at a time to speed things up (one at a time is too slow)
+                      proposedLabelArray.pop(); proposedLabelArray.pop(); proposedLabelArray.pop();
+                      if (proposedLabelArray.length === 0) {
+                          proposedLabel = "";
+                      } else {
+                          proposedLabel = proposedLabelArray.join('') + "..."; // manually truncate with ellipsis
+                      }
+                      d3.select(this).text(proposedLabel);
+                      d.tw = this.getComputedTextLength();
+                  }
+              });
+                
+            });
+
+      }
     });
 
 
