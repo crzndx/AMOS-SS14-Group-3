@@ -1,4 +1,4 @@
-/*
+﻿/*
 Copyright (c) 2008-2013 Pivotal Labs
 
 Permission is hereby granted, free of charge, to any person obtaining
