@@ -81,11 +81,6 @@
         // Each of these sample items should have a reference to a particular
         // group.
         var sampleItems = [
-<<<<<<< HEAD
-            
-=======
-           
->>>>>>> squares
             { group: sampleGroups[0], title: "Card Comparison", subtitle: "Compare different competitor cards with the comparing functionality", description: itemDescription, content: itemContent, backgroundImage: "/images/groupedItems/playingCards.jpg", path: "/pages/TileComparison/TileComparison.html" },
             { group: sampleGroups[0], title: "Showing all Cards", subtitle: "Shows all cards at once", description: itemDescription, content: itemContent, backgroundImage: "/images/groupedItems/playingCards.jpg", path: "/pages/allCards/allCards.html" },
             { group: sampleGroups[0], title: "Linecharts", subtitle: "Displays financial line charts e.g. sales", description: itemDescription, content: itemContent, backgroundImage: "/images/groupedItems/lineChart.jpg", path: "/pages/lineChart/lineChart.html" },
@@ -112,21 +107,10 @@
             { group: sampleGroups[6], title: "Linecharts", subtitle: "Sales numbers", description: itemDescription, content: itemContent, backgroundImage: "/images/groupedItems/lineChart.jpg", path: "/pages/lineChart/lineChart.html" },
             { group: sampleGroups[6], title: "Treemap", subtitle: "Sales by product line/country", description: itemDescription, content: itemContent, backgroundImage: "/images/groupedItems/squares.jpg", path: "/pages/squares/squares.html" },
 
-<<<<<<< HEAD
 
-            
-=======
             { group: sampleGroups[7], title: "Linecharts", subtitle: "HR data ", description: itemDescription, content: itemContent, backgroundImage: "/images/groupedItems/lineChart.jpg", path: "/pages/lineChart/lineChart.html" },
            
             { group: sampleGroups[8], title: "Linecharts", subtitle: "PR data", description: itemDescription, content: itemContent, backgroundImage: "/images/groupedItems/lineChart.jpg", path: "/pages/lineChart/lineChart.html" },
-           
->>>>>>> squares
-
-
-<<<<<<< HEAD
-            { group: sampleGroups[3], title: "Squares", subtitle: "Displays KPI in squares of different sizes", description: itemDescription, content: itemContent, backgroundImage: "/images/groupedItems/squares.jpg", path: "/pages/squares/squares.html" },
-=======
->>>>>>> squares
 
         ];
 
