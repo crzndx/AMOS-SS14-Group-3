@@ -36,42 +36,49 @@
             <div class="contentwrapper">
                 <!-- add all specific subpage content here -->
 
-               
+
+                <div id="confirmFlyout" data-win-control="WinJS.UI.Flyout" aria-label="{Confirm purchase flyout}">
+
+                </div>
+
 
                 <div class=" ">
 
                     <br />
                     <div id="tiletemplate" class=".contentwrapper">
-                        <div id="customercard">
+                        <div id="customercard" width="320">
 
-                            <div id="plandiv" class="plan plan1" >
+                            <div id="plandiv" class="plan plan1">
                                 <div class="header">
-                                    <img data-win-bind="src: logo"/>
+                                    <img data-win-bind="src: logo" />
                                 </div>
 
-                                <div class="kpiCanvas" style="background-color:#000000; width:160px; height:79px; position:relative;">
+                                <div class="kpiCanvas" style="background-color:#000000; width:307px; height:79px; position:relative;">
                                     <input type="hidden" class="itemid" data-win-bind="value: Name"></input>
                                 </div>
 
                                 <div class="barchart"></div>
-
+                                <input type="button" class="signup" id="moreInfoButton" value="More Info"
+                                       onclick="TileComparison.moreInfoButton_Click(event);" />
                             </div>
                         </div>
 
                     </div>
-                    <div id="customerListView" style="height:425px;" class="listBox" data-win-control="WinJS.UI.ListView" data-win-options="{
+                    <div id="customerListView" style="height:525px;" class="listBox" data-win-control="WinJS.UI.ListView" data-win-options="{
                         selectionMode: 'multi',
                         oniteminvoked : handler,
-                        itemTemplate : TemplatingExample.itemTemplateFunction,
+                        itemTemplate : TileComparison.itemTemplateFunction,
                         tapBehavior: WinJS.UI.TapBehavior.toggleSelect,
                         itemsReorderable: true,
                         layout: { type: WinJS.UI.GridLayout, maxRows: 1 }
                     }"></div>
-                    <div  style="text-align:center;"><img id="kpiLeft" src="/images/left.png" width="60"
-                            onmouseover="this.src='/images/left_hover.png'"
-                            onmouseout="this.src = '/images/left.png'" /><img id="kpiRight" src="/images/right.png" width="60"
-                             onmouseover="this.src='/images/right_hover.png'"
-                             onmouseout="this.src = '/images/right.png'" /></div>
+                    <div style="text-align:center;">
+                        <img id="kpiLeft" src="/images/left.png" width="60"
+                             onmouseover="this.src='/images/left_hover.png'"
+                             onmouseout="this.src = '/images/left.png'" /><img id="kpiRight" src="/images/right.png" width="60"
+                                                                               onmouseover="this.src='/images/right_hover.png'"
+                                                                               onmouseout="this.src = '/images/right.png'" />
+                    </div>
 
                     <div class="MessageBox" style="margin-top:10px;">
                         <div class="MessageToTheUserInvisible" id="MessageToTheUser">Select more to compare!!!</div>
