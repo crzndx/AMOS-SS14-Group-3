@@ -31,11 +31,15 @@
         </header>
         <section aria-label="Main content" role="main">
             <div class="contentwrapper">
+                <div id="confirmFlyout" data-win-control="WinJS.UI.Flyout" aria-label="{Confirm purchase flyout}">
+
+                </div>
                 <!-- add all specific subpage content here -->
-               <!--Copied from winjs list view-->
+                <!--Copied from winjs list view-->
                 <!-- Simple template for the ListView instantiation  -->
                 <div id="smallListIconTextTemplate" data-win-control="WinJS.Binding.Template" style="display: none">
                     <div class="smallListIconTextItem">
+                        <input type="hidden" class="itemid" data-win-bind="value: Name"></input>
                         <img src="#" class="smallListIconTextItem-Image" data-win-bind="src: logo" />
                         <div class="smallListIconTextItem-Detail">
                             <h4 data-win-bind="textContent: Name"></h4>
@@ -50,15 +54,17 @@
                      class="win-selectionstylefilled"
                      data-win-control="WinJS.UI.ListView"
                      data-win-options="{
-                                        itemDataSource: Sample.ListView.data.dataSource,
-                                        itemTemplate: smallListIconTextTemplate,
-                                        selectionMode: 'none',
-                                        tapBehavior: 'none',
-                                        swipeBehavior: 'none',
-                                        layout: { type: WinJS.UI.GridLayout }
+    itemDataSource: Sample.ListView.data.dataSource,
+    itemTemplate: smallListIconTextTemplate,
+    oniteminvoked : handler,
+    selectionMode: 'none',
+
+                     tapBehavior: WinJS.UI.TapBehavior.toggleSelect,
+                        swipeBehavior: 'none',
+                        layout: { type: WinJS.UI.GridLayout }
                     }">
                 </div>
-            <!--Finished copying-->
+                <!--Finished copying-->
 
             </div>
         </section>

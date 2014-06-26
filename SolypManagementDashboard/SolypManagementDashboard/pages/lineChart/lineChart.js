@@ -1,5 +1,8 @@
-﻿var LineChart = function () {
-    "use strict";
+﻿
+
+    function addthis(a, b) {
+        return a + b;
+    }
 
     /*
      * Graph plotting with Flot
@@ -141,6 +144,7 @@
         colorsChosen.length = 0;
 
         index = ind;
+        return ind;
     }
 
     /*
@@ -165,6 +169,7 @@
         colorsChosen.length = 0;
 
         index = ind;
+        return ind;
     }
 
     /*
@@ -390,4 +395,3 @@
 
         }
     });
-}();

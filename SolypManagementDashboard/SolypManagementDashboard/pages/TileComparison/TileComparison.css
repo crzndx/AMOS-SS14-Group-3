@@ -81,6 +81,10 @@
     color: Black;
 }
 
+.barchart {
+	height:170px;
+}
+
 .itemdetailpage section[role=main] {
     margin-left: 120px;
     margin-right: 120px;
@@ -113,7 +117,8 @@
 		border: 1px solid #ddd;
 		color: #333;
 		padding: 20px;
-		width: 160px;
+		width: 320px;
+		height: 450px;
 		float: left;
 		_display: inline; /* IE6 double margin fix */
 		position: relative;
@@ -329,8 +334,21 @@
 }
 
 .win-container {
-	widht:200px;
+	width:350px;
 }
+
+
+.mypage.fragment section[role=main] {
+    display: -ms-grid;
+    -ms-grid-rows: 1fr;
+    -ms-grid-columns: 1fr;
+}
+
+.mypage.fragment section[role=main] .hidden
+{
+    -ms-grid-column-align: center;
+    -ms-grid-row-align: center;
+}  
 
 
 

@@ -30,7 +30,7 @@
                 .size([w, h])
                 .padding([20, 4, 4, 4])
                 .value(function(d) {
-                    return d.size;
+                    return d.investment;
                 });
 
             var svg = d3.select(".contentwrapper").append("svg")
@@ -75,9 +75,28 @@
                       d.tw = this.getComputedTextLength();
                   }
               });
+
+                d3.selectAll("input").on("change", function change() {
+                    var value = this.value === "count"
+                        ? function () { return 1; }
+                        : function (d) { return d.investment; };
+
+                    cell
+                        .data(treemap.value(value).nodes)
+                        .transition()
+                        .duration(1500)
+                        .call(position);
+
+                });
                 
             });
 
+            function position() {
+                this.style("left", function (d) { return d.x + "px"; })
+                    .style("top", function (d) { return d.y + "px"; })
+                    .style("width", function (d) { return Math.max(0, d.dx - 1) + "px"; })
+                    .style("height", function (d) { return Math.max(0, d.dy - 1) + "px"; });
+            }
       }
     });
 
