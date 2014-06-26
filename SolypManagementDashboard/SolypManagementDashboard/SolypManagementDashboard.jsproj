@@ -183,6 +183,11 @@
     <Content Include="pages\newPageDummy\newDummyCSS.css" />
     <Content Include="pages\newPageDummy\newDummyHTML.html" />
     <Content Include="pages\newPageDummy\newDummyJS.js" />
+    <Content Include="pages\squares_zoom\squares_zoom.css" />
+    <Content Include="pages\squares_zoom\squares.html" />
+    <Content Include="pages\squares_zoom\squares_zoom.js" />
+    <Content Include="pages\squares_zoom\squaresdata.json" />
+    <Content Include="pages\squares\squaresdata.json" />
     <Content Include="pages\squares\squares.css" />
     <Content Include="pages\squares\squares.html" />
     <Content Include="pages\squares\squares.js" />
