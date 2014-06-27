@@ -1,5 +1,6 @@
 ﻿/// <reference path="../../lib/testing/jasmine-2.0.0/jasmine.js" />
 /// <reference path="lineChart.js" />
+/// <reference path="lineChart.html" />
 
 /* 
  * wasted nearly 20 hours realizing reference paths are case-sensitive...
@@ -16,12 +17,22 @@ var dataset1 = {
         "china": {
             label: "China",
             data: [[2004, 480451], [2005, 504638], [2006, 528692]]
+        },
+        "metadata": {
+            title: "Sales in Europe",
+            xaxis: "Whatever",
+            yaxis: "Bla"
         }
     },
     1: {
         "uk": {
             label: "United Kingdom",
             data: [[1988, 183194], [2005, 303468], [2006, 458495]]
+        },
+        "metadata": {
+            title: "Sales in America",
+            xaxis: "Sometext",
+            yaxis: "yaxisname"
         }
     }
 };
@@ -35,25 +46,47 @@ var dataset2 = {
         "France": {
             label: "France",
             data: [[2034, 481451], [2005, 504631], [2026, 512312]]
+        },
+        "metadata": {
+            title: "the title",
+            xaxis: "xaxis name",
+            yaxis: "yaxis name"
         }
     },
     1: {
         "Poland": {
             label: "Poland&/=)?)(?)(/&$§",
             data: [[1988, 183194], [2105, 123465], [2104, 458335]]
+        },
+        "metadata": {
+            title: "Poland data",
+            xaxis: "Yrs",
+            yaxis: "Nonsense text"
         }
     },
     2: {
         "Bosnia": {
             label: "Bosnia",
             data: [[1288, 13394], [45, 1441], [1144, 35]]
-    }
+        },
+        "metadata": {
+            title: "Sales in Europe",
+            xaxis: "Years",
+            yaxis: "in EUR"
+        }
 }
 };
 
 // for later use testing different datasets
 var datasets = [dataset1, dataset2];
 
+/* Test Template
+describe("General test", function () {
+    it("just proves the proper work of Jasmine testing library", function () {
+        expect(true).toBe(true);
+    });
+});
+*/
 
 describe("General test", function () {
     it("just proves the proper work of Jasmine testing library", function () {
@@ -61,17 +94,45 @@ describe("General test", function () {
     });
 });
 
-
-describe("update title", function () {
-    it("test updating title", function () {
-        // old title
-        var elem = document.getElementById("chartTitle").innerHTML;
-        updateChartTitle();
-        // updated title
-        var elemNew = document.getElementById("chartTitle").innerHTML;
-        expect(elem).not.toBe(elemNew);
+describe("addition", function () {
+    it("test", function () {
+        // test how to invoke function in other JS file 
+        var x = addthis(3,2);
+        expect(x).toBe(5);
     });
 });
+
+
+describe("update Chart title", function () {
+
+    it("check if DOM manipulation happens", function () {
+        // old title
+        var elem = document.getElementById('chartTitle').innerText;
+        updateChartTitle(1, dataset1);
+        // updated title
+        var elemNew = document.getElementById('chartTitle').innerText;
+        expect(elem).not.toBe(elemNew);
+    });
+
+    it("test index correctness", function () {
+        expect(function () {
+            updateChartTitle(-1, dataset1);
+        }).toThrow("updateChartError");
+        expect(function () {
+            updateChartTitle(3331, dataset1);
+        }).toThrow("updateChartError");
+    });
+
+    it("test passed dataset", function () {
+        expect(
+            function () {
+                updateChartTitle(1, notguiltyreference);
+            }).toThrow();
+        // catch reference error
+    });
+});
+
+
 
 describe("showNext/Prev test", function () {
     it("tests showPrevious function", function () {
@@ -91,6 +152,8 @@ describe("showNext/Prev test", function () {
 
     });
 });
+
+
 
 describe("test data validation", function () {
 

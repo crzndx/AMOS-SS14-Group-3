@@ -1,5 +1,4 @@
 ﻿
-
     function addthis(a, b) {
         return a + b;
     }
@@ -15,30 +14,9 @@
 
     var canvasElementName = "#plottingarea"; //  where will be drawn
     var choices = $("#choices");
-    var plottingarea = $("#plottingarea");
 
-    var  colors = ["#ff0000", "#ff9900", "#99ff00", "#408cff", "#cc00ff", "#ffbfbf", "#ffcc00", "#7fffa6", "#4053ff", "#ff00b3", "#ffa680", "#ffff80", "#80ffff", "#bfc6ff", "#ff0066", "#ffd9bf", "#f2ffbf", "#00ccff", "#cc80ff", "#ff80b3"];
+    var colors = ["#ff0000", "#ff9900", "#99ff00", "#408cff", "#cc00ff", "#ffbfbf", "#ffcc00", "#7fffa6", "#4053ff", "#ff00b3", "#ffa680", "#ffff80", "#80ffff", "#bfc6ff", "#ff0066", "#ffd9bf", "#f2ffbf", "#00ccff", "#cc80ff", "#ff80b3"];
     var colorsChosen = [];
-
-    /* get random color from defined list of good visible colors */
-    function getRandomColor(colorList) {
-       var l = colorList.length;
-       var r = colorList[Math.floor(Math.random() * l)];
-
-       // is color already in use?
-       if (colorsChosen.indexOf(r) > -1) {
-           if(colorList.length != colorsChosen.length) { 
-               return getRandomColor(colorList);
-           } else {
-               // when showing more than 20 graphs
-               return "#ff0000";
-           }
-       } else {
-           colorsChosen.push(r);
-           return r;
-       }
-    }
-
 
     /*
      * Data for graphs to be plotted
@@ -117,14 +95,78 @@
     };
 
     // options to draw canvas
-    var options;
+    var options = {
+        series: {
+            lines: {
+                show: true
+            },
+            points: {
+                show: true
+            }
+        },
+        grid: {
+            hoverable: true,
+            clickable: true
+        },
+        yaxis: {
+            min: 0
+        },
+        xaxis: {
+            tickDecimals: 0
+        },
+        legend: {
+            show: false
+        },
+        yaxisName: datasets[index]["metadata"]["xaxis"],
+        xaxisName: datasets[index]["metadata"]["yaxis"],
+        crosshair: {
+            mode: "xy",
+            color: "rgba(255, 255, 255, 0.30)",
+            lineWidth: 1
+        }
+    };
 
+
+    function getOptions() {
+        return options;
+    }
+
+    function getDatasets() {
+        return datasets;
+    }
+
+    function getCanvas() {
+        return canvasElementName;
+    }
+
+    function getDocument() {
+        return document;
+    }
+
+    /* get random color from defined list of good visible colors */
+    function getRandomColor(colorList) {
+        var l = colorList.length;
+        var r = colorList[Math.floor(Math.random() * l)];
+
+        // is color already in use?
+        if (colorsChosen.indexOf(r) > -1) {
+            if (colorList.length != colorsChosen.length) {
+                return getRandomColor(colorList);
+            } else {
+                // when showing more than 20 graphs
+                return "#ff0000";
+            }
+        } else {
+            colorsChosen.push(r);
+            return r;
+        }
+    }
 
 
     /*
      * Show Data one in front of actual displayed at the moment.
      */
-    function showPreviousDataset(ind) {
+    function showPreviousDataset(ind, data) {
 
         // decrease actualYear parameter if year is existent
         if (ind > 0) {
@@ -150,9 +192,9 @@
     /*
      * Show Data one year in the future of actual displayed at the moment.
      */
-    function showNextDataset(ind) {
+    function showNextDataset(ind, data) {
       
-        if (datasets[ind+1] != null) {
+        if (data[ind+1] != null) {
             ind = ind + 1;
         }
 
@@ -236,38 +278,6 @@
         });
 
         if (data.length > 0) {
-            options = {
-                series: {
-                    lines: {
-                        show: true
-                    },
-                    points: {
-                        show: true
-                    }
-                },
-                grid: {
-                    hoverable: true,
-                    clickable: true
-                },
-                yaxis: {
-                    min: 0
-                },
-                xaxis: {
-                    tickDecimals: 0
-                },
-                legend: {
-                    show: false
-                },
-                yaxisName: datasets[index]["metadata"]["xaxis"],
-                xaxisName: datasets[index]["metadata"]["yaxis"],
-                crosshair: {
-                    mode: "xy",
-                    color: "rgba(255, 255, 255, 0.30)",
-                    lineWidth: 1
-
-                }
-            };
-
             $("<div id='tooltip'></div>").css({
                 position: "absolute",
                 display: "none",
@@ -366,15 +376,19 @@
         }
 
         // reprint chart title accordingly
-        updateChartTitle(ind);
+        updateChartTitle(ind, datasets);
     }
 
     /*
      *  Reprints the title of the actual chart displayed.
-     *  argument: ind is the indicator for the dataset to show (index)
+     *  argument: ind is the indicator for the dataset to show (index), dataset d
      */
-    function updateChartTitle(ind) {
-        document.getElementById("chartTitle").innerHTML = datasets[ind]["metadata"]["title"];
+    function updateChartTitle(ind, d) {
+        if (d[ind] != null) {
+            document.getElementById("chartTitle").innerHTML = d[ind]["metadata"]["title"];
+        } else {
+            throw "updateChartError";
+        }
     }
 
     /*
@@ -386,8 +400,8 @@
         ready: function (element, options) {
 
             // eventListeners navigation buttons for Dataset changes
-            document.getElementById("rightNav").addEventListener("click", function () { showNextDataset(index); });
-            document.getElementById("leftNav").addEventListener("click", function () { showPreviousDataset(index); });
+            document.getElementById("rightNav").addEventListener("click", function () { showNextDataset(index, datasets); });
+            document.getElementById("leftNav").addEventListener("click", function () { showPreviousDataset(index, datasets); });
 
             // print initially
             printChoices(index);
