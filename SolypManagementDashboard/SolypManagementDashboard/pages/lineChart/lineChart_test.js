@@ -7,7 +7,6 @@
  * hint: use drag&drop from solution explorer to avoid wrongly spelled paths
  */
 
-
 var dataset1 = {
     0: {
         "myanmar": {
@@ -74,7 +73,7 @@ var dataset2 = {
             xaxis: "Years",
             yaxis: "in EUR"
         }
-}
+    }
 };
 
 // for later use testing different datasets
@@ -91,14 +90,6 @@ describe("General test", function () {
 describe("General test", function () {
     it("just proves the proper work of Jasmine testing library", function () {
         expect(true).toBe(true);
-    });
-});
-
-describe("addition", function () {
-    it("test", function () {
-        // test how to invoke function in other JS file 
-        var x = addthis(3,2);
-        expect(x).toBe(5);
     });
 });
 
@@ -132,28 +123,82 @@ describe("update Chart title", function () {
     });
 });
 
+describe("showNext/PrevDataset", function () {
 
+    it("tests show Previous/Next Datasets function", function () {
 
-describe("showNext/Prev test", function () {
-    it("tests showPrevious function", function () {
-        var i = -13;
-        while (i < 70) {
-            it("showNext test", function () {
-                // todo 
-                expect(true).toBe(true);
-            });
+        datasets.forEach(function () {
+            // value defines datasetX 
+            var i = -13;
+            while (i < 70) {
+                /*
+                 * Test showNextDataset() function
+                 */
+                it("showNext test", function () {
+                    var resN = showNextDataset(i, value);
+                    if (i < 0) {
+                        expect(resN).toBe(resN);
+                    } else {
+                        if (value[i + 1] == null) {
+                            expect(resN).toBe(resN);
+                        } else {
+                            expect(resN).toBe(i + 1);
+                        }
+                    }
+                });
 
-            it("showPrevious test", function () {
-                // todo
-                expect(true).toBe(true);
-            });
-            i++;
-        }
+                /*
+                 * Test showPreviousDataset() function
+                 */
+                it("showPrevious test", function () {
+                    var resN = showPreviousDataset(i, value);
+                    if (i < 0) {
+                        expect(resN).toBe(resN);
+                    } else {
+                        if (value[i + 1] == null) {
+                            expect(resN).toBe(resN);
+                        } else {
+                            expect(resN).toBe(i - 1);
+                        }
+                    }
+                });
+               
+                i++;  // while
+            }
 
+        });
     });
 });
 
+describe("randomColor test", function () {
+    it("checks if a color may be used twice", function () {
 
+        var colors = getColorList();
+        var chosen = getColorsChosen();
+
+        var len = colors.length;
+
+        for(var i = 0; i < len; i++) {
+            var chosenColor = getRandomColor(colors);
+            console.log(chosenColor);
+            chosen = getColorsChosen(); //update
+
+            expect(chosen).toContain(chosenColor);
+        }
+
+        var dup = false;
+        // chosen colors has duplicates?
+        var len = chosen.length;
+        for (var a = 0; a < len; a++) {                      
+            for (var b = a + 1; b < len; b++) {
+                if (chosen[a] == chosen[b])
+                    dup = true;
+            }
+        }
+        expect(dup).toBe(false);
+        
+    });
+});
 
 describe("test data validation", function () {
 

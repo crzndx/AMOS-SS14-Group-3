@@ -1,8 +1,4 @@
 ﻿
-    function addthis(a, b) {
-        return a + b;
-    }
-
     /*
      * Graph plotting with Flot
      * https://github.com/flot/
@@ -127,23 +123,10 @@
     };
 
 
-    function getOptions() {
-        return options;
-    }
-
-    function getDatasets() {
-        return datasets;
-    }
-
-    function getCanvas() {
-        return canvasElementName;
-    }
-
-    function getDocument() {
-        return document;
-    }
-
-    /* get random color from defined list of good visible colors */
+    /*
+    * get random color from defined list of good visible colors
+    * arguments: a list of colors
+    */
     function getRandomColor(colorList) {
         var l = colorList.length;
         var r = colorList[Math.floor(Math.random() * l)];
@@ -165,6 +148,7 @@
 
     /*
      * Show Data one in front of actual displayed at the moment.
+     * arguments: index, dataset
      */
     function showPreviousDataset(ind, data) {
 
@@ -191,6 +175,7 @@
 
     /*
      * Show Data one year in the future of actual displayed at the moment.
+     * arguments: index, dataset
      */
     function showNextDataset(ind, data) {
       
@@ -212,13 +197,6 @@
 
         index = ind;
         return ind;
-    }
-
-    /*
-     * Desperately needed debugging function...
-     */
-    function log(msg) {
-        document.getElementById("status").innerHTML += msg;
     }
 
     /*
@@ -340,7 +318,7 @@
             if (key === "metadata") return;
             // why I hate Windows development... (unallowed operation throwing errors otherwise)
             MSApp.execUnsafeLocalFunction(function () {
-                var untrusted = "<input type='checkbox' checked='checked' id='" + key + "' style='display: inline;'>" +
+                var untrusted = "<input type='checkbox' class='choice' checked='checked' id='" + key + "' style='display: inline;'>" +
                                 "<label style='margin-left: 5px; color:" + val.color + " !important; text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.22); font-size: 16px;'>" + val.label + "</label><br>";
                     // @TODO create new dom element and append afterwards maybe doesnt need .execUnsafeLocal...
                 choices.append(untrusted);
@@ -409,3 +387,40 @@
 
         }
     });
+
+
+    /*
+     * Helper functions used to pass important global variable data for testing 
+     */
+
+    function getOptions() {
+        return options;
+    }
+
+    function getDatasets() {
+        return datasets;
+    }
+
+    function getCanvas() {
+        return canvasElementName;
+    }
+
+    function getDocument() {
+        return document;
+    }
+
+    function getColorList() {
+        return colors;
+    }
+
+    function getColorsChosen() {
+        return colorsChosen;
+    }
+
+
+    /*
+     * Desperately needed debugging function...
+     */
+    function log(msg) {
+        document.getElementById("status").innerHTML += msg;
+    }
