@@ -18,6 +18,7 @@ var dataset1 = {
             data: [[2004, 480451], [2005, 504638], [2006, 528692]]
         },
         "metadata": {
+            pagetitle: "new page title",
             title: "Sales in Europe",
             xaxis: "Whatever",
             yaxis: "Bla"
@@ -29,6 +30,7 @@ var dataset1 = {
             data: [[1988, 183194], [2005, 303468], [2006, 458495]]
         },
         "metadata": {
+            pagetitle: "new page title2",
             title: "Sales in America",
             xaxis: "Sometext",
             yaxis: "yaxisname"
@@ -47,6 +49,7 @@ var dataset2 = {
             data: [[2034, 481451], [2005, 504631], [2026, 512312]]
         },
         "metadata": {
+            pagetitle: "new page titles",
             title: "the title",
             xaxis: "xaxis name",
             yaxis: "yaxis name"
@@ -58,6 +61,7 @@ var dataset2 = {
             data: [[1988, 183194], [2105, 123465], [2104, 458335]]
         },
         "metadata": {
+            pagetitle: "test this title",
             title: "Poland data",
             xaxis: "Yrs",
             yaxis: "Nonsense text"
@@ -69,6 +73,7 @@ var dataset2 = {
             data: [[1288, 13394], [45, 1441], [1144, 35]]
         },
         "metadata": {
+            pagetitle: "",
             title: "Sales in Europe",
             xaxis: "Years",
             yaxis: "in EUR"
@@ -122,6 +127,46 @@ describe("update Chart title", function () {
         // catch reference error
     });
 });
+
+describe("update page title", function () {
+
+    it("page title DOM manipulation", function () {
+        // old title
+        var elem = document.getElementById('pageTitle').innerText;
+        updatePageTitle(1, dataset1);
+        // updated title
+        var elemNew = document.getElementById('pageTitle').innerText;
+        expect(elem).not.toBe(elemNew);
+
+    });
+
+    it("test index correctness", function () {
+        expect(function () {
+            updatePageTitle(-1, dataset2);
+        }).toThrow();
+        expect(function () {
+            updatePageTitle(3331, dataset2);
+        }).toThrow();
+    });
+
+    it("test passed dataset", function () {
+        expect(
+            function () {
+                updateChartTitle(1, notguiltyreference);
+            }).toThrow();
+        // catch reference error
+    });
+
+    it("test title not changing", function () {
+        // old title
+        var elem = document.getElementById('pageTitle').innerText;
+        updatePageTitle(2, dataset2);
+        // updated title
+        var elemNew = document.getElementById('pageTitle').innerText;
+        expect(elem).toBe(elemNew);
+    });
+});
+
 
 describe("showNext/PrevDataset", function () {
 

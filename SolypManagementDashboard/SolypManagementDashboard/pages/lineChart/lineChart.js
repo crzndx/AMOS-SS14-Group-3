@@ -31,8 +31,8 @@
                 label: "China",
                 data: [[1988, 483994], [1989, 479060], [1990, 457648], [1991, 401949], [1992, 424705], [1993, 402375], [1994, 377867], [1995, 357382], [1996, 337946], [1997, 336185], [1998, 328611], [1999, 329421], [2000, 342172], [2001, 344932], [2002, 387303], [2003, 440813], [2004, 480451], [2005, 504638], [2006, 528692]]
             },
-            "russia": {
-                label: "Russia",
+            "saudiarabia": {
+                label: "Saudi Arabia",
                 data: [[1988, 218000], [1989, 203000], [1990, 171000], [1992, 42500], [1993, 37600], [1994, 36600], [1995, 21700], [1996, 19200], [1997, 21300], [1998, 13600], [1999, 14000], [2000, 19100], [2001, 21300], [2002, 23600], [2003, 25100], [2004, 26100], [2005, 31100], [2006, 34700]]
             },
             "thailand": {
@@ -44,9 +44,10 @@
                 data: [[1988, 11982], [1989, 22027], [1990, 660696], [1991, 44348], [1992, 128560], [1993, 256393], [1994, 354579], [1995, 550818], [1996, 50554], [1997, 148276], [1998, 472691], [1999, 347529], [2000, 473778], [2001, 487160], [2002, 509249], [2003, 574521], [2004, 602334], [2005, 601076], [2006, 593213]]
             },
             "metadata": {
-                title: "Sales in Asia",
-                xaxis: "Years",
-                yaxis: "in Yen"
+                pagetitle: "Sales MEA",
+                title: "Sales in Asia and Middle East",
+                xaxis: "Year",
+                yaxis: "Yen"
             }
         },
         1: {
@@ -63,9 +64,10 @@
                 data: [[1988, 55627], [1989, 55475], [1990, 58464], [1991, 55134], [1992, 52436], [1993, 47139], [1994, 43962], [1995, 43238], [1996, 42395], [1997, 40854], [1998, 40993], [1999, 41822], [2000, 41147], [2001, 40474], [2002, 40604], [2003, 40044], [2004, 38816], [2005, 38060], [2006, 36984]]
             },
             "metadata": {
+                pagetitle: "Sales EU",
                 title: "Sales in Europe",
-                xaxis: "Years",
-                yaxis: "in EUR"
+                xaxis: "Year",
+                yaxis: "Euro"
             }
             
         },
@@ -83,8 +85,9 @@
                 data: [[1988, 4382], [1989, 4498], [1990, 4535], [1991, 4398], [1992, 4766], [1993, 4441], [1994, 4670], [1995, 4217], [1996, 4275], [1997, 4203], [1998, 4482], [1999, 4506]]
             },
             "metadata": {
+                pagetitle: "Customers",
                 title: "Customers in Scandinavia",
-                xaxis: "Years",
+                xaxis: "Year",
                 yaxis: "Headcount"
             }
         }
@@ -271,7 +274,8 @@
 
                 // show actual position of crosshair
                 if ($("#enablePosition:checked").length > 0 ) {
-                    $("#mouseoverdata").text(pos.x.toFixed(0) + ", " + pos.y.toFixed(0));
+                    // $("#mouseoverdata").text(pos.x.toFixed(0) + ", " + pos.y.toFixed(0));
+                     $("#mouseoverdata").text(datasets[index]['metadata']['xaxis'] + ": " + pos.x.toFixed(0) + ", " + datasets[index]['metadata']['yaxis'] + ": " + pos.y.toFixed(0));
                 } else {
                     $("#mouseoverdata").text("");
                 }
@@ -286,7 +290,7 @@
                         var x = item.datapoint[0],
                             y = item.datapoint[1];
 
-                        $("#tooltip").html(item.series.label + ": x: " + x.toFixed(0) + " ; y: " + y.toFixed(0))
+                        $("#tooltip").html(item.series.label + ": <br> " + datasets[index]['metadata']['xaxis'] + ": " + x.toFixed(0) + "<br>" +datasets[index]['metadata']['yaxis'] + ": " + y.toFixed(0))
                             .css({ top: item.pageY + 5, left: item.pageX + 5 })
                             .fadeIn(400);
                     } else {
@@ -355,6 +359,7 @@
 
         // reprint chart title accordingly
         updateChartTitle(ind, datasets);
+        updatePageTitle(ind, datasets);
     }
 
     /*
@@ -366,6 +371,25 @@
             document.getElementById("chartTitle").innerHTML = d[ind]["metadata"]["title"];
         } else {
             throw "updateChartError";
+        }
+    }
+
+    function updatePageTitle(ind, d) {
+
+        if (d[ind]["metadata"]["pagetitle"] == "") {
+            // do not alter title if empty
+            return;
+        }
+
+        if (d[ind]["metadata"]["pagetitle"] == null) {
+            // do not alter title if empty
+            throw "updateTitleError";
+        }
+
+        if (d[ind] != null) {
+            document.getElementById("pageTitle").innerHTML = d[ind]["metadata"]["pagetitle"];
+        } else {
+            throw "updateTitleError";
         }
     }
 
