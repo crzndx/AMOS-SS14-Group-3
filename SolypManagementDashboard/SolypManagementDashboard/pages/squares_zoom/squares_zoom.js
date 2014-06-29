@@ -1,9 +1,9 @@
 ﻿(function () {
     
 
-        
+ 
     
-    WinJS.UI.Pages.define("/pages/squares_zoom/squares.html", {
+    WinJS.UI.Pages.define("/pages/squares_zoom/squares_zoom.html", {
         // This function is called whenever a user navigates to this page. It
         // populates the page elements with the app's data.
         ready: function (element, options) {
@@ -14,12 +14,13 @@
 
             //Mike bostock's tree map
             // leaving 50 on top because we need to fit the form, we leave 10 on the sides to make it look more spacious but the truth is that the content wrapper already has margins
-            
+
 
             /**********/
-            
-            var chartWidth = 550;
-            var chartHeight = 550;
+
+            var isIE = true;
+            var chartWidth = 960;
+            var chartHeight = 500;
             var xscale = d3.scale.linear().range([0, chartWidth]);
             var yscale = d3.scale.linear().range([0, chartHeight]);
             var color = d3.scale.category10();
@@ -34,7 +35,7 @@
                 .size([chartWidth, chartHeight])
                 .sticky(true)
                 .value(function (d) {
-                    return d.size;
+                    return d.investment;
                 });
 
             var chart = d3.select(".contentwrapper")
@@ -43,7 +44,7 @@
                 .attr("height", chartHeight)
                 .append("svg:g");
 
-            d3.json("pages/squares/squaresdata.json", function (data) {
+            d3.json("pages/squares_zoom/squaresdata.json", function (data) {
                 node = root = data;
                 var nodes = treemap.nodes(root);
 
@@ -73,7 +74,7 @@
                     .style("fill", headerColor);
                 parentEnterTransition.append('foreignObject')
                     .attr("class", "foreignObject")
-                    .append("xhtml:contentwrapper")
+                    .append("xhtml:body")
                     .attr("class", "labelbody")
                     .append("div")
                     .attr("class", "label");
@@ -135,10 +136,13 @@
                         return d.name;
                     });
 
-               
+                if (isIE) {
                     childEnterTransition.selectAll(".foreignObject .labelbody .label")
                         .style("display", "none");
-               
+                } else {
+                    childEnterTransition.selectAll(".foreignObject")
+                        .style("display", "none");
+                }
 
                 // update transition
                 var childUpdateTransition = childrenCells.transition().duration(transitionDuration);
@@ -171,10 +175,12 @@
                 childrenCells.exit()
                     .remove();
 
+
                 d3.select("select").on("change", function () {
                     console.log("select zoom(node)");
-                    treemap.value(this.value == "size" ? size : count)
-                        .nodes(root);
+                    treemap.value(this.value == "size" ? investment : revenue)
+                           .nodes(root);
+
                     zoom(node);
                 });
 
@@ -182,13 +188,13 @@
             });
 
 
-            function size(d) {
-                return d.size;
+            function investment(d) {
+                return d.investment;
             }
 
 
-            function count(d) {
-                return 1;
+            function revenue(d) {
+                return d.revenue;
             }
 
 
@@ -221,7 +227,7 @@
 
 
             function zoom(d) {
-                this.treemap
+                treemap
                     .padding([headerHeight / (chartHeight / d.dy), 0, 0, 0])
                     .nodes(d);
 
@@ -234,10 +240,13 @@
                 yscale.domain([d.y, d.y + d.dy]);
 
                 if (node != level) {
-                   
+                    if (isIE) {
                         chart.selectAll(".cell.child .foreignObject .labelbody .label")
                             .style("display", "none");
-                   
+                    } else {
+                        chart.selectAll(".cell.child .foreignObject")
+                            .style("display", "none");
+                    }
                 }
 
                 var zoomTransition = chart.selectAll("g.cell").transition().duration(transitionDuration)
@@ -255,14 +264,21 @@
                                     return idealTextColor(color(d.parent.name));
                                 });
 
-                            
+                            if (isIE) {
                                 chart.selectAll(".cell.child")
                                     .filter(function (d) {
                                         return d.parent === self.node; // only get the children for selected group
                                     })
                                     .select(".foreignObject .labelbody .label")
                                     .style("display", "")
-                            
+                            } else {
+                                chart.selectAll(".cell.child")
+                                    .filter(function (d) {
+                                        return d.parent === self.node; // only get the children for selected group
+                                    })
+                                    .select(".foreignObject")
+                                    .style("display", "")
+                            }
                         }
                     });
 
@@ -296,9 +312,8 @@
                     d3.event.stopPropagation();
                 }
             }
-        
-      }
-    });
+        }
+        });
 
 
 

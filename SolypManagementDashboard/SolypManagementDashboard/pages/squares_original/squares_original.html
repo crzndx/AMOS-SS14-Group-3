@@ -14,12 +14,11 @@
     <link href="/css/default.css" rel="stylesheet" />
 
     <!-- change these link names accordingly to the subpage name -->
-    <link href="squares_zoom.css" rel="stylesheet" />
-    <script src="squares_zoom.js"></script>
+    <link href="squares_original.css" rel="stylesheet" />
+    <script src="squares_original.js"></script>
 
     <!--Copied from Mike Bostock-->
     <script src="../../lib/js/d3/d3.js"></script>
-    <script src="../../lib/js/jquery/jquery-2.1.1.js"></script>
     
 </head>
 <body>
@@ -34,7 +33,10 @@
         </header>
         <section aria-label="Main content" role="main">
             <div  class="contentwrapper">
-                
+                <form>
+                    <label><input type="radio" name="mode" value="size" checked> Size</label>
+                    <label><input type="radio" name="mode" value="count"> Count</label>
+                </form>
                
             </div>
         </section>

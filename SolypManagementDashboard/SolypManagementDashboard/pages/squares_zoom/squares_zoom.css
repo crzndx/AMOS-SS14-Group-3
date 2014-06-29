@@ -12,48 +12,57 @@
 
 /*Copied from Mike Bostock*/
 
-
-
-text {
-pointer-events: none;
+    
+form {
+  position: absolute;
+  right: 10px;
+  top: 10px;
 }
 
-.grandparent text { /* header text */
-font-weight: bold;
-font-size: medium;
-font-family: "Open Sans", Helvetica, Arial, sans-serif; 
-}
 
-rect {
-fill: none;
-stroke: #fff;
-}
+        svg {
+            overflow: hidden;
+        }
 
-rect.parent,
-.grandparent rect {
-stroke-width: 2px;
-}
+        rect {
+            pointer-events: all;
+            cursor: pointer;
+            stroke: #EEEEEE;
+        }
 
-.grandparent rect {
-fill: #fff;
-}
+        .chart {
+            display: block;
+            margin: auto;
+        }
 
-.children rect.parent,
-.grandparent rect {
-cursor: pointer;
-}
+        .parent .label {
+            color: #FFFFFF;
+            text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+            -webkit-text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+            -moz-text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+        }
 
-rect.parent {
-pointer-events: all; 
-}
+        .labelbody {
+            background: transparent;
+        }
 
-.children:hover rect.child,
-.grandparent:hover rect {
-fill: #aaa;
-}
+        .label {
+            margin: 2px;
+            white-space: pre;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+            -webkit-text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+            -moz-text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+        }
 
-.textdiv { /* text in the boxes */
-font-size: medium;
-padding: 5px;
-font-family: "Open Sans", Helvetica, Arial, sans-serif; 
-}
+        .child .label {
+            white-space: pre-wrap;
+            text-align: center;
+            text-overflow: ellipsis;
+        }
+
+        .cell {
+            font-size: 11px;
+            cursor: pointer
+        }

@@ -11,11 +11,22 @@
 /*Copied from Mike Bostock*/
 
  
-        rect {
-            fill: none;
-            stroke: #FFFFFF;
-        }
-        .labelbody {
+  .form {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+
+.node {
+  border: solid 1px white;
+  font: 10px sans-serif;
+  line-height: 12px;
+  overflow: hidden;
+  position: absolute;
+  text-indent: 2px;
+}
+
+ .labelbody {
             margin: 2px;
         }
         .foreignObject {
@@ -23,12 +34,4 @@
             text-overflow: ellipsis;
             text-align: left;
             word-wrap: break-word;
-        }
-
-         .footer {
-            z-index: 1;
-            display: block;
-            font-size: 26px;
-            font-weight: 200;
-            text-shadow: 0 1px 0 #fff;
         }
