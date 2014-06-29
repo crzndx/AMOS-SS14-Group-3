@@ -7,18 +7,18 @@
     position: relative;
     width: 960px;
     font-size: 12px;
-    background: #bbb;
+  
     }
 
 /*Copied from Mike Bostock*/
 
-    
-form {
-  position: absolute;
-  right: 10px;
-  top: 10px;
-}
-
+.footer {
+            z-index: 1;
+            display: block;
+            font-size: 26px;
+            font-weight: 200;
+            text-shadow: 0 1px 0 #fff;
+        }
 
         svg {
             overflow: hidden;

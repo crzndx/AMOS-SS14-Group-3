@@ -18,12 +18,12 @@
 
             /**********/
 
-            var isIE = true;
+           
             var chartWidth = 960;
             var chartHeight = 500;
             var xscale = d3.scale.linear().range([0, chartWidth]);
             var yscale = d3.scale.linear().range([0, chartHeight]);
-            var color = d3.scale.category10();
+            var color = d3.scale.category20();
             var headerHeight = 20;
             var headerColor = "#555555";
             var transitionDuration = 500;
@@ -136,13 +136,10 @@
                         return d.name;
                     });
 
-                if (isIE) {
+               
                     childEnterTransition.selectAll(".foreignObject .labelbody .label")
                         .style("display", "none");
-                } else {
-                    childEnterTransition.selectAll(".foreignObject")
-                        .style("display", "none");
-                }
+               
 
                 // update transition
                 var childUpdateTransition = childrenCells.transition().duration(transitionDuration);
@@ -240,13 +237,10 @@
                 yscale.domain([d.y, d.y + d.dy]);
 
                 if (node != level) {
-                    if (isIE) {
+                  
                         chart.selectAll(".cell.child .foreignObject .labelbody .label")
                             .style("display", "none");
-                    } else {
-                        chart.selectAll(".cell.child .foreignObject")
-                            .style("display", "none");
-                    }
+                    
                 }
 
                 var zoomTransition = chart.selectAll("g.cell").transition().duration(transitionDuration)
@@ -264,21 +258,14 @@
                                     return idealTextColor(color(d.parent.name));
                                 });
 
-                            if (isIE) {
+                           
                                 chart.selectAll(".cell.child")
                                     .filter(function (d) {
                                         return d.parent === self.node; // only get the children for selected group
                                     })
                                     .select(".foreignObject .labelbody .label")
                                     .style("display", "")
-                            } else {
-                                chart.selectAll(".cell.child")
-                                    .filter(function (d) {
-                                        return d.parent === self.node; // only get the children for selected group
-                                    })
-                                    .select(".foreignObject")
-                                    .style("display", "")
-                            }
+                          
                         }
                     });
 

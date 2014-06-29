@@ -10,8 +10,8 @@
 
 /*Copied from Mike Bostock*/
 
- 
-  .form {
+
+form {
   position: absolute;
   right: 10px;
   top: 10px;
@@ -25,13 +25,3 @@
   position: absolute;
   text-indent: 2px;
 }
-
- .labelbody {
-            margin: 2px;
-        }
-        .foreignObject {
-            font: 9px sans-serif;
-            text-overflow: ellipsis;
-            text-align: left;
-            word-wrap: break-word;
-        }

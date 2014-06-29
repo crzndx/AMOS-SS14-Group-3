@@ -189,10 +189,10 @@
     <Content Include="pages\newPageDummy\newDummyCSS.css" />
     <Content Include="pages\newPageDummy\newDummyHTML.html" />
     <Content Include="pages\newPageDummy\newDummyJS.js" />
-    <Content Include="pages\squares\squares.css" />
-    <Content Include="pages\squares\squares.html" />
-    <Content Include="pages\squares\squares.js" />
-    <Content Include="pages\squares\squaresdata.json" />
+    <Content Include="pages\squares_label\squares_label.css" />
+    <Content Include="pages\squares_label\squares_label.html" />
+    <Content Include="pages\squares_label\squares_label.js" />
+    <Content Include="pages\squares_label\squaresdata.json" />
     <Content Include="pages\squares_original\squaresdata.json" />
     <Content Include="pages\squares_original\squares_original.css" />
     <Content Include="pages\squares_original\squares_original.html" />

@@ -45,11 +45,11 @@
                     .attr("class", "node")
                     .call(position)
                     .style("background", function (d) { return d.children ? color(d.name) : null; })
-                    .text(function (d) { return d.children ? null : d.name; });
-                    
+                    .text(function(d) { return d.children ? null : d.name; });
+                  
  
                 d3.selectAll("input").on("change", function change() {
-                    var value = this.value === "count"
+                    var value = this.value === "revenue"
                         ? function (d) { return d.revenue; }
                         : function (d) { return d.investment; };
 
