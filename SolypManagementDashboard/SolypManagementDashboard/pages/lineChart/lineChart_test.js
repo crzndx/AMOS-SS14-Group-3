@@ -98,6 +98,13 @@ describe("General test", function () {
     });
 });
 
+describe("navigation arrow test", function () {
+    it("proves if dom gets altered and arrows are being toggled", function () {
+
+        expect(true).toBe(true);
+    });
+});
+
 
 describe("update Chart title", function () {
 

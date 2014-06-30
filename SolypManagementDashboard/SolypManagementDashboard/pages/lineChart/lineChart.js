@@ -166,8 +166,8 @@
             myNode.removeChild(myNode.firstChild);
         }
 
-        printChoices(ind);
-        plotCheckedLines(ind);
+        printChoices(ind, data);
+        plotCheckedLines(ind, data);
 
         // reset usable colors on next sheet @see getRandomColor function
         colorsChosen.length = 0;
@@ -192,8 +192,8 @@
             myNode.removeChild(myNode.firstChild);
         }
 
-        printChoices(ind);
-        plotCheckedLines(ind);
+        printChoices(ind, data);
+        plotCheckedLines(ind, data);
 
         // reset usable colors on next sheet @see getRandomColor function
         colorsChosen.length = 0;
@@ -245,16 +245,16 @@
 
     /*
     * Actually plots the graphs at given data index number
-    * arguments: index (which dataset to plot)
+    * arguments: index (which dataset to plot), data d
     */
-    function plotCheckedLines(index) {
+    function plotCheckedLines(index, d) {
         var data = [];
 
         choices.find("input:checked").each(function () {
             var key = $(this).attr("id");
 
-            if (key && datasets[index][key]) {
-                data.push(datasets[index][key]);
+            if (key && d[index][key]) {
+                data.push(d[index][key]);
             }
         });
 
@@ -275,7 +275,7 @@
                 // show actual position of crosshair
                 if ($("#enablePosition:checked").length > 0 ) {
                     // $("#mouseoverdata").text(pos.x.toFixed(0) + ", " + pos.y.toFixed(0));
-                     $("#mouseoverdata").text(datasets[index]['metadata']['xaxis'] + ": " + pos.x.toFixed(0) + ", " + datasets[index]['metadata']['yaxis'] + ": " + pos.y.toFixed(0));
+                     $("#mouseoverdata").text(d[index]['metadata']['xaxis'] + ": " + pos.x.toFixed(0) + ", " + d[index]['metadata']['yaxis'] + ": " + pos.y.toFixed(0));
                 } else {
                     $("#mouseoverdata").text("");
                 }
@@ -290,7 +290,7 @@
                         var x = item.datapoint[0],
                             y = item.datapoint[1];
 
-                        $("#tooltip").html(item.series.label + ": <br> " + datasets[index]['metadata']['xaxis'] + ": " + x.toFixed(0) + "<br>" +datasets[index]['metadata']['yaxis'] + ": " + y.toFixed(0))
+                        $("#tooltip").html(item.series.label + ": <br> " + d[index]['metadata']['xaxis'] + ": " + x.toFixed(0) + "<br>" + d[index]['metadata']['yaxis'] + ": " + y.toFixed(0))
                             .css({ top: item.pageY + 5, left: item.pageX + 5 })
                             .fadeIn(400);
                     } else {
@@ -300,8 +300,8 @@
             });
 
             // paint labels on x and y axis
-            paintXlabel(datasets[index]['metadata']['xaxis']);
-            paintYlabel(datasets[index]['metadata']['yaxis']);
+            paintXlabel(d[index]['metadata']['xaxis']);
+            paintYlabel(d[index]['metadata']['yaxis']);
           
         }
     }
@@ -309,16 +309,17 @@
     /*
      * Funciton responsible for printing the left side navigational menu.
      * Prints a toggling-functionality for the data being displayed as graphs on the canvas
-     * arguments: index (which dataset is shown)
+     * arguments: index (which dataset is shown), dataset d
      */
-    function printChoices(index) {
+    function printChoices(index, d) {
+
         // give every graph a unique color from config
-        $.each(datasets[index], function (key, val) {
+        $.each(d[index], function (key, val) {
             val.color = getRandomColor(colors);
         });
 
         choices = $("#choices");
-        $.each(datasets[index], function (key, val) {
+        $.each(d[index], function (key, val) {
             if (key === "metadata") return;
             // why I hate Windows development... (unallowed operation throwing errors otherwise)
             MSApp.execUnsafeLocalFunction(function () {
@@ -329,25 +330,25 @@
             });
         });
 
-        printNavigationArrows(index);
+        printNavigationArrows(index, d);
 
         /* redefine onclick behaviour on newly printed input elements on each subpage -- important*/
         $(document).on("click", "input", function () {
-            plotCheckedLines(index);
+            plotCheckedLines(index, d);
         });
 
     }
 
     /*
      *  define if navigation arrows make sense on a certain page (toggle them if needed)
-     *  argument: ind is the indicator for the dataset to show (index)
+     *  argument: ind is the indicator for the dataset to show (index), dataset d
      */
-    function printNavigationArrows(ind) {
-        if (datasets[ind - 1] == null) {
+    function printNavigationArrows(ind, d) {
+        if (d[ind - 1] == null) {
             // start
             $("#leftNav").hide();
             $("#rightNav").show();
-        } else if (datasets[ind + 1] == null) {
+        } else if (d[ind + 1] == null) {
             // middle pages
             $("#leftNav").show();
             $("#rightNav").hide();
@@ -358,8 +359,8 @@
         }
 
         // reprint chart title accordingly
-        updateChartTitle(ind, datasets);
-        updatePageTitle(ind, datasets);
+        updateChartTitle(ind, d);
+        updatePageTitle(ind, d);
     }
 
     /*
@@ -406,8 +407,8 @@
             document.getElementById("leftNav").addEventListener("click", function () { showPreviousDataset(index, datasets); });
 
             // print initially
-            printChoices(index);
-            plotCheckedLines(index);
+            printChoices(index, datasets);
+            plotCheckedLines(index, datasets);
 
         }
     });
