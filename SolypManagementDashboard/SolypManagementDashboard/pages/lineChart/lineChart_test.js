@@ -98,14 +98,6 @@ describe("General test", function () {
     });
 });
 
-describe("navigation arrow test", function () {
-    it("proves if dom gets altered and arrows are being toggled", function () {
-
-        expect(true).toBe(true);
-    });
-});
-
-
 describe("update Chart title", function () {
 
     it("check if DOM manipulation happens", function () {
@@ -219,6 +211,30 @@ describe("showNext/PrevDataset", function () {
             }
 
         });
+    });
+});
+
+describe("navigation arrow test", function () {
+    it("index check", function () {
+
+        // get sure we are starting right, otherwise toggle fails
+        expect(document.getElementById('leftNav').style.display).toBe("none");
+        expect(document.getElementById('rightNav').style.display).toBe("none");
+
+        it("test navigation arrow with a wrong index", function () {
+            expect(
+                function () {
+                    printNavigationArrows(-1, dataset1);
+                }).toThrow("indexError");
+        });
+
+        it("test navigation arrow index", function () {
+            expect(
+                function () {
+                    printNavigationArrows(2, undef);
+                }).toThrow(ReferenceError);
+        });
+
     });
 });
 

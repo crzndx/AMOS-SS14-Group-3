@@ -344,23 +344,33 @@
      *  argument: ind is the indicator for the dataset to show (index), dataset d
      */
     function printNavigationArrows(ind, d) {
+
+        if (ind < 0 || ind > d.length) {
+            throw "indexError";
+        }
+
+        var r;
         if (d[ind - 1] == null) {
             // start
             $("#leftNav").hide();
             $("#rightNav").show();
+            r = "right";
         } else if (d[ind + 1] == null) {
             // middle pages
             $("#leftNav").show();
             $("#rightNav").hide();
+            r = "left";
         } else {
             // end
             $("#leftNav").show();
             $("#rightNav").show();
+            r = "both";
         }
 
         // reprint chart title accordingly
         updateChartTitle(ind, d);
         updatePageTitle(ind, d);
+        return r;
     }
 
     /*
