@@ -286,7 +286,8 @@
                 });
 
                 // tooltip appears on click of a data point
-                if (item) {
+                if ($("#enableHoverable:checked").length > 0) {
+                    if (item) {
                         var x = item.datapoint[0],
                             y = item.datapoint[1];
 
@@ -295,7 +296,8 @@
                             .fadeIn(400);
                     } else {
                         $("#tooltip").hide();
-               }
+                    }
+                }
                 
             });
 
@@ -405,6 +407,34 @@
     }
 
     /*
+     *  Sets options for showing crosshairs on plot hover
+     *  default shown is xy crosshair
+     */
+    function crosshairOptions() {
+        // status of crosshair option inputs
+        var x = document.getElementById("enableCrosshairX").checked;
+        var y = document.getElementById("enableCrosshairY").checked;
+
+        // translating for flot
+        if(x == true && y == false) {
+            options["crosshair"]["mode"] = "x";
+            return "x";
+        }
+        if (x == false && y == true) {
+            options["crosshair"]["mode"] = "y";
+            return "y";
+        }
+        if (x == true && y == true) {
+            options["crosshair"]["mode"] = "xy";
+            return "xy";
+        }
+        if (x == false && y == false) {
+            options["crosshair"]["mode"] = "none";
+            return "none";
+        }
+    }
+
+    /*
      * Grid navigation - called when listed page is being loaded
      */
     WinJS.UI.Pages.define("/pages/lineChart/lineChart.html", {
@@ -415,6 +445,8 @@
             // eventListeners navigation buttons for Dataset changes
             document.getElementById("rightNav").addEventListener("click", function () { showNextDataset(index, datasets); });
             document.getElementById("leftNav").addEventListener("click", function () { showPreviousDataset(index, datasets); });
+            document.getElementById("enableCrosshairX").addEventListener("click", function () { crosshairOptions(); });
+            document.getElementById("enableCrosshairY").addEventListener("click", function () { crosshairOptions(); });
 
             // print initially
             printChoices(index, datasets);
