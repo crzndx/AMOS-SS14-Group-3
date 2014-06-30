@@ -11,7 +11,7 @@
     var canvasElementName = "#plottingarea"; //  where will be drawn
     var choices = $("#choices");
 
-    var colors = ["#ff0000", "#ff9900", "#99ff00", "#408cff", "#cc00ff", "#ffbfbf", "#ffcc00", "#7fffa6", "#4053ff", "#ff00b3", "#ffa680", "#ffff80", "#80ffff", "#bfc6ff", "#ff0066", "#ffd9bf", "#f2ffbf", "#00ccff", "#cc80ff", "#ff80b3"];
+    var colors = ["#ff5959", "#f3ac00", "#99ff00", "#83d0f5", "#db65ef", "#ffbfbf", "#ffcc00", "#7fffa6", "#00b9ee", "#ff00b3", "#ffa680", "#ffff80", "#80ffff", "#bfc6ff", "#ff0066", "#ffd9bf", "#f2ffbf", "#00ccff", "#cc80ff", "#ff80b3"];
     var colorsChosen = [];
 
     /*
@@ -42,6 +42,22 @@
             "japan": {
                 label: "Japan",
                 data: [[1988, 11982], [1989, 22027], [1990, 660696], [1991, 44348], [1992, 128560], [1993, 256393], [1994, 354579], [1995, 550818], [1996, 50554], [1997, 148276], [1998, 472691], [1999, 347529], [2000, 473778], [2001, 487160], [2002, 509249], [2003, 574521], [2004, 602334], [2005, 601076], [2006, 593213]]
+            },
+            "kazakhstan": {
+                label: "Kazhakztan",
+                data: [[1988, 1982], [1989, 2217], [1990, 41296], [1991, 51248], [1992, 52460], [1993, 78633], [1994, 99579], [1995, 12418], [1996, 78554], [1997, 88876], [1998, 57551], [1999, 44429], [2000, 17778], [2001, 8760], [2002, 5000], [2003, 55452], [2004, 40234], [2005, 10276], [2006, 59283]]
+            },
+            "india": {
+                label: "India",
+                data: [[1988, 62982], [1989, 22027], [1990, 68696], [1991, 62348], [1992, 58560], [1993, 98393], [1994, 78879], [1995, 5418], [1996, 58854], [1997, 45676], [1998, 34591], [1999, 47529], [2000, 48878], [2001, 99960], [2002, 55749], [2003, 51112], [2004, 545234], [2005, 60076], [2006, 8783]]
+            },
+            "russia": {
+                label: "Russia",
+                data: [[1988, 62982], [1989, 12027], [1990, 40688], [1991, 62348], [1992, 58560], [1993, 87393], [1994, 77779], [1995, 22818], [1996, 58794], [1997, 44576], [1998, 12691], [1999, 48759], [2000, 66678], [2001, 48760], [2002, 45649], [2003, 55482], [2004, 33634], [2005, 60076], [2006, 78713]]
+            },
+            "mongolia": {
+                label: "Mongolia",
+                data: [[1988, 62982], [1989, 61527], [1990, 68888], [1991, 69999], [1992, 58790], [1993, 15493], [1994, 98779], [1995, 50818], [1996, 3694], [1997, 3676], [1998, 48881], [1999, 54829], [2000, 88778], [2001, 48760], [2002, 87649], [2003, 11452], [2004, 64834], [2005, 54076], [2006, 87213]]
             },
             "metadata": {
                 pagetitle: "Sales MEA",
@@ -124,6 +140,25 @@
             lineWidth: 1
         }
     };
+
+    /*
+    * load data externally
+    * arguments: a by ms-appx defined URI string. e.g. "ms-appx:///data/sales/linechart_countries.txt"
+    *
+    * TODO: testing! NOT IN USE YET!
+    */
+    function loadDataFromLocalFile(sourceString) {
+
+        var uri = new Windows.Foundation.Uri(sourceString);
+
+        Windows.Storage.StorageFile.getFileFromApplicationUriAsync(uri).then(function (file) {
+            return Windows.Storage.FileIO.readTextAsync(file);
+        }).done(function (text) {
+            // overwrit / write into local variable
+            datasets = JSON.parse(text);
+        });
+
+    }
 
 
     /*
@@ -316,8 +351,10 @@
     function printChoices(index, d) {
 
         // give every graph a unique color from config
+        var j = 0;
         $.each(d[index], function (key, val) {
-            val.color = getRandomColor(colors);
+            //val.color = getRandomColor(colors);
+            val.color = colors[j++];
         });
 
         choices = $("#choices");
