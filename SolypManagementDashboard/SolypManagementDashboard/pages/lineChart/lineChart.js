@@ -11,7 +11,7 @@
     var canvasElementName = "#plottingarea"; //  where will be drawn
     var choices = $("#choices");
 
-    var colors = ["#ff5959", "#f3ac00", "#99ff00", "#83d0f5", "#db65ef", "#ffbfbf", "#ffcc00", "#7fffa6", "#00b9ee", "#ff00b3", "#ffa680", "#ffff80", "#80ffff", "#bfc6ff", "#ff0066", "#ffd9bf", "#f2ffbf", "#00ccff", "#cc80ff", "#ff80b3"];
+    var colors = ["#ff5959", "#f3ac00", "#99ff00", "#83d0f5", "#db65ef", "#ffbfbf", "#f1fa00", "#7fffa6", "#00b9ee", "#ff00b3", "#ffa680", "#ffff80", "#80ffff", "#bfc6ff", "#ff0066", "#ffd9bf", "#f2ffbf", "#00ccff", "#cc80ff", "#ff80b3"];
     var colorsChosen = [];
 
     /*
@@ -154,7 +154,7 @@
         Windows.Storage.StorageFile.getFileFromApplicationUriAsync(uri).then(function (file) {
             return Windows.Storage.FileIO.readTextAsync(file);
         }).done(function (text) {
-            // overwrit / write into local variable
+            // overwrite / write into local variable
             datasets = JSON.parse(text);
         });
 
@@ -521,10 +521,6 @@
         return colorsChosen;
     }
 
-
-    /*
-     * Desperately needed debugging function...
-     */
     function log(msg) {
         document.getElementById("status").innerHTML += msg;
     }

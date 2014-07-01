@@ -8,6 +8,31 @@
     margin-top: 30px;
 }
 
+#lineChartCanvas {
+    width: 80%;
+    margin-left:20%;
+}
+
+#lineChartControls {
+    width: 15%;
+    float: left;
+}
+
+#showOptions {
+    text-align: center;
+    margin-top: 30px;
+}
+
+#choices {
+    margin-top: 50px;
+}
+
+#canvasTitle {
+    text-align:center;
+    margin-top: -50px !important;
+    margin-bottom: 10px;
+}
+
 #chartTitle {
     padding-left: 10px;
     padding-right: 10px;
