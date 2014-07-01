@@ -14,13 +14,12 @@
     <link href="/css/default.css" rel="stylesheet" />
 
     <!-- change these link names accordingly to the subpage name -->
-    <link href="squares_zoom.css" rel="stylesheet" />
-    <script src="squares_zoom.js"></script>
+    <link href="treemap.css" rel="stylesheet" />
+    <script src="treemap.js"></script>
 
     <!--Copied from Mike Bostock-->
     <script src="../../lib/js/d3/d3.js"></script>
-    <script src="../../lib/js/jquery/jquery-2.1.1.js"></script>
-   
+    
 </head>
 <body>
     <!-- The content that will be loaded and displayed. -->
@@ -34,13 +33,16 @@
         </header>
         <section aria-label="Main content" role="main">
             <div  class="contentwrapper">
-                <div class="form">
-                    <select>
-                        <option value="size">Size</option>
-                        <option value="count">Count</option>
-                    </select>
-                </div>
-               
+                
+                    
+                    <div class="hint">click to descend or ascend</div>
+                    <div>
+                        <form>
+                            <label><input type="radio" name="mode" value="investment" checked> Investment</label>
+                            <label><input type="radio" name="mode" value="revenue"> Revenue</label>
+                        </form>
+                    </div>
+                
             </div>
         </section>
     </div>
