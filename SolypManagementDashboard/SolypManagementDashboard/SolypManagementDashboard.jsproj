@@ -52,7 +52,7 @@
     <PackageCertificateKeyFile>SolypManagementDashboard_TemporaryKey.pfx</PackageCertificateKeyFile>
     <AppxAutoIncrementPackageRevision>False</AppxAutoIncrementPackageRevision>
     <AppxBundlePlatforms>neutral</AppxBundlePlatforms>
-    <AppxPackageDir>C:\Users\Philipp\Desktop\amosrelease11\</AppxPackageDir>
+    <AppxPackageDir>C:\Users\lindan\Desktop\release\</AppxPackageDir>
   </PropertyGroup>
   <ItemGroup>
     <AppxManifest Include="package.appxmanifest">
