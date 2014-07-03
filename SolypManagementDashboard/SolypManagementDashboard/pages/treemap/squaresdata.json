@@ -18,15 +18,15 @@
      "children": [
       {"name": "BetweennessCentrality", "investment": 3534, "revenue": 45454},
       {"name": "LinkDistance", "investment": 5731, "revenue": 5656},
-      {"name": "MaxFlowMinCut", "investment": 7840, "revenue": 456},
+      {"name": "MaxFlowMinCut", "investment": 7840, "revenue": 4568},
       {"name": "ShortestPaths", "investment": 5914,"revenue": 5432},
-      {"name": "SpanningTree", "investment": 3416, "revenue": 234}
+      {"name": "SpanningTree", "investment": 3416, "revenue": 2344}
      ]
     },
     {
      "name": "optimization",
      "children": [
-      {"name": "AspectRatioBanker", "investment": 7074, "revenue": 454}
+      {"name": "AspectRatioBanker", "investment": 7074, "revenue": 6598}
      ]
     }
    ]
