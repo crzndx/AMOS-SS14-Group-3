@@ -333,8 +333,8 @@
     color: rgba(0, 0, 0, 1.0);
 }
 
-.win-container {
-	width:350px;
+.tileTemplate {
+    width:350px;
 }
 
 

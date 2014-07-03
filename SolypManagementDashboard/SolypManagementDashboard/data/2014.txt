@@ -1,0 +1,160 @@
+[{
+            "Name": "BMW",
+            "Year": "2011",
+			"KPI": [
+				["profits", 2853, 0],
+				["salesVolume", 1461, 0],
+				["returnOnCapital", 19.1, 0],
+				["workforce", 95453, 0],
+				["womeWorkforceShare", 13.5, 0],
+				["averageTrainingHours", 3.6, 1],
+				["energyConsumptionPerVehicle", 2.75, 0],
+				["waterConsumptionPerVehicle", 2.31, 0],
+				["co2perVehicle", 0.86],
+				["revenueSum", 60447]
+				
+			],
+            "quarterRevenue": [11.75, 17.28, 18.34, 29.63],
+            "logo": "/images/carLogos/bmw.png"
+            },
+            {
+
+            "Name": "Volkswagen",
+            "Year": "2011",
+            "KPI": [
+				["profits", 2853, 0],
+				["salesVolume", 1461, 0],
+				["returnOnCapital", 19.1, 0],
+				["workforce", 95453, 0],
+				["womeWorkforceShare", 13.5, 0],
+				["averageTrainingHours", 3.6, 1],
+				["energyConsumptionPerVehicle", 2.75, 0],
+				["waterConsumptionPerVehicle", 2.31, 0],
+				["co2perVehicle", 0.86],
+				["revenueSum", 60447]
+				
+			],
+            "quarterRevenue": [12.75, 13.28, 14.34, 25.63],
+            "logo": "/images/carLogos/volkswagen.png"
+            },
+            {
+
+                "Name": "Mazda",
+                "Year": "2011",
+                "KPI": [
+				["profits", 2853, 0],
+				["salesVolume", 1461, 0],
+				["returnOnCapital", 19.1, 0],
+				["workforce", 95453, 0],
+				["womeWorkforceShare", 13.5, 0],
+				["averageTrainingHours", 3.6, 1],
+				["energyConsumptionPerVehicle", 2.75, 0],
+				["waterConsumptionPerVehicle", 2.31, 0],
+				["co2perVehicle", 0.86],
+				["revenueSum", 60447]
+				
+			],
+                "quarterRevenue": [12.75, 13.28, 14.34, 25.63],
+                "logo": "/images/carLogos/mazda.png"
+            },
+            {
+
+                "Name": "Ford",
+                "Year": "2011",
+                "KPI": [
+				["profits", 2853, 0],
+				["salesVolume", 1461, 0],
+				["returnOnCapital", 19.1, 0],
+				["workforce", 95453, 0],
+				["womeWorkforceShare", 13.5, 0],
+				["averageTrainingHours", 3.6, 1],
+				["energyConsumptionPerVehicle", 2.75, 0],
+				["waterConsumptionPerVehicle", 2.31, 0],
+				["co2perVehicle", 0.86],
+				["revenueSum", 60447]
+				
+			],
+                "quarterRevenue": [12.75, 13.28, 14.34, 25.63],
+                "logo": "/images/carLogos/ford.png"
+            },
+            {
+
+                "Name": "Vauxhall",
+                "Year": "2011",
+                "KPI": [
+				["profits", 2853, 0],
+				["salesVolume", 1461, 0],
+				["returnOnCapital", 19.1, 0],
+				["workforce", 95453, 0],
+				["womeWorkforceShare", 13.5, 0],
+				["averageTrainingHours", 3.6, 1],
+				["energyConsumptionPerVehicle", 2.75, 0],
+				["waterConsumptionPerVehicle", 2.31, 0],
+				["co2perVehicle", 0.86],
+				["revenueSum", 60447]
+				
+			],
+                "quarterRevenue": [12.75, 13.28, 14.34, 25.63],
+                "logo": "/images/carLogos/vauxhall.png"
+            },
+            {
+
+                "Name": "Skoda",
+                "Year": "2011",
+               "KPI": [
+				["profits", 2853, 0],
+				["salesVolume", 1461, 0],
+				["returnOnCapital", 19.1, 0],
+				["workforce", 95453, 0],
+				["womeWorkforceShare", 13.5, 0],
+				["averageTrainingHours", 3.6, 1],
+				["energyConsumptionPerVehicle", 2.75, 0],
+				["waterConsumptionPerVehicle", 2.31, 0],
+				["co2perVehicle", 0.86],
+				["revenueSum", 60447]
+				
+			],
+                "quarterRevenue": [12.75, 13.28, 14.34, 25.63],
+                "logo": "/images/carLogos/skoda.png"
+            },
+            {
+
+                "Name": "Mini",
+                "Year": "2011",
+                "KPI": [
+				["profits", 2853, 0],
+				["salesVolume", 1461, 0],
+				["returnOnCapital", 19.1, 0],
+				["workforce", 95453, 0],
+				["womeWorkforceShare", 13.5, 0],
+				["averageTrainingHours", 3.6, 1],
+				["energyConsumptionPerVehicle", 2.75, 0],
+				["waterConsumptionPerVehicle", 2.31, 0],
+				["co2perVehicle", 0.86],
+				["revenueSum", 60447]
+				
+			],
+                "quarterRevenue": [12.75, 13.28, 14.34, 25.63],
+                "logo": "/images/carLogos/mini.png"
+            },
+            {
+
+                "Name": "Seat",
+                "Year": "2011",
+                "KPI": [
+				["profits", 2853, 0],
+				["salesVolume", 1461, 0],
+				["returnOnCapital", 19.1, 0],
+				["workforce", 95453, 0],
+				["womenWorkforceShare", 13.5, 0],
+				["averageTrainingHours", 3.6, 1],
+				["energyConsumptionPerVehicle", 2.75, 0],
+				["waterConsumptionPerVehicle", 2.31, 0],
+				["co2perVehicle", 0.86],
+				["revenueSum", 60447]
+				
+			],
+                "quarterRevenue": [12.75, 13.28, 14.34, 25.63],
+                "logo": "/images/carLogos/seat.png"
+            }
+    ]

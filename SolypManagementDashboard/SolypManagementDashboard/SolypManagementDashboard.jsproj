@@ -60,6 +60,8 @@
     </AppxManifest>
     <Content Include="css\default.css" />
     <Content Include="data\2011.txt" />
+    <Content Include="data\2013.txt" />
+    <Content Include="data\2014.txt" />
     <Content Include="images\background\1.jpg" />
     <Content Include="images\background\10.jpg" />
     <Content Include="images\background\11.jpg" />
