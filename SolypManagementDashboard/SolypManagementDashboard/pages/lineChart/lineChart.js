@@ -1,9 +1,4 @@
 ﻿
-
-    function addthis(a, b) {
-        return a + b;
-    }
-
     /*
      * Graph plotting with Flot
      * https://github.com/flot/
@@ -15,30 +10,9 @@
 
     var canvasElementName = "#plottingarea"; //  where will be drawn
     var choices = $("#choices");
-    var plottingarea = $("#plottingarea");
 
-    var  colors = ["#ff0000", "#ff9900", "#99ff00", "#408cff", "#cc00ff", "#ffbfbf", "#ffcc00", "#7fffa6", "#4053ff", "#ff00b3", "#ffa680", "#ffff80", "#80ffff", "#bfc6ff", "#ff0066", "#ffd9bf", "#f2ffbf", "#00ccff", "#cc80ff", "#ff80b3"];
+    var colors = ["#ff5959", "#f3ac00", "#99ff00", "#83d0f5", "#db65ef", "#ffbfbf", "#f1fa00", "#7fffa6", "#00b9ee", "#ff00b3", "#ffa680", "#ffff80", "#80ffff", "#bfc6ff", "#ff0066", "#ffd9bf", "#f2ffbf", "#00ccff", "#cc80ff", "#ff80b3"];
     var colorsChosen = [];
-
-    /* get random color from defined list of good visible colors */
-    function getRandomColor(colorList) {
-       var l = colorList.length;
-       var r = colorList[Math.floor(Math.random() * l)];
-
-       // is color already in use?
-       if (colorsChosen.indexOf(r) > -1) {
-           if(colorList.length != colorsChosen.length) { 
-               return getRandomColor(colorList);
-           } else {
-               // when showing more than 20 graphs
-               return "#ff0000";
-           }
-       } else {
-           colorsChosen.push(r);
-           return r;
-       }
-    }
-
 
     /*
      * Data for graphs to be plotted
@@ -57,8 +31,8 @@
                 label: "China",
                 data: [[1988, 483994], [1989, 479060], [1990, 457648], [1991, 401949], [1992, 424705], [1993, 402375], [1994, 377867], [1995, 357382], [1996, 337946], [1997, 336185], [1998, 328611], [1999, 329421], [2000, 342172], [2001, 344932], [2002, 387303], [2003, 440813], [2004, 480451], [2005, 504638], [2006, 528692]]
             },
-            "russia": {
-                label: "Russia",
+            "saudiarabia": {
+                label: "Saudi Arabia",
                 data: [[1988, 218000], [1989, 203000], [1990, 171000], [1992, 42500], [1993, 37600], [1994, 36600], [1995, 21700], [1996, 19200], [1997, 21300], [1998, 13600], [1999, 14000], [2000, 19100], [2001, 21300], [2002, 23600], [2003, 25100], [2004, 26100], [2005, 31100], [2006, 34700]]
             },
             "thailand": {
@@ -69,10 +43,27 @@
                 label: "Japan",
                 data: [[1988, 11982], [1989, 22027], [1990, 660696], [1991, 44348], [1992, 128560], [1993, 256393], [1994, 354579], [1995, 550818], [1996, 50554], [1997, 148276], [1998, 472691], [1999, 347529], [2000, 473778], [2001, 487160], [2002, 509249], [2003, 574521], [2004, 602334], [2005, 601076], [2006, 593213]]
             },
+            "kazakhstan": {
+                label: "Kazhakztan",
+                data: [[1988, 1982], [1989, 2217], [1990, 41296], [1991, 51248], [1992, 52460], [1993, 78633], [1994, 99579], [1995, 12418], [1996, 78554], [1997, 88876], [1998, 57551], [1999, 44429], [2000, 17778], [2001, 8760], [2002, 5000], [2003, 55452], [2004, 40234], [2005, 10276], [2006, 59283]]
+            },
+            "india": {
+                label: "India",
+                data: [[1988, 62982], [1989, 22027], [1990, 68696], [1991, 62348], [1992, 58560], [1993, 98393], [1994, 78879], [1995, 5418], [1996, 58854], [1997, 45676], [1998, 34591], [1999, 47529], [2000, 48878], [2001, 99960], [2002, 55749], [2003, 51112], [2004, 545234], [2005, 60076], [2006, 8783]]
+            },
+            "russia": {
+                label: "Russia",
+                data: [[1988, 62982], [1989, 12027], [1990, 40688], [1991, 62348], [1992, 58560], [1993, 87393], [1994, 77779], [1995, 22818], [1996, 58794], [1997, 44576], [1998, 12691], [1999, 48759], [2000, 66678], [2001, 48760], [2002, 45649], [2003, 55482], [2004, 33634], [2005, 60076], [2006, 78713]]
+            },
+            "mongolia": {
+                label: "Mongolia",
+                data: [[1988, 62982], [1989, 61527], [1990, 68888], [1991, 69999], [1992, 58790], [1993, 15493], [1994, 98779], [1995, 50818], [1996, 3694], [1997, 3676], [1998, 48881], [1999, 54829], [2000, 88778], [2001, 48760], [2002, 87649], [2003, 11452], [2004, 64834], [2005, 54076], [2006, 87213]]
+            },
             "metadata": {
-                title: "Sales in Asia",
-                xaxis: "Years",
-                yaxis: "in Yen"
+                pagetitle: "Sales MEA",
+                title: "Sales in Asia and Middle East",
+                xaxis: "Year",
+                yaxis: "Yen"
             }
         },
         1: {
@@ -89,9 +80,10 @@
                 data: [[1988, 55627], [1989, 55475], [1990, 58464], [1991, 55134], [1992, 52436], [1993, 47139], [1994, 43962], [1995, 43238], [1996, 42395], [1997, 40854], [1998, 40993], [1999, 41822], [2000, 41147], [2001, 40474], [2002, 40604], [2003, 40044], [2004, 38816], [2005, 38060], [2006, 36984]]
             },
             "metadata": {
+                pagetitle: "Sales EU",
                 title: "Sales in Europe",
-                xaxis: "Years",
-                yaxis: "in EUR"
+                xaxis: "Year",
+                yaxis: "Euro"
             }
             
         },
@@ -109,22 +101,94 @@
                 data: [[1988, 4382], [1989, 4498], [1990, 4535], [1991, 4398], [1992, 4766], [1993, 4441], [1994, 4670], [1995, 4217], [1996, 4275], [1997, 4203], [1998, 4482], [1999, 4506]]
             },
             "metadata": {
+                pagetitle: "Customers",
                 title: "Customers in Scandinavia",
-                xaxis: "Years",
+                xaxis: "Year",
                 yaxis: "Headcount"
             }
         }
     };
 
     // options to draw canvas
-    var options;
+    var options = {
+        series: {
+            lines: {
+                show: true
+            },
+            points: {
+                show: true
+            }
+        },
+        grid: {
+            hoverable: true,
+            clickable: true
+        },
+        yaxis: {
+            min: 0
+        },
+        xaxis: {
+            tickDecimals: 0
+        },
+        legend: {
+            show: false
+        },
+        yaxisName: datasets[index]["metadata"]["xaxis"],
+        xaxisName: datasets[index]["metadata"]["yaxis"],
+        crosshair: {
+            mode: "xy",
+            color: "rgba(255, 255, 255, 0.30)",
+            lineWidth: 1
+        }
+    };
 
+    /*
+    * load data externally
+    * arguments: a by ms-appx defined URI string. e.g. "ms-appx:///data/sales/linechart_countries.txt"
+    *
+    * TODO: testing! NOT IN USE YET!
+    */
+    function loadDataFromLocalFile(sourceString) {
+
+        var uri = new Windows.Foundation.Uri(sourceString);
+
+        Windows.Storage.StorageFile.getFileFromApplicationUriAsync(uri).then(function (file) {
+            return Windows.Storage.FileIO.readTextAsync(file);
+        }).done(function (text) {
+            // overwrite / write into local variable
+            datasets = JSON.parse(text);
+        });
+
+    }
+
+
+    /*
+    * get random color from defined list of good visible colors
+    * arguments: a list of colors
+    */
+    function getRandomColor(colorList) {
+        var l = colorList.length;
+        var r = colorList[Math.floor(Math.random() * l)];
+
+        // is color already in use?
+        if (colorsChosen.indexOf(r) > -1) {
+            if (colorList.length != colorsChosen.length) {
+                return getRandomColor(colorList);
+            } else {
+                // when showing more than 20 graphs
+                return "#ff0000";
+            }
+        } else {
+            colorsChosen.push(r);
+            return r;
+        }
+    }
 
 
     /*
      * Show Data one in front of actual displayed at the moment.
+     * arguments: index, dataset
      */
-    function showPreviousDataset(ind) {
+    function showPreviousDataset(ind, data) {
 
         // decrease actualYear parameter if year is existent
         if (ind > 0) {
@@ -137,8 +201,8 @@
             myNode.removeChild(myNode.firstChild);
         }
 
-        printChoices(ind);
-        plotCheckedLines(ind);
+        printChoices(ind, data);
+        plotCheckedLines(ind, data);
 
         // reset usable colors on next sheet @see getRandomColor function
         colorsChosen.length = 0;
@@ -149,10 +213,11 @@
 
     /*
      * Show Data one year in the future of actual displayed at the moment.
+     * arguments: index, dataset
      */
-    function showNextDataset(ind) {
+    function showNextDataset(ind, data) {
       
-        if (datasets[ind+1] != null) {
+        if (data[ind+1] != null) {
             ind = ind + 1;
         }
 
@@ -162,21 +227,14 @@
             myNode.removeChild(myNode.firstChild);
         }
 
-        printChoices(ind);
-        plotCheckedLines(ind);
+        printChoices(ind, data);
+        plotCheckedLines(ind, data);
 
         // reset usable colors on next sheet @see getRandomColor function
         colorsChosen.length = 0;
 
         index = ind;
         return ind;
-    }
-
-    /*
-     * Desperately needed debugging function...
-     */
-    function log(msg) {
-        document.getElementById("status").innerHTML += msg;
     }
 
     /*
@@ -222,52 +280,20 @@
 
     /*
     * Actually plots the graphs at given data index number
-    * arguments: index (which dataset to plot)
+    * arguments: index (which dataset to plot), data d
     */
-    function plotCheckedLines(index) {
+    function plotCheckedLines(index, d) {
         var data = [];
 
         choices.find("input:checked").each(function () {
             var key = $(this).attr("id");
 
-            if (key && datasets[index][key]) {
-                data.push(datasets[index][key]);
+            if (key && d[index][key]) {
+                data.push(d[index][key]);
             }
         });
 
         if (data.length > 0) {
-            options = {
-                series: {
-                    lines: {
-                        show: true
-                    },
-                    points: {
-                        show: true
-                    }
-                },
-                grid: {
-                    hoverable: true,
-                    clickable: true
-                },
-                yaxis: {
-                    min: 0
-                },
-                xaxis: {
-                    tickDecimals: 0
-                },
-                legend: {
-                    show: false
-                },
-                yaxisName: datasets[index]["metadata"]["xaxis"],
-                xaxisName: datasets[index]["metadata"]["yaxis"],
-                crosshair: {
-                    mode: "xy",
-                    color: "rgba(255, 255, 255, 0.30)",
-                    lineWidth: 1
-
-                }
-            };
-
             $("<div id='tooltip'></div>").css({
                 position: "absolute",
                 display: "none",
@@ -283,7 +309,8 @@
 
                 // show actual position of crosshair
                 if ($("#enablePosition:checked").length > 0 ) {
-                    $("#mouseoverdata").text(pos.x.toFixed(0) + ", " + pos.y.toFixed(0));
+                    // $("#mouseoverdata").text(pos.x.toFixed(0) + ", " + pos.y.toFixed(0));
+                     $("#mouseoverdata").text(d[index]['metadata']['xaxis'] + ": " + pos.x.toFixed(0) + ", " + d[index]['metadata']['yaxis'] + ": " + pos.y.toFixed(0));
                 } else {
                     $("#mouseoverdata").text("");
                 }
@@ -294,22 +321,24 @@
                 });
 
                 // tooltip appears on click of a data point
-                if (item) {
+                if ($("#enableHoverable:checked").length > 0) {
+                    if (item) {
                         var x = item.datapoint[0],
                             y = item.datapoint[1];
 
-                        $("#tooltip").html(item.series.label + ": x: " + x.toFixed(0) + " ; y: " + y.toFixed(0))
+                        $("#tooltip").html(item.series.label + ": <br> " + d[index]['metadata']['xaxis'] + ": " + x.toFixed(0) + "<br>" + d[index]['metadata']['yaxis'] + ": " + y.toFixed(0))
                             .css({ top: item.pageY + 5, left: item.pageX + 5 })
                             .fadeIn(400);
                     } else {
                         $("#tooltip").hide();
-               }
+                    }
+                }
                 
             });
 
             // paint labels on x and y axis
-            paintXlabel(datasets[index]['metadata']['xaxis']);
-            paintYlabel(datasets[index]['metadata']['yaxis']);
+            paintXlabel(d[index]['metadata']['xaxis']);
+            paintYlabel(d[index]['metadata']['yaxis']);
           
         }
     }
@@ -317,64 +346,129 @@
     /*
      * Funciton responsible for printing the left side navigational menu.
      * Prints a toggling-functionality for the data being displayed as graphs on the canvas
-     * arguments: index (which dataset is shown)
+     * arguments: index (which dataset is shown), dataset d
      */
-    function printChoices(index) {
+    function printChoices(index, d) {
+
         // give every graph a unique color from config
-        $.each(datasets[index], function (key, val) {
-            val.color = getRandomColor(colors);
+        var j = 0;
+        $.each(d[index], function (key, val) {
+            //val.color = getRandomColor(colors);
+            val.color = colors[j++];
         });
 
         choices = $("#choices");
-        $.each(datasets[index], function (key, val) {
+        $.each(d[index], function (key, val) {
             if (key === "metadata") return;
             // why I hate Windows development... (unallowed operation throwing errors otherwise)
             MSApp.execUnsafeLocalFunction(function () {
-                var untrusted = "<input type='checkbox' checked='checked' id='" + key + "' style='display: inline;'>" +
+                var untrusted = "<input type='checkbox' class='choice' checked='checked' id='" + key + "' style='display: inline;'>" +
                                 "<label style='margin-left: 5px; color:" + val.color + " !important; text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.22); font-size: 16px;'>" + val.label + "</label><br>";
                     // @TODO create new dom element and append afterwards maybe doesnt need .execUnsafeLocal...
                 choices.append(untrusted);
             });
         });
 
-        printNavigationArrows(index);
+        printNavigationArrows(index, d);
 
         /* redefine onclick behaviour on newly printed input elements on each subpage -- important*/
         $(document).on("click", "input", function () {
-            plotCheckedLines(index);
+            plotCheckedLines(index, d);
         });
 
     }
 
     /*
      *  define if navigation arrows make sense on a certain page (toggle them if needed)
-     *  argument: ind is the indicator for the dataset to show (index)
+     *  argument: ind is the indicator for the dataset to show (index), dataset d
      */
-    function printNavigationArrows(ind) {
-        if (datasets[ind - 1] == null) {
+    function printNavigationArrows(ind, d) {
+
+        if (ind < 0 || ind > d.length) {
+            throw "indexError";
+        }
+
+        var r;
+        if (d[ind - 1] == null) {
             // start
             $("#leftNav").hide();
             $("#rightNav").show();
-        } else if (datasets[ind + 1] == null) {
+            r = "right";
+        } else if (d[ind + 1] == null) {
             // middle pages
             $("#leftNav").show();
             $("#rightNav").hide();
+            r = "left";
         } else {
             // end
             $("#leftNav").show();
             $("#rightNav").show();
+            r = "both";
         }
 
         // reprint chart title accordingly
-        updateChartTitle(ind);
+        updateChartTitle(ind, d);
+        updatePageTitle(ind, d);
+        return r;
     }
 
     /*
      *  Reprints the title of the actual chart displayed.
-     *  argument: ind is the indicator for the dataset to show (index)
+     *  argument: ind is the indicator for the dataset to show (index), dataset d
      */
-    function updateChartTitle(ind) {
-        document.getElementById("chartTitle").innerHTML = datasets[ind]["metadata"]["title"];
+    function updateChartTitle(ind, d) {
+        if (d[ind] != null) {
+            document.getElementById("chartTitle").innerHTML = d[ind]["metadata"]["title"];
+        } else {
+            throw "updateChartError";
+        }
+    }
+
+    function updatePageTitle(ind, d) {
+
+        if (d[ind]["metadata"]["pagetitle"] == "") {
+            // do not alter title if empty
+            return;
+        }
+
+        if (d[ind]["metadata"]["pagetitle"] == null) {
+            // do not alter title if empty
+            throw "updateTitleError";
+        }
+
+        if (d[ind] != null) {
+            document.getElementById("pageTitle").innerHTML = d[ind]["metadata"]["pagetitle"];
+        } else {
+            throw "updateTitleError";
+        }
+    }
+
+    /*
+     *  Sets options for showing crosshairs on plot hover
+     *  default shown is xy crosshair
+     */
+    function crosshairOptions() {
+        // status of crosshair option inputs
+        var x = document.getElementById("enableCrosshairX").checked;
+        var y = document.getElementById("enableCrosshairY").checked;
+
+        // translating for flot
+        if(x == true && y == false) {
+            options["crosshair"]["mode"] = "x";
+            return "x";
+        }
+        if (x == false && y == true) {
+            options["crosshair"]["mode"] = "y";
+            return "y";
+        }
+        if (x == true && y == true) {
+            options["crosshair"]["mode"] = "xy";
+            return "xy";
+        }
+        if (x == false && y == false) {
+            options["crosshair"]["mode"] = "none";
+            return "none";
+        }
     }
 
     /*
@@ -386,12 +480,47 @@
         ready: function (element, options) {
 
             // eventListeners navigation buttons for Dataset changes
-            document.getElementById("rightNav").addEventListener("click", function () { showNextDataset(index); });
-            document.getElementById("leftNav").addEventListener("click", function () { showPreviousDataset(index); });
+            document.getElementById("rightNav").addEventListener("click", function () { showNextDataset(index, datasets); });
+            document.getElementById("leftNav").addEventListener("click", function () { showPreviousDataset(index, datasets); });
+            document.getElementById("enableCrosshairX").addEventListener("click", function () { crosshairOptions(); });
+            document.getElementById("enableCrosshairY").addEventListener("click", function () { crosshairOptions(); });
 
             // print initially
-            printChoices(index);
-            plotCheckedLines(index);
+            printChoices(index, datasets);
+            plotCheckedLines(index, datasets);
 
         }
     });
+
+
+    /*
+     * Helper functions used to pass important global variable data for testing 
+     */
+
+    function getOptions() {
+        return options;
+    }
+
+    function getDatasets() {
+        return datasets;
+    }
+
+    function getCanvas() {
+        return canvasElementName;
+    }
+
+    function getDocument() {
+        return document;
+    }
+
+    function getColorList() {
+        return colors;
+    }
+
+    function getColorsChosen() {
+        return colorsChosen;
+    }
+
+    function log(msg) {
+        document.getElementById("status").innerHTML += msg;
+    }

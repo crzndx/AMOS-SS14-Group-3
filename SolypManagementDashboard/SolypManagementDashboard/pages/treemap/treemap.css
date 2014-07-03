@@ -6,21 +6,30 @@
     margin: auto;
     position: relative;
     width: 960px;
+   
     }
 
 /*Copied from Mike Bostock*/
 
- 
-        rect {
-            fill: none;
-            stroke: #FFFFFF;
-        }
-        .labelbody {
-            margin: 2px;
-        }
-        .foreignObject {
-            font: 9px sans-serif;
-            text-overflow: ellipsis;
-            text-align: left;
-            word-wrap: break-word;
-        }
+form {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+
+.chart {
+  display: block;
+  margin: auto;
+  margin-top: 40px;
+  width: 960px;
+  height: 500px;
+  overflow:hidden;
+}
+
+text {
+  font-size: 11px;
+}
+
+rect {
+  fill: none;
+}

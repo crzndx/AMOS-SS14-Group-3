@@ -11,6 +11,7 @@
     }
 
 
+
     var customerCardsTileId = 0;
 
     // Generates the Template for the ListView-Items
@@ -116,8 +117,10 @@
 
 
     function loadData() {
+        var dataSource = "ms-appx:///data/" + currentYear + ".txt";
+        var temp = "/data/" + currentYear + ".txt";
 
-        var uri = new Windows.Foundation.Uri("ms-appx:///data/2011.txt");
+        var uri = new Windows.Foundation.Uri(dataSource);
 
         Windows.Storage.StorageFile.getFileFromApplicationUriAsync(uri).then(function (file) {
             return Windows.Storage.FileIO.readTextAsync(file);
@@ -128,9 +131,14 @@
             var tileData = new WinJS.Binding.List(temp);
             var list2 = document.getElementById("customerListView").winControl;
             list2.itemDataSource = tileData.dataSource;
-
-            list2.forceLayout();
             customerCardsTileId = 0;
+            list2.forceLayout();
+
+
+        }, function (message) {
+            var messageDialog = new Windows.UI.Popups.MessageDialog(message);
+            currentYear += lastModificationOnCurrentYear * -1;
+            messageDialog.showAsync();
 
         });
 
@@ -188,7 +196,7 @@
             var tempObj = new WinJS.Binding.List(selectedArray);
             // lettersList = new WinJS.Binding.List(letters);
             list2.itemDataSource = tempObj.dataSource;
-
+            customerCardsTileId = 0;
             list2.forceLayout();
 
 
@@ -331,8 +339,18 @@
 
     }
 
-
-
+    var currentYear = 2013;
+    var lastModificationOnCurrentYear = 0;
+    function showNextYear() {
+        currentYear += 1;
+        lastModificationOnCurrentYear = 1;
+        initTiles();
+    }
+    function showPreviousYear() {
+        currentYear -= 1;
+        lastModificationOnCurrentYear = -1;
+        initTiles();
+    }
 
     WinJS.UI.Pages.define("/pages/TileComparison/TileComparison.html", {
 
@@ -341,8 +359,8 @@
             /* Initialize App Bar */
             slidingAppBar = document.getElementById("appBar").winControl;
 
-            slidingAppBar.getCommandById("showNextYear").addEventListener("click", function () { showNextYear(dimensionIndex); });
-            slidingAppBar.getCommandById("showPreviousYear").addEventListener("click", function () { showPreviousYear(dimensionIndex); });
+            slidingAppBar.getCommandById("showNextYear").addEventListener("click", function () { showNextYear(); });
+            slidingAppBar.getCommandById("showPreviousYear").addEventListener("click", function () { showPreviousYear(); });
             slidingAppBar.getCommandById("showAllCards").addEventListener("click", function () { showAllCards(); });
 
             /*****************************************/
