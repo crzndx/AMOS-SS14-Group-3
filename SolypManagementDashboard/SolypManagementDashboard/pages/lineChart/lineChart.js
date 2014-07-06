@@ -21,12 +21,11 @@
      */
     var index = 0; // current index to show dataset #
 
-    // actual data being displayed
-// @TODO do it externally?
-    var datasets;
-
+    /*
+    * Default dataset to show
+    */
     var datasets = {
-        0 : {
+        0: {
             "myanmar": {
                 label: "Myanmar",
                 data: [[1988, 683994], [1989, 573060], [1990, 153631], [1991, 333349], [1992, 311705], [1993, 202111], [1994, 247867], [1995, 300382], [1996, 300046], [1997, 300000], [1998, 322611], [1999, 129421], [2000, 142172], [2001, 244932], [2002, 227303], [2003, 540813], [2004, 183451], [2005, 304638], [2006, 528692]]
@@ -89,7 +88,7 @@
                 xaxis: "Year",
                 yaxis: "Euro"
             }
-            
+
         },
         2: {
             "denmark": {
@@ -115,35 +114,160 @@
 
     // options to draw canvas
     var options = {
-        "series": {
-            "lines": {
-                "show": true
+        series: {
+            lines: {
+                show: true
             },
-            "points": {
-                "show": true
+            points: {
+                show: true
             }
         },
-        "grid": {
-            "hoverable": true,
-            "clickable": true
+        grid: {
+            hoverable: true,
+            clickable: true
         },
-        "yaxis": {
-            "min": 0
+        yaxis: {
+            min: 0
         },
-        "xaxis": {
-            "tickDecimals": 0
+        xaxis: {
+            tickDecimals: 0
         },
-        "legend": {
-            "show": false
+        legend: {
+            show: false
         },
-        "yaxisName": datasets[index]["metadata"]["xaxis"],
-        "xaxisName": datasets[index]["metadata"]["yaxis"],
-        "crosshair": {
-            "mode": "xy",
-            "color": "rgba(255, 255, 255, 0.30)",
-            "lineWidth": 1
+        yaxisName: datasets[index]["metadata"]["xaxis"],
+        xaxisName: datasets[index]["metadata"]["yaxis"],
+        crosshair: {
+            mode: "xy",
+            color: "rgba(255, 255, 255, 0.30)",
+            lineWidth: 1
         }
     };
+
+
+
+    /*
+     * Sales page dataset
+     */ 
+
+    var datasetsSales = {
+        0: {
+            "mercedes-benz-cars": {
+                label: "Mercedes-Benz Cars",
+                data:  [[2004, 7890], [2005, 8123], [2006, 8456], [2007, 8490], [2008, 8590], [2009, 8345], [2010, 8933], [2011, 8945], [2012, 9078], [2013, 9034]]
+            },
+            "daimlertrucks": {
+                label: "Daimler Trucks",
+                data: [[2004, 3590], [2005, 4690], [2006, 3218], [2007, 3990], [2008, 1589], [2009, 3580], [2010, 4590], [2011, 4219], [2012, 4032], [2013, 4834]]
+            },
+            "mercedes-benz-vans": {
+                label: "Mercedes-Benz Vans",
+                data: [[2004, 1392], [2005, 1990], [2006, 1840], [2007, 1850], [2008, 1730], [2009, 2124], [2010, 2432], [2011, 2510], [2012, 2310], [2013, 1380]]
+            },
+            "daimlerbusses": {
+                label: "Daimler Busses",
+                data: [[2004, 2940], [2005, 2910], [2006, 2495], [2007, 2122], [2008, 2395], [2009, 2509], [2010, 3690], [2011, 2390], [2012, 2139], [2013, 2311]]
+            },
+            "daimlerfinancialservices": {
+                label: "Daimler Financial Services",
+                data: [[2004, 849], [2005, 829], [2006, 823], [2007, 869], [2008, 800], [2009, 734], [2010, 798], [2011, 8511], [2012, 8243], [2013, 8340]]
+            },
+            "metadata": {
+                pagetitle: "Total Sales",
+                title: "Global",
+                xaxis: "Year",
+                yaxis: "Euros (Million)"
+            }
+        },
+        1: {
+            "mercedes-benz-cars": {
+                label: "Mercedes-Benz Cars",
+                data: [[2004, 1656.9], [2005, 3655.35], [2006, 3381.2], [2007, 2377.2], [2008, 2920.6], [2009, 2503.5], [2010, 2590.57], [2011, 3130.75], [2012, 3721.98], [2013, 1806.8]]
+            },
+            "daimlertrucks": {
+                label: "Daimler Trucks",
+                data: [[2004, 1005.2], [2005, 1360.1], [2006, 772.32], [2007, 2114.7], [2008, 762.72], [2009, 1718.4], [2010, 2019.6], [2011, 2109.5], [2012, 1774.08], [2013, 1450.2]]
+            },
+            "mercedes-benz-vans": {
+                label: "Mercedes-Benz Vans",
+                data: [[2004, 542.88], [2005, 557.2], [2006, 883.2], [2007, 758.5], [2008, 709.3], [2009, 531], [2010, 1143.04], [2011, 903.6], [2012, 808.5], [2013, 524.4]]
+            },
+            "daimlerbusses": {
+                label: "Daimler Busses",
+                data: [[2004, 882], [2005, 1658.7], [2006, 823.35], [2007, 551.72], [2008, 670.6], [2009, 978.51], [2010, 2029.5], [2011, 908.2], [2012, 1283.4], [2013, 947.51]]
+            },
+            "daimlerfinancialservices": {
+                label: "Daimler Financial Services",
+                data: [[2004, 280.17], [2005, 306.73], [2006, 148.14], [2007, 243.32], [2008, 224], [2009, 205.52], [2010, 215.46], [2011, 3149.07], [2012, 2967.48], [2013, 3336]]
+            },
+            "metadata": {
+                pagetitle: "Total Sales",
+                title: "Western and Northern Europe",
+                xaxis: "Year",
+                yaxis: "Euros (Million)"
+            }
+        },
+        2: {
+            "mercedes-benz-cars": {
+                label: "Mercedes-Benz Cars",
+                data: [[2004, 1183.5], [2005, 487.38], [2006, 1352.48], [2007, 933.9], [2008, 1546.2], [2009, 1168.3], [2010, 1518.61], [2011, 1699.55], [2012, 1452.48], [2013, 1716.46]]
+            },
+            "daimlertrucks": {
+                label: "Daimler Trucks",
+                data: [[2004, 610.3], [2005, 938], [2006, 579.24], [2007, 239.4], [2008, 95.34], [2009, 465.4], [2010, 367.2], [2011, 379.71], [2012, 403.2], [2013, 435.06]]
+            },
+            "mercedes-benz-vans": {
+                label: "Mercedes-Benz Vans",
+                data: [[2004, 125.28], [2005, 398], [2006, 110.4], [2007, 148], [2008, 190.3], [2009, 361.08], [2010, 437.76], [2011, 301.2], [2012, 277.2], [2013, 82.8]]
+            },
+            "daimlerbusses": {
+                label: "Daimler Busses",
+                data: [[2004, 382.2], [2005, 145.5], [2006, 474.05], [2007, 339.52], [2008, 359.25], [2009, 326.17], [2010, 332.1], [2011, 239], [2012, 106.95], [2013, 392.87]]
+            },
+            "daimlerfinancialservices": {
+                label: "Daimler Financial Services",
+                data: [[2004, 101.88], [2005, 124.35], [2006, 164.6], [2007, 112.97], [2008, 152], [2009, 124.78], [2010, 143.64], [2011, 1446.87], [2012, 1401.31], [2013, 1584.6]]
+            },
+            "metadata": {
+                pagetitle: "Total Sales",
+                title: "Eastern Europe",
+                xaxis: "Year",
+                yaxis: "Euros (Million)"
+            }
+        },
+        3: {
+            "mercedes-benz-cars": {
+                label: "Mercedes-Benz Cars",
+                data: [[2004,2445.9],	[2005,2274.44],	[2006,2620.43],	[2007,2801.7],	[2008,2061.6],	[2009,2586.95],	[2010,3037.22],	[2011,2594.05],	[2012,1997.16],	[2013,3161.9]]
+            },
+            "daimlertrucks": {
+                label: "Daimler Trucks",
+                data: [[2004, 1148.8], [2005, 1407], [2006, 1126.3], [2007, 997.5], [2008, 413.14], [2009, 930.8], [2010, 1606.5], [2011, 1054.75], [2012, 1088.64], [2013, 1546.88]]
+            },
+            "mercedes-benz-vans": {
+                label: "Mercedes-Benz Vans",
+                data: [[2004, 361.92], [2005, 457.7], [2006, 496.8], [2007, 592], [2008, 380.6], [2009, 700.92], [2010, 510.72], [2011, 727.9], [2012, 716.1], [2013, 455.4]]
+            },
+            "daimlerbusses": {
+                label: "Daimler Busses",
+                data: [[2004, 882], [2005, 756.6], [2006, 798.4], [2007, 700.26], [2008, 814.3], [2009, 677.43], [2010, 811.8], [2011, 573.6], [2012, 427.8], [2013, 600.86]]
+            },
+            "daimlerfinancialservices": {
+                label: "Daimler Financial Services",
+                data: [[2004,220.74],	[2005,223.83],	[2006,271.59],	[2007,260.7],	[2008,272],	[2009,234.88],	[2010,183.54],	[2011,2468.19],	[2012,2637.76],	[2013,1918.2]]
+            },
+            "metadata": {
+                pagetitle: "Total Sales",
+                title: "Central and North America",
+                xaxis: "Year",
+                yaxis: "Euros (Million)"
+            }
+        }
+    };
+
+
+
+
 
     /*
      * Grid navigation - called when listed page is being loaded
@@ -156,7 +280,9 @@
             // get path of the source externally from homescreendata.js file
             sourcePath = options.sourcePath;
             // and refresh dataset with this now queried data
-            loadDataFromLocalFile(sourcePath);
+            //loadDataFromLocalFile(sourcePath);
+
+            loadDataInFile(sourcePath);
 
             // eventListeners navigation buttons for Dataset changes
             document.getElementById("rightNav").addEventListener("click", function () { showNextDataset(index, datasets); });
@@ -170,15 +296,33 @@
 
         }
     });
+
     
 
     /*
-    * load data externally
+     * Temporary hack due to malfunction of external loading
+     * gets string what to load from config file
+     */
+    function loadDataInFile(sourceVariable) {
+        switch (sourceVariable) {
+            // see homescreenData.js for linking of cases
+            case "salesData":
+                  datasets = datasetsSales; break;
+            case "financeData":
+                  datasets = datasetsFinance; break;
+            case "projectsfinalData":
+                  datasets = datasetsProjectsFinalData; break;
+            default:
+                  datasets = datasets;
+        }
+    }
+
+    /*
+    * load data externally (NOT WORKING, occasional errors!!!)
     * arguments: a by ms-appx defined URI string. e.g. "ms-appx:///data/sales/linechart_countries.txt"
     *
     * TODO: testing! NOT IN USE YET!
     */
-
     function loadDataFromLocalFile(sourceString) {
 
         var uri = new Windows.Foundation.Uri(sourceString);
@@ -187,8 +331,8 @@
             return Windows.Storage.FileIO.readTextAsync(file);
         }).done(function (text) {
             // overwrite / write into local variable
-
-            // var dataset2 = JSON.parse(text);
+            // THROWS ERRORS on indexing !! cant figure out why & short on time, therefore data gathering from local variables (yes its ugly)
+            // dataset = JSON.parse(text);
         });
 
     }
