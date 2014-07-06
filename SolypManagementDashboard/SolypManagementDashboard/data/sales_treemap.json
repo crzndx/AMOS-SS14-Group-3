@@ -1,0 +1,46 @@
+{
+ "name": "Sales",
+ "children": [
+  {
+   "name": "Mercedes-Benz Cars",
+   "children": [
+    {"name": "Mercedes-Benz", "investment": 12503000, "revenue": 1156},
+	{"name": "Smart", "investment": 340234, "revenue": 149}  
+    ]
+  },
+  {
+    "name": "Daimler  Trucks",
+     "children": [
+      {"name": "Mercedes-Benz", "investment": 73046, "revenue": 94},
+      {"name": "Freightliner", "investment": 103743, "revenue": 104},
+	  {"name": "Western Star", "investment": 37482, "revenue": 36},
+	  {"name": "Thomas Built Buses", "investment": 94755, "revenue": 13},
+	  {"name": "Fuso", "investment": 204632, "revenue": 238},
+	  {"name": "BharatBenz", "investment": 283946, "revenue": 195}
+     ]
+    },
+    {
+     "name": "Mercedes-Benz Vans",
+     "children": [
+      {"name": "Mercedes-Benz", "investment": 98364, "revenue": 32},
+	  {"name": "Freightliner", "investment": 45639, "revenue": 19}
+     ]
+    },
+	{
+     "name": "Daimler Buses",
+     "children": [
+      {"name": "Mercedes-Benz", "investment": 86342, "revenue": 51},
+	  {"name": "Setra", "investment": 39465, "revenue": 28}
+     ]
+    },
+	{
+     "name": "Daimler Financial Services",
+     "children": [
+      {"name": "Mercedes-Benz Bank", "investment":384652, "revenue": 275},
+	  {"name": "Mercedes-Benz Financial", "investment": 974526, "revenue": 947},
+	  {"name": "Daimler Truck Financial", "investment": 746342, "revenue": 472}
+	 ]
+    }
+   ]
+ }
+ 

@@ -1,0 +1,92 @@
+
+{
+ "name": "Finance",
+ "children": [
+ {
+   "name": "Western and Northern Europe",
+   "children": [
+	{"name":"Spain", "investment": 125000, "revenue" :350000},
+	{"name":"France", "investment":237000, "revenue" :539000},
+	{"name":"Portugal", "investment":94000, "revenue" :210000},
+	{"name":"Finland", "investment":142000, "revenue" :382000},
+	{"name":"Norwey", "investment":385000, "revenue" :610000},
+	{"name":"Sweden", "investment":204000, "revenue" :472000},
+	{"name":"Benelux", "investment":82000, "revenue" :156000},
+	{"name":"UK", "investment":421000, "revenue" :710000},
+	{"name":"Italy", "investment":214000, "revenue" :453000},
+	{"name":"Denmark", "investment":87000, "revenue" :172000}
+	]
+  },
+  {
+	"name": "Eastern Europe",
+	"children": [
+	{"name":"Slovakia", "investment": 63000, "revenue" :120000},
+	{"name":"Czech Republic", "investment": 42000, "revenue" :92000},
+	{"name":"Poland", "investment": 74000, "revenue" :153000},
+	{"name":"Ukraine", "investment": 92300, "revenue" :201000},
+	{"name":"Hungary", "investment": 73500, "revenue" :173000},
+	{"name":"Romania", "investment": 43000, "revenue" :93200},
+	{"name":"Bulgaria", "investment": 37000, "revenue" :83000}
+	]
+  },
+  {"name":"Germany", "investment": 421000, "revenue" :832000},
+  {"name":"USA", "investment": 473000, "revenue" :847000},
+  {"name":"UAE", "investment": 325000, "revenue" :648000},
+  {"name":"China", "investment": 285000, "revenue" :574000},
+  {"name":"India", "investment": 149000, "revenue" :325000},
+  {
+	"name": "Central and North America",
+	"children": [
+	{"name":"Mexico", "investment": 103000, "revenue" :294000},
+	{"name":"Canada", "investment": 287000, "revenue" :436000},
+	{"name":"Islands", "investment": 82000, "revenue" :143000}
+	]
+  },
+  {
+	"name": "South America",
+	"children": [
+	{"name":"Brazil", "investment": 93800, "revenue" :215000},
+	{"name":"Argentina", "investment": 97400, "revenue" :194000},
+	{"name":"Chile", "investment": 73800, "revenue" :183000},
+	{"name":"Colombia", "investment": 77000, "revenue" :173000},
+	{"name":"Venezuela", "investment": 83400, "revenue" :189000},
+	{"name":"Ecuador", "investment": 63000, "revenue" :168000},
+	{"name":"Uruguay", "investment": 74600, "revenue" :171000}
+	]
+  },
+  {
+	"name": "Africa",
+	"children": [
+	{"name":"Ghana", "investment": 21000, "revenue" :62400},
+	{"name":"Ethiopia", "investment": 14000, "revenue" :42900},
+	{"name":"Angola", "investment": 35000, "revenue" :93200},
+	{"name":"Tunisia", "investment": 29000, "revenue" :54900},
+	{"name":"Morocco", "investment": 19000, "revenue" :41800},
+	{"name":"Nigeria", "investment": 38400, "revenue" :140000},
+	{"name":"Egypt", "investment": 15300, "revenue" :74000},
+	{"name":"South Africa", "investment": 42100, "revenue" :183000}
+	]
+  },
+  {
+	"name": "Australia & NZ",
+	"children": [
+	{"name":"Australia", "investment": 194000, "revenue" :328000},
+	{"name":"New Zealand", "investment": 132000, "revenue" :317000}
+	]
+  },
+  {
+	"name": "Asia Pacific ",
+	"children": [
+	{"name":"Japan", "investment": 173000, "revenue" :398000},
+	{"name":"Singapore", "investment": 132000, "revenue" :379000},
+	{"name":"Brunei", "investment": 84300, "revenue" :178000},
+	{"name":"Korea, South", "investment": 142000, "revenue" :387000},
+	{"name":"Malaysia", "investment": 93000, "revenue" :164000},
+	{"name":"Azerbaijan", "investment": 74300, "revenue" :132000},
+	{"name":"Thailand", "investment": 75000, "revenue" :153000},
+	{"name":"Kazakhstan", "investment": 58000, "revenue" :104000}
+	]
+  }
+  ]
+ }
+

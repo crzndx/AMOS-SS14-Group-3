@@ -7,11 +7,11 @@
         // This function is called whenever a user navigates to this page. It
         // populates the page elements with the app's data.
         ready: function (element, options) {
-
+            sourcePath = options.sourcePath;
             // Add useful content here
             // what should be done after pageload? does more content need to be rendered?
             // start other js services?
-
+            
             /**********/
  
 
@@ -39,7 +39,7 @@
               .append("svg:g")
                 .attr("transform", "translate(.5,.5)");
 
-            d3.json("pages/treemap/squaresdata.json", function (data) {
+            d3.json(sourcePath , function (data) {
                 node = root = data;
 
                 var nodes = treemap.nodes(root)

@@ -59,6 +59,10 @@
     </AppxManifest>
     <Content Include="css\default.css" />
     <Content Include="data\2011.txt" />
+    <Content Include="data\finance_treemap.json" />
+    <Content Include="data\globalProjects_treemap.json" />
+    <Content Include="data\sales_treemap.json" />
+    <Content Include="data\squaresdata.json" />
     <Content Include="images\background\1.jpg" />
     <Content Include="images\background\10.jpg" />
     <Content Include="images\background\11.jpg" />

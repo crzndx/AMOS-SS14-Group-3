@@ -71,11 +71,10 @@
         // Each of these sample groups must have a unique key to be displayed
         // separately.
         var sampleGroups = [
-            { key: "group1", title: "Competitors", subtitle: "Aggregated Competitor data", backgroundImage: darkGray, description: groupDescription },
+            { key: "group1", title: "Finance", subtitle: "Aggregated Finance data", backgroundImage: darkGray, description: groupDescription },
             { key: "group2", title: "Sales", subtitle: "Aggregated Sales data", backgroundImage: lightGray, description: groupDescription },
-            { key: "group3", title: "Finances", subtitle: "Aggregated Finances data", backgroundImage: mediumGray, description: groupDescription },
-            { key: "group4", title: "Strategy", subtitle: "Aggregated Strategy data", backgroundImage: lightGray, description: groupDescription },
-            { key: "group5", title: "Customer Support", subtitle: "Customer Support data", backgroundImage: mediumGray, description: groupDescription },
+            { key: "group3", title: "Global Projects", subtitle: "Projects over the world", backgroundImage: mediumGray, description: groupDescription },
+           
         ];
 
         // Each of these sample items should have a reference to a particular
@@ -84,17 +83,17 @@
             
             { group: sampleGroups[0], title: "Card Comparison", subtitle: "Compare different competitor cards with the comparing functionality", description: itemDescription, content: itemContent, backgroundImage: "/images/groupedItems/playingCards.jpg", path: "/pages/TileComparison/TileComparison.html", sourcePath: "salesDataxx" },
             { group: sampleGroups[0], title: "Showing all Cards", subtitle: "Shows all cards at once", description: itemDescription, content: itemContent, backgroundImage: "/images/groupedItems/playingCards.jpg", path: "/pages/allCards/allCards.html", sourcePath: "ms-appx:///data/sales/linechart.txt" },
+            { group: sampleGroups[0], title: "Treemap", subtitle: "Displays KPI in squares of different sizes", description: itemDescription, content: itemContent, backgroundImage: "/images/groupedItems/squares.jpg", path: "/pages/treemap/treemap.html", sourcePath: "/data/finance_treemap.json" },
+            { group: sampleGroups[0], title: "Dummy Page", subtitle: "This is a basic template site used for every new subpage", description: itemDescription, content: itemContent, backgroundImage: "/images/groupedItems/blankPage.jpg", path: "/pages/newPageDummy/newDummyHTML.html", sourcePath: "ms-appx:///data/sales/linechart.txt" },
 
+            { group: sampleGroups[1], title: "Total Sales", subtitle: "Displays financial line charts e.g. sales", description: itemDescription, content: itemContent, backgroundImage: "/images/groupedItems/lineChart.jpg", path: "/pages/lineChart/lineChart.html", sourcePath: "salesData" },
+            { group: sampleGroups[1], title: "Financial Charts", subtitle: "Displays financial line charts e.g. sales", description: itemDescription, content: itemContent, backgroundImage: "/images/groupedItems/lineChart.jpg", path: "/pages/lineChart/lineChart.html", sourcePath: "defaultdataset" },
+            { group: sampleGroups[1], title: "Treemap", subtitle: "Displays KPI in squares of different sizes", description: itemDescription, content: itemContent, backgroundImage: "/images/groupedItems/squares.jpg", path: "/pages/treemap/treemap.html", sourcePath: "/data/sales_treemap.json" },
+
+
+            { group: sampleGroups[2], title: "Treemap", subtitle: "Displays KPI in squares of different sizes", description: itemDescription, content: itemContent, backgroundImage: "/images/groupedItems/squares.jpg", path: "/pages/treemap/treemap.html", sourcePath: "/data/globalProjects_treemap.json" },
 
             
-
-            { group: sampleGroups[2], title: "Total Sales", subtitle: "Displays financial line charts e.g. sales", description: itemDescription, content: itemContent, backgroundImage: "/images/groupedItems/lineChart.jpg", path: "/pages/lineChart/lineChart.html", sourcePath: "salesData" },
-            { group: sampleGroups[2], title: "Financial Charts", subtitle: "Displays financial line charts e.g. sales", description: itemDescription, content: itemContent, backgroundImage: "/images/groupedItems/lineChart.jpg", path: "/pages/lineChart/lineChart.html", sourcePath: "defaultdataset" },
-
-
-            { group: sampleGroups[3], title: "Squares", subtitle: "Displays KPI in squares of different sizes", description: itemDescription, content: itemContent, backgroundImage: "/images/groupedItems/squares.jpg", path: "/pages/squares/squares.html", sourcePath: "ms-appx:///data/sales/linechart.txt" },
-
-            { group: sampleGroups[4], title: "Dummy Page", subtitle: "This is a basic template site used for every new subpage", description: itemDescription, content: itemContent, backgroundImage: "/images/groupedItems/blankPage.jpg", path: "/pages/newPageDummy/newDummyHTML.html", sourcePath: "ms-appx:///data/sales/linechart.txt" },
         ];
 
         return sampleItems;
