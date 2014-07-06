@@ -104,6 +104,10 @@
             { group: sampleGroups[3], title: "Linecharts", subtitle: "Procurement data is displayed over time", description: itemDescription, content: itemContent, backgroundImage: "/images/groupedItems/lineChart.jpg", path: "/pages/lineChart/lineChart.html" },
             { group: sampleGroups[3], title: "Treemap", subtitle: "Different areas with their invesment", description: itemDescription, content: itemContent, backgroundImage: "/images/groupedItems/squares.jpg", path: "/pages/squares/squares.html" },
 
+             /* <do not change> this is done*/
+            { group: sampleGroups[3], title: "Total Costs", subtitle: "Global projects total cost aggregated data for 2004-2013", description: itemDescription, content: itemContent, backgroundImage: "/images/groupedItems/lineChart_global_project_total_cost.png", path: "/pages/lineChart/lineChart.html", sourcePath: "globalProjectsData" },
+            /* </do not change> */  
+
             { group: sampleGroups[4], title: "Linecharts", subtitle: "Production line data, as timing and quality", description: itemDescription, content: itemContent, backgroundImage: "/images/groupedItems/lineChart.jpg", path: "/pages/lineChart/lineChart.html" },
             { group: sampleGroups[4], title: "Treemap", subtitle: "Unit costs of every step in the production line", description: itemDescription, content: itemContent, backgroundImage: "/images/groupedItems/squares.jpg", path: "/pages/squares/squares.html" },
 
@@ -113,8 +117,9 @@
             { group: sampleGroups[6], title: "Treemap", subtitle: "Sales by product line/country", description: itemDescription, content: itemContent, backgroundImage: "/images/groupedItems/squares.jpg", path: "/pages/squares/squares.html" },
             /* <do not change> this is done*/
             { group: sampleGroups[6], title: "Net Profit Margins", subtitle: "Daimler and Mercedes financial data on net profit margins", description: itemDescription, content: itemContent, backgroundImage: "/images/groupedItems/lineChart_profit.jpg", path: "/pages/lineChart/lineChart.html", sourcePath: "financeData" },
+             /* </do not change> */
             { group: sampleGroups[7], title: "Employees", subtitle: "Shows the development of headcount of employees and more useful content", description: itemDescription, content: itemContent, backgroundImage: "/images/groupedItems/lineChart_employee.png", path: "/pages/lineChart/lineChart.html", sourcePath: "hrData" },
-            /* </do not change> */
+
             { group: sampleGroups[8], title: "Linecharts", subtitle: "PR data", description: itemDescription, content: itemContent, backgroundImage: "/images/groupedItems/lineChart.jpg", path: "/pages/lineChart/lineChart.html" },
 
         ];

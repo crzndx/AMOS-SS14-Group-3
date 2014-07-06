@@ -538,6 +538,162 @@
         }
     }
 
+    var datasetsGlobalProjects = {
+        0: {
+            "joinme": {
+                label: "Joinme",
+                data: [[2004, 0], [2005, 0], [2006, 0], [2007, 0], [2008, 270], [2009, 140], [2010, 100], [2011, 340], [2012, 103], [2013, 0]]
+            },
+            "marketv7": {
+                label: "Market V7",
+                data: [[2004, 0], [2005, 0], [2006, 0], [2007, 12], [2008, 14], [2009, 18], [2010, 18], [2011, 11], [2012, 10], [2013, 4]]
+            },
+            "Crowsuite": {
+                label: "Crowsuite",
+                data: [[2004, 0], [2005, 0], [2006, 0], [2007, 0], [2008, 180], [2009, 200], [2010, 210], [2011, 401], [2012, 210], [2013, 230]]
+            },
+            "AntraDOB": {
+                label: "Females",
+                data: [[2004, 0], [2005, 0], [2006, 34], [2007, 44], [2008, 28], [2009, 55], [2010, 17], [2011, 0], [2012, 0], [2013, 0]]
+            },
+            "metadata": {
+                pagetitle: "Global Projects",
+                title: "Sales Projects",
+                xaxis: "Years",
+                yaxis: "Euros (thousand)"
+            }
+        },
+        1: {
+            "morman": {
+                label: "Morman",
+                data: [[2004, 0], [2005, 0], [2006, 93], [2007, 84], [2008, 43], [2009, 68], [2010, 69], [2011, 63], [2012, 43], [2013, 54]]
+            },
+            "impactdos": {
+                label: "Impactdos",
+                data: [[2004, 0], [2005, 17], [2006, 8], [2007, 19], [2008, 15], [2009, 10], [2010, 7], [2011, 18], [2012, 11], [2013, 0]]
+            },
+            "x2": {
+                label: "X2",
+                data: [[2004, 0], [2005, 0], [2006, 0], [2007, 0], [2008, 7], [2009, 4], [2010, 4], [2011, 6], [2012, 7], [2013, 2]]
+            },
+            "Trylog": {
+                label: "trylog",
+                data: [[2004, 0], [2005, 0], [2006, 0], [2007, 100], [2008, 119], [2009, 137], [2010, 76], [2011, 40], [2012, 90], [2013, 55]]
+            },
+            "metadata": {
+                pagetitle: "Global Projects",
+                title: "Compliance Projects",
+                xaxis: "Years",
+                yaxis: "Euros (thousand)"
+            }
+        },
+        2: {
+            "ffmindia": {
+                label: "FFM India Migration",
+                data: [	[2004,0],	[2005,126],	[2006,132],	[2007,144],	[2008,158],	[2009,154],	[2010,130],	[2011,175],	[2012,0],[2013,0]]
+            },
+            "logis": {
+                label: "Logis decomission",
+                data: [[2004, 0], [2005, 23], [2006, 11], [2007, 27], [2008, 25], [2009, 17], [2010, 18], [2011, 0], [2012, 0], [2013, 0]]
+            },
+            "Backboneintegration": {
+                label: "Backbone Integration",
+                data: [[2004, 0], [2005, 0], [2006, 0], [2007, 160], [2008, 230], [2009, 233], [2010, 225], [2011, 152], [2012, 189], [2013, 249]]
+            },
+            "axis": {
+                label: "AXIS3000 Implementation",
+                data: [[2004, 0], [2005, 0], [2006, 50], [2007, 53], [2008, 46], [2009, 68], [2010, 49], [2011, 65], [2012, 64], [2013, 0]]
+            },
+            "ibenz": {
+                label: "iBenz 2.0",
+                data: [[2004, 0], [2005, 0], [2006, 51], [2007, 84], [2008, 36], [2009, 96], [2010, 83], [2011, 81], [2012, 70], [2013, 52]]
+            },
+            "metadata": {
+                pagetitle: "Global Projects",
+                title: "IT Projects",
+                xaxis: "Years",
+                yaxis: "Euros (thousand)"
+            }
+        },
+        3: {
+            "Safetyfirst": {
+                label: "Safety Fist",
+                data: [[2004, 0], [2005, 0], [2006, 0], [2007, 0], [2008, 188], [2009, 151], [2010, 150], [2011, 128], [2012, 140], [2013, 159]]
+            },
+            "steer": {
+                label: "Steering Assistance",
+                data: [[2004, 0], [2005, 0], [2006, 0], [2007, 0], [2008, 92], [2009, 114], [2010, 128], [2011, 92], [2012, 156], [2013, 136]]
+            },
+            "brakectrl": {
+                label: "Brake Control",
+                data: [[2004, 0], [2005, 0], [2006, 0], [2007, 0], [2008, 0], [2009, 52], [2010, 58], [2011, 40], [2012, 154], [2013, 87]]
+            },
+            "360sense": {
+                label: "360 sense",
+                data: [[2004, 0], [2005, 183], [2006, 11], [2007, 243], [2008, 117], [2009, 203], [2010, 61], [2011, 65], [2012, 140], [2013, 127]]
+            },
+            "engineplus": {
+                label: "engineplus",
+                data: [[2004, 39], [2005, 47], [2006, 43], [2007, 65], [2008, 60], [2009, 54], [2010, 11], [2011, 57], [2012, 49], [2013, 77]]
+            },
+            "df": {
+                label: "DF 4.7",
+                data: [[2004, 19], [2005, 24], [2006, 11], [2007, 26], [2008, 21], [2009, 0], [2010, 0], [2011, 0], [2012, 0], [2013, 0]]
+            },
+            "metadata": {
+                pagetitle: "Global Projects",
+                title: "Car Trucks & Projects",
+                xaxis: "Years",
+                yaxis: "Euros (thousand)"
+            }
+        },
+        4: {
+            "prielli": {
+                label: "Pirelli Six",
+                data: [[2004, 112], [2005, 140], [2006, 145], [2007, 150], [2008, 195], [2009, 112], [2010, 0], [2011, 0], [2012, 0], [2013, 0]]
+            },
+            "door": {
+                label: "Door 4x4",
+                data: [[2004, 103], [2005, 93], [2006, 65], [2007, 72], [2008, 126], [2009, 58], [2010, 0], [2011, 0], [2012, 0], [2013, 0]]
+            },
+            "mgp": {
+                label: "MGP",
+                data: [[2004, 0], [2005, 0], [2006, 0], [2007, 0], [2008, 0], [2009, 27], [2010, 75], [2011, 83], [2012, 37], [2013, 29]]
+            },
+            "metadata": {
+                pagetitle: "Global Projects",
+                title: "Parts Management Projects",
+                xaxis: "Years",
+                yaxis: "Euros (thousand)"
+            }
+        },
+        5: {
+            "topseed": {
+                label: "Topseed",
+                data: [[2004, 0], [2005, 0], [2006, 0], [2007, 125], [2008, 198], [2009, 0], [2010, 0], [2011, 0], [2012, 0], [2013, 0]]
+            },
+            "intel": {
+                label: "Intel Lab",
+                data: [[2004, 179], [2005, 186], [2006, 173], [2007, 87], [2008, 118], [2009, 135], [2010, 94], [2011, 89], [2012, 80], [2013, 88]]
+            },
+            "dhl": {
+                label: "DHL RFID",
+                data: [[2004, 0], [2005, 0], [2006, 0], [2007, 0], [2008, 0], [2009, 167], [2010, 156], [2011, 162], [2012, 0], [2013, 0]]
+            },
+            "customerfirst": {
+                label: "CustomerFirst",
+                data: [[2004, 0], [2005, 0], [2006, 67], [2007, 64], [2008, 55], [2009, 70], [2010, 63], [2011, 47], [2012, 42], [2013, 40]]
+            },
+            "metadata": {
+                pagetitle: "Global Projects",
+                title: "Warehouse Management Projects",
+                xaxis: "Years",
+                yaxis: "Euros (thousand)"
+            }
+        },
+
+    }
+
 
     /*
      * Grid navigation - called when listed page is being loaded
@@ -582,8 +738,8 @@
                 datasets = datasetsFinance; break;
             case "hrData":
                 datasets = datasetsHR; break;
-            case "projectsfinalData":
-                  datasets = datasetsProjectsFinalData; break;
+            case "globalProjectsData":
+                  datasets = datasetsGlobalProjects; break;
             default:
                   datasets = datasets;
         }

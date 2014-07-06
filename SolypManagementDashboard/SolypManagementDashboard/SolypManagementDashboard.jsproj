@@ -87,6 +87,7 @@
     <Content Include="images\groupedItems\blankPage.jpg" />
     <Content Include="images\groupedItems\lineChart.jpg" />
     <Content Include="images\groupedItems\lineChart_employee.png" />
+    <Content Include="images\groupedItems\lineChart_global_project_total_cost.png" />
     <Content Include="images\groupedItems\lineChart_profit.jpg" />
     <Content Include="images\groupedItems\playingCards.jpg" />
     <Content Include="images\groupedItems\squares.jpg" />
