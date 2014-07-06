@@ -86,6 +86,8 @@
     <Content Include="images\carLogos\volkswagen.png" />
     <Content Include="images\groupedItems\blankPage.jpg" />
     <Content Include="images\groupedItems\lineChart.jpg" />
+    <Content Include="images\groupedItems\lineChart_employee.png" />
+    <Content Include="images\groupedItems\lineChart_profit.jpg" />
     <Content Include="images\groupedItems\playingCards.jpg" />
     <Content Include="images\groupedItems\squares.jpg" />
     <Content Include="images\left.png" />

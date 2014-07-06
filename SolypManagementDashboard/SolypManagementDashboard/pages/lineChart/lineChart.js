@@ -495,6 +495,50 @@
     }
 
 
+    var datasetsHR = {
+        0: {
+            "male": {
+                label: "Males",
+                data: [[2004, 54], [2005, 66], [2006, 77], [2007, 70], [2008, 72], [2009, 74], [2010, 77], [2011, 81], [2012, 90], [2013, 88]]
+            },
+            "female": {
+                label: "Females",
+                data: [[2004, 1], [2005, 1], [2006, 2], [2007, 2], [2008, 11], [2009, 13], [2010, 17], [2011, 21], [2012, 23], [2013, 1, 33]]
+            },
+            "metadata": {
+                pagetitle: "Employee base",
+                title: "by gender",
+                xaxis: "Years",
+                yaxis: "Sex"
+            }
+        },
+        1: {
+            "engineering": {
+                label: "Engineering",
+                data: [[2004, 8678], [2005, 8798], [2006, 8799], [2007, 8888], [2008, 8998], [2009, 9001], [2010, 8871], [2011, 8899], [2012, 8950], [2013, 9050]]
+            },
+            "hr": {
+                label: "Human Resources",
+                data: [[2004, 2031], [2005, 3010], [2006, 3811], [2007, 5823], [2008, 6215], [2009, 6489], [2010, 7033], [2011, 8131], [2012, 7010], [2013, 3666]]
+            },
+            "logistics": {
+                label: "Logistics",
+                data: [[2004, 3131], [2007, 5555], [2010, 6533], [2011, 6731], [2012, 7010], [2013, 8881]]
+            },
+            "interns": {
+                label: "Interns",
+                data: [[2004, 2210], [2013, 1531]]
+            },
+            "metadata": {
+                pagetitle: "Employee wages",
+                title: "Average wages per month (pre tax)",
+                xaxis: "Years",
+                yaxis: "Euros"
+            }
+        }
+    }
+
+
     /*
      * Grid navigation - called when listed page is being loaded
      */
@@ -535,7 +579,9 @@
             case "salesData":
                   datasets = datasetsSales; break;
             case "financeData":
-                  datasets = datasetsFinance; break;
+                datasets = datasetsFinance; break;
+            case "hrData":
+                datasets = datasetsHR; break;
             case "projectsfinalData":
                   datasets = datasetsProjectsFinalData; break;
             default:
