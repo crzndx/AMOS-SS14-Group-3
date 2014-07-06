@@ -1,5 +1,4 @@
 ﻿(function () {
-    "use strict";
 
     var list = new WinJS.Binding.List();
     var groupedItems = list.createGrouped(
@@ -17,6 +16,7 @@
         items: groupedItems,
         groups: groupedItems.groups,
         getItemReference: getItemReference,
+        getItemSourcePath: getItemSourcePath,
         getItemsFromGroup: getItemsFromGroup,
         resolveGroupReference: resolveGroupReference,
         resolveItemReference: resolveItemReference
@@ -26,6 +26,11 @@
     // unique reference to the item that can be easily serialized.
     function getItemReference(item) {
         return item.path;
+    }
+
+    /* hack for getting the url of a datasource if available */
+    function getItemSourcePath(item) {
+            return item.sourcePath;
     }
 
     // This function returns a WinJS.Binding.List containing only the items
@@ -53,9 +58,9 @@
     // Returns an array of sample data that can be added to the application's
     // data list. 
     function generateSampleData() {
-        var itemContent = "<p>Curabitur class aliquam vestibulum nam curae maecenas sed integer cras phasellus suspendisse quisque donec dis praesent accumsan bibendum pellentesque condimentum adipiscing etiam consequat vivamus dictumst aliquam duis convallis scelerisque est parturient ullamcorper aliquet fusce suspendisse nunc hac eleifend amet blandit facilisi condimentum commodo scelerisque faucibus aenean ullamcorper ante mauris dignissim consectetuer nullam lorem vestibulum habitant conubia elementum pellentesque morbi facilisis arcu sollicitudin diam cubilia aptent vestibulum auctor eget dapibus pellentesque inceptos leo egestas interdum nulla consectetuer suspendisse adipiscing pellentesque proin lobortis sollicitudin augue elit mus congue fermentum parturient fringilla euismod feugiat</p><p>Curabitur class aliquam vestibulum nam curae maecenas sed integer cras phasellus suspendisse quisque donec dis praesent accumsan bibendum pellentesque condimentum adipiscing etiam consequat vivamus dictumst aliquam duis convallis scelerisque est parturient ullamcorper aliquet fusce suspendisse nunc hac eleifend amet blandit facilisi condimentum commodo scelerisque faucibus aenean ullamcorper ante mauris dignissim consectetuer nullam lorem vestibulum habitant conubia elementum pellentesque morbi facilisis arcu sollicitudin diam cubilia aptent vestibulum auctor eget dapibus pellentesque inceptos leo egestas interdum nulla consectetuer suspendisse adipiscing pellentesque proin lobortis sollicitudin augue elit mus congue fermentum parturient fringilla euismod feugiat</p><p>Curabitur class aliquam vestibulum nam curae maecenas sed integer cras phasellus suspendisse quisque donec dis praesent accumsan bibendum pellentesque condimentum adipiscing etiam consequat vivamus dictumst aliquam duis convallis scelerisque est parturient ullamcorper aliquet fusce suspendisse nunc hac eleifend amet blandit facilisi condimentum commodo scelerisque faucibus aenean ullamcorper ante mauris dignissim consectetuer nullam lorem vestibulum habitant conubia elementum pellentesque morbi facilisis arcu sollicitudin diam cubilia aptent vestibulum auctor eget dapibus pellentesque inceptos leo egestas interdum nulla consectetuer suspendisse adipiscing pellentesque proin lobortis sollicitudin augue elit mus congue fermentum parturient fringilla euismod feugiat</p><p>Curabitur class aliquam vestibulum nam curae maecenas sed integer cras phasellus suspendisse quisque donec dis praesent accumsan bibendum pellentesque condimentum adipiscing etiam consequat vivamus dictumst aliquam duis convallis scelerisque est parturient ullamcorper aliquet fusce suspendisse nunc hac eleifend amet blandit facilisi condimentum commodo scelerisque faucibus aenean ullamcorper ante mauris dignissim consectetuer nullam lorem vestibulum habitant conubia elementum pellentesque morbi facilisis arcu sollicitudin diam cubilia aptent vestibulum auctor eget dapibus pellentesque inceptos leo egestas interdum nulla consectetuer suspendisse adipiscing pellentesque proin lobortis sollicitudin augue elit mus congue fermentum parturient fringilla euismod feugiat</p><p>Curabitur class aliquam vestibulum nam curae maecenas sed integer cras phasellus suspendisse quisque donec dis praesent accumsan bibendum pellentesque condimentum adipiscing etiam consequat vivamus dictumst aliquam duis convallis scelerisque est parturient ullamcorper aliquet fusce suspendisse nunc hac eleifend amet blandit facilisi condimentum commodo scelerisque faucibus aenean ullamcorper ante mauris dignissim consectetuer nullam lorem vestibulum habitant conubia elementum pellentesque morbi facilisis arcu sollicitudin diam cubilia aptent vestibulum auctor eget dapibus pellentesque inceptos leo egestas interdum nulla consectetuer suspendisse adipiscing pellentesque proin lobortis sollicitudin augue elit mus congue fermentum parturient fringilla euismod feugiat</p><p>Curabitur class aliquam vestibulum nam curae maecenas sed integer cras phasellus suspendisse quisque donec dis praesent accumsan bibendum pellentesque condimentum adipiscing etiam consequat vivamus dictumst aliquam duis convallis scelerisque est parturient ullamcorper aliquet fusce suspendisse nunc hac eleifend amet blandit facilisi condimentum commodo scelerisque faucibus aenean ullamcorper ante mauris dignissim consectetuer nullam lorem vestibulum habitant conubia elementum pellentesque morbi facilisis arcu sollicitudin diam cubilia aptent vestibulum auctor eget dapibus pellentesque inceptos leo egestas interdum nulla consectetuer suspendisse adipiscing pellentesque proin lobortis sollicitudin augue elit mus congue fermentum parturient fringilla euismod feugiat</p><p>Curabitur class aliquam vestibulum nam curae maecenas sed integer cras phasellus suspendisse quisque donec dis praesent accumsan bibendum pellentesque condimentum adipiscing etiam consequat vivamus dictumst aliquam duis convallis scelerisque est parturient ullamcorper aliquet fusce suspendisse nunc hac eleifend amet blandit facilisi condimentum commodo scelerisque faucibus aenean ullamcorper ante mauris dignissim consectetuer nullam lorem vestibulum habitant conubia elementum pellentesque morbi facilisis arcu sollicitudin diam cubilia aptent vestibulum auctor eget dapibus pellentesque inceptos leo egestas interdum nulla consectetuer suspendisse adipiscing pellentesque proin lobortis sollicitudin augue elit mus congue fermentum parturient fringilla euismod feugiat";
-        var itemDescription = "Item Description: Pellentesque porta mauris quis interdum vehicula urna sapien ultrices velit nec venenatis dui odio in augue cras posuere enim a cursus convallis neque turpis malesuada erat ut adipiscing neque tortor ac erat";
-        var groupDescription = "Group Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus tempor scelerisque lorem in vehicula. Aliquam tincidunt, lacus ut sagittis tristique, turpis massa volutpat augue, eu rutrum ligula ante a ante";
+        var itemContent = "";
+        var itemDescription = "";
+        var groupDescription = "";
 
         // These three strings encode placeholder images. You will want to set the
         // backgroundImage property in your real data to be URLs to images.
@@ -75,7 +80,6 @@
             { key: "group7", title: "Finance", subtitle: "Aggregated finance data", backgroundImage: mediumGray, description: groupDescription },
             { key: "group8", title: "HR", subtitle: "Aggregated HR data", backgroundImage: mediumGray, description: groupDescription },
             { key: "group9", title: "PR", subtitle: "Aggregated PR data", backgroundImage: mediumGray, description: groupDescription },
-
         ];
 
         // Each of these sample items should have a reference to a particular
@@ -84,11 +88,16 @@
             { group: sampleGroups[0], title: "Card Comparison", subtitle: "Compare different competitor cards with the comparing functionality", description: itemDescription, content: itemContent, backgroundImage: "/images/groupedItems/playingCards.jpg", path: "/pages/TileComparison/TileComparison.html" },
             { group: sampleGroups[0], title: "Showing all Cards", subtitle: "Shows all cards at once", description: itemDescription, content: itemContent, backgroundImage: "/images/groupedItems/playingCards.jpg", path: "/pages/allCards/allCards.html" },
             { group: sampleGroups[0], title: "Linecharts", subtitle: "Displays financial line charts e.g. sales", description: itemDescription, content: itemContent, backgroundImage: "/images/groupedItems/lineChart.jpg", path: "/pages/lineChart/lineChart.html" },
+
+            { group: sampleGroups[0], title: "Squares", subtitle: "Displays KPI in squares of different sizes", description: itemDescription, content: itemContent, backgroundImage: "/images/groupedItems/squares.jpg", path: "/pages/squares/squares.html" },
+            { group: sampleGroups[0], title: "Squares", subtitle: "Displays KPI in squares of different sizes", description: itemDescription, content: itemContent, backgroundImage: "/images/groupedItems/squares.jpg", path: "/pages/squares_zoom/squares.html" },
             { group: sampleGroups[0], title: "Dummy Page", subtitle: "This is a basic template site used for every new subpage", description: itemDescription, content: itemContent, backgroundImage: "/images/groupedItems/blankPage.jpg", path: "/pages/newPageDummy/newDummyHTML.html" },
-            { group: sampleGroups[0], title: "Treemap", subtitle: "Displays KPI in squares of different sizes", description: itemDescription, content: itemContent, backgroundImage: "/images/groupedItems/squares.jpg", path: "/pages/treemap/treemap.html" },
 
             { group: sampleGroups[1], title: "Products", subtitle: "Detailed list of all our products", description: itemDescription, content: itemContent, backgroundImage: "/images/groupedItems/playingCards.jpg", path: "/pages/TileComparison/TileComparison.html" },
-            { group: sampleGroups[1], title: "Linecharts", subtitle: "How our products have evolve over time", description: itemDescription, content: itemContent, backgroundImage: "/images/groupedItems/lineChart.jpg", path: "/pages/lineChart/lineChart.html" },
+            /* <do not change> this is done*/
+            { group: sampleGroups[2], title: "Total Sales", subtitle: "Sales figures worldwide and regional by departments", description: itemDescription, content: itemContent, backgroundImage: "/images/groupedItems/lineChart.jpg", path: "/pages/lineChart/lineChart.html", sourcePath: "salesData" },
+            /* </do not change> */
+
             { group: sampleGroups[1], title: "Treemap", subtitle: "Current investment/revenue on products", description: itemDescription, content: itemContent, backgroundImage: "/images/groupedItems/squares.jpg", path: "/pages/squares/squares.html" },
 
             { group: sampleGroups[2], title: "Linecharts", subtitle: "Research and development over time", description: itemDescription, content: itemContent, backgroundImage: "/images/groupedItems/lineChart.jpg", path: "/pages/lineChart/lineChart.html" },
@@ -97,18 +106,22 @@
             { group: sampleGroups[3], title: "Linecharts", subtitle: "Procurement data is displayed over time", description: itemDescription, content: itemContent, backgroundImage: "/images/groupedItems/lineChart.jpg", path: "/pages/lineChart/lineChart.html" },
             { group: sampleGroups[3], title: "Treemap", subtitle: "Different areas with their invesment", description: itemDescription, content: itemContent, backgroundImage: "/images/groupedItems/squares.jpg", path: "/pages/squares/squares.html" },
 
+             /* <do not change> this is done*/
+            { group: sampleGroups[3], title: "Total Costs", subtitle: "Global projects total cost aggregated data for 2004-2013", description: itemDescription, content: itemContent, backgroundImage: "/images/groupedItems/lineChart_global_project_total_cost.png", path: "/pages/lineChart/lineChart.html", sourcePath: "globalProjectsData" },
+            /* </do not change> */  
+
             { group: sampleGroups[4], title: "Linecharts", subtitle: "Production line data, as timing and quality", description: itemDescription, content: itemContent, backgroundImage: "/images/groupedItems/lineChart.jpg", path: "/pages/lineChart/lineChart.html" },
             { group: sampleGroups[4], title: "Treemap", subtitle: "Unit costs of every step in the production line", description: itemDescription, content: itemContent, backgroundImage: "/images/groupedItems/squares.jpg", path: "/pages/squares/squares.html" },
 
             { group: sampleGroups[5], title: "Linecharts", subtitle: "Marketing campaigns data", description: itemDescription, content: itemContent, backgroundImage: "/images/groupedItems/lineChart.jpg", path: "/pages/lineChart/lineChart.html" },
             { group: sampleGroups[5], title: "Treemap", subtitle: "Investment in different campaings", description: itemDescription, content: itemContent, backgroundImage: "/images/groupedItems/squares.jpg", path: "/pages/squares/squares.html" },
 
-            { group: sampleGroups[6], title: "Linecharts", subtitle: "Sales numbers", description: itemDescription, content: itemContent, backgroundImage: "/images/groupedItems/lineChart.jpg", path: "/pages/lineChart/lineChart.html" },
             { group: sampleGroups[6], title: "Treemap", subtitle: "Sales by product line/country", description: itemDescription, content: itemContent, backgroundImage: "/images/groupedItems/squares.jpg", path: "/pages/squares/squares.html" },
+            /* <do not change> this is done*/
+            { group: sampleGroups[6], title: "Net Profit Margins", subtitle: "Daimler and Mercedes financial data on net profit margins", description: itemDescription, content: itemContent, backgroundImage: "/images/groupedItems/lineChart_profit.jpg", path: "/pages/lineChart/lineChart.html", sourcePath: "financeData" },
+             /* </do not change> */
+            { group: sampleGroups[7], title: "Employees", subtitle: "Shows the development of headcount of employees and more useful content", description: itemDescription, content: itemContent, backgroundImage: "/images/groupedItems/lineChart_employee.png", path: "/pages/lineChart/lineChart.html", sourcePath: "hrData" },
 
-
-            { group: sampleGroups[7], title: "Linecharts", subtitle: "HR data ", description: itemDescription, content: itemContent, backgroundImage: "/images/groupedItems/lineChart.jpg", path: "/pages/lineChart/lineChart.html" },
-           
             { group: sampleGroups[8], title: "Linecharts", subtitle: "PR data", description: itemDescription, content: itemContent, backgroundImage: "/images/groupedItems/lineChart.jpg", path: "/pages/lineChart/lineChart.html" },
 
         ];

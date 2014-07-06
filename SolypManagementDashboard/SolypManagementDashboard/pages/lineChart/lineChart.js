@@ -14,15 +14,18 @@
     var colors = ["#ff5959", "#f3ac00", "#99ff00", "#83d0f5", "#db65ef", "#ffbfbf", "#f1fa00", "#7fffa6", "#00b9ee", "#ff00b3", "#ffa680", "#ffff80", "#80ffff", "#bfc6ff", "#ff0066", "#ffd9bf", "#f2ffbf", "#00ccff", "#cc80ff", "#ff80b3"];
     var colorsChosen = [];
 
+    var sourcePath = "";
+
     /*
      * Data for graphs to be plotted
      */
     var index = 0; // current index to show dataset #
 
-    // actual data being displayed
-    // @TODO do it externally?
+    /*
+    * Default dataset to show
+    */
     var datasets = {
-        0 : {
+        0: {
             "myanmar": {
                 label: "Myanmar",
                 data: [[1988, 683994], [1989, 573060], [1990, 153631], [1991, 333349], [1992, 311705], [1993, 202111], [1994, 247867], [1995, 300382], [1996, 300046], [1997, 300000], [1998, 322611], [1999, 129421], [2000, 142172], [2001, 244932], [2002, 227303], [2003, 540813], [2004, 183451], [2005, 304638], [2006, 528692]]
@@ -85,7 +88,7 @@
                 xaxis: "Year",
                 yaxis: "Euro"
             }
-            
+
         },
         2: {
             "denmark": {
@@ -141,8 +144,609 @@
         }
     };
 
+
+
     /*
-    * load data externally
+     * Sales page dataset
+     */ 
+
+    var datasetsSales = {
+        0: {
+            "mercedes-benz-cars": {
+                label: "Mercedes-Benz Cars",
+                data:  [[2004, 7890], [2005, 8123], [2006, 8456], [2007, 8490], [2008, 8590], [2009, 8345], [2010, 8933], [2011, 8945], [2012, 9078], [2013, 9034]]
+            },
+            "daimlertrucks": {
+                label: "Daimler Trucks",
+                data: [[2004, 3590], [2005, 4690], [2006, 3218], [2007, 3990], [2008, 1589], [2009, 3580], [2010, 4590], [2011, 4219], [2012, 4032], [2013, 4834]]
+            },
+            "mercedes-benz-vans": {
+                label: "Mercedes-Benz Vans",
+                data: [[2004, 1392], [2005, 1990], [2006, 1840], [2007, 1850], [2008, 1730], [2009, 2124], [2010, 2432], [2011, 2510], [2012, 2310], [2013, 1380]]
+            },
+            "daimlerbusses": {
+                label: "Daimler Busses",
+                data: [[2004, 2940], [2005, 2910], [2006, 2495], [2007, 2122], [2008, 2395], [2009, 2509], [2010, 3690], [2011, 2390], [2012, 2139], [2013, 2311]]
+            },
+            "daimlerfinancialservices": {
+                label: "Daimler Financial Services",
+                data: [[2004, 849], [2005, 829], [2006, 823], [2007, 869], [2008, 800], [2009, 734], [2010, 798], [2011, 8511], [2012, 8243], [2013, 8340]]
+            },
+            "metadata": {
+                pagetitle: "Total Sales",
+                title: "Global",
+                xaxis: "Year",
+                yaxis: "Euros (Million)"
+            }
+        },
+        1: {
+            "mercedes-benz-cars": {
+                label: "Mercedes-Benz Cars",
+                data: [[2004, 1656.9], [2005, 3655.35], [2006, 3381.2], [2007, 2377.2], [2008, 2920.6], [2009, 2503.5], [2010, 2590.57], [2011, 3130.75], [2012, 3721.98], [2013, 1806.8]]
+            },
+            "daimlertrucks": {
+                label: "Daimler Trucks",
+                data: [[2004, 1005.2], [2005, 1360.1], [2006, 772.32], [2007, 2114.7], [2008, 762.72], [2009, 1718.4], [2010, 2019.6], [2011, 2109.5], [2012, 1774.08], [2013, 1450.2]]
+            },
+            "mercedes-benz-vans": {
+                label: "Mercedes-Benz Vans",
+                data: [[2004, 542.88], [2005, 557.2], [2006, 883.2], [2007, 758.5], [2008, 709.3], [2009, 531], [2010, 1143.04], [2011, 903.6], [2012, 808.5], [2013, 524.4]]
+            },
+            "daimlerbusses": {
+                label: "Daimler Busses",
+                data: [[2004, 882], [2005, 1658.7], [2006, 823.35], [2007, 551.72], [2008, 670.6], [2009, 978.51], [2010, 2029.5], [2011, 908.2], [2012, 1283.4], [2013, 947.51]]
+            },
+            "daimlerfinancialservices": {
+                label: "Daimler Financial Services",
+                data: [[2004, 280.17], [2005, 306.73], [2006, 148.14], [2007, 243.32], [2008, 224], [2009, 205.52], [2010, 215.46], [2011, 3149.07], [2012, 2967.48], [2013, 3336]]
+            },
+            "metadata": {
+                pagetitle: "Total Sales",
+                title: "Western and Northern Europe",
+                xaxis: "Year",
+                yaxis: "Euros (Million)"
+            }
+        },
+        2: {
+            "mercedes-benz-cars": {
+                label: "Mercedes-Benz Cars",
+                data: [[2004, 1183.5], [2005, 487.38], [2006, 1352.48], [2007, 933.9], [2008, 1546.2], [2009, 1168.3], [2010, 1518.61], [2011, 1699.55], [2012, 1452.48], [2013, 1716.46]]
+            },
+            "daimlertrucks": {
+                label: "Daimler Trucks",
+                data: [[2004, 610.3], [2005, 938], [2006, 579.24], [2007, 239.4], [2008, 95.34], [2009, 465.4], [2010, 367.2], [2011, 379.71], [2012, 403.2], [2013, 435.06]]
+            },
+            "mercedes-benz-vans": {
+                label: "Mercedes-Benz Vans",
+                data: [[2004, 125.28], [2005, 398], [2006, 110.4], [2007, 148], [2008, 190.3], [2009, 361.08], [2010, 437.76], [2011, 301.2], [2012, 277.2], [2013, 82.8]]
+            },
+            "daimlerbusses": {
+                label: "Daimler Busses",
+                data: [[2004, 382.2], [2005, 145.5], [2006, 474.05], [2007, 339.52], [2008, 359.25], [2009, 326.17], [2010, 332.1], [2011, 239], [2012, 106.95], [2013, 392.87]]
+            },
+            "daimlerfinancialservices": {
+                label: "Daimler Financial Services",
+                data: [[2004, 101.88], [2005, 124.35], [2006, 164.6], [2007, 112.97], [2008, 152], [2009, 124.78], [2010, 143.64], [2011, 1446.87], [2012, 1401.31], [2013, 1584.6]]
+            },
+            "daimlerengineeringconsulting": {
+                label: "Engineering & Consulting",
+                data: [[2004, 799], [2005, 629], [2006, 723], [2007, 839], [2008, 830], [2009, 744], [2010, 728], [2011, 811], [2012, 823], [2013, 840]]
+            },
+            "metadata": {
+                pagetitle: "Total Sales",
+                title: "Eastern Europe",
+                xaxis: "Year",
+                yaxis: "Euros (Million)"
+            }
+        },
+        3: {
+            "mercedes-benz-cars": {
+                label: "Mercedes-Benz Cars",
+                data: [[2004,2445.9],	[2005,2274.44],	[2006,2620.43],	[2007,2801.7],	[2008,2061.6],	[2009,2586.95],	[2010,3037.22],	[2011,2594.05],	[2012,1997.16],	[2013,3161.9]]
+            },
+            "daimlertrucks": {
+                label: "Daimler Trucks",
+                data: [[2004, 1148.8], [2005, 1407], [2006, 1126.3], [2007, 997.5], [2008, 413.14], [2009, 930.8], [2010, 1606.5], [2011, 1054.75], [2012, 1088.64], [2013, 1546.88]]
+            },
+            "mercedes-benz-vans": {
+                label: "Mercedes-Benz Vans",
+                data: [[2004, 361.92], [2005, 457.7], [2006, 496.8], [2007, 592], [2008, 380.6], [2009, 700.92], [2010, 510.72], [2011, 727.9], [2012, 716.1], [2013, 455.4]]
+            },
+            "daimlerbusses": {
+                label: "Daimler Busses",
+                data: [[2004, 882], [2005, 756.6], [2006, 798.4], [2007, 700.26], [2008, 814.3], [2009, 677.43], [2010, 811.8], [2011, 573.6], [2012, 427.8], [2013, 600.86]]
+            },
+            "daimlerfinancialservices": {
+                label: "Daimler Financial Services",
+                data: [[2004,220.74],	[2005,223.83],	[2006,271.59],	[2007,260.7],	[2008,272],	[2009,234.88],	[2010,183.54],	[2011,2468.19],	[2012,2637.76],	[2013,1918.2]]
+            },
+            "metadata": {
+                pagetitle: "Total Sales",
+                title: "Central and North America",
+                xaxis: "Year",
+                yaxis: "Euros (Million)"
+            }
+        },
+        4: {
+            "mercedes-benz-cars": {
+                label: "Mercedes-Benz Cars",
+                data: [[2004, 1814.7],[2005, 1218.45],[2006, 845.3],[2007, 1613.1],[2008, 1632.1],[2009, 1752.45],[2010, 1071.96],[2011, 894.5],[2012, 1089.36],[2013, 1897.14]]
+            },
+            "daimlermotorbikes": {
+                label: "Daimler Motorbikes",
+                data: [[2004, 502.6],[2005, 797.3],[2006, 579.24],[2007, 399],[2008, 158.9],[2009, 322.2],[2010, 413.1],[2011, 464.09],[2012, 564.48],[2013, 1063.48]]
+            },
+            "mercedes-benz-vans": {
+                label: "Mercedes-Benz Vans",
+                data: [[2004, 222.72],[2005, 417.9],[2006, 294.4],[2007, 185],[2008, 311.4],[2009, 446.04],[2010, 243.2],[2011, 376.5],[2012, 277.2],[2013, 276]]
+            },
+            "daimlerbusses": {
+                label: "Daimler Busses",
+                data: [[2004, 529.2],[2005, 261.9],[2006, 274.45],[2007, 403.18],[2008, 335.3],[2009, 451.62],[2010, 369],[2011, 501.9],[2012, 256.68],[2013, 277.32]]
+            },
+            "daimlerfinancialservices": {
+                label: "Daimler Financial Services",
+                data: [[2004, 169.8],[2005, 132.64],[2006, 172.83],[2007, 191.18],[2008, 120],[2009, 124.78],[2010, 183.54],[2011, 851.1],[2012, 824.3],[2013, 1000.8]]
+            },
+            "metadata": {
+                pagetitle: "Total Sales",
+                title: "Asia Pacific",
+                xaxis: "Year",
+                yaxis: "Euros (Million)"
+            }
+        },
+        5: {
+            "mercedes-benz-cars": {
+                label: "Mercedes-Benz Cars",
+                data: [[2004, 789],[2005, 487.38],[2006, 253.59],[2007, 764.1],[2008, 429.5],[2009, 333.8],[2010, 714.64],[2011, 626.15],[2012, 817.02],[2013, 451.7]]
+            },
+            "daimlertrucks": {
+                label: "Daimler Trucks",
+                data: [[2004, 323.1],[2005, 187.6],[2006, 160.9],[2007, 239.4],[2008, 158.9],[2009, 143.2],[2010, 183.6],[2011, 210.95],[2012, 201.6],[2013, 338.38]]
+            },
+            "mercedes-benz-vans": {
+                label: "Mercedes-Benz Vans",
+                data: [[2004, 139.2],[2005, 159.2],[2006, 55.2],[2007, 166.5],[2008, 138.4],[2009, 84.96],[2010, 97.28],[2011, 200.8],[2012, 231],[2013, 41.4]]
+            },
+            "daimlerbusses": {
+                label: "Daimler Busses",
+                data: [[2004, 264.6],[2005, 87.3],[2006, 124.75],[2007, 127.32],[2008, 215.55],[2009, 75.27],[2010, 147.6],[2011, 167.3],[2012, 64.17],[2013, 92.44]]
+            },
+            "metadata": {
+                pagetitle: "Total Sales",
+                title: "Africa",
+                xaxis: "Year",
+                yaxis: "Euros (Million)"
+            }
+        }
+    };
+
+
+
+    var datasetsFinance = {
+        0: {
+            "mercedes-benz-cars": {
+                label: "Mercedes-Benz Cars",
+                data: [[2004, 10], [2005, 11.5], [2006, 12.3], [2007, 13.1], [2008, 12.5], [2009, 10.9], [2010, 10.1], [2011, 11.7], [2012, 12.1], [2013, 13.1]]
+            },
+            "daimlertrucks": {
+                label: "Daimler Trucks",
+                data: [[2004, 8.1], [2005, 8.4], [2006, 7.9], [2007, 7.7], [2008, 7.9], [2009, 6.3], [2010, 6.4], [2011, 7.8], [2012, 7.4], [2013, 1, 8.6]]
+            },
+            "mercedes-benz-vans": {
+                label: "Mercedes-Benz Vans",
+                data: [[2004, 14.1], [2005, 14.7], [2006, 16.1], [2007, 11.9], [2008, 10.1], [2009, 13.1], [2010, 11.3], [2011, 12.4], [2012, 13.6], [2013, 14.2]]
+            },
+            "daimlerbusses": {
+                label: "Daimler Busses",
+                data: [[2004, 1.2], [2005, 1.3], [2006, 0.9], [2007, 1.1], [2008, 1.4], [2009, 1.2], [2010, 1.1], [2011, 1.4], [2012, 1.3], [2013, 1.2]]
+            },
+            "daimlerfinancialservices": {
+                label: "Daimler Financial Services",
+                data: [[2004, 8.1], [2005, 9.8], [2006, 9.9], [2007, 10.2], [2008, 8.9], [2009, 12.3], [2010, 14.1], [2011, 11.2], [2012, 11.8], [2013, 2.11]]
+            },
+            "metadata": {
+                pagetitle: "Net Profit Margins",
+                title: "Worldwide",
+                xaxis: "Years",
+                yaxis: "%"
+            }
+        },
+        1: {
+            "mercedes-benz-cars": {
+                label: "Mercedes-Benz Cars",
+                data: [[2004, 2.3], [2005, 2.645], [2006, 6.027], [2007, 5.633], [2008, 6.375], [2009, 3.27], [2010, 4.343], [2011, 4.797], [2012, 4.477], [2013, 4.716]]
+            },
+            "daimlertrucks": {
+                label: "Daimler Trucks",
+                data: [[2004, 4.131], [2005, 3.276], [2006, 2.528], [2007, 1.463], [2008, 3.081], [2009, 1.89], [2010, 2.88], [2011, 2.028], [2012, 3.626], [2013, 3.01]]
+            },
+            "mercedes-benz-vans": {
+                label: "Mercedes-Benz Vans",
+                data: [[2004, 6.063], [2005, 3.528], [2006, 6.762], [2007, 5.117], [2008, 5.757], [2009, 7.205], [2010, 2.486], [2011, 3.596], [2012, 4.216], [2013, 3.408]]
+            },
+            "daimlerbusses": {
+                label: "Daimler Busses",
+                data: [[2004, 0.504], [2005, 0.494], [2006, 0.216], [2007, 0.429], [2008, 0.392], [2009, 0.444], [2010, 0.297], [2011, 0.322], [2012, 0.65], [2013, 0.384]]
+            },
+            "daimlerfinancialservices": {
+                label: "Daimler Financial Services",
+                data: [[2004, 2.268], [2005, 3.92], [2006, 3.168], [2007, 3.366], [2008, 2.759], [2009, 3.813], [2010, 6.768], [2011, 4.928], [2012, 2.832], [2013, 5.83]]
+            },
+            "metadata": {
+                pagetitle: "Net Profit Margins",
+                title: "Western and Northern Europe",
+                xaxis: "Years",
+                yaxis: "%"
+            }
+        },
+        2: {
+            "mercedes-benz-cars": {
+                label: "Mercedes-Benz Cars",
+                data: [[2004, 1.6], [2005, 2.3], [2006, 0.615], [2007, 1.441], [2008, 1.25], [2009, 2.071], [2010, 0.606], [2011, 2.223], [2012, 2.057], [2013, 1.834]]
+            },
+            "daimlertrucks": {
+                label: "Daimler Trucks",
+                data: [[2004, 0.729], [2005, 1.344], [2006, 1.106], [2007, 1.386], [2008, 0.79], [2009, 1.071], [2010, 0.768], [2011, 1.326], [2012, 0.444], [2013, 1.462]]
+            },
+            "mercedes-benz-vans": {
+                label: "Mercedes-Benz Vans",
+                data: [[2004, 0.846], [2005, 2.646], [2006, 1.61], [2007, 1.071], [2008, 0.808], [2009, 0.917], [2010, 2.26], [2011, 1.612], [2012, 0.952], [2013, 2.414]]
+            },
+            "daimlerbusses": {
+                label: "Daimler Busses",
+                data: [[2004, 0.12], [2005, 0.234], [2006, 0.153], [2007, 0.055], [2008, 0.266], [2009, 0.228], [2010, 0.187], [2011, 0.252], [2012, 0.091], [2013, 0.216]]
+            },
+            "daimlerfinancialservices": {
+                label: "Daimler Financial Services",
+                data: [[2004, 1.539], [2005, 0.588], [2006, 1.089], [2007, 1.53], [2008, 1.068], [2009, 2.091], [2010, 1.128], [2011, 0.56], [2012, 1.652], [2013, 1.43]]
+            },
+            "metadata": {
+                pagetitle: "Net Profit Margins",
+                title: "Eastern Europe",
+                xaxis: "Years",
+                yaxis: "%"
+            }
+        },
+        3: {
+            "mercedes-benz-cars": {
+                label: "Mercedes-Benz Cars",
+                data: [[2004, 3.3], [2005, 3.795], [2006, 3.321], [2007, 3.406], [2008, 2.5], [2009, 2.289], [2010, 2.121], [2011, 2.808], [2012, 2.42], [2013, 4.323]]
+            },
+            "daimlertrucks": {
+                label: "Daimler Trucks",
+                data: [[2004, 1.782], [2005, 2.688], [2006, 1.975], [2007, 2.464], [2008, 2.133], [2009, 1.323], [2010, 1.344], [2011, 2.73], [2012, 2.22], [2013, 2.15]]
+            },
+            "mercedes-benz-vans": {
+                label: "Mercedes-Benz Vans",
+                data: [[2004, 4.371], [2005, 3.969], [2006, 3.381], [2007, 2.618], [2008, 2.121], [2009, 3.275], [2010, 3.842], [2011, 4.092], [2012, 4.216], [2013, 4.686]]
+            },
+            "daimlerbusses": {
+                label: "Daimler Busses",
+                data: [[2004, 0.324], [2005, 0.364], [2006, 0.279], [2007, 0.385], [2008, 0.392], [2009, 0.3], [2010, 0.33], [2011, 0.462], [2012, 0.312], [2013, 0.288]]
+            },
+            "daimlerfinancialservices": {
+                label: "Daimler Financial Services",
+                data: [[2004, 2.025], [2005, 2.94], [2006, 3.069], [2007, 3.162], [2008, 2.67], [2009, 3.198], [2010, 3.102], [2011, 3.472], [2012, 4.13], [2013, 2.2]]
+            },
+            "metadata": {
+                pagetitle: "Net Profit Margins",
+                title: "Central and North America",
+                xaxis: "Years",
+                yaxis: "%"
+            }
+        },
+        3: {
+            "mercedes-benz-cars": {
+                label: "Mercedes-Benz Cars",
+                data: [[2004, 2], [2005, 2.415], [2006, 1.23], [2007, 1.703], [2008, 1.625], [2009, 2.18], [2010, 2.02], [2011, 1.053], [2012, 2.541], [2013, 1.834]]
+            },
+            "daimlertrucks": {
+                label: "Daimler Trucks",
+                data: [[2004, 0.648], [2005, 0.84], [2006, 1.58], [2007, 1.771], [2008, 1.58], [2009, 1.449], [2010, 1.088], [2011, 1.482], [2012, 0.814], [2013, 1.29]]
+            },
+            "mercedes-benz-vans": {
+                label: "Mercedes-Benz Vans",
+                data: [[2004, 2.115], [2005, 3.381], [2006, 3.381], [2007, 2.499], [2008, 0.808], [2009, 1.048], [2010, 1.582], [2011, 2.108], [2012, 2.992], [2013, 2.272]]
+            },
+            "daimlerbusses": {
+                label: "Daimler Busses",
+                data: [[2004, 0.204], [2005, 0.156], [2006, 0.189], [2007, 0.165], [2008, 0.28], [2009, 0.168], [2010, 0.209], [2011, 0.224], [2012, 0.117], [2013, 0.252]]
+            },
+            "daimlerfinancialservices": {
+                label: "Daimler Financial Services",
+                data: [[2004, 1.458], [2005, 1.96], [2006, 1.782], [2007, 1.53], [2008, 1.958], [2009, 2.46], [2010, 1.974], [2011, 1.568], [2012, 2.36], [2013, 0.99]]
+            },
+            "metadata": {
+                pagetitle: "Net Profit Margins",
+                title: "Asia Pacific Region",
+                xaxis: "Years",
+                yaxis: "%"
+            }
+        },
+        4: {
+            "mercedes-benz-cars": {
+                label: "Mercedes-Benz Cars",
+                data: [[2004, 0.8], [2005, 0.345], [2006, 1.107], [2007, 0.917], [2008, 0.75], [2009, 1.09], [2010, 1.01], [2011, 0.819], [2012, 0.605], [2013, 0.393]]
+            },
+            "daimlertrucks": {
+                label: "Daimler Trucks",
+                data: [[2004, 0.81], [2005, 0.252], [2006, 0.711], [2007, 0.616], [2008, 0.316], [2009, 0.567], [2010, 0.32], [2011, 0.234], [2012, 0.296], [2013, 0.688]]
+            },
+            "mercedes-benz-vans": {
+                label: "Mercedes-Benz Vans",
+                data: [[2004, 0.705], [2005, 1.176], [2006, 0.966], [2007, 0.595], [2008, 0.606], [2009, 0.655], [2010, 1.13], [2011, 0.992], [2012, 1.224], [2013, 1.42]]
+            },
+            "daimlerbusses": {
+                label: "Daimler Busses",
+                data: [[2004, 0.048], [2005, 0.052], [2006, 0.063], [2007, 0.066], [2008, 0.07], [2009, 0.06], [2010, 0.077], [2011, 0.14], [2012, 0.13], [2013, 0.06]]
+            },
+            "daimlerfinancialservices": {
+                label: "Daimler Financial Services",
+                data: [[2004, 0.81], [2005, 0.392], [2006, 0.792], [2007, 0.612], [2008, 0.445], [2009, 0.738], [2010, 1.128], [2011, 0.672], [2012, 0.826], [2013, 0.55]]
+            },
+            "metadata": {
+                pagetitle: "Net Profit Margins",
+                title: "Middle East and Africa",
+                xaxis: "Years",
+                yaxis: "%"
+            }
+        },
+    }
+
+
+    var datasetsHR = {
+        0: {
+            "male": {
+                label: "Males",
+                data: [[2004, 54], [2005, 66], [2006, 77], [2007, 70], [2008, 72], [2009, 74], [2010, 77], [2011, 81], [2012, 90], [2013, 88]]
+            },
+            "female": {
+                label: "Females",
+                data: [[2004, 1], [2005, 1], [2006, 2], [2007, 2], [2008, 11], [2009, 13], [2010, 17], [2011, 21], [2012, 23], [2013, 1, 33]]
+            },
+            "metadata": {
+                pagetitle: "Employee base",
+                title: "by gender",
+                xaxis: "Years",
+                yaxis: "Sex"
+            }
+        },
+        1: {
+            "engineering": {
+                label: "Engineering",
+                data: [[2004, 8678], [2005, 8798], [2006, 8799], [2007, 8888], [2008, 8998], [2009, 9001], [2010, 8871], [2011, 8899], [2012, 8950], [2013, 9050]]
+            },
+            "hr": {
+                label: "Human Resources",
+                data: [[2004, 2031], [2005, 3010], [2006, 3811], [2007, 5823], [2008, 6215], [2009, 6489], [2010, 7033], [2011, 8131], [2012, 7010], [2013, 3666]]
+            },
+            "logistics": {
+                label: "Logistics",
+                data: [[2004, 3131], [2007, 5555], [2010, 6533], [2011, 6731], [2012, 7010], [2013, 8881]]
+            },
+            "interns": {
+                label: "Interns",
+                data: [[2004, 2210], [2013, 1531]]
+            },
+            "metadata": {
+                pagetitle: "Employee wages",
+                title: "Average wages per month (pre tax)",
+                xaxis: "Years",
+                yaxis: "Euros"
+            }
+        }
+    }
+
+    var datasetsGlobalProjects = {
+        0: {
+            "joinme": {
+                label: "Joinme",
+                data: [[2004, 0], [2005, 0], [2006, 0], [2007, 0], [2008, 270], [2009, 140], [2010, 100], [2011, 340], [2012, 103], [2013, 0]]
+            },
+            "marketv7": {
+                label: "Market V7",
+                data: [[2004, 0], [2005, 0], [2006, 0], [2007, 12], [2008, 14], [2009, 18], [2010, 18], [2011, 11], [2012, 10], [2013, 4]]
+            },
+            "Crowsuite": {
+                label: "Crowsuite",
+                data: [[2004, 0], [2005, 0], [2006, 0], [2007, 0], [2008, 180], [2009, 200], [2010, 210], [2011, 401], [2012, 210], [2013, 230]]
+            },
+            "AntraDOB": {
+                label: "Females",
+                data: [[2004, 0], [2005, 0], [2006, 34], [2007, 44], [2008, 28], [2009, 55], [2010, 17], [2011, 0], [2012, 0], [2013, 0]]
+            },
+            "metadata": {
+                pagetitle: "Global Projects",
+                title: "Sales Projects",
+                xaxis: "Years",
+                yaxis: "Euros (thousand)"
+            }
+        },
+        1: {
+            "morman": {
+                label: "Morman",
+                data: [[2004, 0], [2005, 0], [2006, 93], [2007, 84], [2008, 43], [2009, 68], [2010, 69], [2011, 63], [2012, 43], [2013, 54]]
+            },
+            "impactdos": {
+                label: "Impactdos",
+                data: [[2004, 0], [2005, 17], [2006, 8], [2007, 19], [2008, 15], [2009, 10], [2010, 7], [2011, 18], [2012, 11], [2013, 0]]
+            },
+            "x2": {
+                label: "X2",
+                data: [[2004, 0], [2005, 0], [2006, 0], [2007, 0], [2008, 7], [2009, 4], [2010, 4], [2011, 6], [2012, 7], [2013, 2]]
+            },
+            "Trylog": {
+                label: "trylog",
+                data: [[2004, 0], [2005, 0], [2006, 0], [2007, 100], [2008, 119], [2009, 137], [2010, 76], [2011, 40], [2012, 90], [2013, 55]]
+            },
+            "metadata": {
+                pagetitle: "Global Projects",
+                title: "Compliance Projects",
+                xaxis: "Years",
+                yaxis: "Euros (thousand)"
+            }
+        },
+        2: {
+            "ffmindia": {
+                label: "FFM India Migration",
+                data: [	[2004,0],	[2005,126],	[2006,132],	[2007,144],	[2008,158],	[2009,154],	[2010,130],	[2011,175],	[2012,0],[2013,0]]
+            },
+            "logis": {
+                label: "Logis decomission",
+                data: [[2004, 0], [2005, 23], [2006, 11], [2007, 27], [2008, 25], [2009, 17], [2010, 18], [2011, 0], [2012, 0], [2013, 0]]
+            },
+            "Backboneintegration": {
+                label: "Backbone Integration",
+                data: [[2004, 0], [2005, 0], [2006, 0], [2007, 160], [2008, 230], [2009, 233], [2010, 225], [2011, 152], [2012, 189], [2013, 249]]
+            },
+            "axis": {
+                label: "AXIS3000 Implementation",
+                data: [[2004, 0], [2005, 0], [2006, 50], [2007, 53], [2008, 46], [2009, 68], [2010, 49], [2011, 65], [2012, 64], [2013, 0]]
+            },
+            "ibenz": {
+                label: "iBenz 2.0",
+                data: [[2004, 0], [2005, 0], [2006, 51], [2007, 84], [2008, 36], [2009, 96], [2010, 83], [2011, 81], [2012, 70], [2013, 52]]
+            },
+            "metadata": {
+                pagetitle: "Global Projects",
+                title: "IT Projects",
+                xaxis: "Years",
+                yaxis: "Euros (thousand)"
+            }
+        },
+        3: {
+            "Safetyfirst": {
+                label: "Safety Fist",
+                data: [[2004, 0], [2005, 0], [2006, 0], [2007, 0], [2008, 188], [2009, 151], [2010, 150], [2011, 128], [2012, 140], [2013, 159]]
+            },
+            "steer": {
+                label: "Steering Assistance",
+                data: [[2004, 0], [2005, 0], [2006, 0], [2007, 0], [2008, 92], [2009, 114], [2010, 128], [2011, 92], [2012, 156], [2013, 136]]
+            },
+            "brakectrl": {
+                label: "Brake Control",
+                data: [[2004, 0], [2005, 0], [2006, 0], [2007, 0], [2008, 0], [2009, 52], [2010, 58], [2011, 40], [2012, 154], [2013, 87]]
+            },
+            "360sense": {
+                label: "360 sense",
+                data: [[2004, 0], [2005, 183], [2006, 11], [2007, 243], [2008, 117], [2009, 203], [2010, 61], [2011, 65], [2012, 140], [2013, 127]]
+            },
+            "engineplus": {
+                label: "engineplus",
+                data: [[2004, 39], [2005, 47], [2006, 43], [2007, 65], [2008, 60], [2009, 54], [2010, 11], [2011, 57], [2012, 49], [2013, 77]]
+            },
+            "df": {
+                label: "DF 4.7",
+                data: [[2004, 19], [2005, 24], [2006, 11], [2007, 26], [2008, 21], [2009, 0], [2010, 0], [2011, 0], [2012, 0], [2013, 0]]
+            },
+            "metadata": {
+                pagetitle: "Global Projects",
+                title: "Car Trucks & Projects",
+                xaxis: "Years",
+                yaxis: "Euros (thousand)"
+            }
+        },
+        4: {
+            "prielli": {
+                label: "Pirelli Six",
+                data: [[2004, 112], [2005, 140], [2006, 145], [2007, 150], [2008, 195], [2009, 112], [2010, 0], [2011, 0], [2012, 0], [2013, 0]]
+            },
+            "door": {
+                label: "Door 4x4",
+                data: [[2004, 103], [2005, 93], [2006, 65], [2007, 72], [2008, 126], [2009, 58], [2010, 0], [2011, 0], [2012, 0], [2013, 0]]
+            },
+            "mgp": {
+                label: "MGP",
+                data: [[2004, 0], [2005, 0], [2006, 0], [2007, 0], [2008, 0], [2009, 27], [2010, 75], [2011, 83], [2012, 37], [2013, 29]]
+            },
+            "metadata": {
+                pagetitle: "Global Projects",
+                title: "Parts Management Projects",
+                xaxis: "Years",
+                yaxis: "Euros (thousand)"
+            }
+        },
+        5: {
+            "topseed": {
+                label: "Topseed",
+                data: [[2004, 0], [2005, 0], [2006, 0], [2007, 125], [2008, 198], [2009, 0], [2010, 0], [2011, 0], [2012, 0], [2013, 0]]
+            },
+            "intel": {
+                label: "Intel Lab",
+                data: [[2004, 179], [2005, 186], [2006, 173], [2007, 87], [2008, 118], [2009, 135], [2010, 94], [2011, 89], [2012, 80], [2013, 88]]
+            },
+            "dhl": {
+                label: "DHL RFID",
+                data: [[2004, 0], [2005, 0], [2006, 0], [2007, 0], [2008, 0], [2009, 167], [2010, 156], [2011, 162], [2012, 0], [2013, 0]]
+            },
+            "customerfirst": {
+                label: "CustomerFirst",
+                data: [[2004, 0], [2005, 0], [2006, 67], [2007, 64], [2008, 55], [2009, 70], [2010, 63], [2011, 47], [2012, 42], [2013, 40]]
+            },
+            "metadata": {
+                pagetitle: "Global Projects",
+                title: "Warehouse Management Projects",
+                xaxis: "Years",
+                yaxis: "Euros (thousand)"
+            }
+        },
+
+    }
+
+
+    /*
+     * Grid navigation - called when listed page is being loaded
+     */
+    WinJS.UI.Pages.define("/pages/lineChart/lineChart.html", {
+        // This function is called whenever a user navigates to this page. It
+        // populates the page elements with the app's data.
+        ready: function (element, options) {
+
+            // get path of the source externally from homescreendata.js file
+            sourcePath = options.sourcePath;
+            // and refresh dataset with this now queried data
+            //loadDataFromLocalFile(sourcePath);
+
+            loadDataInFile(sourcePath);
+
+            // eventListeners navigation buttons for Dataset changes
+            document.getElementById("rightNav").addEventListener("click", function () { showNextDataset(index, datasets); });
+            document.getElementById("leftNav").addEventListener("click", function () { showPreviousDataset(index, datasets); });
+            document.getElementById("enableCrosshairX").addEventListener("click", function () { crosshairOptions(); });
+            document.getElementById("enableCrosshairY").addEventListener("click", function () { crosshairOptions(); });
+
+            // print initially
+            printChoices(index, datasets);
+            plotCheckedLines(index, datasets);
+
+        }
+    });
+
+    
+
+    /*
+     * Temporary hack due to malfunction of external loading
+     * gets string what to load from config file
+     */
+    function loadDataInFile(sourceVariable) {
+        switch (sourceVariable) {
+            // see homescreenData.js for linking of cases
+            case "salesData":
+                  datasets = datasetsSales; break;
+            case "financeData":
+                datasets = datasetsFinance; break;
+            case "hrData":
+                datasets = datasetsHR; break;
+            case "globalProjectsData":
+                  datasets = datasetsGlobalProjects; break;
+            default:
+                  datasets = datasets;
+        }
+    }
+
+    /*
+    * load data externally (NOT WORKING, occasional errors!!!)
     * arguments: a by ms-appx defined URI string. e.g. "ms-appx:///data/sales/linechart_countries.txt"
     *
     * TODO: testing! NOT IN USE YET!
@@ -155,7 +759,8 @@
             return Windows.Storage.FileIO.readTextAsync(file);
         }).done(function (text) {
             // overwrite / write into local variable
-            datasets = JSON.parse(text);
+            // THROWS ERRORS on indexing !! cant figure out why & short on time, therefore data gathering from local variables (yes its ugly)
+            // dataset = JSON.parse(text);
         });
 
     }
@@ -470,28 +1075,6 @@
             return "none";
         }
     }
-
-    /*
-     * Grid navigation - called when listed page is being loaded
-     */
-    WinJS.UI.Pages.define("/pages/lineChart/lineChart.html", {
-        // This function is called whenever a user navigates to this page. It
-        // populates the page elements with the app's data.
-        ready: function (element, options) {
-
-            // eventListeners navigation buttons for Dataset changes
-            document.getElementById("rightNav").addEventListener("click", function () { showNextDataset(index, datasets); });
-            document.getElementById("leftNav").addEventListener("click", function () { showPreviousDataset(index, datasets); });
-            document.getElementById("enableCrosshairX").addEventListener("click", function () { crosshairOptions(); });
-            document.getElementById("enableCrosshairY").addEventListener("click", function () { crosshairOptions(); });
-
-            // print initially
-            printChoices(index, datasets);
-            plotCheckedLines(index, datasets);
-
-        }
-    });
-
 
     /*
      * Helper functions used to pass important global variable data for testing 
