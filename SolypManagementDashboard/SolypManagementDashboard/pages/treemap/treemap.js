@@ -7,11 +7,11 @@
         // This function is called whenever a user navigates to this page. It
         // populates the page elements with the app's data.
         ready: function (element, options) {
-
+            sourcePath = options.sourcePath;
             // Add useful content here
             // what should be done after pageload? does more content need to be rendered?
             // start other js services?
-
+            
             /**********/
  
 
@@ -27,7 +27,7 @@
                 .round(false)
                 .size([w, h])
                 .sticky(true)
-                .value(function (d) { return d.investment; });
+                .value(function (d) { return d.a; });
 
             var svg = d3.select(".contentwrapper").append("div")
                 .attr("class", "chart")
@@ -39,9 +39,18 @@
               .append("svg:g")
                 .attr("transform", "translate(.5,.5)");
 
-            d3.json("pages/treemap/squaresdata.json", function (data) {
+            
+
+            d3.json(sourcePath, function (data) {
                 node = root = data;
 
+                var title = node.name;
+
+                var labela = node.labela;
+                var labelb = node.labelb;
+           
+                
+            
                 var nodes = treemap.nodes(root)
                     .filter(function (d) { return !d.children; });
 
@@ -67,18 +76,29 @@
 
                 d3.select(window).on("click", function () { zoom(root); });
 
+
+                //adding button labels
+                d3.select(".label_a").text(labela);
+                d3.select(".label_b").text(labelb);
+
+
                 d3.selectAll("input").on("change", function () {
-                    treemap.value(this.value == "investment" ? investment : revenue).nodes(root);
+                    treemap.value(this.value == "value_a" ? value_a : value_b).nodes(root);
                     zoom(node);
                 });
+                //adding title
+                d3.select(".pagetitle").text(title);
+              
             });
 
-            function investment(d) {
-                return d.investment;
+          
+
+            function value_a(d) {
+                return d.a;
             }
 
-            function revenue(d) {
-                return d.revenue;
+            function value_b(d) {
+                return d.b;
             }
 
             function zoom(d) {

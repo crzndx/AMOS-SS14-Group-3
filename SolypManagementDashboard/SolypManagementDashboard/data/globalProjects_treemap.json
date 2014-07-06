@@ -1,0 +1,73 @@
+{
+  "name": "Global Projects", "labela" : "Project Cost", "labelb" : "Total Work Days",
+  "children": [
+  {
+	"name": "sales",
+	"children": [
+	{"name": "Joinme", "a": 340000, "b": 125},
+	{"name": "Market V7", "a": 48000, "b": 23},
+	{"name": "Crowsuite", "a": 129000, "b": 399}
+	]
+  },
+   {
+	"name": "Compliance",
+	"children": [
+	{"name": "Morman", "a": 230000, "b": 428},
+	{"name": "Impactdos", "a": 382000, "b": 217},
+	{"name": "X2", "a": 27000, "b": 19},
+	{"name": "Trylog", "a": 497000, "b": 150}
+	]
+  },
+   {
+	"name": "Finance & Controlling",
+	"children": [
+	{"name": "ABD", "a": 21000, "b": 10},
+	{"name": "Invoicing EMP", "a": 482000, "b": 260},
+	{"name": "Quotation Update", "a": 321000, "b": 175}
+	]
+  },
+   {
+	"name": "IT",
+	"children": [
+	{"name": "FFM India Migration", "a": 84000, "b": 70},
+	{"name": "Logis decomission", "a": 32000, "b": 12},
+	{"name": "Backbone Integration", "a": 14000, "b": 5},
+	{"name": "AXIS 3000 Implementation", "a": 48000, "b": 20},
+	{"name": "iBenz 2.1", "a": 72000, "b": 85}
+	]
+  },
+   {
+	"name": "Parts Management",
+	"children": [
+	{"name": "Pirelli Six", "a": 43000, "b": 25},
+	{"name": "Door 4x4", "a": 29000, "b": 10},
+	{"name": "MGP", "a": 31000, "b": 15}
+	]
+  },
+   {
+	"name": "Cars",
+	"children": [
+	{"name": "SafetyFirst", "a": 324000, "b": 380},
+	{"name": "Steering Assistanceÿ", "a":475000, "b": 410},
+	{"name": "Brakecontrol", "a":94000, "b": 70}
+	]
+  },
+   {
+	"name": "Trucks",
+	"children": [
+	{"name": "360-sense", "a": 381000, "b": 493},
+	{"name": "Engine Plus", "a": 495000, "b": 395},
+	{"name": "DF 4.7", "a": 28400, "b": 32}
+	]
+  },
+   {
+	"name": "Warehouse Management",
+	"children": [
+	{"name": "Topseed", "a":43200, "b":50},
+	{"name": "Intel Lab", "a": 23400, "b": 20},
+	{"name": "DHL RFID", "a": 29100, "b": 27},
+	{"name": "CustomerFirst", "a": 49000, "b": 55}
+	]
+   }
+  ]
+ }

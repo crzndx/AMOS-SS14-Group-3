@@ -1,0 +1,34 @@
+{
+ "name": "flare",
+ "children": [
+  {
+   "name": "analytics",
+   "children": [
+    {
+     "name": "cluster",
+     "children": [
+      {"name": "AgglomerativeCluster", "investment": 3938, "revenue": 45454},
+      {"name": "CommunityStructure", "investment": 3938, "revenue": 5454},
+      {"name": "HierarchicalCluster", "investment": 6714, "revenue": 8787},
+      {"name": "MergeEdge", "investment": 743, "revenue": 9696}
+     ]
+    },
+    {
+     "name": "graph",
+     "children": [
+      {"name": "BetweennessCentrality", "investment": 3534, "revenue": 45454},
+      {"name": "LinkDistance", "investment": 5731, "revenue": 5656},
+      {"name": "MaxFlowMinCut", "investment": 7840, "revenue": 4568},
+      {"name": "ShortestPaths", "investment": 5914,"revenue": 5432},
+      {"name": "SpanningTree", "investment": 3416, "revenue": 2344}
+     ]
+    },
+    {
+     "name": "optimization",
+     "children": [
+      {"name": "AspectRatioBanker", "investment": 7074, "revenue": 6598}
+     ]
+    }
+   ]
+  }
+  ]}

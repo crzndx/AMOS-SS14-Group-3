@@ -61,6 +61,10 @@
     <Content Include="css\default.css" />
     <Content Include="data\2011.txt" />
     <Content Include="data\sales\linechart.txt" />
+    <Content Include="data\finance_treemap.json" />
+    <Content Include="data\globalProjects_treemap.json" />
+    <Content Include="data\sales_treemap.json" />
+    <Content Include="data\squaresdata.json" />
     <Content Include="images\background\1.jpg" />
     <Content Include="images\background\10.jpg" />
     <Content Include="images\background\11.jpg" />
@@ -90,12 +94,12 @@
     <Content Include="images\groupedItems\lineChart_global_project_total_cost.png" />
     <Content Include="images\groupedItems\lineChart_profit.jpg" />
     <Content Include="images\groupedItems\playingCards.jpg" />
-    <Content Include="images\groupedItems\squares.jpg" />
     <Content Include="images\left.png" />
     <Content Include="images\left_hover.png" />
     <Content Include="images\Logo-150.png" />
     <Content Include="images\Logo-200.png" />
     <Content Include="images\Logo-300.png" />
+    <Content Include="images\groupedItems\squares.png" />
     <Content Include="images\logo.scale-100.png" />
     <Content Include="images\Logo1.png" />
     <Content Include="images\Logo2.png" />
