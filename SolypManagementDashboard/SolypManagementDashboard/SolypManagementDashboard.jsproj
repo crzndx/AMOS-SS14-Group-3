@@ -89,11 +89,14 @@
     <Content Include="images\carLogos\vauxhall.png" />
     <Content Include="images\carLogos\volkswagen.png" />
     <Content Include="images\groupedItems\blankPage.jpg" />
+    <Content Include="images\groupedItems\finance_treemap.jpg" />
     <Content Include="images\groupedItems\lineChart.jpg" />
     <Content Include="images\groupedItems\lineChart_employee.png" />
     <Content Include="images\groupedItems\lineChart_global_project_total_cost.png" />
     <Content Include="images\groupedItems\lineChart_profit.jpg" />
     <Content Include="images\groupedItems\playingCards.jpg" />
+    <Content Include="images\groupedItems\sales_treemap.jpg" />
+    <Content Include="images\groupedItems\world_project_treemap.png" />
     <Content Include="images\left.png" />
     <Content Include="images\left_hover.png" />
     <Content Include="images\Logo-150.png" />
