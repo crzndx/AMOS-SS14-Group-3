@@ -15,8 +15,8 @@
             /**********/
  
 
-            var w = 1100,
-                h =550,
+            var w = 960,
+                h =500,
                 x = d3.scale.linear().range([0, w]),
                 y = d3.scale.linear().range([0, h]),
                 color = d3.scale.category20c(),
@@ -27,7 +27,7 @@
                 .round(false)
                 .size([w, h])
                 .sticky(true)
-                .value(function (d) { return d.investment; });
+                .value(function (d) { return d.a; });
 
             var svg = d3.select(".contentwrapper").append("div")
                 .attr("class", "chart")
@@ -83,7 +83,7 @@
 
 
                 d3.selectAll("input").on("change", function () {
-                    treemap.value(this.value == "investment" ? investment : revenue).nodes(root);
+                    treemap.value(this.value == "value_a" ? value_a : value_b).nodes(root);
                     zoom(node);
                 });
                 //adding title
@@ -93,12 +93,12 @@
 
           
 
-            function investment(d) {
-                return d.investment;
+            function value_a(d) {
+                return d.a;
             }
 
-            function revenue(d) {
-                return d.revenue;
+            function value_b(d) {
+                return d.b;
             }
 
             function zoom(d) {

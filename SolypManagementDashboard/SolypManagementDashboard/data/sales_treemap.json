@@ -4,41 +4,41 @@
   {
    "name": "Mercedes-Benz Cars",
    "children": [
-    {"name": "Mercedes-Benz", "investment": 12503000, "revenue": 1156},
-	{"name": "Smart", "investment": 340234, "revenue": 149}  
+    {"name": "Mercedes-Benz", "a": 12503000, "b": 1156},
+	{"name": "Smart", "a": 340234, "b": 149}  
     ]
   },
   {
     "name": "Daimler  Trucks",
      "children": [
-      {"name": "Mercedes-Benz", "investment": 73046, "revenue": 94},
-      {"name": "Freightliner", "investment": 103743, "revenue": 104},
-	  {"name": "Western Star", "investment": 37482, "revenue": 36},
-	  {"name": "Thomas Built Buses", "investment": 94755, "revenue": 13},
-	  {"name": "Fuso", "investment": 204632, "revenue": 238},
-	  {"name": "BharatBenz", "investment": 283946, "revenue": 195}
+      {"name": "Mercedes-Benz", "a": 73046, "b": 94},
+      {"name": "Freightliner", "a": 103743, "b": 104},
+	  {"name": "Western Star", "a": 37482, "b": 36},
+	  {"name": "Thomas Built Buses", "a": 94755, "b": 13},
+	  {"name": "Fuso", "a": 204632, "b": 238},
+	  {"name": "BharatBenz", "a": 283946, "b": 195}
      ]
     },
     {
      "name": "Mercedes-Benz Vans",
      "children": [
-      {"name": "Mercedes-Benz", "investment": 98364, "revenue": 32},
-	  {"name": "Freightliner", "investment": 45639, "revenue": 19}
+      {"name": "Mercedes-Benz", "a": 98364, "b": 32},
+	  {"name": "Freightliner", "a": 45639, "b": 19}
      ]
     },
 	{
      "name": "Daimler Buses",
      "children": [
-      {"name": "Mercedes-Benz", "investment": 86342, "revenue": 51},
-	  {"name": "Setra", "investment": 39465, "revenue": 28}
+      {"name": "Mercedes-Benz", "a": 86342, "b": 51},
+	  {"name": "Setra", "a": 39465, "b": 28}
      ]
     },
 	{
      "name": "Daimler Financial Services",
      "children": [
-      {"name": "Mercedes-Benz Bank", "investment":384652, "revenue": 275},
-	  {"name": "Mercedes-Benz Financial", "investment": 974526, "revenue": 947},
-	  {"name": "Daimler Truck Financial", "investment": 746342, "revenue": 472}
+      {"name": "Mercedes-Benz Bank", "a":384652, "b": 275},
+	  {"name": "Mercedes-Benz Financial", "a": 974526, "b": 947},
+	  {"name": "Daimler Truck Financial", "a": 746342, "b": 472}
 	 ]
     }
    ]

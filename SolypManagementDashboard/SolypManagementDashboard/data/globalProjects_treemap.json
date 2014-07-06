@@ -4,69 +4,69 @@
   {
 	"name": "sales",
 	"children": [
-	{"name": "Joinme", "investment": 340000, "revenue": 125},
-	{"name": "Market V7", "investment": 48000, "revenue": 23},
-	{"name": "Crowsuite", "investment": 129000, "revenue": 399}
+	{"name": "Joinme", "a": 340000, "b": 125},
+	{"name": "Market V7", "a": 48000, "b": 23},
+	{"name": "Crowsuite", "a": 129000, "b": 399}
 	]
   },
    {
 	"name": "Compliance",
 	"children": [
-	{"name": "Morman", "investment": 230000, "revenue": 428},
-	{"name": "Impactdos", "investment": 382000, "revenue": 217},
-	{"name": "X2", "investment": 27000, "revenue": 19},
-	{"name": "Trylog", "investment": 497000, "revenue": 150}
+	{"name": "Morman", "a": 230000, "b": 428},
+	{"name": "Impactdos", "a": 382000, "b": 217},
+	{"name": "X2", "a": 27000, "b": 19},
+	{"name": "Trylog", "a": 497000, "b": 150}
 	]
   },
    {
 	"name": "Finance & Controlling",
 	"children": [
-	{"name": "ABD", "investment": 21000, "revenue": 10},
-	{"name": "Invoicing EMP", "investment": 482000, "revenue": 260},
-	{"name": "Quotation Update", "investment": 321000, "revenue": 175}
+	{"name": "ABD", "a": 21000, "b": 10},
+	{"name": "Invoicing EMP", "a": 482000, "b": 260},
+	{"name": "Quotation Update", "a": 321000, "b": 175}
 	]
   },
    {
 	"name": "IT",
 	"children": [
-	{"name": "FFM India Migration", "investment": 84000, "revenue": 70},
-	{"name": "Logis decomission", "investment": 32000, "revenue": 12},
-	{"name": "Backbone Integration", "investment": 14000, "revenue": 5},
-	{"name": "AXIS 3000 Implementation", "investment": 48000, "revenue": 20},
-	{"name": "iBenz 2.1", "investment": 72000, "revenue": 85}
+	{"name": "FFM India Migration", "a": 84000, "b": 70},
+	{"name": "Logis decomission", "a": 32000, "b": 12},
+	{"name": "Backbone Integration", "a": 14000, "b": 5},
+	{"name": "AXIS 3000 Implementation", "a": 48000, "b": 20},
+	{"name": "iBenz 2.1", "a": 72000, "b": 85}
 	]
   },
    {
 	"name": "Parts Management",
 	"children": [
-	{"name": "Pirelli Six", "investment": 43000, "revenue": 25},
-	{"name": "Door 4x4", "investment": 29000, "revenue": 10},
-	{"name": "MGP", "investment": 31000, "revenue": 15}
+	{"name": "Pirelli Six", "a": 43000, "b": 25},
+	{"name": "Door 4x4", "a": 29000, "b": 10},
+	{"name": "MGP", "a": 31000, "b": 15}
 	]
   },
    {
 	"name": "Cars",
 	"children": [
-	{"name": "SafetyFirst", "investment": 324000, "revenue": 380},
-	{"name": "Steering Assistanceÿ", "investment":475000, "revenue": 410},
-	{"name": "Brakecontrol", "investment":94000, "revenue": 70}
+	{"name": "SafetyFirst", "a": 324000, "b": 380},
+	{"name": "Steering Assistanceÿ", "a":475000, "b": 410},
+	{"name": "Brakecontrol", "a":94000, "b": 70}
 	]
   },
    {
 	"name": "Trucks",
 	"children": [
-	{"name": "360-sense", "investment": 381000, "revenue": 493},
-	{"name": "Engine Plus", "investment": 495000, "revenue": 395},
-	{"name": "DF 4.7", "investment": 28400, "revenue": 32}
+	{"name": "360-sense", "a": 381000, "b": 493},
+	{"name": "Engine Plus", "a": 495000, "b": 395},
+	{"name": "DF 4.7", "a": 28400, "b": 32}
 	]
   },
    {
 	"name": "Warehouse Management",
 	"children": [
-	{"name": "Topseed", "investment":43200, "revenue":50},
-	{"name": "Intel Lab", "investment": 23400, "revenue": 20},
-	{"name": "DHL RFID", "investment": 29100, "revenue": 27},
-	{"name": "CustomerFirst", "investment": 49000, "revenue": 55}
+	{"name": "Topseed", "a":43200, "b":50},
+	{"name": "Intel Lab", "a": 23400, "b": 20},
+	{"name": "DHL RFID", "a": 29100, "b": 27},
+	{"name": "CustomerFirst", "a": 49000, "b": 55}
 	]
    }
   ]
