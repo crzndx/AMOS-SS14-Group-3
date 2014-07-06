@@ -87,17 +87,17 @@
 
              /* <do not change> this is done*/
              { group: sampleGroups[1], title: "Net Profit Margins", subtitle: "Daimler and Mercedes financial data on net profit margins", description: itemDescription, content: itemContent, backgroundImage: "/images/groupedItems/lineChart_profit.jpg", path: "/pages/lineChart/lineChart.html", sourcePath: "financeData" },
-             { group: sampleGroups[1], title: "Finance", subtitle: "Here the contrast between account payables and receivables is shown", description: itemDescription, content: itemContent, backgroundImage: "/images/groupedItems/squares.jpg", path: "/pages/treemap/treemap.html", sourcePath: "/data/finance_treemap.json" },
+             { group: sampleGroups[1], title: "Finance", subtitle: "Here the contrast between account payables and receivables is shown", description: itemDescription, content: itemContent, backgroundImage: "/images/groupedItems/squares.png", path: "/pages/treemap/treemap.html", sourcePath: "/data/finance_treemap.json" },
              /* </do not change> */
 
              /* <do not change> this is done*/
              { group: sampleGroups[2], title: "Total Sales", subtitle: "Sales figures worldwide and regional by departments", description: itemDescription, content: itemContent, backgroundImage: "/images/groupedItems/lineChart.jpg", path: "/pages/lineChart/lineChart.html", sourcePath: "salesData" },
-             { group: sampleGroups[2], title: "Sales", subtitle: "Shows the sales of vehicles and their corresponding customer complaints", description: itemDescription, content: itemContent, backgroundImage: "/images/groupedItems/squares.jpg", path: "/pages/treemap/treemap.html", sourcePath: "/data/sales_treemap.json" },
+             { group: sampleGroups[2], title: "Sales", subtitle: "Shows the sales of vehicles and their corresponding customer complaints", description: itemDescription, content: itemContent, backgroundImage: "/images/groupedItems/squares.png", path: "/pages/treemap/treemap.html", sourcePath: "/data/sales_treemap.json" },
              /* </do not change> */
 
              /* <do not change> this is done*/
              { group: sampleGroups[3], title: "Total Costs", subtitle: "Global projects total cost aggregated data for 2004-2013", description: itemDescription, content: itemContent, backgroundImage: "/images/groupedItems/lineChart_global_project_total_cost.png", path: "/pages/lineChart/lineChart.html", sourcePath: "globalProjectsData" },
-             { group: sampleGroups[3], title: "Global Projects", subtitle: "Represents the cost for each project compared to the working days", description: itemDescription, content: itemContent, backgroundImage: "/images/groupedItems/squares.jpg", path: "/pages/treemap/treemap.html", sourcePath: "/data/globalProjects_treemap.json" },
+             { group: sampleGroups[3], title: "Global Projects", subtitle: "Represents the cost for each project compared to the working days", description: itemDescription, content: itemContent, backgroundImage: "/images/groupedItems/squares.png", path: "/pages/treemap/treemap.html", sourcePath: "/data/globalProjects_treemap.json" },
              /* </do not change> */
 
 
