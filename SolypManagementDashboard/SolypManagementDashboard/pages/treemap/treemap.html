@@ -33,16 +33,17 @@
         </header>
         <section aria-label="Main content" role="main">
             <div class="contentwrapper">
-                <div class="treemap">
+                <div id="treemapContent">
+                    <div class="treemap" id="treemap">
+                        <div class="hint" id="hint">click to descend or ascend</div>
+                        <div>
+                            <form>
+                                <label><input type="radio" name="mode" value="value_a" checked><span class="label_a"></span></label>
+                                <label><input type="radio" name="mode" value="value_b"><span class="label_b"></span></label>
+                            </form>
+                        </div>
 
-                    <div class="hint">click to descend or ascend</div>
-                    <div>
-                        <form>
-                            <label><input type="radio" name="mode" value="value_a" checked><span class="label_a"></span></label>
-                            <label><input type="radio" name="mode" value="value_b"><span class="label_b"></span></label>
-                        </form>
                     </div>
-
                 </div>
             </div>
         </section>

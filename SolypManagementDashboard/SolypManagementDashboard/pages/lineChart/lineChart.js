@@ -1,4 +1,4 @@
-﻿
+﻿(function () {
     /*
      * Graph plotting with Flot
      * https://github.com/flot/
@@ -1107,3 +1107,6 @@
     function log(msg) {
         document.getElementById("status").innerHTML += msg;
     }
+
+
+})();

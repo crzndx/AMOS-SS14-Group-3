@@ -1,12 +1,10 @@
 ﻿/* add all CSS changes specifically concerning the new subpage here*/
 
 .contentwrapper {
-    margin: 20px; /* TODO needs defined makeover that every page looks the same!*/
-   
-   
-    }
+    margin: 50px; /* TODO needs defined makeover that every page looks the same!*/
+}
 
-.treemap {
+#treemap {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     margin: auto;
     position: relative;
@@ -24,7 +22,7 @@ form {
   display: block;
   margin: auto;
   margin-top: 40px;
-  width: 960px;
+  min-width: 960px;
   height: 500px;
   overflow:hidden;
 }
