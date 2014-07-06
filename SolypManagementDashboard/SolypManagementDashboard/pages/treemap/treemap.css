@@ -1,14 +1,17 @@
 ﻿/* add all CSS changes specifically concerning the new subpage here*/
 
 .contentwrapper {
-    margin: 50px; /* TODO needs defined makeover that every page looks the same!*/
+    margin: 20px; /* TODO needs defined makeover that every page looks the same!*/
+   
+   
+    }
+
+.treemap {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     margin: auto;
     position: relative;
     width: 960px;
-   
-    }
-
+}
 /*Copied from Mike Bostock*/
 
 form {
@@ -34,7 +37,7 @@ rect {
   fill: none;
 }
  .hint {
-     position: relative;
+    position: relative;
     left: 10px;
     top: 20px;
  }

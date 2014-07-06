@@ -29,7 +29,7 @@
                 .sticky(true)
                 .value(function (d) { return d.a; });
 
-            var svg = d3.select(".contentwrapper").append("div")
+            var svg = d3.select(".treemap").append("div")
                 .attr("class", "chart")
                 .style("width", w + "px")
                 .style("height", h + "px")
