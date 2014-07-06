@@ -87,12 +87,12 @@
 
              /* <do not change> this is done*/
              { group: sampleGroups[1], title: "Net Profit Margins", subtitle: "Daimler and Mercedes financial data on net profit margins", description: itemDescription, content: itemContent, backgroundImage: "/images/groupedItems/lineChart_profit.jpg", path: "/pages/lineChart/lineChart.html", sourcePath: "financeData" },
-             { group: sampleGroups[1], title: "Finance", subtitle: "Here the contrast between account payables and receivables is shown", description: itemDescription, content: itemContent, backgroundImage: "/images/groupedItems/finance_treemap.jpg", path: "/pages/treemap/treemap.html", sourcePath: "/data/finance_treemap.json" },
+             { group: sampleGroups[1], title: "Balance", subtitle: "Here the contrast between account payables and receivables is shown", description: itemDescription, content: itemContent, backgroundImage: "/images/groupedItems/finance_treemap.jpg", path: "/pages/treemap/treemap.html", sourcePath: "/data/finance_treemap.json" },
              /* </do not change> */
 
              /* <do not change> this is done*/
              { group: sampleGroups[2], title: "Total Sales", subtitle: "Sales figures worldwide and regional by departments", description: itemDescription, content: itemContent, backgroundImage: "/images/groupedItems/lineChart.jpg", path: "/pages/lineChart/lineChart.html", sourcePath: "salesData" },
-             { group: sampleGroups[2], title: "Sales", subtitle: "Shows the sales of vehicles and their corresponding customer complaints", description: itemDescription, content: itemContent, backgroundImage: "/images/groupedItems/sales_treemap.jpg", path: "/pages/treemap/treemap.html", sourcePath: "/data/sales_treemap.json" },
+             { group: sampleGroups[2], title: "Customer complains", subtitle: "Shows the sales of vehicles and their corresponding customer complaints", description: itemDescription, content: itemContent, backgroundImage: "/images/groupedItems/sales_treemap.jpg", path: "/pages/treemap/treemap.html", sourcePath: "/data/sales_treemap.json" },
              /* </do not change> */
 
              /* <do not change> this is done*/
