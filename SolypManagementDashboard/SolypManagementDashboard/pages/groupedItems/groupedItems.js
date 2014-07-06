@@ -28,7 +28,7 @@
 
         _itemInvoked: function (args) {
             var item = HomescreenData.items.getAt(args.detail.itemIndex);
-            nav.navigate(HomescreenData.getItemReference(item));
+            nav.navigate(HomescreenData.getItemReference(item), { sourcePath: HomescreenData.getItemSourcePath(item) });
 
 
             //nav.navigate("/pages/testSeite/page.html");

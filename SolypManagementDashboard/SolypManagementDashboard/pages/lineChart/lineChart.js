@@ -14,13 +14,17 @@
     var colors = ["#ff5959", "#f3ac00", "#99ff00", "#83d0f5", "#db65ef", "#ffbfbf", "#f1fa00", "#7fffa6", "#00b9ee", "#ff00b3", "#ffa680", "#ffff80", "#80ffff", "#bfc6ff", "#ff0066", "#ffd9bf", "#f2ffbf", "#00ccff", "#cc80ff", "#ff80b3"];
     var colorsChosen = [];
 
+    var sourcePath = "";
+
     /*
      * Data for graphs to be plotted
      */
     var index = 0; // current index to show dataset #
 
     // actual data being displayed
-    // @TODO do it externally?
+// @TODO do it externally?
+    var datasets;
+
     var datasets = {
         0 : {
             "myanmar": {
@@ -111,35 +115,62 @@
 
     // options to draw canvas
     var options = {
-        series: {
-            lines: {
-                show: true
+        "series": {
+            "lines": {
+                "show": true
             },
-            points: {
-                show: true
+            "points": {
+                "show": true
             }
         },
-        grid: {
-            hoverable: true,
-            clickable: true
+        "grid": {
+            "hoverable": true,
+            "clickable": true
         },
-        yaxis: {
-            min: 0
+        "yaxis": {
+            "min": 0
         },
-        xaxis: {
-            tickDecimals: 0
+        "xaxis": {
+            "tickDecimals": 0
         },
-        legend: {
-            show: false
+        "legend": {
+            "show": false
         },
-        yaxisName: datasets[index]["metadata"]["xaxis"],
-        xaxisName: datasets[index]["metadata"]["yaxis"],
-        crosshair: {
-            mode: "xy",
-            color: "rgba(255, 255, 255, 0.30)",
-            lineWidth: 1
+        "yaxisName": datasets[index]["metadata"]["xaxis"],
+        "xaxisName": datasets[index]["metadata"]["yaxis"],
+        "crosshair": {
+            "mode": "xy",
+            "color": "rgba(255, 255, 255, 0.30)",
+            "lineWidth": 1
         }
     };
+
+    /*
+     * Grid navigation - called when listed page is being loaded
+     */
+    WinJS.UI.Pages.define("/pages/lineChart/lineChart.html", {
+        // This function is called whenever a user navigates to this page. It
+        // populates the page elements with the app's data.
+        ready: function (element, options) {
+
+            // get path of the source externally from homescreendata.js file
+            sourcePath = options.sourcePath;
+            // and refresh dataset with this now queried data
+            loadDataFromLocalFile(sourcePath);
+
+            // eventListeners navigation buttons for Dataset changes
+            document.getElementById("rightNav").addEventListener("click", function () { showNextDataset(index, datasets); });
+            document.getElementById("leftNav").addEventListener("click", function () { showPreviousDataset(index, datasets); });
+            document.getElementById("enableCrosshairX").addEventListener("click", function () { crosshairOptions(); });
+            document.getElementById("enableCrosshairY").addEventListener("click", function () { crosshairOptions(); });
+
+            // print initially
+            printChoices(index, datasets);
+            plotCheckedLines(index, datasets);
+
+        }
+    });
+    
 
     /*
     * load data externally
@@ -147,6 +178,7 @@
     *
     * TODO: testing! NOT IN USE YET!
     */
+
     function loadDataFromLocalFile(sourceString) {
 
         var uri = new Windows.Foundation.Uri(sourceString);
@@ -155,7 +187,8 @@
             return Windows.Storage.FileIO.readTextAsync(file);
         }).done(function (text) {
             // overwrite / write into local variable
-            datasets = JSON.parse(text);
+
+            // var dataset2 = JSON.parse(text);
         });
 
     }
@@ -470,28 +503,6 @@
             return "none";
         }
     }
-
-    /*
-     * Grid navigation - called when listed page is being loaded
-     */
-    WinJS.UI.Pages.define("/pages/lineChart/lineChart.html", {
-        // This function is called whenever a user navigates to this page. It
-        // populates the page elements with the app's data.
-        ready: function (element, options) {
-
-            // eventListeners navigation buttons for Dataset changes
-            document.getElementById("rightNav").addEventListener("click", function () { showNextDataset(index, datasets); });
-            document.getElementById("leftNav").addEventListener("click", function () { showPreviousDataset(index, datasets); });
-            document.getElementById("enableCrosshairX").addEventListener("click", function () { crosshairOptions(); });
-            document.getElementById("enableCrosshairY").addEventListener("click", function () { crosshairOptions(); });
-
-            // print initially
-            printChoices(index, datasets);
-            plotCheckedLines(index, datasets);
-
-        }
-    });
-
 
     /*
      * Helper functions used to pass important global variable data for testing 

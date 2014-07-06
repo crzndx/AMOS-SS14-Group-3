@@ -1,5 +1,4 @@
 ﻿(function () {
-    "use strict";
 
     var list = new WinJS.Binding.List();
     var groupedItems = list.createGrouped(
@@ -17,6 +16,7 @@
         items: groupedItems,
         groups: groupedItems.groups,
         getItemReference: getItemReference,
+        getItemSourcePath: getItemSourcePath,
         getItemsFromGroup: getItemsFromGroup,
         resolveGroupReference: resolveGroupReference,
         resolveItemReference: resolveItemReference
@@ -26,6 +26,11 @@
     // unique reference to the item that can be easily serialized.
     function getItemReference(item) {
         return item.path;
+    }
+
+    /* hack for getting the url of a datasource if available */
+    function getItemSourcePath(item) {
+            return item.sourcePath;
     }
 
     // This function returns a WinJS.Binding.List containing only the items
@@ -77,17 +82,17 @@
         // group.
         var sampleItems = [
             
-            { group: sampleGroups[0], title: "Card Comparison", subtitle: "Compare different competitor cards with the comparing functionality", description: itemDescription, content: itemContent, backgroundImage: "/images/groupedItems/playingCards.jpg", path: "/pages/TileComparison/TileComparison.html" },
-            { group: sampleGroups[0], title: "Showing all Cards", subtitle: "Shows all cards at once", description: itemDescription, content: itemContent, backgroundImage: "/images/groupedItems/playingCards.jpg", path: "/pages/allCards/allCards.html" },
+            { group: sampleGroups[0], title: "Card Comparison", subtitle: "Compare different competitor cards with the comparing functionality", description: itemDescription, content: itemContent, backgroundImage: "/images/groupedItems/playingCards.jpg", path: "/pages/TileComparison/TileComparison.html", sourcePath: "ms-appx:///data/sales/linechart.txt" },
+            { group: sampleGroups[0], title: "Showing all Cards", subtitle: "Shows all cards at once", description: itemDescription, content: itemContent, backgroundImage: "/images/groupedItems/playingCards.jpg", path: "/pages/allCards/allCards.html", sourcePath: "ms-appx:///data/sales/linechart.txt" },
 
 
             
 
-            { group: sampleGroups[2], title: "Linecharts", subtitle: "Displays financial line charts e.g. sales", description: itemDescription, content: itemContent, backgroundImage: "/images/groupedItems/lineChart.jpg", path: "/pages/lineChart/lineChart.html" },
+            { group: sampleGroups[2], title: "Linecharts", subtitle: "Displays financial line charts e.g. sales", description: itemDescription, content: itemContent, backgroundImage: "/images/groupedItems/lineChart.jpg", path: "/pages/lineChart/lineChart.html", sourcePath: "ms-appx:///data/sales/linechart.txt" },
 
-            { group: sampleGroups[3], title: "Squares", subtitle: "Displays KPI in squares of different sizes", description: itemDescription, content: itemContent, backgroundImage: "/images/groupedItems/squares.jpg", path: "/pages/squares/squares.html" },
+            { group: sampleGroups[3], title: "Squares", subtitle: "Displays KPI in squares of different sizes", description: itemDescription, content: itemContent, backgroundImage: "/images/groupedItems/squares.jpg", path: "/pages/squares/squares.html", sourcePath: "ms-appx:///data/sales/linechart.txt" },
 
-            { group: sampleGroups[4], title: "Dummy Page", subtitle: "This is a basic template site used for every new subpage", description: itemDescription, content: itemContent, backgroundImage: "/images/groupedItems/blankPage.jpg", path: "/pages/newPageDummy/newDummyHTML.html" },
+            { group: sampleGroups[4], title: "Dummy Page", subtitle: "This is a basic template site used for every new subpage", description: itemDescription, content: itemContent, backgroundImage: "/images/groupedItems/blankPage.jpg", path: "/pages/newPageDummy/newDummyHTML.html", sourcePath: "ms-appx:///data/sales/linechart.txt" },
         ];
 
         return sampleItems;

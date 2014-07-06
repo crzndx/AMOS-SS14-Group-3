@@ -60,6 +60,7 @@
     </AppxManifest>
     <Content Include="css\default.css" />
     <Content Include="data\2011.txt" />
+    <Content Include="data\sales\linechart.txt" />
     <Content Include="images\background\1.jpg" />
     <Content Include="images\background\10.jpg" />
     <Content Include="images\background\11.jpg" />
@@ -197,6 +198,10 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{82a7f48d-3b50-4b1e-b82e-3ada8210c358}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="data\NewFolder1\" />
+    <Folder Include="data\NewFolder\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\$(WMSJSProjectDirectory)\Microsoft.VisualStudio.$(WMSJSProject).targets" />
   <!-- To modify your build process, add your task inside one of the targets below then uncomment
