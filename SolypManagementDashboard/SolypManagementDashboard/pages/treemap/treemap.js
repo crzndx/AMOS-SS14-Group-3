@@ -87,7 +87,7 @@
                     zoom(node);
                 });
                 //adding title
-                d3.select(".pagetitle").text(title);
+                d3.select("#treemap_title").text(title);
               
             });
 
