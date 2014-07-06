@@ -1,5 +1,5 @@
 {
- "name": "Sales",
+ "name": "Sales", "labela" : "Vehicles Sold", "labelb" : "Customer Complaints",
  "children": [
   {
    "name": "Mercedes-Benz Cars",

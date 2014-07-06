@@ -1,5 +1,5 @@
 {
-  "name": "Global Projects",
+  "name": "Global Projects", "labela" : "Project Cost", "labelb" : "Total Work Days",
   "children": [
   {
 	"name": "sales",
