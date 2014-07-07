@@ -226,12 +226,8 @@
             if ((' ' + elems[i].className + ' ').indexOf(' kpiCanvas ') > -1) {
 
                 var temp = elems[i].getElementsByClassName("itemid")[0];
-
                 var newInnerHTML = '<input type="hidden" class="itemid" value="' + temp.value + '"></input>';
-
                 var x = getCustomberIdByName(temp.value);
-
-
                 var counter = 0;
 
                 while (counter < 3 && (kpiBaseReference + counter) < data[x].KPI.length) {
@@ -239,7 +235,7 @@
                     var kpi_temp = data[x].KPI[kpiBaseReference + counter];
                     var kpi_type = (kpi_temp[2] == undefined) ? 0 : kpi_temp[2];
 
-                    newInnerHTML += generateKPIDiv(kpi_temp[0], kpi_temp[1], kpi_type, tops[counter], 225, 84);
+                    newInnerHTML += generateKPIDiv(kpi_temp[0], kpi_temp[1], kpi_type, tops[counter], 220, 84);
 
                     counter++;
                 }
@@ -254,11 +250,11 @@
         //     debugger;
         var newInnerHTML =
            '<div style="position: absolute; text-align: left; left:1px; top:' + top + 'px; width: ' + nameDivWidth
-               + 'px; height:25px; background-color: #FFFFFF;"><b>' + name + '</b></div>';
+               + 'px; height:25px; background-color: #FFFFFF; border-color: #008080 ">' + name + '</div>';
 
         switch (type) {
             case PERCENTAGE:
-                newInnerHTML += '<div style="position: absolute; text-align: left; left: ' + (nameDivWidth + 2) + 'px; top: ' + top
+                newInnerHTML += '<div style="position: absolute; text-align: left;  left: ' + (nameDivWidth + 2) + 'px; top: ' + top
                     + 'px; width: ' + valueDivWidth + 'px; height: 25px; background-color: #FFFFFF;">' + value + '%</div>';
                 break;
             case RATING:
@@ -320,9 +316,9 @@
         var x = getCustomberIdByName(temp.value);
         var height = 20 + 2 + data[x].KPI.length * 26;
         var counter = 0;
-        var flyOutContent = '<div style="width:420px; height:' + height + 'px; background-color:#000000; position:relative;">';
-        flyOutContent += '<div style="position:absolute; background-color:#FFFFFF; left:1px; top:1px; width:418px; height:20px; text-align:center;">' +
-            data[x].Name + '</div>';
+        var flyOutContent = '<div style="width:420px; height:' + height + 'px; background-color:#008080; position:relative;">';
+        flyOutContent += '<div style="position:absolute; background-color:#FFFFFF; left:1px; top:1px; width:418px; height:20px; text-align:center;"><b>' +
+            data[x].Name + '</b></div>';
         var top = 22;
         while ((counter < data[x].KPI.length)) {
             flyOutContent += generateKPIDiv(data[x].KPI[counter][0], data[x].KPI[counter][1], data[x].KPI[counter][2], top, 240, 177);
