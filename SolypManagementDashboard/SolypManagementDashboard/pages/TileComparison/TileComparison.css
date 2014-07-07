@@ -1,5 +1,9 @@
 ﻿/* add all CSS changes specifically concerning the new subpage here*/
 
+.tile_contentwrapper {
+     margin-left: 120px;
+    margin-right: 120px;
+}
     /* styles */
 .listBox {
    /* border: 1px solid #222222; */
@@ -85,10 +89,7 @@
 	height:170px;
 }
 
-.itemdetailpage section[role=main] {
-    margin-left: 120px;
-    margin-right: 120px;
-}
+
 
 #customercard {
 		margin:0 auto;
