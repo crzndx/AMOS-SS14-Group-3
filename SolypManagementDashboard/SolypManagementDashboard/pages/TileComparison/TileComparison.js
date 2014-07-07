@@ -10,8 +10,6 @@
         WinJS.Navigation.navigate("pages/allCards/allCards.html");
     }
 
-
-
     var customerCardsTileId = 0;
 
     // Generates the Template for the ListView-Items
@@ -249,25 +247,25 @@
 
         //     debugger;
         var newInnerHTML =
-           '<div style="position: absolute; text-align: left; left:1px; top:' + top + 'px; width: ' + nameDivWidth
-               + 'px; height:25px; background-color: #FFFFFF; border-color: #008080 ">' + name + '</div>';
+           '<div style="position: absolute; padding-left:5px; padding-top:7px; text-align: left; left:1px; top:' + top + 'px; width: ' + (nameDivWidth - 5)
+               + 'px; height:18px; background-color: #FFFFFF; border-color: #008080 ">' + name + '</div>';
 
         switch (type) {
             case PERCENTAGE:
-                newInnerHTML += '<div style="position: absolute; text-align: left;  left: ' + (nameDivWidth + 2) + 'px; top: ' + top
-                    + 'px; width: ' + valueDivWidth + 'px; height: 25px; background-color: #FFFFFF;">' + value + '%</div>';
+                newInnerHTML += '<div style="position: absolute; padding-top:7px; padding-left:5px;  text-align: left;  left: ' + (nameDivWidth + 2) + 'px; top: ' + top
+                    + 'px; width: ' + (valueDivWidth - 5) + 'px; height: 18px; background-color: #FFFFFF;">' + value + '%</div>';
                 break;
             case RATING:
-                newInnerHTML += '<div style="position: absolute; text-align: left; left: ' + (nameDivWidth + 2) + 'px; top: ' + top
-                    + 'px; width: ' + valueDivWidth + 'px; height: 25px; background-color: #FFFFFF;">';
+                newInnerHTML += '<div style="position: absolute; padding-top:7px; padding-left:5px;  text-align: left; left: ' + (nameDivWidth + 2) + 'px; top: ' + top
+                    + 'px; width: ' + (valueDivWidth - 5) + 'px; height: 18px; background-color: #FFFFFF;">';
                 newInnerHTML += '<span class="win-small" data-win-control="WinJS.UI.Rating" data-win-options="{ userRating: ' + value
                     + ', disabled: true}"></span></div>';
                 break;
             case NUMBER:
             default:
                 newInnerHTML +=
-                    '<div style="position: absolute; text-align: left; left: ' + (nameDivWidth + 2) + 'px; top: ' + top + 'px; width: '
-                        + valueDivWidth + 'px; height: 25px; background-color: #FFFFFF;">' + value + '</div>';
+                    '<div style="position: absolute; padding-top:7px; padding-left:5px;  text-align: left; left: ' + (nameDivWidth + 2) + 'px; top: ' + top + 'px; width: '
+                        + (valueDivWidth - 5) + 'px; height: 18px; background-color: #FFFFFF;">' + value + '</div>';
                 break;
         }
 
