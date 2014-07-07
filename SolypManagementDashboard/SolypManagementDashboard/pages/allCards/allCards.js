@@ -215,7 +215,7 @@
     var items = [];
 
     // Generate 160 items
-    for (var i = 0; i < 20; i++) {
+    for (var i = 0; i < 1; i++) {
         json.forEach(function (item) {
             items.push(item);
         });

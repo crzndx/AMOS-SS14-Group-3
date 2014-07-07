@@ -33,7 +33,7 @@
         </header>
         <section aria-label="Main content" role="main">
 
-            <div class="contentwrapper">
+            <div class="tile_contentwrapper">
                 <!-- add all specific subpage content here -->
 
 
@@ -45,7 +45,7 @@
                 <div class=" ">
 
                     <div id="tiletemplate" class="tileTemplate">
-                        <div id="customercard"  style="margin:2px;">
+                        <div id="customercard" style="margin:2px;">
 
                             <div id="plandiv" class="plan plan1">
                                 <div class="header">
@@ -72,15 +72,15 @@
                         layout: { type: WinJS.UI.GridLayout, maxRows: 1 }
                     }"></div>
                     <div style="text-align:center;">
-                        <img id="kpiLeft" src="/images/left.png" width="60"
+                        <img id="kpiLeft" src="/images/left.png" width="50" style="margin-top:50px;"
                              onmouseover="this.src='/images/left_hover.png'"
-                             onmouseout="this.src = '/images/left.png'" /><button id="compareButton" class="action secondary MessageToTheUserInvisible">Compare Tiles</button><img id="kpiRight" src="/images/right.png" width="60"
-                                                                               onmouseover="this.src='/images/right_hover.png'"
-                                                                               onmouseout="this.src = '/images/right.png'" />
+                             onmouseout="this.src = '/images/left.png'" /><button id="compareButton" style="position:relative;margin-bottom:140px;" class="action secondary MessageToTheUserInvisible">Compare Tiles</button><img id="kpiRight" src="/images/right.png" width="60"
+                                                                                                                                                                                                                                  onmouseover="this.src='/images/right_hover.png'"
+                                                                                                                                                                                                                                  onmouseout="this.src = '/images/right.png'" />
                     </div>
                     <div class="MessageBox">
                         <div class="MessageToTheUserInvisible" id="MessageToTheUser">Select more to compare!!!</div>
-                       
+
                     </div>
                 </div>
             </div>
