@@ -58,7 +58,7 @@
 
                                 <div class="barchart"></div>
                                 <input type="button" class="signup" id="moreInfoButton" value="More Info"
-                                       onclick="TileComparison.moreInfoButton_Click(event);" />
+                                       ondblclick="TileComparison.moreInfoButton_Click(event);" />
                             </div>
                         </div>
 
@@ -77,7 +77,7 @@
                                          onmouseover="this.src='/images/left_hover.png'"
                                          onmouseout="this.src = '/images/left.png'" />
                                
-                                    <button id="compareButton" class="action secondary MessageToTheUserInvisible">Compare Tiles</button>
+                                    <button id="compareButton" style="position:relative;" class="action secondary MessageToTheUserInvisible">Compare Tiles</button>
                               
                                     <img id="kpiRight" src="/images/right.png" width="50"
                                          onmouseover="this.src='/images/right_hover.png'"
