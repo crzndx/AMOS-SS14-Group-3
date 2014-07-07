@@ -254,12 +254,17 @@
     }
 
 
+    function showTileComparison() {
+        WinJS.Navigation.navigate("pages/TileComparison/TileComparison.html");
+    }
+
     WinJS.UI.Pages.define("/pages/allCards/allCards.html", {
         // This function is called whenever a user navigates to this page. It
         // populates the page elements with the app's data.
         ready: function (element, options) {
             //    var item = HomescreenData.resolveItemReference(options.item);
-
+            var slidingAppBar = document.getElementById("appBarAllCards").winControl;
+            slidingAppBar.getCommandById("showTileComparison").addEventListener("click", function () { showTileComparison(); });
             // Parses the title of the subpage from the data file
             // element.querySelector(".titlearea .pagetitle").textContent = item.title;
             var listView = document.querySelector("#listView");

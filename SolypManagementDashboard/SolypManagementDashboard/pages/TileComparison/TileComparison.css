@@ -1,5 +1,6 @@
 ﻿/* add all CSS changes specifically concerning the new subpage here*/
 
+
     /* styles */
 .listBox {
    /* border: 1px solid #222222; */
@@ -333,8 +334,8 @@
     color: rgba(0, 0, 0, 1.0);
 }
 
-.win-container {
-	width:350px;
+.tileTemplate {
+    width:350px;
 }
 
 

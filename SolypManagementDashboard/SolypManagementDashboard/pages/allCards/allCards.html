@@ -65,7 +65,13 @@
                     }">
                 </div>
                 <!--Finished copying-->
+                <!-- Installs the AppBar at the top of the screen. Must be swiped in from the top of the screen -->
+                <div id="appBarWrapper">
+                    <div id="appBarAllCards" data-win-control="WinJS.UI.AppBar" data-win-options="{sticky: false, placement: 'top'}">
+                        <button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{id:'showTileComparison',label:'Show Customer Comparison',icon:'viewall', section:'selection',tooltip: 'Show Customer Comparison'}"></button>
 
+                    </div>
+                </div>
             </div>
         </section>
     </div>
