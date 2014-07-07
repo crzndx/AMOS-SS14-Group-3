@@ -1,7 +1,6 @@
 ﻿(function () {
     
-
-        
+       
     
     WinJS.UI.Pages.define("/pages/treemap/treemap.html", {
         // This function is called whenever a user navigates to this page. It
@@ -14,9 +13,14 @@
             
             /**********/
  
+            var elem = document.getElementById("treemapContent");
+            var treeHeight = elem.offsetHeight;
+            var treeWidth = elem.offsetWidth;
+            
+            
 
-            var w = 960,
-                h =500,
+            var w = treeWidth,
+                h = treeHeight,
                 x = d3.scale.linear().range([0, w]),
                 y = d3.scale.linear().range([0, h]),
                 color = d3.scale.category20c(),
@@ -39,7 +43,6 @@
               .append("svg:g")
                 .attr("transform", "translate(.5,.5)");
 
-            
 
             d3.json(sourcePath, function (data) {
                 node = root = data;
@@ -71,7 +74,15 @@
                     .attr("y", function (d) { return d.dy / 2; })
                     .attr("dy", ".35em")
                     .attr("text-anchor", "middle")
-                    .text(function (d) { return d.name; })
+                    .text(function (d) { return d.name })
+                    /* these line down here shows the sizes of all elements (but does not distinguish between parent und child nodes!!!! needs to detect zoom()!!!
+                    .text(function (d) {
+                        if (node != d.parent) { // children
+                            return d.name + " " + (d.dx * d.dy / (d.parent.dx * d.parent.dy) * 100).toFixed(1) + "%";
+                        } else { // parent nodes
+                            return d.name + " " + (d.dx * d.dy / (treeWidth*treeHeight) * 100).toFixed(1) + "%";;
+                        }
+                    }) */
                     .style("opacity", function (d) { d.w = this.getComputedTextLength(); return d.dx > d.w ? 1 : 0; });
 
                 d3.select(window).on("click", function () { zoom(root); });
@@ -126,6 +137,8 @@
         }
     });
     // some more librarys/js starts here
-
+    function log(msg) {
+        document.getElementById("status").innerHTML += msg;
+    }
 
 })();
