@@ -13,161 +13,161 @@
         "Name": "BMW",
         "Year": "2011",
         "KPI": [
-            ["profits", 2853, 0],
-            ["salesVolume", 1461, 0],
-            ["returnOnCapital", 19.1, 0],
-            ["workforce", 95453, 0],
-            ["womeWorkforceShare", 13.5, 0],
-            ["averageTrainingHours", 3.6, 1],
-            ["energyConsumptionPerVehicle", 2.75, 0],
-            ["waterConsumptionPerVehicle", 2.31, 0],
-            ["co2perVehicle", 0.86],
-            ["revenueSum", 60447]
+            ["Profits", 2853, 0],
+            ["Sales Volume", 1461, 0],
+            ["Return On Capital", 19.1, 0],
+            ["Workforce", 95453, 0],
+            ["Women Workforce Share", 13.5, 0],
+
+            ["Energy Consumption Per Vehicle", 2.75, 0],
+            ["Water Consumption Per Vehicle", 2.31, 0],
+            ["CO2 Per Vehicle", 0.86],
+            ["Revenue Sum", 60447]
 
         ],
         "quarterRevenue": [11.75, 17.28, 18.34, 29.63],
         "logo": "/images/carLogos/bmw.png"
     },
-            {
+           {
 
-                "Name": "Volkswagen",
-                "Year": "2011",
-                "KPI": [
-                    ["profits", 2853, 0],
-                    ["salesVolume", 1461, 0],
-                    ["returnOnCapital", 19.1, 0],
-                    ["workforce", 95453, 0],
-                    ["womeWorkforceShare", 13.5, 0],
-                    ["averageTrainingHours", 3.6, 1],
-                    ["energyConsumptionPerVehicle", 2.75, 0],
-                    ["waterConsumptionPerVehicle", 2.31, 0],
-                    ["co2perVehicle", 0.86],
-                    ["revenueSum", 60447]
+               "Name": "Volkswagen",
+               "Year": "2011",
+               "KPI": [
+                   ["Profits", 2853, 0],
+                   ["Sales Volume", 1461, 0],
+                   ["Return On Capital", 19.1, 0],
+                   ["Workforce", 95453, 0],
+                   ["Women Workforce Share", 13.5, 0],
 
-                ],
-                "quarterRevenue": [12.75, 13.28, 14.34, 25.63],
-                "logo": "/images/carLogos/volkswagen.png"
-            },
-            {
+                   ["Energy Consumption Per Vehicle", 2.75, 0],
+                   ["Water Consumption Per Vehicle", 2.31, 0],
+                   ["CO2 Per Vehicle", 0.86],
+                   ["Revenue Sum", 60447]
 
-                "Name": "Mazda",
-                "Year": "2011",
-                "KPI": [
-				["profits", 2853, 0],
-				["salesVolume", 1461, 0],
-				["returnOnCapital", 19.1, 0],
-				["workforce", 95453, 0],
-				["womeWorkforceShare", 13.5, 0],
-				["averageTrainingHours", 3.6, 1],
-				["energyConsumptionPerVehicle", 2.75, 0],
-				["waterConsumptionPerVehicle", 2.31, 0],
-				["co2perVehicle", 0.86],
-				["revenueSum", 60447]
+               ],
+               "quarterRevenue": [12.75, 13.28, 14.34, 25.63],
+               "logo": "/images/carLogos/volkswagen.png"
+           },
+           {
 
-                ],
-                "quarterRevenue": [12.75, 13.28, 14.34, 25.63],
-                "logo": "/images/carLogos/mazda.png"
-            },
-            {
+               "Name": "Mazda",
+               "Year": "2011",
+               "KPI": [
+               ["Profits", 2853, 0],
+               ["Sales Volume", 1461, 0],
+               ["Return On Capital", 19.1, 0],
+               ["Workforce", 95453, 0],
+               ["Women Workforce Share", 13.5, 0],
 
-                "Name": "Ford",
-                "Year": "2011",
-                "KPI": [
-				["profits", 2853, 0],
-				["salesVolume", 1461, 0],
-				["returnOnCapital", 19.1, 0],
-				["workforce", 95453, 0],
-				["womeWorkforceShare", 13.5, 0],
-				["averageTrainingHours", 3.6, 1],
-				["energyConsumptionPerVehicle", 2.75, 0],
-				["waterConsumptionPerVehicle", 2.31, 0],
-				["co2perVehicle", 0.86],
-				["revenueSum", 60447]
+               ["Energy Consumption Per Vehicle", 2.75, 0],
+               ["Water Consumption Per Vehicle", 2.31, 0],
+               ["CO2 Per Vehicle", 0.86],
+               ["Revenue Sum", 60447]
 
-                ],
-                "quarterRevenue": [12.75, 13.28, 14.34, 25.63],
-                "logo": "/images/carLogos/ford.png"
-            },
-            {
+               ],
+               "quarterRevenue": [12.75, 13.28, 14.34, 25.63],
+               "logo": "/images/carLogos/mazda.png"
+           },
+           {
 
-                "Name": "Vauxhall",
-                "Year": "2011",
-                "KPI": [
-				["profits", 2853, 0],
-				["salesVolume", 1461, 0],
-				["returnOnCapital", 19.1, 0],
-				["workforce", 95453, 0],
-				["womeWorkforceShare", 13.5, 0],
-				["averageTrainingHours", 3.6, 1],
-				["energyConsumptionPerVehicle", 2.75, 0],
-				["waterConsumptionPerVehicle", 2.31, 0],
-				["co2perVehicle", 0.86],
-				["revenueSum", 60447]
+               "Name": "Ford",
+               "Year": "2011",
+               "KPI": [
+               ["Profits", 2853, 0],
+               ["Sales Volume", 1461, 0],
+               ["Return On Capital", 19.1, 0],
+               ["Workforce", 95453, 0],
+               ["Women Workforce Share", 13.5, 0],
 
-                ],
-                "quarterRevenue": [12.75, 13.28, 14.34, 25.63],
-                "logo": "/images/carLogos/vauxhall.png"
-            },
-            {
+               ["Energy Consumption Per Vehicle", 2.75, 0],
+               ["Water Consumption Per Vehicle", 2.31, 0],
+               ["CO2 Per Vehicle", 0.86],
+               ["Revenue Sum", 60447]
 
-                "Name": "Skoda",
-                "Year": "2011",
-                "KPI": [
-				["profits", 2853, 0],
-				["salesVolume", 1461, 0],
-				["returnOnCapital", 19.1, 0],
-				["workforce", 95453, 0],
-				["womeWorkforceShare", 13.5, 0],
-				["averageTrainingHours", 3.6, 1],
-				["energyConsumptionPerVehicle", 2.75, 0],
-				["waterConsumptionPerVehicle", 2.31, 0],
-				["co2perVehicle", 0.86],
-				["revenueSum", 60447]
+               ],
+               "quarterRevenue": [12.75, 13.28, 14.34, 25.63],
+               "logo": "/images/carLogos/ford.png"
+           },
+           {
 
-                ],
-                "quarterRevenue": [12.75, 13.28, 14.34, 25.63],
-                "logo": "/images/carLogos/skoda.png"
-            },
-            {
+               "Name": "Vauxhall",
+               "Year": "2011",
+               "KPI": [
+               ["Profits", 2853, 0],
+               ["Sales Volume", 1461, 0],
+               ["Return On Capital", 19.1, 0],
+               ["Workforce", 95453, 0],
+               ["Women Workforce Share", 13.5, 0],
 
-                "Name": "Mini",
-                "Year": "2011",
-                "KPI": [
-				["profits", 2853, 0],
-				["salesVolume", 1461, 0],
-				["returnOnCapital", 19.1, 0],
-				["workforce", 95453, 0],
-				["womeWorkforceShare", 13.5, 0],
-				["averageTrainingHours", 3.6, 1],
-				["energyConsumptionPerVehicle", 2.75, 0],
-				["waterConsumptionPerVehicle", 2.31, 0],
-				["co2perVehicle", 0.86],
-				["revenueSum", 60447]
+               ["Energy Consumption Per Vehicle", 2.75, 0],
+               ["Water Consumption Per Vehicle", 2.31, 0],
+               ["CO2 Per Vehicle", 0.86],
+               ["Revenue Sum", 60447]
 
-                ],
-                "quarterRevenue": [12.75, 13.28, 14.34, 25.63],
-                "logo": "/images/carLogos/mini.png"
-            },
-            {
+               ],
+               "quarterRevenue": [12.75, 13.28, 14.34, 25.63],
+               "logo": "/images/carLogos/vauxhall.png"
+           },
+           {
 
-                "Name": "Seat",
-                "Year": "2011",
-                "KPI": [
-				["profits", 2853, 0],
-				["salesVolume", 1461, 0],
-				["returnOnCapital", 19.1, 0],
-				["workforce", 95453, 0],
-				["womeWorkforceShare", 13.5, 0],
-				["averageTrainingHours", 3.6, 1],
-				["energyConsumptionPerVehicle", 2.75, 0],
-				["waterConsumptionPerVehicle", 2.31, 0],
-				["co2perVehicle", 0.86],
-				["revenueSum", 60447]
+               "Name": "Skoda",
+               "Year": "2011",
+               "KPI": [
+               ["Profits", 2853, 0],
+               ["Sales Volume", 1461, 0],
+               ["Return On Capital", 19.1, 0],
+               ["Workforce", 95453, 0],
+               ["Women Workforce Share", 13.5, 0],
 
-                ],
-                "quarterRevenue": [12.75, 13.28, 14.34, 25.63],
-                "logo": "/images/carLogos/seat.png"
-            }
+               ["Energy Consumption Per Vehicle", 2.75, 0],
+               ["Water Consumption Per Vehicle", 2.31, 0],
+               ["CO2 Per Vehicle", 0.86],
+               ["Revenue Sum", 60447]
+
+               ],
+               "quarterRevenue": [12.75, 13.28, 14.34, 25.63],
+               "logo": "/images/carLogos/skoda.png"
+           },
+           {
+
+               "Name": "Mini",
+               "Year": "2011",
+               "KPI": [
+               ["Profits", 2853, 0],
+               ["Sales Volume", 1461, 0],
+               ["Return On Capital", 19.1, 0],
+               ["Workforce", 95453, 0],
+               ["Women Workforce Share", 13.5, 0],
+
+               ["Energy Consumption Per Vehicle", 2.75, 0],
+               ["Water Consumption Per Vehicle", 2.31, 0],
+               ["CO2 Per Vehicle", 0.86],
+               ["Revenue Sum", 60447]
+
+               ],
+               "quarterRevenue": [12.75, 13.28, 14.34, 25.63],
+               "logo": "/images/carLogos/mini.png"
+           },
+           {
+
+               "Name": "Seat",
+               "Year": "2011",
+               "KPI": [
+               ["Profits", 2853, 0],
+               ["Sales Volume", 1461, 0],
+               ["Return On Capital", 19.1, 0],
+               ["Workforce", 95453, 0],
+               ["Women Workforce Share", 13.5, 0],
+
+               ["Energy Consumption Per Vehicle", 2.75, 0],
+               ["Water Consumption Per Vehicle", 2.31, 0],
+               ["CO2 Per Vehicle", 0.86],
+               ["Revenue Sum", 60447]
+
+               ],
+               "quarterRevenue": [12.75, 13.28, 14.34, 25.63],
+               "logo": "/images/carLogos/seat.png"
+           }
     ];
 
     function getCustomberIdByName(name) {
@@ -186,16 +186,16 @@
 
         //     debugger;
         var newInnerHTML =
-           '<div style="position: absolute; text-align: left; left:1px; top:' + top + 'px; width: ' + nameDivWidth
-               + 'px; height:25px; background-color: #FFFFFF;"><b>' + name + '</b></div>';
+           '<div  style="position: absolute; text-align: center; left:1px; top:' + top + 'px; width: ' + nameDivWidth
+               + 'px; height:25px; background-color: #FFFFFF; border-color: #008080 ">' + name + '</div>';
 
         switch (type) {
             case PERCENTAGE:
-                newInnerHTML += '<div style="position: absolute; text-align: left; left: ' + (nameDivWidth + 2) + 'px; top: ' + top
+                newInnerHTML += '<div style="position: absolute; text-align: center; left: ' + (nameDivWidth + 2) + 'px; top: ' + top
                     + 'px; width: ' + valueDivWidth + 'px; height: 25px; background-color: #FFFFFF;">' + value + '%</div>';
                 break;
             case RATING:
-                newInnerHTML += '<div style="position: absolute; text-align: left; left: ' + (nameDivWidth + 2) + 'px; top: ' + top
+                newInnerHTML += '<div style="position: absolute; text-align: center; left: ' + (nameDivWidth + 2) + 'px; top: ' + top
                     + 'px; width: ' + valueDivWidth + 'px; height: 25px; background-color: #FFFFFF;">';
                 newInnerHTML += '<span class="win-small" data-win-control="WinJS.UI.Rating" data-win-options="{ userRating: ' + value
                     + ', disabled: true}"></span></div>';
@@ -203,7 +203,7 @@
             case NUMBER:
             default:
                 newInnerHTML +=
-                    '<div style="position: absolute; text-align: left; left: ' + (nameDivWidth + 2) + 'px; top: ' + top + 'px; width: '
+                    '<div style="position: absolute; text-align: center; left: ' + (nameDivWidth + 2) + 'px; top: ' + top + 'px; width: '
                         + valueDivWidth + 'px; height: 25px; background-color: #FFFFFF;">' + value + '</div>';
                 break;
         }
@@ -235,9 +235,9 @@
         var x = getCustomberIdByName(temp.value);
         var height = 20 + 2 + json[x].KPI.length * 26;
         var counter = 0;
-        var flyOutContent = '<div style="width:420px; height:' + height + 'px; background-color:#000000; position:relative;">';
-        flyOutContent += '<div style="position:absolute; background-color:#FFFFFF; left:1px; top:1px; width:418px; height:20px; text-align:center;">' +
-            json[x].Name + '</div>';
+        var flyOutContent = '<div style="width:420px; height:' + height + 'px; background-color:#008080; position:relative;">';
+        flyOutContent += '<div style="position:absolute; background-color:#FFFFFF; left:1px; top:1px; width:418px; height:20px; text-align:center;"><b>' +
+            json[x].Name + '</b></div>';
         var top = 22;
         while ((counter < json[x].KPI.length)) {
             flyOutContent += generateKPIDiv(json[x].KPI[counter][0], json[x].KPI[counter][1], json[x].KPI[counter][2], top, 240, 177);
@@ -254,17 +254,12 @@
     }
 
 
-    function showTileComparison() {
-        WinJS.Navigation.navigate("pages/TileComparison/TileComparison.html");
-    }
-
     WinJS.UI.Pages.define("/pages/allCards/allCards.html", {
         // This function is called whenever a user navigates to this page. It
         // populates the page elements with the app's data.
         ready: function (element, options) {
             //    var item = HomescreenData.resolveItemReference(options.item);
-            var slidingAppBar = document.getElementById("appBarAllCards").winControl;
-            slidingAppBar.getCommandById("showTileComparison").addEventListener("click", function () { showTileComparison(); });
+
             // Parses the title of the subpage from the data file
             // element.querySelector(".titlearea .pagetitle").textContent = item.title;
             var listView = document.querySelector("#listView");
