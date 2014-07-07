@@ -44,7 +44,7 @@
             .attr("text-anchor", "middle")
             .style("font-size", "12px")
             .style("text-decoration", "underline")
-            .text("Quarter Revenue");
+            .text("Quarter Revenue " + item.data.Year);
 
             //BARCHART starts here
 
