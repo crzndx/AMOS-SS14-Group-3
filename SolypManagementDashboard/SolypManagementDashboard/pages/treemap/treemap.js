@@ -51,8 +51,6 @@
 
                 var labela = node.labela;
                 var labelb = node.labelb;
-           
-                
             
                 var nodes = treemap.nodes(root)
                     .filter(function (d) { return !d.children; });
