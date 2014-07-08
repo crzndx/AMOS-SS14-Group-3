@@ -25,6 +25,10 @@ Extract Content of release.zip, right click on "Add-AppDevPackage" and click "Ru
 *To run the Unit-Test you should have the Chuzpah-Extension installed. (in Visual Studio click on Extras->Extensions and updates and search for "chuzpah").
 
 ##Repository-Structure
+
+This little representation shows the structure of the project. Only relevant folders are shown here and are annotated if the name is not mnemonic.
+
+
 	Root-Directory (contains, amongst other things, release.zip and licence file)
 	planning (less important planning files)
 	SolypManagementDashboard (contains actual Visual-Studio Project)
@@ -38,15 +42,15 @@ Extract Content of release.zip, right click on "Add-AppDevPackage" and click "Ru
 	---------d3 (d3 Library used for Charts)
 	---------flot (Library used for Linechart)
 	---------jquery (also in use from linechart)
-	---pages (contains severel subfolders; every subfolder represents one page in the Application)
+	---pages (contains several subfolders; every subfolder represents one page in the Application)
 	------allCards
-	------groupDetail
 	------groupedItems
-	------itemDetail
 	------lineChart
 	------newPageDummy (template for new subpages)
 	------TileComparison
 	------treemap
+
+
 
 ##Additional notes regarding Subpages
 
