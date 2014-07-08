@@ -1,0 +1,36 @@
+<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="1078" measuredH="472" mockupW="648" mockupH="388">
+  <controls>
+    <control controlID="0" controlTypeID="com.balsamiq.mockups::Canvas" x="430" y="116" w="524" h="356" measuredW="100" measuredH="70" zOrder="0" locked="false" isInGroup="-1"/>
+    <control controlID="1" controlTypeID="com.balsamiq.mockups::LineChart" x="595" y="207" w="348" h="217" measuredW="187" measuredH="175" zOrder="1" locked="false" isInGroup="-1"/>
+    <control controlID="2" controlTypeID="com.balsamiq.mockups::Label" x="645" y="141" w="-1" h="-1" measuredW="243" measuredH="48" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>40</size>
+        <text>Sales%20Europe</text>
+      </controlProperties>
+    </control>
+    <control controlID="3" controlTypeID="com.balsamiq.mockups::List" x="462" y="215" w="118" h="182" measuredW="100" measuredH="174" zOrder="3" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Product%20A%0AProduct%20B%0AProduct%20C%0AProduct%20D%0AProduct%20E%0AProduct%20F%0AProduct%20G%0AProduct%20H</text>
+        <verticalScrollbar>true</verticalScrollbar>
+      </controlProperties>
+    </control>
+    <control controlID="4" controlTypeID="com.balsamiq.mockups::Icon" x="895" y="155" w="-1" h="-1" measuredW="24" measuredH="24" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>DownTriangleIcon%7Csmall</icon>
+        <rotation>90</rotation>
+      </controlProperties>
+    </control>
+    <control controlID="7" controlTypeID="com.balsamiq.mockups::StickyNote" x="933" y="84" w="145" h="123" measuredW="109" measuredH="123" zOrder="5" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>After%20u%20click%20the%20button%2C%20the%20next%20group%20of%20KPIs%20are%20displayed</text>
+        <underline>false</underline>
+      </controlProperties>
+    </control>
+    <control controlID="9" controlTypeID="com.balsamiq.mockups::IconLabel" x="445" y="131" w="-1" h="-1" measuredW="29" measuredH="39" zOrder="6" locked="false" isInGroup="-1">
+      <controlProperties>
+        <icon>HomeIcon%7Csmall</icon>
+        <text>back</text>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>
