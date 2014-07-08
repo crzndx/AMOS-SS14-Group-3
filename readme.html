@@ -1,0 +1,50 @@
+<h1>SolypManagemendDashboard V1.0</h1>
+
+<h2>Prerequisites</h2>
+Windows 8<br>
+Tablet PC (recommended)<br>
+
+
+<h2>Installation</h2>
+Extract Content of release.zip, right click on "Add-AppDevPackage" and click "Run with Powershell".
+Needs Administrative Privileges and cannot be done, if Application is already installed.
+
+<h2>Prerequisites for the Project.</h2>
+Use Visual Studio 2013 or better to open the SolyManagementDashboard.sln file.
+To run the Unit-Test you should have the Chuzpah-Extension installed. (in Visual Studio click on 
+Extras->Extensions and updates and search for "chuzpah").
+
+<h2>Repository-Structure</h2>
+<div style="font-family:'Courier New', Arial;"> 
+Root-Directory (contains, amongst other things, release.zip and licence file)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;planning (less important planning files)<br>
+SolypManagementDashboard (contains actual Visual-Studio Project)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;bin (output of compilation process)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;css (default-stylesheet)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;data (contains example-datafiles)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;images (all images used inside application)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;js (additional Javascript-Files)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;lib (Javascript-Libraries)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;js<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;d3 (d3 Library used for Charts)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;flot (Library used for Linechart)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;jquery (also in use from linechart)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;pages (contains severel subfolders; every subfolder represents one page in the Application)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;allCards<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;groupDetail<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;groupedItems<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;itemDetail<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lineChart<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;newPageDummy<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TileComparison<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;treemap<br>
+</div>
+<br>
+<h2>Additional notes regarding Subpages</h2>
+
+<h3>TileComparison</h3>
+Main Element of TileComparison is a WinJS-ListView, which displays the Tiles.<br>
+In TileComparison.js, the function "itemTemplateFunction" is responsible for creating the Tile itself. The div with id "tiletemplate"
+gets used as base for the Tile. It gets enriched with the d3-chart and the dynamically generated KPI-Table.<br>
+Compare-Tiles-Functionality is done by exchanging the Datasource of the WinJS-Listview with a temporarly created datasource with only
+selected Elements.<br>
