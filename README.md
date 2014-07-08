@@ -56,8 +56,7 @@ This little representation shows the structure of the project. Only relevant fol
 
 ###TileComparison
 Main Element of TileComparison is a WinJS-ListView, which displays the Tiles.
-In TileComparison.js, the function "itemTemplateFunction" is responsible for creating the Tile itself. The div with id "tiletemplate"
-gets used as base for the Tile. It gets enriched with the d3-chart and the dynamically generated KPI-Table.
+In TileComparison.js, the function "itemTemplateFunction" is responsible for creating the Tile itself. The div with id "tiletemplate" gets used as base for the Tile. It gets enriched with the d3-chart and the dynamically generated KPI-Table.
 Compare-Tiles-Functionality is done by exchanging the Datasource of the WinJS-Listview with a temporarly created datasource with only
 selected Elements.
 
@@ -73,6 +72,13 @@ square of the treemap doesn't fit the size because it is too big, the label will
 A particular branch can be selected and it will occupy the size of the canvas of the whole treemap. 
 The data used for drawing the treemaap is in the data file directory.
 
+###LineChart
+The content area is divided into three regions. One region for displaying the graph itself, another for (de)selection the graphlines to show and the thrid one is responsible for setting various options on this page e.g. showing the data points accurately. Linechart currently only supports reading from inline javascript (sufficient for this release version), but reading from external files/json streams should be possible in the future with small changes.
+
+
+# Testing
+
+Test cases are implemented in the respective -subpagename-_test.js files with help of the Jasmine testing framework and Chutzpah integration for Visual Studio 2013.
 
 # License
 
