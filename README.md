@@ -72,3 +72,12 @@ tTreemap.js generates a treemap where two data attributes can be seen. The data 
 square of the treemap doesn't fit the size because it is too big, the label will not be shown. An extra functionality regarding the treemap is the zoom in/ out.
 A particular branch can be selected and it will occupy the size of the canvas of the whole treemap. 
 The data used for drawing the treemaap is in the data file directory.
+
+
+# License
+
+AGPL v3 (for more information have a closer look into license file)
+
+# Contribution?
+
+feel free to contribute!
