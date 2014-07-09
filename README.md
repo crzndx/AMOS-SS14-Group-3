@@ -13,21 +13,21 @@ We hope to learn from this project about Agile Methods and Open Source.
 #SolypManagemendDashboard V1.0
 
 ##Prerequisites
-+Windows 8 (does not work with older version)
-+Tablet PC (recommended for touch gestures), but also works with normal PC (with a mouse)
-+Visual Studio 2013 (recommended for debugging/execution with simulator)
+* Windows 8 (does not work with older version)
+* Tablet PC (recommended for touch gestures), but also works with normal PC (with a mouse)
+* Visual Studio 2013 (recommended for debugging/execution with simulator)
 
 ##Installation
 Extract content of release.zip, afterwards right click on "Add-AppDevPackage" and click "Run with Powershell". Needs Administrative Privileges and cannot be done, if Application is already installed. A small tile will be added to your Windows 8 homescreen listed under "All Apps" (see arrow in the bottom). Right there it is listed under the letter "S". Alternatively, you may just type the project name after accessing the homescreen. Windows will propose search results, as well as the newly installed Management Dashboard. Just click to run the app.
 
 ##Prerequisites for the Project
-*Use Visual Studio 2013 (or newer) to open the SolyManagementDashboard.sln file.
-*To run the Unit-Test you should have the Chuzpah-Extension installed. (in Visual Studio click on Extras->Extensions and updates and search for "chuzpah").
+* Use Visual Studio 2013 (or newer) to open the SolyManagementDashboard.sln file.
+* To run the Unit-Test you should have the Chuzpah-Extension installed. (in Visual Studio click on Extras->Extensions and updates and search for "chuzpah").
 
 ##Technologies used
-+HTML5
-+CSS3
-+Javascript
+* HTML5
+* CSS3
+* Javascript
 
 We have several JS libraries in use. We tried to keep the number small - to not have too many dependencies. For testing, Jasmine is in use. For the productive side a mix of WinJS, jQuery, flot and d3.
 
