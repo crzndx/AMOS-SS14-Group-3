@@ -175,9 +175,6 @@
     <Content Include="lib\testing\jasmine-2.0.0\jasmine.js" />
     <Content Include="lib\testing\jasmine-2.0.0\jasmine_favicon.png" />
     <Content Include="lib\testing\jasmine-2.0.0\MIT.LICENSE" />
-    <Content Include="pages\groupDetail\d3playground\d3playground.css" />
-    <Content Include="pages\groupDetail\d3playground\d3playground.html" />
-    <Content Include="pages\groupDetail\d3playground\d3playground.js" />
     <Content Include="pages\itemDetail\itemDetail.css" />
     <Content Include="pages\itemDetail\itemDetail.html" />
     <Content Include="pages\itemDetail\itemDetail.js" />
@@ -198,7 +195,6 @@
     <Content Include="pages\newPageDummy\newDummyCSS.css" />
     <Content Include="pages\newPageDummy\newDummyHTML.html" />
     <Content Include="pages\newPageDummy\newDummyJS.js" />
-    <Content Include="pages\treemap\squaresdata.json" />
     <Content Include="pages\treemap\treemap.css" />
     <Content Include="pages\treemap\treemap.html" />
     <Content Include="pages\treemap\treemap.js" />
