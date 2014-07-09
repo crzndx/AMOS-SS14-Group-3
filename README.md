@@ -7,10 +7,10 @@ For documentation, have a look at the source code or the planning documents.
 
 We hope to learn from this project about Agile Methods and Open Source.
 
-"The journey is the goal" - Confucius
+> "The journey is the goal" - Confucius
 
 
-#SolypManagemendDashboard V1.0
+#SolypManagementDashboard V1.0
 
 ##Prerequisites
 * Windows 8 (does not work with older version)
