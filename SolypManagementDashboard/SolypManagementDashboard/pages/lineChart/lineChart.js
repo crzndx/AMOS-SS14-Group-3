@@ -710,6 +710,8 @@
 
             loadDataInFile(sourcePath);
 
+            index = 0;
+
             // eventListeners navigation buttons for Dataset changes
             document.getElementById("rightNav").addEventListener("click", function () { showNextDataset(index, datasets); });
             document.getElementById("leftNav").addEventListener("click", function () { showPreviousDataset(index, datasets); });
