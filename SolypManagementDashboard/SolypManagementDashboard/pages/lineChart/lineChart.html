@@ -24,9 +24,13 @@
     <!--d3js-->
     <script src="../../lib/js/d3/d3.js"></script>
 
+    <!-- linking homescreendata -->
+    <script src="/js/homescreenData.js"></script>
+
     <!-- change these link names accordingly to the subpage name -->
     <link href="linceChart.css" rel="stylesheet" />
     <script src="lineChart.js"></script>
+
 
 </head>
 <body>
@@ -36,41 +40,52 @@
             <button data-win-control="WinJS.UI.BackButton"></button>
             <h1 class="titlearea win-type-ellipsis">
                 <!-- change name of the actual title shown -->
-                <span class="pagetitle">LineChart</span>
+                <span class="pagetitle" id="pageTitle">LineChart</span>
             </h1>
         </header>
         <section aria-label="Main content" role="main">
-            <div class="contentwrapper">
+            <div class="line_contentwrapper">
                 <!-- add all specific subpage content here -->
-                <div id="lineChartControls" style="width: 20%; float: left;">
-                    <div id="controlsTitle">
+                <div id="lineChartControls">
+                    <!-- <div id="controlsTitle">
                         <h2>Graphlines:</h2>
                     </div>
+                        -->
                     <!-- dynamically render graph on/off switches from json dataset-->
                     <div id="choices"></div>
                     <!-- Options for interaction -->
-                    <div id="controlsTitle">
-                        <h2>Options:</h2>
-                    </div>
-                    <div id="showOptions">
-                        <label><input id="enablePosition" type="checkbox" checked="checked">Show coordinates</label>
-                        <br />
-                        <span id="mouseoverdata"></span>
-                    </div>
+
                 </div>
-                <div id="lineChartCanvas" style="width: 76%; margin-left:23%;">
-                        <div id="canvasTitle" style="text-align:center;">
-                            <span id="leftNav">&#xe112;</span>
+                <div id="lineChartCanvas">
+                        <div id="canvasTitle">
+                            <span id="leftNav" style="display: none;">&#xe112;</span>
                             <span id="chartTitle">Sales</span>
-                            <span id="rightNav">&#xe111;</span>
+                            <span id="rightNav" style="display: none;">&#xe111;</span>
                         </div>
                         <!-- Plotted graph area -->
                         <div id="plottingarea" class="plottingarea"></div>
+                        <!--
+                            <div id="controlsTitle">
+                            <h2>Options:</h2>
+                        </div>
+                        -->
+                        <div id="showOptions">
+                            <label>
+                                <input id="enableCrosshairX" type="checkbox" checked="checked"><span id="crosshairx">Crosshair x</span>
+                            </label>
 
+                            <label>
+                                <input id="enableCrosshairY" type="checkbox" checked="checked"><span id="crosshairy">Crosshair y</span>
+                            </label>
+
+                            <label><input id="enableHoverable" type="checkbox" checked="checked">Show data points on hover</label>
+
+                            <label><input id="enablePosition" type="checkbox" checked="checked">Show coordinates</label>
+                            <br />
+                            <span id="mouseoverdata"></span>
+                        </div>
                         <!-- used for debugging, otherwise invisible -->
                         <div id="status"></div>
-
-                  
                 </div>
             </div>
         </section>

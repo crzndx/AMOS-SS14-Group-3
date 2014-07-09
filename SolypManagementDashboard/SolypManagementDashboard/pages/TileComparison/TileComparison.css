@@ -1,5 +1,9 @@
 ﻿/* add all CSS changes specifically concerning the new subpage here*/
 
+.tile_contentwrapper {
+     margin-left: 120px;
+    margin-right: 120px;
+}
     /* styles */
 .listBox {
    /* border: 1px solid #222222; */
@@ -85,10 +89,7 @@
 	height:170px;
 }
 
-.itemdetailpage section[role=main] {
-    margin-left: 120px;
-    margin-right: 120px;
-}
+
 
 #customercard {
 		margin:0 auto;
@@ -117,7 +118,8 @@
 		border: 1px solid #ddd;
 		color: #333;
 		padding: 20px;
-		width: 320px;
+		
+		width: 322px;
 		height: 450px;
 		float: left;
 		_display: inline; /* IE6 double margin fix */
@@ -162,13 +164,8 @@
 		padding: 40px 40px 20px;
 		margin: -20px -20px 20px -20px;
 		border-bottom: 8px solid;
-		background-color: #eee;
-		background-image: -moz-linear-gradient(#fff,#eee);
-		background-image: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#eee));    
-		background-image: -webkit-linear-gradient(#fff, #eee);
-		background-image: -o-linear-gradient(#fff, #eee);
-		background-image: -ms-linear-gradient(#fff, #eee);
-		background-image: linear-gradient(#fff, #eee);
+		background-color: #ffffff;
+		
 	}
 
 	#customercard .header:after {
@@ -333,8 +330,8 @@
     color: rgba(0, 0, 0, 1.0);
 }
 
-.win-container {
-	width:350px;
+.tileTemplate {
+    width:350px;
 }
 
 

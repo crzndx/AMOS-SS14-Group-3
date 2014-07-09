@@ -38,7 +38,7 @@
         <header aria-label="Header content" role="banner">
             <button data-win-control="WinJS.UI.BackButton"></button>
             <h1 class="titlearea win-type-ellipsis">
-                <span class="pagetitle">Solyp Management Dashboard</span>
+                <img src="/images/Logo-300.png" height="46px" /> <span class="pagetitle">Management Dashboard</span>
             </h1>
         </header>
         <section aria-label="Main content" role="main">
@@ -50,9 +50,9 @@
                     groupHeaderTemplate: select('.headertemplate'),
                     itemDataSource: HomescreenData.items.dataSource,
                     itemTemplate: select('.itemtemplate'),
-                    ongroupheaderinvoked: select('.pagecontrol').winControl.groupHeaderInvoked,
                     oniteminvoked: select('.pagecontrol').winControl.itemInvoked
                 }">
+                <!-- removed /* ongroupheaderinvoked: select('.pagecontrol').winControl.groupHeaderInvoked,*/  -->
             </div>
         </section>
     </div>

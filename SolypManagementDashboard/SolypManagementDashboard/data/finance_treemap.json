@@ -1,0 +1,92 @@
+
+{
+ "name": "Finance", "labela" : "Account Payables", "labelb" : "Account Receivables",
+ "children": [
+ {
+   "name": "Western and Northern Europe",
+   "children": [
+	{"name":"Spain", "a": 125000, "b" :350000},
+	{"name":"France", "a":237000, "b" :539000},
+	{"name":"Portugal", "a":94000, "b" :210000},
+	{"name":"Finland", "a":142000, "b" :382000},
+	{"name":"Norwey", "a":385000, "b" :610000},
+	{"name":"Sweden", "a":204000, "b" :472000},
+	{"name":"Benelux", "a":82000, "b" :156000},
+	{"name":"UK", "a":421000, "b" :710000},
+	{"name":"Italy", "a":214000, "b" :453000},
+	{"name":"Denmark", "a":87000, "b" :172000}
+	]
+  },
+  {
+	"name": "Eastern Europe",
+	"children": [
+	{"name":"Slovakia", "a": 63000, "b" :120000},
+	{"name":"Czech Republic", "a": 42000, "b" :92000},
+	{"name":"Poland", "a": 74000, "b" :153000},
+	{"name":"Ukraine", "a": 92300, "b" :201000},
+	{"name":"Hungary", "a": 73500, "b" :173000},
+	{"name":"Romania", "a": 43000, "b" :93200},
+	{"name":"Bulgaria", "a": 37000, "b" :83000}
+	]
+  },
+  {"name":"Germany", "a": 421000, "b" :832000},
+  {"name":"USA", "a": 473000, "b" :847000},
+  {"name":"UAE", "a": 325000, "b" :648000},
+  {"name":"China", "a": 285000, "b" :574000},
+  {"name":"India", "a": 149000, "b" :325000},
+  {
+	"name": "Central and North America",
+	"children": [
+	{"name":"Mexico", "a": 103000, "b" :294000},
+	{"name":"Canada", "a": 287000, "b" :436000},
+	{"name":"Islands", "a": 82000, "b" :143000}
+	]
+  },
+  {
+	"name": "South America",
+	"children": [
+	{"name":"Brazil", "a": 93800, "b" :215000},
+	{"name":"Argentina", "a": 97400, "b" :194000},
+	{"name":"Chile", "a": 73800, "b" :183000},
+	{"name":"Colombia", "a": 77000, "b" :173000},
+	{"name":"Venezuela", "a": 83400, "b" :189000},
+	{"name":"Ecuador", "a": 63000, "b" :168000},
+	{"name":"Uruguay", "a": 74600, "b" :171000}
+	]
+  },
+  {
+	"name": "Africa",
+	"children": [
+	{"name":"Ghana", "a": 21000, "b" :62400},
+	{"name":"Ethiopia", "a": 14000, "b" :42900},
+	{"name":"Angola", "a": 35000, "b" :93200},
+	{"name":"Tunisia", "a": 29000, "b" :54900},
+	{"name":"Morocco", "a": 19000, "b" :41800},
+	{"name":"Nigeria", "a": 38400, "b" :140000},
+	{"name":"Egypt", "a": 15300, "b" :74000},
+	{"name":"South Africa", "a": 42100, "b" :183000}
+	]
+  },
+  {
+	"name": "Australia & NZ",
+	"children": [
+	{"name":"Australia", "a": 194000, "b" :328000},
+	{"name":"New Zealand", "a": 132000, "b" :317000}
+	]
+  },
+  {
+	"name": "Asia Pacific ",
+	"children": [
+	{"name":"Japan", "a": 173000, "b" :398000},
+	{"name":"Singapore", "a": 132000, "b" :379000},
+	{"name":"Brunei", "a": 84300, "b" :178000},
+	{"name":"Korea, South", "a": 142000, "b" :387000},
+	{"name":"Malaysia", "a": 93000, "b" :164000},
+	{"name":"Azerbaijan", "a": 74300, "b" :132000},
+	{"name":"Thailand", "a": 75000, "b" :153000},
+	{"name":"Kazakhstan", "a": 58000, "b" :104000}
+	]
+  }
+  ]
+ }
+

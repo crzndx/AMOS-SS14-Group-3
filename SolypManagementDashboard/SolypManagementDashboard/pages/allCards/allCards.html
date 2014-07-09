@@ -30,7 +30,7 @@
             </h1>
         </header>
         <section aria-label="Main content" role="main">
-            <div class="contentwrapper">
+            <div class="allcards_contentwrap">
                 <div id="confirmFlyout" data-win-control="WinJS.UI.Flyout" aria-label="{Confirm purchase flyout}">
 
                 </div>
@@ -43,7 +43,6 @@
                         <img src="#" class="smallListIconTextItem-Image" data-win-bind="src: logo" />
                         <div class="smallListIconTextItem-Detail">
                             <h4 data-win-bind="textContent: Name"></h4>
-                            <h6 data-win-bind="textContent: profits"></h6>
                         </div>
                     </div>
                 </div>
@@ -65,7 +64,12 @@
                     }">
                 </div>
                 <!--Finished copying-->
-
+                <!-- Installs the AppBar at the top of the screen. Must be swiped in from the top of the screen -->
+                <div id="appBarWrapper">
+                    <div id="appBarAllCards" data-win-control="WinJS.UI.AppBar" data-win-options="{sticky: false, placement: 'top'}">
+                        <button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{id:'showTileComparison',label:'Show Customer Comparison',icon:'viewall', section:'selection',tooltip: 'Show Customer Comparison'}"></button>
+                    </div>
+                </div>
             </div>
         </section>
     </div>

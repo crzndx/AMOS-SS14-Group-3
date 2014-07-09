@@ -16,8 +16,8 @@
 @-ms-keyframes animatedBackground {
     /*move background to the left*/
     0% { background-position: 0 0; }
-    /* turnpoint after 600px to the right*/
-    45% {background-position: -600px 0;}
+    /* turnpoint after 800px to the right*/
+    55% {background-position: -150px 0;}
     /* wait 5% of the time at the other turnpoint again*/
     95% { background-position: 0px 0; }
     /* starting point again*/

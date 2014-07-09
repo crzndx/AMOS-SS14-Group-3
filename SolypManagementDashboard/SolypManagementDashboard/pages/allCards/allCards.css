@@ -1,7 +1,10 @@
 ﻿/* add all CSS changes specifically concerning the new subpage here*/
 
-.contentwrapper {
-    margin: 50px; /* TODO needs defined makeover that every page looks the same!*/
+.allcards_contentwrap {
+    margin-left:110px; /* TODO needs defined makeover that every page looks the same!*/
+    margin-top:50px;
+    margin-bottom:50px;
+    margin-right:50px;
 }
 
 /*Copied from winjs listview*/

@@ -10,7 +10,6 @@
         WinJS.Navigation.navigate("pages/allCards/allCards.html");
     }
 
-
     var customerCardsTileId = 0;
 
     // Generates the Template for the ListView-Items
@@ -45,7 +44,7 @@
             .attr("text-anchor", "middle")
             .style("font-size", "12px")
             .style("text-decoration", "underline")
-            .text("Quarter Revenue");
+            .text("Quarter Revenue " + item.data.Year);
 
             //BARCHART starts here
 
@@ -116,8 +115,10 @@
 
 
     function loadData() {
+        var dataSource = "ms-appx:///data/" + currentYear + ".txt";
+        var temp = "/data/" + currentYear + ".txt";
 
-        var uri = new Windows.Foundation.Uri("ms-appx:///data/2011.txt");
+        var uri = new Windows.Foundation.Uri(dataSource);
 
         Windows.Storage.StorageFile.getFileFromApplicationUriAsync(uri).then(function (file) {
             return Windows.Storage.FileIO.readTextAsync(file);
@@ -128,9 +129,14 @@
             var tileData = new WinJS.Binding.List(temp);
             var list2 = document.getElementById("customerListView").winControl;
             list2.itemDataSource = tileData.dataSource;
-
-            list2.forceLayout();
             customerCardsTileId = 0;
+            list2.forceLayout();
+
+
+        }, function (message) {
+            var messageDialog = new Windows.UI.Popups.MessageDialog(message);
+            currentYear += lastModificationOnCurrentYear * -1;
+            messageDialog.showAsync();
 
         });
 
@@ -188,7 +194,7 @@
             var tempObj = new WinJS.Binding.List(selectedArray);
             // lettersList = new WinJS.Binding.List(letters);
             list2.itemDataSource = tempObj.dataSource;
-
+            customerCardsTileId = 0;
             list2.forceLayout();
 
 
@@ -218,12 +224,8 @@
             if ((' ' + elems[i].className + ' ').indexOf(' kpiCanvas ') > -1) {
 
                 var temp = elems[i].getElementsByClassName("itemid")[0];
-
                 var newInnerHTML = '<input type="hidden" class="itemid" value="' + temp.value + '"></input>';
-
                 var x = getCustomberIdByName(temp.value);
-
-
                 var counter = 0;
 
                 while (counter < 3 && (kpiBaseReference + counter) < data[x].KPI.length) {
@@ -231,7 +233,7 @@
                     var kpi_temp = data[x].KPI[kpiBaseReference + counter];
                     var kpi_type = (kpi_temp[2] == undefined) ? 0 : kpi_temp[2];
 
-                    newInnerHTML += generateKPIDiv(kpi_temp[0], kpi_temp[1], kpi_type, tops[counter], 225, 84);
+                    newInnerHTML += generateKPIDiv(kpi_temp[0], kpi_temp[1], kpi_type, tops[counter], 220, 84);
 
                     counter++;
                 }
@@ -245,25 +247,25 @@
 
         //     debugger;
         var newInnerHTML =
-           '<div style="position: absolute; text-align: left; left:1px; top:' + top + 'px; width: ' + nameDivWidth
-               + 'px; height:25px; background-color: #FFFFFF;"><b>' + name + '</b></div>';
+           '<div style="position: absolute; padding-left:5px; padding-top:7px; text-align: left; left:1px; top:' + top + 'px; width: ' + (nameDivWidth - 5)
+               + 'px; height:18px; background-color: #FFFFFF; border-color: #008080 ">' + name + '</div>';
 
         switch (type) {
             case PERCENTAGE:
-                newInnerHTML += '<div style="position: absolute; text-align: left; left: ' + (nameDivWidth + 2) + 'px; top: ' + top
-                    + 'px; width: ' + valueDivWidth + 'px; height: 25px; background-color: #FFFFFF;">' + value + '%</div>';
+                newInnerHTML += '<div style="position: absolute; padding-top:7px; padding-left:5px;  text-align: left;  left: ' + (nameDivWidth + 2) + 'px; top: ' + top
+                    + 'px; width: ' + (valueDivWidth - 5) + 'px; height: 18px; background-color: #FFFFFF;">' + value + '%</div>';
                 break;
             case RATING:
-                newInnerHTML += '<div style="position: absolute; text-align: left; left: ' + (nameDivWidth + 2) + 'px; top: ' + top
-                    + 'px; width: ' + valueDivWidth + 'px; height: 25px; background-color: #FFFFFF;">';
+                newInnerHTML += '<div style="position: absolute; padding-top:7px; padding-left:5px;  text-align: left; left: ' + (nameDivWidth + 2) + 'px; top: ' + top
+                    + 'px; width: ' + (valueDivWidth - 5) + 'px; height: 18px; background-color: #FFFFFF;">';
                 newInnerHTML += '<span class="win-small" data-win-control="WinJS.UI.Rating" data-win-options="{ userRating: ' + value
                     + ', disabled: true}"></span></div>';
                 break;
             case NUMBER:
             default:
                 newInnerHTML +=
-                    '<div style="position: absolute; text-align: left; left: ' + (nameDivWidth + 2) + 'px; top: ' + top + 'px; width: '
-                        + valueDivWidth + 'px; height: 25px; background-color: #FFFFFF;">' + value + '</div>';
+                    '<div style="position: absolute; padding-top:7px; padding-left:5px;  text-align: left; left: ' + (nameDivWidth + 2) + 'px; top: ' + top + 'px; width: '
+                        + (valueDivWidth - 5) + 'px; height: 18px; background-color: #FFFFFF;">' + value + '</div>';
                 break;
         }
 
@@ -312,9 +314,9 @@
         var x = getCustomberIdByName(temp.value);
         var height = 20 + 2 + data[x].KPI.length * 26;
         var counter = 0;
-        var flyOutContent = '<div style="width:420px; height:' + height + 'px; background-color:#000000; position:relative;">';
-        flyOutContent += '<div style="position:absolute; background-color:#FFFFFF; left:1px; top:1px; width:418px; height:20px; text-align:center;">' +
-            data[x].Name + '</div>';
+        var flyOutContent = '<div style="width:420px; height:' + height + 'px; background-color:#008080; position:relative;">';
+        flyOutContent += '<div style="position:absolute; background-color:#FFFFFF; left:1px; top:1px; width:418px; height:20px; text-align:center;"><b>' +
+            data[x].Name + '</b></div>';
         var top = 22;
         while ((counter < data[x].KPI.length)) {
             flyOutContent += generateKPIDiv(data[x].KPI[counter][0], data[x].KPI[counter][1], data[x].KPI[counter][2], top, 240, 177);
@@ -331,8 +333,18 @@
 
     }
 
-
-
+    var currentYear = 2013;
+    var lastModificationOnCurrentYear = 0;
+    function showNextYear() {
+        currentYear += 1;
+        lastModificationOnCurrentYear = 1;
+        initTiles();
+    }
+    function showPreviousYear() {
+        currentYear -= 1;
+        lastModificationOnCurrentYear = -1;
+        initTiles();
+    }
 
     WinJS.UI.Pages.define("/pages/TileComparison/TileComparison.html", {
 
@@ -341,8 +353,8 @@
             /* Initialize App Bar */
             slidingAppBar = document.getElementById("appBar").winControl;
 
-            slidingAppBar.getCommandById("showNextYear").addEventListener("click", function () { showNextYear(dimensionIndex); });
-            slidingAppBar.getCommandById("showPreviousYear").addEventListener("click", function () { showPreviousYear(dimensionIndex); });
+            slidingAppBar.getCommandById("showNextYear").addEventListener("click", function () { showNextYear(); });
+            slidingAppBar.getCommandById("showPreviousYear").addEventListener("click", function () { showPreviousYear(); });
             slidingAppBar.getCommandById("showAllCards").addEventListener("click", function () { showAllCards(); });
 
             /*****************************************/

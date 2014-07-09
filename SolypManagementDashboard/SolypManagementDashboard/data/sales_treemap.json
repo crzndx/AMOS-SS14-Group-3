@@ -1,0 +1,46 @@
+{
+ "name": "Sales", "labela" : "Vehicles Sold", "labelb" : "Customer Complaints",
+ "children": [
+  {
+   "name": "Mercedes-Benz Cars",
+   "children": [
+    {"name": "Mercedes-Benz", "a": 12503000, "b": 1156},
+	{"name": "Smart", "a": 340234, "b": 149}  
+    ]
+  },
+  {
+    "name": "Daimler  Trucks",
+     "children": [
+      {"name": "Mercedes-Benz", "a": 73046, "b": 94},
+      {"name": "Freightliner", "a": 103743, "b": 104},
+	  {"name": "Western Star", "a": 37482, "b": 36},
+	  {"name": "Thomas Built Buses", "a": 94755, "b": 13},
+	  {"name": "Fuso", "a": 204632, "b": 238},
+	  {"name": "BharatBenz", "a": 283946, "b": 195}
+     ]
+    },
+    {
+     "name": "Mercedes-Benz Vans",
+     "children": [
+      {"name": "Mercedes-Benz", "a": 98364, "b": 32},
+	  {"name": "Freightliner", "a": 45639, "b": 19}
+     ]
+    },
+	{
+     "name": "Daimler Buses",
+     "children": [
+      {"name": "Mercedes-Benz", "a": 86342, "b": 51},
+	  {"name": "Setra", "a": 39465, "b": 28}
+     ]
+    },
+	{
+     "name": "Daimler Financial Services",
+     "children": [
+      {"name": "Mercedes-Benz Bank", "a":384652, "b": 275},
+	  {"name": "Mercedes-Benz Financial", "a": 974526, "b": 947},
+	  {"name": "Daimler Truck Financial", "a": 746342, "b": 472}
+	 ]
+    }
+   ]
+ }
+ 

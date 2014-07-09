@@ -1,11 +1,36 @@
 ﻿/* add all CSS changes specifically concerning the new subpage here*/
 
-.contentwrapper {
+.line_contentwrapper {
     margin: 50px; /* TODO needs defined makeover that every page looks the same!*/
 }
 
 #controlsTitle {
     margin-top: 30px;
+}
+
+#lineChartCanvas {
+    width: 78%;
+    margin-left:22%;
+}
+
+#lineChartControls {
+    width: 20%;
+    float: left;
+}
+
+#showOptions {
+    text-align: center;
+    margin-top: 30px;
+}
+
+#choices {
+    margin-top: 50px;
+}
+
+#canvasTitle {
+    text-align:center;
+    margin-top: -50px !important;
+    margin-bottom: 10px;
 }
 
 #chartTitle {
@@ -40,6 +65,5 @@
 -webkit-transform: rotate(-90deg);
 -moz-transform: rotate(-90deg);
 -o-transform: rotate(-90deg);
-writing-mode: bt-lr;
-
+writing-mode: bt-lr; /* !imp */
 }

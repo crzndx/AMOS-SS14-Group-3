@@ -33,7 +33,7 @@
         </header>
         <section aria-label="Main content" role="main">
 
-            <div class="contentwrapper">
+            <div class="tile_contentwrapper">
                 <!-- add all specific subpage content here -->
 
 
@@ -44,9 +44,8 @@
 
                 <div class=" ">
 
-                    <br />
-                    <div id="tiletemplate" class=".contentwrapper">
-                        <div id="customercard" width="320">
+                    <div id="tiletemplate" class="tileTemplate">
+                        <div id="customercard">
 
                             <div id="plandiv" class="plan plan1">
                                 <div class="header">
@@ -54,12 +53,12 @@
                                 </div>
 
                                 <div class="kpiCanvas" style="background-color:#000000; width:307px; height:79px; position:relative;">
-                                    <input type="hidden" class="itemid" data-win-bind="value: Name"></input>
+                                    <input type="hidden" class="itemid" data-win-bind="value: Name"/>
                                 </div>
 
                                 <div class="barchart"></div>
                                 <input type="button" class="signup" id="moreInfoButton" value="More Info"
-                                       onclick="TileComparison.moreInfoButton_Click(event);" />
+                                       ondblclick="TileComparison.moreInfoButton_Click(event);" />
                             </div>
                         </div>
 
@@ -73,16 +72,21 @@
                         layout: { type: WinJS.UI.GridLayout, maxRows: 1 }
                     }"></div>
                     <div style="text-align:center;">
-                        <img id="kpiLeft" src="/images/left.png" width="60"
-                             onmouseover="this.src='/images/left_hover.png'"
-                             onmouseout="this.src = '/images/left.png'" /><img id="kpiRight" src="/images/right.png" width="60"
-                                                                               onmouseover="this.src='/images/right_hover.png'"
-                                                                               onmouseout="this.src = '/images/right.png'" />
+                       
+                                    <img id="kpiLeft" src="/images/left.png" width="50"
+                                         onmouseover="this.src='/images/left_hover.png'"
+                                         onmouseout="this.src = '/images/left.png'" />
+                               
+                                    <button id="compareButton" style="position:relative;" class="action secondary MessageToTheUserInvisible">Compare Tiles</button>
+                              
+                                    <img id="kpiRight" src="/images/right.png" width="50"
+                                         onmouseover="this.src='/images/right_hover.png'"
+                                         onmouseout="this.src = '/images/right.png'" />
+   
                     </div>
+                    <div class="MessageBox">
+                        <div class="MessageToTheUserInvisible" style="color:#FF0000; font-weight:bold;" id="MessageToTheUser">Select more to compare!!!</div>
 
-                    <div class="MessageBox" style="margin-top:10px;">
-                        <div class="MessageToTheUserInvisible" id="MessageToTheUser">Select more to compare!!!</div>
-                        <button id="compareButton" class="action secondary MessageToTheUserInvisible">Compare Tiles</button>
                     </div>
                 </div>
             </div>
